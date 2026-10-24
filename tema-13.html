@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>13. Fizikinių vyksmų lygtys: styga ir
+difuzija · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="temos-puslapis" data-tema="13" data-uzduociu="7">
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <a class="atgal" href="index.html">← Visos temos</a>
+    <nav class="skyreliai" aria-label="Temos dalys">
+      <a href="#teorija">Teorija</a>
+      <a href="#klaidos">Klaidos</a>
+      <a href="#pavyzdziai">Pavyzdžiai</a>
+      <a href="#uzduotys">Užduotys</a>
+    </nav>
+    <span class="temos-progresas" aria-live="polite"></span>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">13 tema · Dalinių išvestinių lygtys</p>
+    <h1>Fizikinių vyksmų lygtys: styga ir difuzija</h1>
+    <p class="hero-info">2 išspręsti pavyzdžiai · 7 užduotys · sprendimai atidengiami po žingsnį</p>
+    <div class="juosta"><div class="juosta-uzpildas"></div></div>
+  </div>
+</header>
+
+<main class="turinys">
+<div class="deze teorija" id="teorija"><div class="deze-antraste">Teorija</div>
+<h3 id="stygos-svyravimų-lygtis">Stygos svyravimų lygtis</h3>
+<p>Styga yra tamprus siūlas, įtemptas tarp dviejų įtvirtintų taškų. Jos
+formą aprašo funkcija <span class="math inline">y(x,t)</span>, t. y.
+taško <span class="math inline">x</span> nuokrypis laiko momentu <span
+class="math inline">t</span>. Prielaidos: styga <strong>absoliučiai
+lanksti</strong>, nuokrypiai <strong>maži</strong> (<span
+class="math inline">\partial y/\partial x\ll1</span>), taškai juda
+<strong>tik vertikaliai</strong>.</p>
+<p>Užrašę Niutono dėsnį mažam stygos elementui <span
+class="math inline">\Delta x</span> (įtempimo jėgos <span
+class="math inline">T</span> projekcijų skirtumas plius išorinė jėga
+<span class="math inline">f</span>) gauname <span
+class="math display">\rho\frac{\partial^2y}{\partial
+t^2}=T\frac{\partial^2y}{\partial x^2}+f(x,t)\qquad\Longrightarrow\qquad
+\frac{\partial^2y}{\partial t^2}=c^2\frac{\partial^2y}{\partial
+x^2},\quad c=\sqrt{T/\rho}\ \ (f=0).</span> <span
+class="math inline">c</span> yra bangos sklidimo greitis, <span
+class="math inline">\rho</span> yra ilginis tankis (kg/m).</p>
+<p><strong>Papildomos sąlygos</strong> (be jų sprendinys
+nevienareikšmis):</p>
+<ul>
+<li><strong>pradinės:</strong> <span
+class="math inline">y(x,0)=y_0(x)</span> (pradinė forma), <span
+class="math inline">\dfrac{\partial y}{\partial t}(x,0)=v_0(x)</span>
+(pradinis greitis);</li>
+<li><strong>kraštinės:</strong> <span
+class="math inline">y(0,t)=0</span>, <span
+class="math inline">y(a,t)=0</span> (įtvirtinti galai).</li>
+</ul>
+<h3 id="stygos-energija">Stygos energija</h3>
+<p><span
+class="math display">E=\underbrace{\frac12\int_0^a\rho\left(\frac{\partial
+y}{\partial
+t}\right)^2dx}_{\text{kinetinė}}+\underbrace{\frac12\int_0^aT\left(\frac{\partial
+y}{\partial x}\right)^2dx}_{\text{potencinė}} .</span> Kai galai
+įtvirtinti ir išorinės jėgos nėra, <span class="math inline">E</span>
+nekinta.</p>
+<h3 id="difuzijos-šilumos-laidumo-lygtis">Difuzijos (šilumos laidumo)
+lygtis</h3>
+<p><span class="math display">\frac{\partial n}{\partial
+t}=D\frac{\partial^2n}{\partial x^2},</span> kur <span
+class="math inline">n(x,t)</span> yra dalelių koncentracija (arba
+temperatūra), o <span class="math inline">D&gt;0</span> yra difuzijos
+koeficientas. Dalelių skaičius išlieka: <span class="math inline">\int
+n\,dx=\text{const}</span>.</p>
+<p>Jei pradžioje visos dalelės yra viename taške, <span
+class="math inline">n(x,0)=\delta(x)</span>, sprendinys (gautas Furjė ir
+Laplaso transformacijomis) yra <span
+class="math display">n(x,t)=\frac{1}{2\sqrt{\pi
+Dt}}\,e^{-\frac{x^2}{4Dt}} .</span> Tai Gauso kreivė, kuri laikui bėgant
+platėja ir žemėja, o plotas po ja lieka lygus 1.</p>
+<h3 id="bangos-ir-difuzijos-lygčių-skirtumai">Bangos ir difuzijos lygčių
+skirtumai</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Bangos lygtis</th>
+<th style="text-align: left;">Difuzijos lygtis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Išvestinė pagal laiką</td>
+<td style="text-align: left;">antroji, <span
+class="math inline">y_{tt}</span></td>
+<td style="text-align: left;">pirmoji, <span
+class="math inline">n_t</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pradinių sąlygų skaičius</td>
+<td style="text-align: left;">2 (<span class="math inline">y_0</span> ir
+<span class="math inline">v_0</span>)</td>
+<td style="text-align: left;">1 (<span
+class="math inline">n_0</span>)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Elgesys</td>
+<td style="text-align: left;">sklinda nesislopindama</td>
+<td style="text-align: left;">išsilygina, „užmiršta“ pradinę formą</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tipas (14 tema)</td>
+<td style="text-align: left;">hiperbolinė</td>
+<td style="text-align: left;">parabolinė</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="deze klaidos" id="klaidos"><div class="deze-antraste">Dažniausios klaidos</div>
+<ul>
+<li><strong>Supainiojami <span class="math inline">\rho</span> ir <span
+class="math inline">T</span>:</strong> <span
+class="math inline">c^2=T/\rho</span>, ne <span
+class="math inline">\rho/T</span>.</li>
+<li><strong>Bangos lygčiai</strong> reikia <strong>dviejų</strong>
+pradinių sąlygų, o difuzijos lygčiai tik vienos.</li>
+<li><strong>Energijoje</strong> pamirštamas <span
+class="math inline">\tfrac12</span> arba vietoje išvestinės kvadrato
+įrašomas modulis.</li>
+<li><strong>Difuzijos sprendinyje:</strong> vardiklyje <span
+class="math inline">\sqrt{4\pi Dt}=2\sqrt{\pi Dt}</span>, o eksponentėje
+<span class="math inline">4Dt</span> (ne <span
+class="math inline">2Dt</span>).</li>
+</ul>
+</div>
+<h2 id="pavyzdziai">Išspręsti pavyzdžiai</h2>
+<div class="deze pavyzdys" id="pvz-13-1"><div class="deze-antraste">13.1 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Styga, kurios ilgis <span
+class="math inline">a</span>, svyruoja pagrindine moda <span
+class="math inline">y=A\sin\dfrac{\pi x}{a}\cos\omega t</span>, <span
+class="math inline">\omega=\dfrac{c\pi}{a}</span>. Raskite jos kinetinę,
+potencinę ir pilnąją energiją.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Išvestinės: <span class="math inline">y_t=-A\omega\sin\dfrac{\pi
+x}{a}\sin\omega t</span> ir <span class="math inline">y_x=A\dfrac\pi
+a\cos\dfrac{\pi x}{a}\cos\omega t</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Naudojame <span
+class="math inline">\displaystyle\int_0^a\sin^2\frac{\pi
+x}{a}dx=\int_0^a\cos^2\frac{\pi x}{a}dx=\frac a2</span>: <span
+class="math display">K=\frac12\rho A^2\omega^2\sin^2\omega t\cdot\frac
+a2,\qquad V=\frac12TA^2\frac{\pi^2}{a^2}\cos^2\omega t\cdot\frac a2
+.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Kadangi <span class="math inline">T=\rho c^2</span>, tai <span
+class="math inline">T\dfrac{\pi^2}{a^2}=\rho\dfrac{c^2\pi^2}{a^2}=\rho\omega^2</span>.
+Tada <span class="math display">E=K+V=\frac{\rho
+A^2\omega^2a}{4}\left(\sin^2\omega t+\cos^2\omega t\right)=\frac{\rho
+A^2\omega^2a}{4}.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Energija pereina iš kinetinės į potencinę ir atgal, bet jų suma lieka
+pastovi. Tai energijos tvermės dėsnis.</p>
+</div>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">K=\dfrac{\rho
+A^2\omega^2a}{4}\sin^2\omega t</span>, <span
+class="math inline">V=\dfrac{\rho A^2\omega^2a}{4}\cos^2\omega t</span>,
+<span class="math inline">E=\dfrac{\rho
+A^2\omega^2a}{4}=\text{const}</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-13-2"><div class="deze-antraste">13.2 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Patikrinkite, kad <span
+class="math inline">n(x,t)=\dfrac{1}{2\sqrt{\pi
+Dt}}e^{-x^2/(4Dt)}</span> tenkina difuzijos lygtį ir normavimo sąlygą
+<span class="math inline">\int n\,dx=1</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Rašome <span class="math inline">n=\dfrac{1}{2\sqrt{\pi
+D}}\,t^{-1/2}e^{-x^2/(4Dt)}</span>. Išvestinė pagal laiką (sandaugos
+taisyklė): <span
+class="math display">n_t=n\left(-\frac{1}{2t}+\frac{x^2}{4Dt^2}\right).</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Pagal <span class="math inline">x</span>: <span
+class="math inline">n_x=n\cdot\left(-\dfrac{x}{2Dt}\right)</span>, todėl
+<span
+class="math display">n_{xx}=n\left(\frac{x^2}{4D^2t^2}-\frac{1}{2Dt}\right),\qquad
+Dn_{xx}=n\left(\frac{x^2}{4Dt^2}-\frac{1}{2t}\right)=n_t\
+\checkmark</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Normavimas: keitinys <span
+class="math inline">s=\dfrac{x}{2\sqrt{Dt}}</span>, <span
+class="math inline">dx=2\sqrt{Dt}\,ds</span>: <span
+class="math display">\int_{-\infty}^\infty
+n\,dx=\frac{2\sqrt{Dt}}{2\sqrt{\pi Dt}}\int_{-\infty}^\infty
+e^{-s^2}ds=\frac{1}{\sqrt\pi}\sqrt\pi=1\ \checkmark</span></p>
+</div>
+<p><strong>Atsakymas:</strong> abi sąlygos tenkinamos.</p>
+</div>
+<h2 id="uzduotys">Savarankiškos užduotys</h2>
+<div class="deze uzduotis" id="uzd-13-1" data-nr="13.1"><div class="deze-antraste">13.1 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Įrodykite, kad <span class="math inline">y=f(x-ct)+g(x+ct)</span> su
+bet kuriomis dukart diferencijuojamomis <span
+class="math inline">f</span> ir <span class="math inline">g</span>
+tenkina bangos lygtį <span
+class="math inline">y_{tt}=c^2y_{xx}</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">\dfrac{\partial}{\partial
+t}f(x-ct)=-cf&#39;</span>, todėl <span
+class="math inline">\dfrac{\partial^2}{\partial
+t^2}f(x-ct)=c^2f&#39;&#39;</span>. Analogiškai <span
+class="math inline">g(x+ct)</span> duoda <span
+class="math inline">c^2g&#39;&#39;</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Pagal <span class="math inline">x</span>: <span
+class="math inline">y_{xx}=f&#39;&#39;+g&#39;&#39;</span>. Todėl <span
+class="math inline">y_{tt}=c^2(f&#39;&#39;+g&#39;&#39;)=c^2y_{xx}</span>
+✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> lygtis tenkinama. <span
+class="math inline">f(x-ct)</span> yra banga, bėganti į dešinę, o <span
+class="math inline">g(x+ct)</span> yra banga, bėganti į kairę.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-13-2" data-nr="13.2"><div class="deze-antraste">13.2 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Gitaros styga: ilgis <span class="math inline">a=0{,}65</span> m,
+įtempimas <span class="math inline">T=70</span> N, ilginis tankis <span
+class="math inline">\rho=5</span> g/m. Raskite bangos greitį ir
+pagrindinį dažnį <span class="math inline">f_1=\dfrac{c}{2a}</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span
+class="math inline">c=\sqrt{T/\rho}=\sqrt{70/0{,}005}=\sqrt{14\,000}\approx118</span>
+m/s.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">f_1=\dfrac{118{,}3}{1{,}3}\approx91</span>
+Hz.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">c\approx118</span> m/s, <span
+class="math inline">f_1\approx91</span> Hz.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-13-3" data-nr="13.3"><div class="deze-antraste">13.3 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Styga ištraukta į formą <span
+class="math inline">y(x,0)=h\sin\dfrac{\pi x}{a}</span> ir paleista be
+pradinio greičio. Raskite jos pilnąją energiją.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Pradžioje <span class="math inline">y_t=0</span>, todėl <span
+class="math inline">K=0</span>, o visa energija yra potencinė.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">y_x=h\dfrac\pi a\cos\dfrac{\pi
+x}{a}</span>, todėl <span
+class="math inline">E=V=\dfrac12Th^2\dfrac{\pi^2}{a^2}\cdot\dfrac
+a2=\dfrac{\pi^2Th^2}{4a}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">E=\dfrac{\pi^2Th^2}{4a}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-13-4" data-nr="13.4"><div class="deze-antraste">13.4 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Apskaičiuokite difuzijos sprendinio vidutinį poslinkio kvadratą <span
+class="math inline">\langle
+x^2\rangle=\displaystyle\int_{-\infty}^{\infty}x^2n(x,t)\,dx</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">n</span> yra Gauso skirstinys su dispersija
+<span class="math inline">\sigma^2</span>, kai <span
+class="math inline">\dfrac{x^2}{4Dt}=\dfrac{x^2}{2\sigma^2}</span>, t.
+y. <span class="math inline">\sigma^2=2Dt</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Gauso skirstinio <span class="math inline">\langle
+x^2\rangle=\sigma^2</span>. (Tiesiogiai: <span class="math inline">\int
+s^2e^{-s^2}ds=\tfrac{\sqrt\pi}{2}</span>, o keitinys duoda tą patį.)</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\langle
+x^2\rangle=2Dt</span>. Dalelės nutolsta proporcingai <span
+class="math inline">\sqrt t</span>, o ne <span
+class="math inline">t</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-13-5" data-nr="13.5"><div class="deze-antraste">13.5 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Įrodykite, kad stygos su įtvirtintais galais energija nekinta: <span
+class="math inline">\dfrac{dE}{dt}=0</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span
+class="math inline">\dfrac{dE}{dt}=\displaystyle\int_0^a\left(\rho
+y_ty_{tt}+Ty_xy_{xt}\right)dx</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Antrą narį integruojame dalimis: <span
+class="math inline">\displaystyle\int_0^aTy_xy_{xt}dx=\Big[Ty_xy_t\Big]_0^a-\int_0^aTy_{xx}y_tdx</span>.
+Galuose <span class="math inline">y=0</span> visada, todėl <span
+class="math inline">y_t=0</span>, ir pirmas narys lygus nuliui.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Lieka <span class="math inline">\displaystyle\int_0^ay_t\left(\rho
+y_{tt}-Ty_{xx}\right)dx=0</span>, nes skliaustas lygus nuliui pagal
+stygos lygtį.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\dfrac{dE}{dt}=0</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-13-6" data-nr="13.6"><div class="deze-antraste">13.6 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Strypo (<span class="math inline">0\leq x\leq l</span>) galuose
+palaikoma nulinė temperatūra, o pradinė temperatūra yra <span
+class="math inline">u(x,0)=\sin\dfrac{\pi x}{l}+\tfrac12\sin\dfrac{3\pi
+x}{l}</span>. Raskite <span class="math inline">u(x,t)</span>, kai <span
+class="math inline">u_t=Du_{xx}</span>. Kuri dalis išnyksta
+greičiau?</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Ieškome sprendinių pavidalu <span class="math inline">e^{-\lambda
+t}\sin\dfrac{n\pi x}{l}</span>. Įrašę gauname <span
+class="math inline">-\lambda=-D\left(\dfrac{n\pi}{l}\right)^2</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Kiekviena pradinės sąlygos dalis slopsta savo greičiu: <span
+class="math display">u=e^{-D\pi^2t/l^2}\sin\frac{\pi
+x}{l}+\frac12e^{-9D\pi^2t/l^2}\sin\frac{3\pi x}{l}.</span></p>
+</div>
+<p><strong>Atsakymas:</strong> antroji dalis slopsta 9 kartus greičiau,
+todėl laikui bėgant lieka tik pagrindinė moda.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-13-7" data-nr="13.7"><div class="deze-antraste">13.7 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Strypo galuose palaikomos temperatūros <span
+class="math inline">u(0)=T_1</span> ir <span
+class="math inline">u(l)=T_2</span>. Raskite nusistovėjusį (stacionarų)
+temperatūros pasiskirstymą. Kaip užrašyti nestacionarų uždavinį, kad
+galuose būtų nulinės sąlygos?</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Stacionariu atveju <span class="math inline">u_t=0</span>, todėl
+<span class="math inline">u&#39;&#39;=0</span> ir <span
+class="math inline">u=T_1+(T_2-T_1)\dfrac xl</span> (tiesinė
+funkcija).</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Pažymime <span class="math inline">u=w(x)+v(x,t)</span>, kur <span
+class="math inline">w</span> yra stacionarus sprendinys. Tada <span
+class="math inline">v_t=Dv_{xx}</span>, o <span
+class="math inline">v(0,t)=v(l,t)=0</span>, todėl <span
+class="math inline">v</span> galima spręsti kaip ankstesnėje
+užduotyje.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">u_{\text{stac}}=T_1+(T_2-T_1)\dfrac xl</span>, o
+nukrypimas <span class="math inline">v=u-u_{\text{stac}}</span> tenkina
+tą pačią lygtį su nulinėmis kraštinėmis sąlygomis.</p>
+</div>
+</div>
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="tema-12.html"><span>← Ankstesnė tema</span><strong>12. Laplaso transformacija</strong></a>
+  <a class="puslapis-kitas" href="tema-14.html"><span>Kita tema →</span><strong>14. Dalinių išvestinių lygčių klasifikacija ir D'Alambero formulė</strong></a>
+</nav>
+
+<script src="svetaine.js"></script>
+</body>
+</html>

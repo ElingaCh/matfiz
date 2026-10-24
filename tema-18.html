@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>18. Sąlyginis ekstremumas ir stygos variacinis
+principas · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="temos-puslapis" data-tema="18" data-uzduociu="7">
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <a class="atgal" href="index.html">← Visos temos</a>
+    <nav class="skyreliai" aria-label="Temos dalys">
+      <a href="#teorija">Teorija</a>
+      <a href="#klaidos">Klaidos</a>
+      <a href="#pavyzdziai">Pavyzdžiai</a>
+      <a href="#uzduotys">Užduotys</a>
+    </nav>
+    <span class="temos-progresas" aria-live="polite"></span>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">18 tema · Variacinis skaičiavimas</p>
+    <h1>Sąlyginis ekstremumas ir stygos variacinis principas</h1>
+    <p class="hero-info">2 išspręsti pavyzdžiai · 7 užduotys · sprendimai atidengiami po žingsnį</p>
+    <div class="juosta"><div class="juosta-uzpildas"></div></div>
+  </div>
+</header>
+
+<main class="turinys">
+<div class="deze teorija" id="teorija"><div class="deze-antraste">Teorija</div>
+<h3 id="izoperimetrinis-uždavinys">Izoperimetrinis uždavinys</h3>
+<p>Dažnai ieškoma ekstremumo, kai funkcijai uždėta <strong>papildoma
+sąlyga</strong>. Klasikinis pavyzdys yra <strong>Didonos
+uždavinys</strong>: kokia fiksuoto ilgio <span
+class="math inline">l</span> kreivė apriboja didžiausią plotą?
+Matematiškai: <span
+class="math display">J[y]=\int_a^bF(x,y,y&#39;)\,dx\to\text{ekstr.},\qquad
+K[y]=\int_a^bG(x,y,y&#39;)\,dx=l\ \ (\text{duota}).</span></p>
+<h3 id="lagranžo-daugiklių-metodas">Lagranžo daugiklių metodas</h3>
+<p>Sudarome <strong>naują</strong> funkciją su nežinomu skaičiumi <span
+class="math inline">\lambda</span> (Lagranžo daugikliu): <span
+class="math display">F^*=F+\lambda G ,</span> ir rašome
+<strong>paprastą</strong> Eulerio lygtį funkcijai <span
+class="math inline">F^*</span>: <span
+class="math display">\frac{\partial F^*}{\partial
+y}-\frac{d}{dx}\frac{\partial F^*}{\partial y&#39;}=0 .</span>
+Sprendinyje bus <strong>trys</strong> konstantos <span
+class="math inline">C_1,C_2,\lambda</span>. Jas randame iš
+<strong>trijų</strong> sąlygų: <span
+class="math inline">y(a)=y_a</span>, <span
+class="math inline">y(b)=y_b</span> ir <span
+class="math inline">K[y]=l</span>.</p>
+<p>Tai visiškai analogiška funkcijų sąlyginiam ekstremumui (Lagranžo
+daugikliai iš analizės kurso).</p>
+<p><strong>Holonominiai ryšiai.</strong> Jei sąlyga yra ne integralas, o
+lygybė <span class="math inline">\varphi(x,y_1,y_2)=0</span>
+(nepriklauso nuo išvestinių), daugiklis tampa funkcija: <span
+class="math inline">F^*=F+\lambda(x)\,\varphi</span>. Jei ryšys
+priklauso ir nuo išvestinių, jis vadinamas
+<strong>neholonominiu</strong>.</p>
+<h3 id="stygos-variacinis-principas">Stygos variacinis principas</h3>
+<p><strong>Mažiausio veikimo principas:</strong> sistema juda taip, kad
+veikimas <span class="math inline">S=\int_{t_1}^{t_2}L\,dt</span>, kur
+<span class="math inline">L=K-V</span>, būtų ekstremalus. Stygai: <span
+class="math display">K=\frac12\int_0^l\rho\,y_t^2\,dx,\qquad
+V=\frac12\int_0^lT\,y_x^2\,dx+\frac12C_1y^2(0,t)+\frac12C_2y^2(l,t),</span>
+kur <span class="math inline">C_1,C_2</span> yra atramų standumai (galai
+pritvirtinti spyruoklėmis). Iš <span class="math inline">\delta
+S=0</span> gauname: <span
+class="math display">\rho\,y_{tt}=T\,y_{xx},\qquad
+T\,y_x(0,t)=C_1\,y(0,t),\qquad T\,y_x(l,t)=-C_2\,y(l,t).</span></p>
+<ul>
+<li><strong>Standžios atramos</strong> (<span
+class="math inline">C\to\infty</span>): <span
+class="math inline">y(0,t)=y(l,t)=0</span> (įtvirtinti galai).</li>
+<li><strong>Minkštos atramos</strong> (<span
+class="math inline">C\to0</span>): <span
+class="math inline">y_x(0,t)=y_x(l,t)=0</span> (laisvi galai).</li>
+</ul>
+<p>Taigi variacinis principas duoda <strong>ir</strong> lygtį,
+<strong>ir</strong> kraštines sąlygas.</p>
+</div>
+<div class="deze klaidos" id="klaidos"><div class="deze-antraste">Dažniausios klaidos</div>
+<ul>
+<li><strong>Eulerio lygtis rašoma <span class="math inline">F</span>, o
+ne <span class="math inline">F^*</span>.</strong> Sąlyga tada visai
+nedalyvauja, ir gaunamas ne tas atsakymas.</li>
+<li><strong>Pamirštama trečioji sąlyga.</strong> Daugiklis <span
+class="math inline">\lambda</span> yra nežinomasis, kurį randame iš
+<span class="math inline">K[y]=l</span>.</li>
+<li><strong>Integruojant dalimis išmetami kraštiniai nariai.</strong>
+Stygos uždavinyje būtent jie duoda kraštines sąlygas.</li>
+<li><strong>Ženklai <span class="math inline">T y_x=\pm
+Cy</span>.</strong> Kairiajame gale <span
+class="math inline">+C_1</span>, dešiniajame <span
+class="math inline">-C_2</span>: spyruoklė visada traukia stygą atgal į
+pusiausvyrą.</li>
+</ul>
+</div>
+<h2 id="pavyzdziai">Išspręsti pavyzdžiai</h2>
+<div class="deze pavyzdys" id="pvz-18-1"><div class="deze-antraste">18.1 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Raskite funkcionalo <span
+class="math inline">J=\displaystyle\int_0^1y&#39;^2dx</span> ekstremalę,
+kai <span class="math inline">y(0)=y(1)=0</span> ir <span
+class="math inline">\displaystyle\int_0^1y^2dx=1</span>. Kuri iš jų
+duoda mažiausią <span class="math inline">J</span>?</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">F^*=y&#39;^2+\lambda y^2</span>. Eulerio
+lygtis: <span class="math inline">2\lambda y-2y&#39;&#39;=0</span>, t.
+y. <span class="math inline">y&#39;&#39;=\lambda y</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Kad būtų nenulinis sprendinys, kuris lygus nuliui abiejuose galuose,
+reikia <span class="math inline">\lambda=-k^2&lt;0</span>. Tada <span
+class="math inline">y=A\sin kx</span>, o <span
+class="math inline">y(1)=0</span> duoda <span
+class="math inline">k=n\pi</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Tai Šturmo–Liuvilio uždavinys iš 16 temos! Lagranžo daugiklis
+atsiduria tikrinės vertės vietoje.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Sąlyga <span class="math inline">\int_0^1A^2\sin^2n\pi
+x\,dx=\frac{A^2}{2}=1</span> duoda <span
+class="math inline">A=\sqrt2</span>. Tada <span
+class="math inline">J=\displaystyle\int_0^12n^2\pi^2\cos^2n\pi
+x\,dx=n^2\pi^2</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">y_n=\sqrt2\sin
+n\pi x</span>, <span class="math inline">J=n^2\pi^2</span>; mažiausias
+<span class="math inline">J=\pi^2</span>, kai <span
+class="math inline">y=\sqrt2\sin\pi x</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-18-2"><div class="deze-antraste">18.2 pavyzdys</div>
+<p><strong>Sąlyga (Didonos uždavinys).</strong> Tarp kreivių, jungiančių
+du <span class="math inline">x</span> ašies taškus, kurių ilgis <span
+class="math inline">l</span>, raskite tą, po kuria plotas <span
+class="math inline">\int y\,dx</span> didžiausias.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">F=y</span>, <span
+class="math inline">G=\sqrt{1+y&#39;^2}</span>, todėl <span
+class="math inline">F^*=y+\lambda\sqrt{1+y&#39;^2}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">F^*</span> nepriklauso nuo <span
+class="math inline">x</span>, todėl <span
+class="math inline">F^*-y&#39;F^*_{y&#39;}=C_1</span>: <span
+class="math display">y+\lambda\sqrt{1+y&#39;^2}-\frac{\lambda
+y&#39;^2}{\sqrt{1+y&#39;^2}}=y+\frac{\lambda}{\sqrt{1+y&#39;^2}}=C_1
+.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Išreiškiame: <span
+class="math inline">\sqrt{1+y&#39;^2}=\dfrac{\lambda}{C_1-y}</span>,
+todėl <span
+class="math inline">dx=\dfrac{(C_1-y)\,dy}{\sqrt{\lambda^2-(C_1-y)^2}}</span>.
+Suintegravę gauname <span
+class="math inline">x-C_2=-\sqrt{\lambda^2-(C_1-y)^2}</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Pakelkite abi puses kvadratu: gaunama apskritimo lygtis. Taigi <span
+class="math inline">|\lambda|</span> yra apskritimo spindulys.</p>
+</div>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">(x-C_2)^2+(y-C_1)^2=\lambda^2</span>, t. y.
+apskritimo lankas.</p>
+</div>
+<h2 id="uzduotys">Savarankiškos užduotys</h2>
+<div class="deze uzduotis" id="uzd-18-1" data-nr="18.1"><div class="deze-antraste">18.1 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Raskite funkcionalo <span
+class="math inline">J=\displaystyle\int_0^1y&#39;^2dx</span> ekstremalę,
+kai <span class="math inline">y(0)=y(1)=0</span> ir <span
+class="math inline">\displaystyle\int_0^1y\,dx=1</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">F^*=y&#39;^2+\lambda y</span>. Eulerio
+lygtis: <span class="math inline">\lambda-2y&#39;&#39;=0</span>, todėl
+<span class="math inline">y&#39;&#39;=\frac\lambda2</span>, <span
+class="math inline">y=\frac\lambda4x^2+C_1x+C_2</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Iš kraštinių sąlygų <span
+class="math inline">y=\frac\lambda4(x^2-x)</span>. Kadangi <span
+class="math inline">\int_0^1(x^2-x)dx=-\frac16</span>, sąlyga duoda
+<span class="math inline">-\frac{\lambda}{24}=1</span>, todėl <span
+class="math inline">\lambda=-24</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=6x(1-x)</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-18-2" data-nr="18.2"><div class="deze-antraste">18.2 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Iš stygos veikimo <span class="math inline">S=\displaystyle\int
+dt\int_0^l\left(\tfrac12\rho y_t^2-\tfrac12Ty_x^2\right)dx</span> (galai
+įtvirtinti) išveskite stygos lygtį, naudodami Eulerio–Ostrogradskio
+lygtį su kintamaisiais <span class="math inline">t</span> ir <span
+class="math inline">x</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">F=\tfrac12\rho y_t^2-\tfrac12Ty_x^2</span>.
+<span class="math inline">\dfrac{\partial F}{\partial y}=0</span>, <span
+class="math inline">\dfrac{\partial F}{\partial y_t}=\rho y_t</span>,
+<span class="math inline">\dfrac{\partial F}{\partial
+y_x}=-Ty_x</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">0-\dfrac{\partial}{\partial t}(\rho
+y_t)-\dfrac{\partial}{\partial x}(-Ty_x)=0</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\rho
+y_{tt}=Ty_{xx}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-18-3" data-nr="18.3"><div class="deze-antraste">18.3 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Raskite funkcionalo <span
+class="math inline">J=\displaystyle\int_0^1y&#39;^2dx</span> ekstremalę,
+kai <span class="math inline">y(0)=y(1)=0</span> ir <span
+class="math inline">\displaystyle\int_0^1x\,y\,dx=1</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">F^*=y&#39;^2+\lambda xy</span>. Eulerio
+lygtis: <span class="math inline">\lambda x-2y&#39;&#39;=0</span>, todėl
+<span class="math inline">y=\frac{\lambda}{12}x^3+C_1x+C_2</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">y(0)=0</span> duoda <span
+class="math inline">C_2=0</span>, <span
+class="math inline">y(1)=0</span> duoda <span
+class="math inline">C_1=-\frac\lambda{12}</span>, todėl <span
+class="math inline">y=\frac{\lambda}{12}(x^3-x)</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span
+class="math inline">\int_0^1x(x^3-x)dx=\frac15-\frac13=-\frac2{15}</span>.
+Sąlyga: <span
+class="math inline">\frac{\lambda}{12}\cdot\left(-\frac{2}{15}\right)=1</span>,
+todėl <span class="math inline">\lambda=-90</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=\dfrac{15}{2}\left(x-x^3\right)</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-18-4" data-nr="18.4"><div class="deze-antraste">18.4 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Stygos kairysis galas įtvirtintas, o dešinysis laisvas (<span
+class="math inline">C_2=0</span>). Kokios kraštinės sąlygos? Raskite
+svyravimų dažnius.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Iš variacinio principo: <span class="math inline">y(0,t)=0</span> ir
+<span class="math inline">Ty_x(l,t)=0</span>, t. y. <span
+class="math inline">y_x(l,t)=0</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Atskyrę kintamuosius <span class="math inline">y=X(x)\cos\omega
+t</span> gauname <span class="math inline">X&#39;&#39;+k^2X=0</span>,
+<span class="math inline">k=\omega/c</span>, <span
+class="math inline">X(0)=0</span>, <span
+class="math inline">X&#39;(l)=0</span>. Tai 16.1 pavyzdys: <span
+class="math inline">X=\sin kx</span>, <span class="math inline">\cos
+kl=0</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">k_n=\dfrac{(2n-1)\pi}{2l}</span>, <span
+class="math inline">\omega_n=\dfrac{(2n-1)\pi c}{2l}</span>, <span
+class="math inline">n=1,2,\dots</span></p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-18-5" data-nr="18.5"><div class="deze-antraste">18.5 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Raskite funkcionalo <span
+class="math inline">J=\displaystyle\int_0^1\left(y&#39;^2+z&#39;^2\right)dx</span>
+ekstremales su holonominiu ryšiu <span class="math inline">y-z=1</span>,
+kai <span class="math inline">y(0)=1</span>, <span
+class="math inline">y(1)=3</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span
+class="math inline">F^*=y&#39;^2+z&#39;^2+\lambda(x)(y-z-1)</span>.
+Eulerio lygtys: <span class="math inline">\lambda-2y&#39;&#39;=0</span>
+ir <span class="math inline">-\lambda-2z&#39;&#39;=0</span>, todėl <span
+class="math inline">y&#39;&#39;=-z&#39;&#39;</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Iš ryšio <span class="math inline">z=y-1</span>, todėl <span
+class="math inline">z&#39;&#39;=y&#39;&#39;</span>. Kartu su <span
+class="math inline">y&#39;&#39;=-z&#39;&#39;</span> gauname <span
+class="math inline">y&#39;&#39;=0</span> ir <span
+class="math inline">\lambda=0</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">y=2x+1</span>,
+<span class="math inline">z=2x</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-18-6" data-nr="18.6"><div class="deze-antraste">18.6 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Sunki grandinė, kurios ilgis <span class="math inline">l</span>,
+pakabinta už galų. Jos potencinė energija proporcinga <span
+class="math inline">\displaystyle\int y\sqrt{1+y&#39;^2}\,dx</span>.
+Raskite grandinės formą.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Sąlyga: <span class="math inline">\int\sqrt{1+y&#39;^2}\,dx=l</span>.
+<span class="math inline">F^*=(y+\lambda)\sqrt{1+y&#39;^2}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Pažymėkime <span class="math inline">Y=y+\lambda</span>. Tada <span
+class="math inline">Y&#39;=y&#39;</span>, ir <span
+class="math inline">F^*=Y\sqrt{1+Y&#39;^2}</span> yra tas pats kaip 17.2
+pavyzdyje.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Iš ten <span
+class="math inline">Y=C\operatorname{ch}\dfrac{x-C_2}{C}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=C\operatorname{ch}\dfrac{x-C_2}{C}-\lambda</span>
+(grandininė linija). <span class="math inline">C</span>, <span
+class="math inline">C_2</span> ir <span
+class="math inline">\lambda</span> randami iš abiejų pakabinimo taškų ir
+ilgio <span class="math inline">l</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-18-7" data-nr="18.7"><div class="deze-antraste">18.7 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Stygos kairysis galas įtvirtintas, o dešinysis pritvirtintas
+spyruokle, kurios standumas <span class="math inline">C_2</span>.
+Užrašykite lygtį, iš kurios randami dažniai, ir patikrinkite ribinius
+atvejus <span class="math inline">C_2\to\infty</span> bei <span
+class="math inline">C_2\to0</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">X=\sin kx</span> (nes <span
+class="math inline">X(0)=0</span>). Kraštinė sąlyga <span
+class="math inline">TX&#39;(l)=-C_2X(l)</span> duoda <span
+class="math inline">Tk\cos kl=-C_2\sin kl</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Lygtis dažniams: <span
+class="math inline">\operatorname{tg}kl=-\dfrac{Tk}{C_2}</span>, <span
+class="math inline">\omega=ck</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Kai <span class="math inline">C_2\to\infty</span>: <span
+class="math inline">\operatorname{tg}kl\to0</span>, todėl <span
+class="math inline">kl=n\pi</span> (įtvirtintas galas). Kai <span
+class="math inline">C_2\to0</span>: <span
+class="math inline">\operatorname{tg}kl\to\infty</span>, todėl <span
+class="math inline">kl=\frac{(2n-1)\pi}{2}</span> (laisvas galas, 18.4
+užduotis).</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\operatorname{tg}kl=-\dfrac{Tk}{C_2}</span>;
+ribiniai atvejai sutampa su įtvirtintu ir laisvu galu.</p>
+</div>
+</div>
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="tema-17.html"><span>← Ankstesnė tema</span><strong>17. Funkcionalas, variacija ir Eulerio lygtis</strong></a>
+  <a class="puslapis-kitas" href="tema-19.html"><span>Kita tema →</span><strong>19. Judamieji rėžiai ir ekstremalės su lūžio taškais</strong></a>
+</nav>
+
+<script src="svetaine.js"></script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6. Analizinės funkcijos ir Gama
+funkcija · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="temos-puslapis" data-tema="6" data-uzduociu="7">
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <a class="atgal" href="index.html">← Visos temos</a>
+    <nav class="skyreliai" aria-label="Temos dalys">
+      <a href="#teorija">Teorija</a>
+      <a href="#klaidos">Klaidos</a>
+      <a href="#pavyzdziai">Pavyzdžiai</a>
+      <a href="#uzduotys">Užduotys</a>
+    </nav>
+    <span class="temos-progresas" aria-live="polite"></span>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">6 tema · Kompleksinė analizė, sumos ir
+asimptotika</p>
+    <h1>Analizinės funkcijos ir Gama funkcija</h1>
+    <p class="hero-info">3 išspręsti pavyzdžiai · 7 užduotys · sprendimai atidengiami po žingsnį</p>
+    <div class="juosta"><div class="juosta-uzpildas"></div></div>
+  </div>
+</header>
+
+<main class="turinys">
+<div class="deze teorija" id="teorija"><div class="deze-antraste">Teorija</div>
+<h3 id="kompleksiniai-skaičiai">Kompleksiniai skaičiai</h3>
+<p><span class="math inline">z=x+iy</span>, kur <span
+class="math inline">i^2=-1</span>, <span
+class="math inline">x=\operatorname{Re}z</span>, <span
+class="math inline">y=\operatorname{Im}z</span>. Polinė (trigonometrinė)
+forma: <span
+class="math display">z=r(\cos\varphi+i\sin\varphi)=re^{i\varphi},\qquad
+r=|z|=\sqrt{x^2+y^2},\quad \varphi=\arg z .</span> Jungtinis skaičius
+<span class="math inline">\bar z=z^*=x-iy</span>, <span
+class="math inline">z\bar z=|z|^2</span>. <strong>Eulerio
+formulė</strong> <span
+class="math inline">e^{i\varphi}=\cos\varphi+i\sin\varphi</span>
+išplaukia sudėjus <span class="math inline">e^x</span>, <span
+class="math inline">\cos x</span> ir <span class="math inline">\sin
+x</span> Teiloro eilutes.</p>
+<h3 id="kompleksinio-kintamojo-funkcija">Kompleksinio kintamojo
+funkcija</h3>
+<p><span class="math inline">w=f(z)=u(x,y)+iv(x,y)</span>: kiekvienam
+<span class="math inline">z</span> priskiriamas kompleksinis <span
+class="math inline">w</span>. Funkciją sudaro dvi realiosios funkcijos
+<span class="math inline">u</span> ir <span
+class="math inline">v</span>.</p>
+<p>Svarbiausios elementariosios funkcijos: <span
+class="math display">e^z=e^x(\cos y+i\sin y),\qquad \sin
+z=\frac{e^{iz}-e^{-iz}}{2i},\qquad \cos
+z=\frac{e^{iz}+e^{-iz}}{2},</span> <span class="math display">\sin
+z=\sin x\operatorname{ch}y+i\cos x\operatorname{sh}y,\qquad \ln
+z=\ln|z|+i(\arg z+2\pi k)\ \text{(daugiareikšmė).}</span></p>
+<h3 id="išvestinė-ir-analiziškumas">Išvestinė ir analiziškumas</h3>
+<p><span class="math display">f&#39;(z_0)=\lim_{\Delta
+z\to0}\frac{f(z_0+\Delta z)-f(z_0)}{\Delta z}.</span> Esminis skirtumas
+nuo realiosios analizės: <span class="math inline">\Delta z</span> prie
+nulio gali artėti <strong>iš bet kurios krypties</strong> plokštumoje, o
+riba turi būti ta pati. Tai labai griežtas reikalavimas.</p>
+<p>Funkcija, kuri yra vienareikšmė ir diferencijuojama kiekviename
+srities taške, vadinama <strong>analizine</strong> toje srityje.</p>
+<h3 id="košyrymano-sąlygos">Košy–Rymano sąlygos</h3>
+<p><span class="math inline">f=u+iv</span> yra diferencijuojama tada ir
+tik tada, kai <span class="math display">\frac{\partial u}{\partial
+x}=\frac{\partial v}{\partial y},\qquad \frac{\partial u}{\partial
+y}=-\frac{\partial v}{\partial x}.</span> Tada <span
+class="math inline">f&#39;(z)=\frac{\partial u}{\partial
+x}+i\frac{\partial v}{\partial x}</span>. Polinėse koordinatėse <span
+class="math inline">z=re^{i\varphi}</span>: <span
+class="math display">\frac{\partial u}{\partial r}=\frac1r\frac{\partial
+v}{\partial \varphi},\qquad \frac{\partial u}{\partial
+\varphi}=-r\frac{\partial v}{\partial r}.</span></p>
+<p>Iš Košy–Rymano sąlygų išplaukia, kad <span class="math inline">\Delta
+u=0</span> ir <span class="math inline">\Delta v=0</span>: analizinės
+funkcijos realioji ir menamoji dalys yra <strong>harmoninės</strong>.
+Todėl, žinant <span class="math inline">u</span>, galima atkurti <span
+class="math inline">v</span> (su tikslumu iki konstantos).</p>
+<p>Greitas testas: jei funkcija priklauso nuo <span
+class="math inline">\bar z</span> (pvz., <span class="math inline">\bar
+z</span>, <span class="math inline">|z|</span>, <span
+class="math inline">\operatorname{Re}z</span>), ji <strong>nėra</strong>
+analizinė.</p>
+<h3 id="analizinis-tęsinys">Analizinis tęsinys</h3>
+<p>Jei <span class="math inline">w_1</span> analizinė srityje <span
+class="math inline">S_1</span>, <span class="math inline">w_2</span>
+analizinė srityje <span class="math inline">S_2</span> ir
+<strong>sankirtoje</strong> <span class="math inline">w_1=w_2</span>,
+tai funkcija <span
+class="math display">w(z)=\begin{cases}w_1(z),&amp;z\in S_1\\
+w_2(z),&amp;z\in S_2\end{cases}</span> yra analizinė visoje srityje
+<span class="math inline">S_1\cup S_2</span>. Ji vadinama <span
+class="math inline">w_1</span> <strong>analiziniu tęsiniu</strong>. Toks
+tęsinys yra vienintelis.</p>
+<h3 id="gama-funkcija">Gama funkcija</h3>
+<p><span class="math display">\Gamma(z)=\int_0^\infty
+e^{-t}t^{z-1}\,dt,\qquad \operatorname{Re}z&gt;0 .</span> Integruojant
+dalimis gaunama pagrindinė savybė <span
+class="math inline">\Gamma(z+1)=z\,\Gamma(z)</span>. Iš jos
+išplaukia:</p>
+<ul>
+<li><span class="math inline">\Gamma(1)=1</span>, todėl <span
+class="math inline">\Gamma(n+1)=n!</span> (Gama funkcija apibendrina
+faktorialą);</li>
+<li><span
+class="math inline">\Gamma\!\left(\tfrac12\right)=\sqrt\pi</span>;</li>
+<li><strong>analizinis tęsinys į kairę:</strong> <span
+class="math inline">\Gamma(z)=\dfrac{\Gamma(z+1)}{z}=\dfrac{\Gamma(z+2)}{z(z+1)}=\dots</span>
+apibrėžia <span class="math inline">\Gamma</span> visoje plokštumoje,
+išskyrus <strong>polius</strong> <span
+class="math inline">z=0,-1,-2,\dots</span></li>
+</ul>
+</div>
+<div class="deze klaidos" id="klaidos"><div class="deze-antraste">Dažniausios klaidos</div>
+<ul>
+<li><strong>Tikrinama tik viena Košy–Rymano sąlyga.</strong> Reikia
+patikrinti abi.</li>
+<li><strong>Ženklas antrojoje sąlygoje:</strong> <span
+class="math inline">u_y=-v_x</span>, su minusu.</li>
+<li><strong>Diferencijuojamumas taške ir analiziškumas yra skirtingi
+dalykai.</strong> <span class="math inline">|z|^2</span>
+diferencijuojama tik taške <span class="math inline">0</span>, bet
+niekur nėra analizinė, nes analiziškumui reikia diferencijuojamumo
+visoje aplinkoje.</li>
+<li><strong>Atkuriant <span class="math inline">v</span> iš <span
+class="math inline">u</span>,</strong> pamirštama „konstanta“ <span
+class="math inline">g(x)</span>. Integruojant pagal <span
+class="math inline">y</span>, konstanta gali priklausyti nuo <span
+class="math inline">x</span>.</li>
+<li><strong><span class="math inline">\Gamma(n)=(n-1)!</span></strong>,
+o ne <span class="math inline">n!</span>.</li>
+</ul>
+</div>
+<h2 id="pavyzdziai">Išspręsti pavyzdžiai</h2>
+<div class="deze pavyzdys" id="pvz-6-1"><div class="deze-antraste">6.1 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Ar funkcija <span
+class="math inline">f(z)=\dfrac1z</span> analizinė? Raskite jos
+išvestinę.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Atskiriame realiąją ir menamąją dalis, padauginę skaitiklį ir
+vardiklį iš <span class="math inline">\bar z</span>: <span
+class="math display">\frac1z=\frac{\bar z}{z\bar
+z}=\frac{x-iy}{x^2+y^2}\ \Longrightarrow\ u=\frac{x}{x^2+y^2},\quad
+v=-\frac{y}{x^2+y^2}.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Košy–Rymano sąlygos užrašytos dalims <span
+class="math inline">u</span> ir <span class="math inline">v</span>,
+todėl pirmiausia reikia jas išskirti.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Dalinės išvestinės: <span
+class="math display">u_x=\frac{y^2-x^2}{(x^2+y^2)^2},\quad
+v_y=-\frac{x^2+y^2-2y^2}{(x^2+y^2)^2}=\frac{y^2-x^2}{(x^2+y^2)^2}.</span>
+<span class="math display">u_y=\frac{-2xy}{(x^2+y^2)^2},\quad
+v_x=\frac{2xy}{(x^2+y^2)^2}.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">u_x=v_y</span> ✓ ir <span
+class="math inline">u_y=-v_x</span> ✓, kai <span
+class="math inline">(x,y)\neq(0,0)</span>. Taške <span
+class="math inline">z=0</span> funkcija neapibrėžta (tai polius).</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><span
+class="math inline">f&#39;(z)=u_x+iv_x=\dfrac{y^2-x^2+2ixy}{(x^2+y^2)^2}=-\dfrac{(x-iy)^2}{|z|^4}=-\dfrac{\bar
+z^2}{z^2\bar z^2}=-\dfrac{1}{z^2}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">1/z</span>
+analizinė visur, išskyrus <span class="math inline">z=0</span>, o <span
+class="math inline">f&#39;(z)=-1/z^2</span>, kaip ir realiuoju
+atveju.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-6-2"><div class="deze-antraste">6.2 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Raskite analizinę funkciją <span
+class="math inline">f=u+iv</span>, kai <span
+class="math inline">u=x^2-y^2+2x</span> ir <span
+class="math inline">f(0)=0</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Patikriname, ar <span class="math inline">u</span> harmoninė: <span
+class="math inline">\Delta u=2-2=0</span> ✓. Kitaip tokios <span
+class="math inline">f</span> nebūtų.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Pirma sąlyga: <span class="math inline">v_y=u_x=2x+2</span>.
+Integruojame pagal <span class="math inline">y</span>: <span
+class="math display">v=2xy+2y+g(x).</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Integruojant pagal <span class="math inline">y</span>, „konstanta“
+gali būti bet kokia <span class="math inline">x</span> funkcija, nes jos
+išvestinė pagal <span class="math inline">y</span> lygi nuliui.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Antra sąlyga: <span class="math inline">v_x=-u_y</span>. <span
+class="math inline">v_x=2y+g&#39;(x)</span> ir <span
+class="math inline">-u_y=2y</span>, todėl <span
+class="math inline">g&#39;(x)=0</span> ir <span
+class="math inline">g=C</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><span class="math inline">f=x^2-y^2+2x+i(2xy+2y+C)</span>. Pastebime,
+kad <span class="math inline">z^2=x^2-y^2+2ixy</span> ir <span
+class="math inline">2z=2x+2iy</span>, todėl <span
+class="math inline">f=z^2+2z+iC</span>. Iš <span
+class="math inline">f(0)=0</span> gauname <span
+class="math inline">C=0</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">f(z)=z^2+2z</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-6-3"><div class="deze-antraste">6.3 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Įrodykite, kad <span
+class="math inline">\Gamma(z+1)=z\Gamma(z)</span>, ir apskaičiuokite
+<span class="math inline">\Gamma\!\left(\tfrac52\right)</span> bei <span
+class="math inline">\Gamma\!\left(-\tfrac12\right)</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Integruojame dalimis (<span class="math inline">u=t^z</span>, <span
+class="math inline">dv=e^{-t}dt</span>): <span
+class="math display">\Gamma(z+1)=\int_0^\infty
+e^{-t}t^z\,dt=\Big[-t^ze^{-t}\Big]_0^\infty+z\int_0^\infty
+e^{-t}t^{z-1}dt=0+z\Gamma(z).</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Ribose <span class="math inline">t^ze^{-t}\to0</span>: kai <span
+class="math inline">t\to\infty</span>, eksponentė mažėja greičiau nei
+auga laipsninė funkcija, o kai <span class="math inline">t=0</span>,
+<span class="math inline">t^z=0</span> (nes <span
+class="math inline">\operatorname{Re}z&gt;0</span>).</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span
+class="math inline">\Gamma\!\left(\tfrac52\right)=\tfrac32\Gamma\!\left(\tfrac32\right)=\tfrac32\cdot\tfrac12\Gamma\!\left(\tfrac12\right)=\tfrac34\sqrt\pi</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">-\tfrac12</span> nepatenka į integralo
+apibrėžimo sritį, todėl naudojame tęsinį į kairę: <span
+class="math inline">\Gamma(z)=\Gamma(z+1)/z</span>. <span
+class="math display">\Gamma\!\left(-\tfrac12\right)=\frac{\Gamma\!\left(\tfrac12\right)}{-\tfrac12}=-2\sqrt\pi
+.</span></p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\Gamma\!\left(\tfrac52\right)=\tfrac34\sqrt\pi</span>,
+<span
+class="math inline">\Gamma\!\left(-\tfrac12\right)=-2\sqrt\pi</span>.</p>
+</div>
+<h2 id="uzduotys">Savarankiškos užduotys</h2>
+<div class="deze uzduotis" id="uzd-6-1" data-nr="6.1"><div class="deze-antraste">6.1 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Patikrinkite Košy–Rymano sąlygas funkcijai <span
+class="math inline">f(z)=z^2</span> ir raskite <span
+class="math inline">f&#39;(z)</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">z^2=x^2-y^2+2ixy</span>, todėl <span
+class="math inline">u=x^2-y^2</span> ir <span
+class="math inline">v=2xy</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">u_x=2x=v_y</span> ✓, <span
+class="math inline">u_y=-2y=-v_x</span> ✓. Sąlygos tenkinamos visur.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">f&#39;=u_x+iv_x=2x+2iy=2z</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">z^2</span>
+analizinė visoje plokštumoje, <span
+class="math inline">f&#39;(z)=2z</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-6-2" data-nr="6.2"><div class="deze-antraste">6.2 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Kuriuose taškuose funkcija <span
+class="math inline">f(z)=|z|^2</span> diferencijuojama? Ar ji kur nors
+analizinė?</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">u=x^2+y^2</span>, <span
+class="math inline">v=0</span>. <span class="math inline">u_x=2x</span>,
+<span class="math inline">v_y=0</span>, todėl reikia <span
+class="math inline">x=0</span>. <span class="math inline">u_y=2y</span>,
+<span class="math inline">-v_x=0</span>, todėl reikia <span
+class="math inline">y=0</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Abi sąlygos tenkinamos tik taške <span
+class="math inline">z=0</span>. Jo aplinkoje sąlygos netenkinamos.</p>
+</div>
+<p><strong>Atsakymas:</strong> diferencijuojama tik taške <span
+class="math inline">z=0</span> ir niekur nėra analizinė.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-6-3" data-nr="6.3"><div class="deze-antraste">6.3 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Įrodykite, kad <span class="math inline">\sin z=\sin
+x\operatorname{ch}y+i\cos x\operatorname{sh}y</span>, patikrinkite
+Košy–Rymano sąlygas ir parodykite, kad <span class="math inline">(\sin
+z)&#39;=\cos z</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">\sin(x+iy)=\sin x\cos(iy)+\cos
+x\sin(iy)</span>. Kadangi <span
+class="math inline">\cos(iy)=\dfrac{e^{-y}+e^{y}}{2}=\operatorname{ch}y</span>
+ir <span
+class="math inline">\sin(iy)=\dfrac{e^{-y}-e^{y}}{2i}=i\operatorname{sh}y</span>,
+gauname reikiamą formulę.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">u=\sin x\operatorname{ch}y</span>, <span
+class="math inline">v=\cos x\operatorname{sh}y</span>. <span
+class="math inline">u_x=\cos x\operatorname{ch}y=v_y</span> ✓, <span
+class="math inline">u_y=\sin x\operatorname{sh}y=-v_x</span> ✓, nes
+<span class="math inline">v_x=-\sin x\operatorname{sh}y</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">f&#39;=u_x+iv_x=\cos
+x\operatorname{ch}y-i\sin x\operatorname{sh}y=\cos(x+iy)=\cos z</span>.
+Paskutinė lygybė gaunama analogiškai kaip 1 žingsnyje.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\sin z</span>
+analizinė visoje plokštumoje, <span class="math inline">(\sin
+z)&#39;=\cos z</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-6-4" data-nr="6.4"><div class="deze-antraste">6.4 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Patikrinkite poliniu pavidalu užrašytas Košy–Rymano sąlygas funkcijai
+<span class="math inline">f(z)=z^n</span> (čia <span
+class="math inline">n</span> yra natūralusis skaičius).</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">z^n=r^ne^{in\varphi}=r^n(\cos
+n\varphi+i\sin n\varphi)</span>, todėl <span
+class="math inline">u=r^n\cos n\varphi</span> ir <span
+class="math inline">v=r^n\sin n\varphi</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">u_r=nr^{n-1}\cos n\varphi</span> ir <span
+class="math inline">\dfrac1r v_\varphi=\dfrac1r\,nr^n\cos
+n\varphi=nr^{n-1}\cos n\varphi</span> ✓.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">u_\varphi=-nr^n\sin n\varphi</span> ir
+<span class="math inline">-rv_r=-r\cdot nr^{n-1}\sin n\varphi=-nr^n\sin
+n\varphi</span> ✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> abi sąlygos tenkinamos, todėl <span
+class="math inline">z^n</span> analizinė.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-6-5" data-nr="6.5"><div class="deze-antraste">6.5 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Raskite analizinę funkciją <span class="math inline">f=u+iv</span>,
+kai <span class="math inline">v=e^x\sin y</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">u_x=v_y=e^x\cos y</span>, todėl <span
+class="math inline">u=e^x\cos y+h(y)</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">u_y=-v_x</span>: <span
+class="math inline">-e^x\sin y+h&#39;(y)=-e^x\sin y</span>, todėl <span
+class="math inline">h=C</span> (reali konstanta).</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">f=e^x\cos
+y+C+ie^x\sin y=e^z+C</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-6-6" data-nr="6.6"><div class="deze-antraste">6.6 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Patikrinkite, kad <span class="math inline">u=x^3-3xy^2+y</span> yra
+harmoninė, ir raskite analizinę funkciją <span
+class="math inline">f=u+iv</span>, kurios <span
+class="math inline">f(0)=0</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">u_{xx}=6x</span>, <span
+class="math inline">u_{yy}=-6x</span>, todėl <span
+class="math inline">\Delta u=0</span> ✓.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">v_y=u_x=3x^2-3y^2</span>, todėl <span
+class="math inline">v=3x^2y-y^3+g(x)</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">v_x=-u_y</span>: <span
+class="math inline">6xy+g&#39;(x)=-(-6xy+1)=6xy-1</span>, todėl <span
+class="math inline">g&#39;=-1</span> ir <span
+class="math inline">g=-x+C</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><span class="math inline">f=x^3-3xy^2+y+i(3x^2y-y^3-x+C)</span>.
+Kadangi <span class="math inline">z^3=x^3-3xy^2+i(3x^2y-y^3)</span> ir
+<span class="math inline">-iz=y-ix</span>, gauname <span
+class="math inline">f=z^3-iz+iC</span>. Iš <span
+class="math inline">f(0)=0</span> gauname <span
+class="math inline">C=0</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">f(z)=z^3-iz</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-6-7" data-nr="6.7"><div class="deze-antraste">6.7 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Apskaičiuokite <span
+class="math inline">\Gamma\!\left(\tfrac72\right)</span>, <span
+class="math inline">\Gamma\!\left(-\tfrac32\right)</span> ir <span
+class="math inline">\displaystyle\int_0^\infty x^4e^{-x}dx</span>.
+Paaiškinkite, kodėl <span class="math inline">\Gamma(z)</span> turi
+polių taške <span class="math inline">z=-1</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span
+class="math inline">\Gamma\!\left(\tfrac72\right)=\tfrac52\cdot\tfrac32\cdot\tfrac12\sqrt\pi=\tfrac{15}{8}\sqrt\pi</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span
+class="math inline">\Gamma\!\left(-\tfrac32\right)=\dfrac{\Gamma(-\tfrac12)}{-\tfrac32}=\dfrac{-2\sqrt\pi}{-\tfrac32}=\tfrac43\sqrt\pi</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">\displaystyle\int_0^\infty
+x^4e^{-x}dx=\Gamma(5)=4!=24</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><span
+class="math inline">\Gamma(z)=\dfrac{\Gamma(z+2)}{z(z+1)}</span>. Kai
+<span class="math inline">z\to-1</span>, skaitiklis artėja prie <span
+class="math inline">\Gamma(1)=1\neq0</span>, o vardiklis prie nulio.
+Todėl tai <strong>pirmos eilės polius</strong>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\tfrac{15}{8}\sqrt\pi</span>, <span
+class="math inline">\tfrac43\sqrt\pi</span>, <span
+class="math inline">24</span>, o <span class="math inline">z=-1</span>
+yra polius, nes ten vardiklis <span class="math inline">z(z+1)</span>
+lygus nuliui.</p>
+</div>
+</div>
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="tema-05.html"><span>← Ankstesnė tema</span><strong>5. Paprastųjų diferencialinių lygčių sistemos</strong></a>
+  <a class="puslapis-kitas" href="tema-07.html"><span>Kita tema →</span><strong>7. Integravimas kompleksinėje plokštumoje ir Lorano eilutė</strong></a>
+</nav>
+
+<script src="svetaine.js"></script>
+</body>
+</html>

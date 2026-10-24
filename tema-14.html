@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>14. Dalinių išvestinių lygčių klasifikacija ir D’Alambero
+formulė · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="temos-puslapis" data-tema="14" data-uzduociu="7">
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <a class="atgal" href="index.html">← Visos temos</a>
+    <nav class="skyreliai" aria-label="Temos dalys">
+      <a href="#teorija">Teorija</a>
+      <a href="#klaidos">Klaidos</a>
+      <a href="#pavyzdziai">Pavyzdžiai</a>
+      <a href="#uzduotys">Užduotys</a>
+    </nav>
+    <span class="temos-progresas" aria-live="polite"></span>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">14 tema · Dalinių išvestinių lygtys</p>
+    <h1>Dalinių išvestinių lygčių klasifikacija ir D’Alambero
+formulė</h1>
+    <p class="hero-info">2 išspręsti pavyzdžiai · 7 užduotys · sprendimai atidengiami po žingsnį</p>
+    <div class="juosta"><div class="juosta-uzpildas"></div></div>
+  </div>
+</header>
+
+<main class="turinys">
+<div class="deze teorija" id="teorija"><div class="deze-antraste">Teorija</div>
+<h3 id="antros-eilės-tiesinė-didl">Antros eilės tiesinė DIDL</h3>
+<p><span
+class="math display">A\,\psi_{xx}+2B\,\psi_{xy}+C\,\psi_{yy}=F\!\left(x,y,\psi,\psi_x,\psi_y\right).</span>
+Lygties tipą nusako tik aukščiausios eilės narių koeficientai <span
+class="math inline">A,B,C</span>.</p>
+<h3 id="charakteristikos">Charakteristikos</h3>
+<p><strong>Charakteristikos</strong> yra kreivės, ant kurių lygtis
+„virsta“ paprastąja diferencialine lygtimi. Jas randame iš kvadratinės
+lygties: <span
+class="math display">A\left(\frac{dy}{dx}\right)^2-2B\frac{dy}{dx}+C=0\qquad\Longrightarrow\qquad
+A\,dy=\left(B\pm\sqrt{B^2-AC}\right)dx .</span> Gaunamos dvi kreivių
+šeimos <span class="math inline">\lambda(x,y)=\text{const}</span> ir
+<span class="math inline">\mu(x,y)=\text{const}</span>.</p>
+<h3 id="klasifikacija">Klasifikacija</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Sąlyga</th>
+<th style="text-align: left;">Tipas</th>
+<th style="text-align: left;">Charakteristikos</th>
+<th style="text-align: left;">Pavyzdys</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">B^2-AC&gt;0</span></td>
+<td style="text-align: left;">hiperbolinė</td>
+<td style="text-align: left;">dvi realios šeimos</td>
+<td style="text-align: left;">stygos (bangos) lygtis</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">B^2-AC=0</span></td>
+<td style="text-align: left;">parabolinė</td>
+<td style="text-align: left;">viena šeima</td>
+<td style="text-align: left;">šilumos laidumo (difuzijos) lygtis</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">B^2-AC&lt;0</span></td>
+<td style="text-align: left;">elipsinė</td>
+<td style="text-align: left;">realių nėra</td>
+<td style="text-align: left;">Laplaso lygtis</td>
+</tr>
+</tbody>
+</table>
+<p>Jei koeficientai priklauso nuo <span class="math inline">x,y</span>,
+tipas gali skirtis skirtingose srityse.</p>
+<h3 id="kanoninis-pavidalas">Kanoninis pavidalas</h3>
+<p>Naujais kintamaisiais <span
+class="math inline">\xi=\lambda(x,y)</span>, <span
+class="math inline">\eta=\mu(x,y)</span> hiperbolinė lygtis (be žemesnių
+narių) virsta <span
+class="math display">\frac{\partial^2\psi}{\partial\xi\,\partial\eta}=0\
+\Longrightarrow\ \psi=f(\xi)+g(\eta),</span> kur <span
+class="math inline">f</span> ir <span class="math inline">g</span> yra
+bet kokios funkcijos. Parabolinės lygties atveju imame <span
+class="math inline">\xi=\lambda</span>, o <span
+class="math inline">\eta</span> yra bet kuris nepriklausomas kintamasis
+(pvz., <span class="math inline">x</span>), ir gauname <span
+class="math inline">\psi_{\eta\eta}=0</span>, t. y. <span
+class="math inline">\psi=f(\xi)+\eta\,g(\xi)</span>.</p>
+<h3 id="dalambero-formulė">D’Alambero formulė</h3>
+<p>Bangos lygčiai <span class="math inline">y_{tt}=c^2y_{xx}</span>
+charakteristikos yra <span class="math inline">x\mp
+ct=\text{const}</span>, todėl <span
+class="math inline">y=f(x-ct)+g(x+ct)</span>. Iš pradinių sąlygų <span
+class="math inline">y(x,0)=y_0(x)</span>, <span
+class="math inline">y_t(x,0)=v_0(x)</span> gauname <span
+class="math display">\boxed{\,y(x,t)=\frac{y_0(x-ct)+y_0(x+ct)}{2}+\frac{1}{2c}\int_{x-ct}^{x+ct}v_0(x&#39;)\,dx&#39;\,}</span>
+Prasmė: pradinis nuokrypis skyla į dvi vienodas bangas, kurios bėga
+priešingomis kryptimis greičiu <span class="math inline">c</span>.</p>
+</div>
+<div class="deze klaidos" id="klaidos"><div class="deze-antraste">Dažniausios klaidos</div>
+<ul>
+<li><strong>Koeficientas <span class="math inline">B</span>.</strong>
+Lygtyje prie mišrios išvestinės stovi <span
+class="math inline">2B</span>, todėl, pvz., <span
+class="math inline">\psi_{xx}+4\psi_{xy}</span> reiškia <span
+class="math inline">B=2</span>, o ne <span
+class="math inline">B=4</span>.</li>
+<li><strong>Charakteristikos lygtis.</strong> <span
+class="math inline">A(dy)^2-2B\,dx\,dy+C(dx)^2=0</span>, o ženklas prie
+<span class="math inline">B</span> yra minusas.</li>
+<li><strong>D’Alambero formulėje</strong> pamirštamas <span
+class="math inline">\tfrac12</span> prie <span
+class="math inline">y_0</span> arba <span
+class="math inline">\tfrac{1}{2c}</span> prie integralo.</li>
+<li><strong>Atsakymo patikrinimas:</strong> visada verta įrašyti
+rezultatą į lygtį ir pradines sąlygas.</li>
+</ul>
+</div>
+<h2 id="pavyzdziai">Išspręsti pavyzdžiai</h2>
+<div class="deze pavyzdys" id="pvz-14-1"><div class="deze-antraste">14.1 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Nustatykite lygties <span
+class="math inline">u_{xx}+4u_{xy}+3u_{yy}=0</span> tipą, raskite
+charakteristikas ir bendrąjį sprendinį.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">A=1</span>, <span
+class="math inline">2B=4</span>, todėl <span
+class="math inline">B=2</span>, <span class="math inline">C=3</span>.
+<span class="math inline">B^2-AC=4-3=1&gt;0</span>, todėl lygtis
+<strong>hiperbolinė</strong>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Charakteristikų lygtis: <span
+class="math inline">\left(\dfrac{dy}{dx}\right)^2-4\dfrac{dy}{dx}+3=0</span>,
+todėl <span class="math inline">\dfrac{dy}{dx}=1</span> arba <span
+class="math inline">3</span>.</p>
+<p>Charakteristikos: <span class="math inline">y-x=\text{const}</span>
+ir <span class="math inline">y-3x=\text{const}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Su <span class="math inline">\xi=y-x</span>, <span
+class="math inline">\eta=y-3x</span> lygtis virsta <span
+class="math inline">u_{\xi\eta}=0</span>, todėl <span
+class="math display">u=f(y-x)+g(y-3x).</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Patikrinkime <span class="math inline">f(y-x)</span>: <span
+class="math inline">u_{xx}=f&#39;&#39;</span>, <span
+class="math inline">u_{xy}=-f&#39;&#39;</span>, <span
+class="math inline">u_{yy}=f&#39;&#39;</span>, todėl <span
+class="math inline">f&#39;&#39;-4f&#39;&#39;+3f&#39;&#39;=0</span> ✓.
+Analogiškai <span class="math inline">g(y-3x)</span> duoda <span
+class="math inline">9g&#39;&#39;-12g&#39;&#39;+3g&#39;&#39;=0</span>
+✓.</p>
+</div>
+</div>
+<p><strong>Atsakymas:</strong> hiperbolinė, <span
+class="math inline">u=f(y-x)+g(y-3x)</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-14-2"><div class="deze-antraste">14.2 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Begalinės stygos pradinis nuokrypis lygus
+nuliui, o pradinis greitis <span class="math inline">v_0(x)=\cos
+x</span>. Raskite <span class="math inline">y(x,t)</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">y_0=0</span>, todėl lieka tik integralas:
+<span class="math display">y=\frac{1}{2c}\int_{x-ct}^{x+ct}\cos
+x&#39;\,dx&#39;=\frac{\sin(x+ct)-\sin(x-ct)}{2c}.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Pagal formulę <span
+class="math inline">\sin\alpha-\sin\beta=2\cos\dfrac{\alpha+\beta}{2}\sin\dfrac{\alpha-\beta}{2}</span>:
+<span class="math display">y=\frac{2\cos x\sin ct}{2c}=\frac1c\cos x\sin
+ct .</span> Patikrinimas: <span class="math inline">y(x,0)=0</span> ✓,
+<span class="math inline">y_t(x,0)=\cos x</span> ✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">y=\dfrac1c\cos
+x\sin ct</span> (stovinti banga).</p>
+</div>
+<h2 id="uzduotys">Savarankiškos užduotys</h2>
+<div class="deze uzduotis" id="uzd-14-1" data-nr="14.1"><div class="deze-antraste">14.1 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Nustatykite lygčių tipą: a) <span
+class="math inline">u_{xx}-2u_{xy}+u_{yy}=0</span>; b) <span
+class="math inline">u_{xx}+u_{xy}+u_{yy}=0</span>; c) <span
+class="math inline">y\,u_{xx}+u_{yy}=0</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<ol type="a">
+<li><span class="math inline">A=1</span>, <span
+class="math inline">B=-1</span>, <span class="math inline">C=1</span>:
+<span class="math inline">1-1=0</span>, todėl lygtis parabolinė.</li>
+</ol>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<ol start="2" type="a">
+<li><span class="math inline">B=\tfrac12</span>: <span
+class="math inline">\tfrac14-1&lt;0</span>, todėl lygtis elipsinė.</li>
+</ol>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<ol start="3" type="a">
+<li><span class="math inline">A=y</span>, <span
+class="math inline">B=0</span>, <span class="math inline">C=1</span>:
+<span class="math inline">B^2-AC=-y</span>. Kai <span
+class="math inline">y&lt;0</span>, lygtis hiperbolinė, kai <span
+class="math inline">y=0</span>, parabolinė, o kai <span
+class="math inline">y&gt;0</span>, elipsinė (Trikomio lygtis).</li>
+</ol>
+</div>
+<p><strong>Atsakymas:</strong> a) parabolinė; b) elipsinė; c) priklauso
+nuo <span class="math inline">y</span> ženklo.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-14-2" data-nr="14.2"><div class="deze-antraste">14.2 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Su D’Alambero formule raskite begalinės stygos svyravimą, kai <span
+class="math inline">y_0=\sin x</span> ir <span
+class="math inline">v_0=0</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">y=\dfrac{\sin(x-ct)+\sin(x+ct)}{2}=\sin
+x\cos ct</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">y=\sin x\cos
+ct</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-14-3" data-nr="14.3"><div class="deze-antraste">14.3 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Su D’Alambero formule raskite sprendinį, kai <span
+class="math inline">y_0=0</span> ir <span
+class="math inline">v_0=x</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span
+class="math inline">y=\dfrac{1}{2c}\displaystyle\int_{x-ct}^{x+ct}x&#39;dx&#39;=\dfrac{1}{2c}\cdot\dfrac{(x+ct)^2-(x-ct)^2}{2}=\dfrac{1}{2c}\cdot2xct=xt</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Patikrinimas: <span class="math inline">y_{tt}=0=c^2y_{xx}</span> ✓,
+<span class="math inline">y(x,0)=0</span> ✓, <span
+class="math inline">y_t=x</span> ✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=xt</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-14-4" data-nr="14.4"><div class="deze-antraste">14.4 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Raskite lygties <span
+class="math inline">u_{xx}-2u_{xy}-3u_{yy}=0</span> charakteristikas ir
+bendrąjį sprendinį.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">A=1</span>, <span
+class="math inline">B=-1</span>, <span class="math inline">C=-3</span>:
+<span class="math inline">B^2-AC=1+3=4&gt;0</span>, todėl lygtis
+hiperbolinė.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span
+class="math inline">\left(\dfrac{dy}{dx}\right)^2+2\dfrac{dy}{dx}-3=0</span>,
+todėl <span class="math inline">\dfrac{dy}{dx}=1</span> arba <span
+class="math inline">-3</span>. Charakteristikos: <span
+class="math inline">y-x=\text{const}</span> ir <span
+class="math inline">y+3x=\text{const}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">u=f(y-x)+g(y+3x)</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-14-5" data-nr="14.5"><div class="deze-antraste">14.5 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Išspręskite Košy uždavinį <span
+class="math inline">u_{xx}-2u_{xy}-3u_{yy}=0</span>, <span
+class="math inline">u(x,0)=3x^2</span>, <span
+class="math inline">u_y(x,0)=0</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Iš ankstesnės užduoties <span
+class="math inline">u=f(y-x)+g(y+3x)</span>. Kai <span
+class="math inline">y=0</span>: <span
+class="math inline">f(-x)+g(3x)=3x^2</span> ir <span
+class="math inline">f&#39;(-x)+g&#39;(3x)=0</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Pirmą lygybę diferencijuojame pagal <span
+class="math inline">x</span>: <span
+class="math inline">-f&#39;(-x)+3g&#39;(3x)=6x</span>. Kartu su antra
+gauname <span class="math inline">4g&#39;(3x)=6x</span>, todėl <span
+class="math inline">g&#39;(s)=\tfrac s2</span> ir <span
+class="math inline">f&#39;(s)=\tfrac{3s}{2}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">g=\tfrac{s^2}{4}+C_1</span>, <span
+class="math inline">f=\tfrac{3s^2}{4}+C_2</span>, o iš pirmos sąlygos
+<span class="math inline">C_1+C_2=0</span>. Tada <span
+class="math display">u=\tfrac34(y-x)^2+\tfrac14(y+3x)^2=3x^2+y^2
+.</span> Patikrinimas: <span class="math inline">6-0-3\cdot2=0</span> ✓,
+<span class="math inline">u(x,0)=3x^2</span> ✓, <span
+class="math inline">u_y(x,0)=0</span> ✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">u=3x^2+y^2</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-14-6" data-nr="14.6"><div class="deze-antraste">14.6 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Begalinė styga ramybės būsenoje taške <span
+class="math inline">x=0</span> gauna smūgį: <span
+class="math inline">y_0=0</span>, <span
+class="math inline">v_0=\delta(x)</span>. Raskite ir aprašykite <span
+class="math inline">y(x,t)</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span
+class="math inline">y=\dfrac{1}{2c}\displaystyle\int_{x-ct}^{x+ct}\delta(x&#39;)dx&#39;</span>.
+Integralas lygus 1, jei <span
+class="math inline">0\in(x-ct,\,x+ct)</span>, t. y. <span
+class="math inline">|x|&lt;ct</span>, ir 0 kitu atveju.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Su Hevisaido funkcija: <span
+class="math inline">y=\dfrac{1}{2c}\big[\sigma(x+ct)-\sigma(x-ct)\big]</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=\dfrac{1}{2c}</span>, kai <span
+class="math inline">|x|&lt;ct</span>, ir <span
+class="math inline">0</span> kitur. Tai „plokščiakalnis“, kurio kraštai
+bėga į abi puses greičiu <span class="math inline">c</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-14-7" data-nr="14.7"><div class="deze-antraste">14.7 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Suveskite parabolinę lygtį <span
+class="math inline">u_{xx}+2u_{xy}+u_{yy}=0</span> į kanoninį pavidalą
+ir raskite bendrąjį sprendinį.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">B^2-AC=1-1=0</span>. <span
+class="math inline">\left(\dfrac{dy}{dx}\right)^2-2\dfrac{dy}{dx}+1=0</span>,
+todėl <span class="math inline">\dfrac{dy}{dx}=1</span> (dviguba
+šaknis), ir yra viena charakteristikų šeima <span
+class="math inline">y-x=\text{const}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">\xi=y-x</span>, <span
+class="math inline">\eta=x</span>. Tada <span
+class="math inline">u_x=-u_\xi+u_\eta</span>, <span
+class="math inline">u_y=u_\xi</span>, ir lygtis virsta <span
+class="math inline">u_{\eta\eta}=0</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span
+class="math inline">u=f(\xi)+\eta\,g(\xi)=f(y-x)+x\,g(y-x)</span>.
+Patikrinimas narių <span class="math inline">xg(y-x)</span>: <span
+class="math inline">(-2g&#39;+xg&#39;&#39;)+2(g&#39;-xg&#39;&#39;)+xg&#39;&#39;=0</span>
+✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">u=f(y-x)+x\,g(y-x)</span>.</p>
+</div>
+</div>
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="tema-13.html"><span>← Ankstesnė tema</span><strong>13. Fizikinių vyksmų lygtys: styga ir difuzija</strong></a>
+  <a class="puslapis-kitas" href="tema-15.html"><span>Kita tema →</span><strong>15. Kintamųjų atskyrimo (Furjė) metodas</strong></a>
+</nav>
+
+<script src="svetaine.js"></script>
+</body>
+</html>

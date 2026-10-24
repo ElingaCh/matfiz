@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5. Paprastųjų diferencialinių lygčių
+sistemos · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="temos-puslapis" data-tema="5" data-uzduociu="7">
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <a class="atgal" href="index.html">← Visos temos</a>
+    <nav class="skyreliai" aria-label="Temos dalys">
+      <a href="#teorija">Teorija</a>
+      <a href="#klaidos">Klaidos</a>
+      <a href="#pavyzdziai">Pavyzdžiai</a>
+      <a href="#uzduotys">Užduotys</a>
+    </nav>
+    <span class="temos-progresas" aria-live="polite"></span>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">5 tema · Koordinatės ir paprastosios
+diferencialinės lygtys</p>
+    <h1>Paprastųjų diferencialinių lygčių sistemos</h1>
+    <p class="hero-info">2 išspręsti pavyzdžiai · 7 užduotys · sprendimai atidengiami po žingsnį</p>
+    <div class="juosta"><div class="juosta-uzpildas"></div></div>
+  </div>
+</header>
+
+<main class="turinys">
+<div class="deze teorija" id="teorija"><div class="deze-antraste">Teorija</div>
+<h3 id="kas-yra-dl-sistema">Kas yra DL sistema</h3>
+<p>Kai ieškome <strong>kelių</strong> funkcijų iš karto ir jų išvestinės
+susietos tarpusavyje, gauname sistemą. <strong>Normalioji
+sistema</strong> yra tokia, kurioje kiekviena išvestinė išreikšta
+atskirai: <span
+class="math display">\begin{cases}\dfrac{dy_1}{dx}=f_1(x,y_1,\dots,y_n),\\
+\quad\vdots\\ \dfrac{dy_n}{dx}=f_n(x,y_1,\dots,y_n).\end{cases}</span>
+Bendrajame sprendinyje yra tiek laisvų konstantų, kiek yra lygčių
+(pirmos eilės). Košy uždavinyje duodamos visų funkcijų reikšmės
+pradiniame taške.</p>
+<h3 id="eliminavimo-metodas">1. Eliminavimo metodas</h3>
+<p>Iš vienos lygties išreiškiame vieną funkciją, pvz., <span
+class="math inline">y</span> per <span class="math inline">x</span> ir
+<span class="math inline">x&#39;</span>. Įrašę į kitą lygtį gauname
+<strong>vieną aukštesnės eilės lygtį</strong> vienai funkcijai, kurią
+jau mokame spręsti (3 tema). Kitą funkciją randame iš išraiškos, kurią
+gavome pirmame žingsnyje, <strong>be naujo integravimo</strong>.</p>
+<h3 id="integruojamųjų-darinių-metodas">2. Integruojamųjų darinių
+metodas</h3>
+<p>Sudedame, atimame ar dauginame lygtis taip, kad gautume lengvai
+integruojamą lygtį, pvz., <span
+class="math inline">\dfrac{d(x+y)}{dt}=x+y</span>. Kiekvienas toks
+darinys duoda vieną <strong>pirmąjį integralą</strong> <span
+class="math inline">\Phi(t,x,y)=C</span>.</p>
+<h3
+id="eulerio-metodas-tiesinės-sistemos-su-pastoviais-koeficientais">3.
+Eulerio metodas (tiesinės sistemos su pastoviais koeficientais)</h3>
+<p>Sistemai <span
+class="math inline">\begin{cases}x&#39;=a_{11}x+a_{12}y\\
+y&#39;=a_{21}x+a_{22}y\end{cases}</span> ieškome <span
+class="math inline">x=\alpha_1e^{kt}</span>, <span
+class="math inline">y=\alpha_2e^{kt}</span>. Nenulinis sprendinys
+egzistuoja tik tada, kai <span
+class="math display">\begin{vmatrix}a_{11}-k&amp;a_{12}\\a_{21}&amp;a_{22}-k\end{vmatrix}=0\quad\text{(charakteringoji
+lygtis).}</span> Kiekvienai šakniai <span class="math inline">k</span>
+randame vektorių <span class="math inline">(\alpha_1,\alpha_2)</span> iš
+sistemos <span
+class="math inline">(a_{11}-k)\alpha_1+a_{12}\alpha_2=0</span>.</p>
+<ul>
+<li><strong>Realios skirtingos šaknys:</strong> <span
+class="math inline">\begin{pmatrix}x\\y\end{pmatrix}=c_1\begin{pmatrix}\alpha_1^{(1)}\\\alpha_2^{(1)}\end{pmatrix}e^{k_1t}+c_2\begin{pmatrix}\alpha_1^{(2)}\\\alpha_2^{(2)}\end{pmatrix}e^{k_2t}</span>.</li>
+<li><strong>Kompleksinės šaknys <span class="math inline">\alpha\pm
+i\beta</span>:</strong> atsiranda <span class="math inline">e^{\alpha
+t}\cos\beta t</span> ir <span class="math inline">e^{\alpha t}\sin\beta
+t</span>. Paprasčiausia rasti <span class="math inline">x</span> kaip 3
+temoje, o <span class="math inline">y</span> išreikšti iš pirmos
+lygties.</li>
+<li><strong>Kartotinė šaknis:</strong> atsiranda <span
+class="math inline">(c_1+c_2t)e^{kt}</span>. Ir čia patogu <span
+class="math inline">y</span> išreikšti iš pirmos lygties.</li>
+</ul>
+<h3 id="nehomogeninės-sistemos">4. Nehomogeninės sistemos</h3>
+<p>Jei sistemoje yra nariai, priklausantys tik nuo <span
+class="math inline">t</span>, naudojame eliminavimą su neapibrėžtųjų
+koeficientų metodu arba <strong>konstantų varijavimą</strong>:
+homogeninės sistemos sprendinyje <span
+class="math inline">c_1,c_2</span> pakeičiame funkcijomis <span
+class="math inline">c_1(t),c_2(t)</span> ir gauname tiesinę sistemą jų
+išvestinėms.</p>
+</div>
+<div class="deze klaidos" id="klaidos"><div class="deze-antraste">Dažniausios klaidos</div>
+<ul>
+<li><strong>Per daug konstantų.</strong> Radus <span
+class="math inline">x</span> su konstantomis <span
+class="math inline">c_1,c_2</span>, funkciją <span
+class="math inline">y</span> reikia išreikšti <strong>iš
+lygties</strong>, o ne integruoti iš naujo. Kitaip atsiranda papildomų
+konstantų, kurios netenkina sistemos.</li>
+<li><strong>Tikriniai vektoriai.</strong> <span
+class="math inline">(\alpha_1,\alpha_2)</span> randame įrašę kiekvieną
+šaknį <span class="math inline">k</span> atskirai. Vektorius visada
+nustatomas tik su tikslumu iki daugiklio.</li>
+<li><strong>Ženklai determinante.</strong> <span
+class="math inline">k</span> atimamas tik iš įstrižainės elementų.</li>
+<li><strong>Atsakymo patikrinimas:</strong> visada verta įrašyti <span
+class="math inline">x,y</span> į <strong>abi</strong> lygtis.</li>
+</ul>
+</div>
+<h2 id="pavyzdziai">Išspręsti pavyzdžiai</h2>
+<div class="deze pavyzdys" id="pvz-5-1"><div class="deze-antraste">5.1 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Eliminavimo metodu išspręskite sistemą <span
+class="math display">\begin{cases}x&#39;=4x-3y+\sin t,\\
+y&#39;=2x-y-2\cos t.\end{cases}</span></p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Iš pirmos lygties išreiškiame <span class="math inline">y</span>:
+<span class="math display">y=\frac{4x-x&#39;+\sin t}{3}.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Norime gauti vieną lygtį vienai funkcijai. <span
+class="math inline">y</span> lengva išreikšti, nes pirmoje lygtyje jis
+yra tik pirmo laipsnio ir be išvestinės.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Diferencijuojame: <span
+class="math inline">y&#39;=\dfrac{4x&#39;-x&#39;&#39;+\cos t}{3}</span>.
+Įrašome <span class="math inline">y</span> ir <span
+class="math inline">y&#39;</span> į antrą lygtį ir padauginame iš 3:
+<span class="math display">4x&#39;-x&#39;&#39;+\cos t=6x-(4x-x&#39;+\sin
+t)-6\cos t .</span> Sutvarkę gauname <span
+class="math display">x&#39;&#39;-3x&#39;+2x=\sin t+7\cos t .</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Homogeninė dalis: <span class="math inline">k^2-3k+2=0</span>, todėl
+<span class="math inline">k=1,2</span> ir <span class="math inline">\bar
+x=c_1e^t+c_2e^{2t}</span>.</p>
+<p>Atskirasis sprendinys: <span class="math inline">\tilde x=A\cos
+t+B\sin t</span>. Įrašę gauname <span class="math inline">A-3B=7</span>
+ir <span class="math inline">3A+B=1</span>, todėl <span
+class="math inline">A=1</span>, <span class="math inline">B=-2</span>.
+<span class="math display">x=c_1e^t+c_2e^{2t}+\cos t-2\sin t
+.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><span class="math inline">y</span> randame iš 1 žingsnio formulės (be
+integravimo). <span class="math inline">x&#39;=c_1e^t+2c_2e^{2t}-\sin
+t-2\cos t</span>, todėl <span
+class="math display">y=\frac{3c_1e^t+2c_2e^{2t}+6\cos t-6\sin
+t}{3}=c_1e^t+\tfrac23c_2e^{2t}+2\cos t-2\sin t .</span></p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">x=c_1e^t+c_2e^{2t}+\cos t-2\sin t</span>, <span
+class="math inline">y=c_1e^t+\tfrac23c_2e^{2t}+2\cos t-2\sin
+t</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-5-2"><div class="deze-antraste">5.2 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Eulerio metodu išspręskite sistemą <span
+class="math inline">\begin{cases}x&#39;=x+2y,\\
+y&#39;=4x+3y.\end{cases}</span></p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Charakteringoji lygtis: <span
+class="math display">\begin{vmatrix}1-k&amp;2\\4&amp;3-k\end{vmatrix}=(1-k)(3-k)-8=k^2-4k-5=0\
+\Longrightarrow\ k_1=5,\ k_2=-1 .</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Kai <span class="math inline">k_1=5</span>: <span
+class="math inline">(1-5)\alpha_1+2\alpha_2=0</span>, todėl <span
+class="math inline">\alpha_2=2\alpha_1</span>. Imame <span
+class="math inline">(\alpha_1,\alpha_2)=(1,2)</span>.</p>
+<p>Kai <span class="math inline">k_2=-1</span>: <span
+class="math inline">2\alpha_1+2\alpha_2=0</span>, todėl <span
+class="math inline">(\alpha_1,\alpha_2)=(1,-1)</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Kai <span class="math inline">\det=0</span>, abi lygtys dėl <span
+class="math inline">\alpha_1,\alpha_2</span> yra proporcingos, todėl
+pakanka vienos. Vektoriaus ilgį galime pasirinkti laisvai, nes jį vis
+tiek padaugins konstanta <span class="math inline">c_i</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Bendrasis sprendinys: <span
+class="math display">\begin{pmatrix}x\\y\end{pmatrix}=c_1\begin{pmatrix}1\\2\end{pmatrix}e^{5t}+c_2\begin{pmatrix}1\\-1\end{pmatrix}e^{-t}.</span>
+Patikriname pirmą lygtį: <span
+class="math inline">x&#39;=5c_1e^{5t}-c_2e^{-t}</span> ir <span
+class="math inline">x+2y=c_1e^{5t}+c_2e^{-t}+4c_1e^{5t}-2c_2e^{-t}=5c_1e^{5t}-c_2e^{-t}</span>
+✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">x=c_1e^{5t}+c_2e^{-t}</span>, <span
+class="math inline">y=2c_1e^{5t}-c_2e^{-t}</span>.</p>
+</div>
+<h2 id="uzduotys">Savarankiškos užduotys</h2>
+<div class="deze uzduotis" id="uzd-5-1" data-nr="5.1"><div class="deze-antraste">5.1 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Integruojamųjų darinių metodu išspręskite Košy uždavinį <span
+class="math inline">\begin{cases}x&#39;=2y,\\
+y&#39;=2x,\end{cases}</span> <span class="math inline">x(0)=1</span>,
+<span class="math inline">y(0)=0</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Sudedame lygtis: <span class="math inline">(x+y)&#39;=2(x+y)</span>,
+todėl <span class="math inline">x+y=C_1e^{2t}</span>. Atimame: <span
+class="math inline">(x-y)&#39;=-2(x-y)</span>, todėl <span
+class="math inline">x-y=C_2e^{-2t}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Iš pradinių sąlygų <span class="math inline">C_1=1</span> ir <span
+class="math inline">C_2=1</span>. Tada <span
+class="math inline">x=\tfrac12(e^{2t}+e^{-2t})</span> ir <span
+class="math inline">y=\tfrac12(e^{2t}-e^{-2t})</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">x=\operatorname{ch}2t</span>, <span
+class="math inline">y=\operatorname{sh}2t</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-5-2" data-nr="5.2"><div class="deze-antraste">5.2 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Eulerio metodu išspręskite sistemą <span
+class="math inline">\begin{cases}x&#39;=3x-y,\\
+y&#39;=4x-2y.\end{cases}</span></p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">(3-k)(-2-k)+4=k^2-k-2=0</span>, todėl <span
+class="math inline">k_1=2</span>, <span
+class="math inline">k_2=-1</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Kai <span class="math inline">k=2</span>: <span
+class="math inline">\alpha_1-\alpha_2=0</span>, todėl vektorius yra
+<span class="math inline">(1,1)</span>. Kai <span
+class="math inline">k=-1</span>: <span
+class="math inline">4\alpha_1-\alpha_2=0</span>, todėl vektorius yra
+<span class="math inline">(1,4)</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">x=c_1e^{2t}+c_2e^{-t}</span>, <span
+class="math inline">y=c_1e^{2t}+4c_2e^{-t}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-5-3" data-nr="5.3"><div class="deze-antraste">5.3 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Išspręskite sistemą <span
+class="math inline">\begin{cases}x&#39;=x-y,\\
+y&#39;=x+y.\end{cases}</span></p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">(1-k)^2+1=0</span>, todėl <span
+class="math inline">k=1\pm i</span>. Vadinasi, <span
+class="math inline">x=e^t(c_1\cos t+c_2\sin t)</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Eliminavus <span class="math inline">y</span> gaunama <span
+class="math inline">x&#39;&#39;-2x&#39;+2x=0</span> su ta pačia
+charakteringąja lygtimi, todėl <span class="math inline">x</span>
+užrašome kaip 3 temoje.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Iš pirmos lygties <span class="math inline">y=x-x&#39;</span>. <span
+class="math inline">x&#39;=e^t\big((c_1+c_2)\cos t+(c_2-c_1)\sin
+t\big)</span>, todėl <span class="math display">y=e^t(-c_2\cos t+c_1\sin
+t).</span></p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">x=e^t(c_1\cos
+t+c_2\sin t)</span>, <span class="math inline">y=e^t(c_1\sin t-c_2\cos
+t)</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-5-4" data-nr="5.4"><div class="deze-antraste">5.4 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Išspręskite nehomogeninę sistemą <span
+class="math inline">\begin{cases}x&#39;=y+t,\\
+y&#39;=x-t.\end{cases}</span></p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Diferencijuojame pirmą lygtį: <span
+class="math inline">x&#39;&#39;=y&#39;+1=x-t+1</span>, todėl <span
+class="math inline">x&#39;&#39;-x=1-t</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">\bar x=c_1e^t+c_2e^{-t}</span>. Spėjinys
+<span class="math inline">\tilde x=At+B</span>: <span
+class="math inline">-(At+B)=1-t</span>, todėl <span
+class="math inline">A=1</span>, <span class="math inline">B=-1</span>.
+<span class="math display">x=c_1e^t+c_2e^{-t}+t-1 .</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">y=x&#39;-t=c_1e^t-c_2e^{-t}+1-t</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">x=c_1e^t+c_2e^{-t}+t-1</span>, <span
+class="math inline">y=c_1e^t-c_2e^{-t}+1-t</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-5-5" data-nr="5.5"><div class="deze-antraste">5.5 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Raskite sistemos <span class="math inline">\begin{cases}x&#39;=y,\\
+y&#39;=-x\end{cases}</span> pirmąjį integralą ir išspręskite Košy
+uždavinį <span class="math inline">x(0)=0</span>, <span
+class="math inline">y(0)=2</span>. Kokia yra trajektorija plokštumoje
+<span class="math inline">(x,y)</span>?</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Padauginame pirmą lygtį iš <span class="math inline">x</span>, antrą
+iš <span class="math inline">y</span> ir sudedame: <span
+class="math inline">xx&#39;+yy&#39;=xy-yx=0</span>, t. y. <span
+class="math inline">\dfrac{d}{dt}\left(x^2+y^2\right)=0</span>.</p>
+<p>Pirmasis integralas: <span class="math inline">x^2+y^2=C</span>, o iš
+pradinių sąlygų <span class="math inline">C=4</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Eliminuojame: <span class="math inline">x&#39;&#39;=y&#39;=-x</span>,
+todėl <span class="math inline">x=A\cos t+B\sin t</span>. Iš <span
+class="math inline">x(0)=0</span> gauname <span
+class="math inline">A=0</span>, o <span
+class="math inline">y=x&#39;=B\cos t</span> ir <span
+class="math inline">y(0)=2</span> duoda <span
+class="math inline">B=2</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">x=2\sin
+t</span>, <span class="math inline">y=2\cos t</span>. Trajektorija yra
+apskritimas <span class="math inline">x^2+y^2=4</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-5-6" data-nr="5.6"><div class="deze-antraste">5.6 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Konstantų varijavimo metodu išspręskite sistemą <span
+class="math inline">\begin{cases}y_1&#39;=y_2,\\
+y_2&#39;=-y_1+\dfrac{1}{\cos x}.\end{cases}</span></p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Homogeninė sistema (<span
+class="math inline">y_1&#39;&#39;=-y_1</span>): <span
+class="math inline">y_1=c_1\cos x+c_2\sin x</span>, <span
+class="math inline">y_2=-c_1\sin x+c_2\cos x</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Varijuojame <span class="math inline">c_1(x),c_2(x)</span>. Įrašę į
+sistemą gauname <span class="math display">\begin{cases}c_1&#39;\cos
+x+c_2&#39;\sin x=0,\\ -c_1&#39;\sin x+c_2&#39;\cos x=\dfrac{1}{\cos
+x}.\end{cases}</span> Išsprendę: <span
+class="math inline">c_1&#39;=-\operatorname{tg}x</span>, <span
+class="math inline">c_2&#39;=1</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Nariai be išvestinių susiprastina, nes jie tenkina homogeninę
+sistemą. Lieka tik <span class="math inline">c_1&#39;</span> ir <span
+class="math inline">c_2&#39;</span> su dešine puse.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">c_1=\ln|\cos x|+C_1</span>, <span
+class="math inline">c_2=x+C_2</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">y_1=C_1\cos
+x+C_2\sin x+\cos x\ln|\cos x|+x\sin x</span>, <span
+class="math inline">y_2=-C_1\sin x+C_2\cos x-\sin x\ln|\cos x|+x\cos
+x</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-5-7" data-nr="5.7"><div class="deze-antraste">5.7 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Išspręskite sistemą <span
+class="math inline">\begin{cases}x&#39;=x-y,\\
+y&#39;=x+3y,\end{cases}</span> kurios charakteringoji lygtis turi
+kartotinę šaknį.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">(1-k)(3-k)+1=k^2-4k+4=(k-2)^2=0</span>,
+todėl <span class="math inline">k=2</span> yra dviguba šaknis, ir <span
+class="math inline">x=(c_1+c_2t)e^{2t}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Iš pirmos lygties <span class="math inline">y=x-x&#39;</span>. <span
+class="math inline">x&#39;=(2c_1+c_2+2c_2t)e^{2t}</span>, todėl <span
+class="math display">y=(c_1+c_2t-2c_1-c_2-2c_2t)e^{2t}=-(c_1+c_2+c_2t)e^{2t}.</span></p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">x=(c_1+c_2t)e^{2t}</span>, <span
+class="math inline">y=-(c_1+c_2+c_2t)e^{2t}</span>.</p>
+</div>
+</div>
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="tema-04.html"><span>← Ankstesnė tema</span><strong>4. Kraštinis uždavinys ir Gryno funkcija</strong></a>
+  <a class="puslapis-kitas" href="tema-06.html"><span>Kita tema →</span><strong>6. Analizinės funkcijos ir Gama funkcija</strong></a>
+</nav>
+
+<script src="svetaine.js"></script>
+</body>
+</html>

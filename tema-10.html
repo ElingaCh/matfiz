@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10. Integralo asimptotika: balno metodas ir Stirlingo
+formulė · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="temos-puslapis" data-tema="10" data-uzduociu="7">
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <a class="atgal" href="index.html">← Visos temos</a>
+    <nav class="skyreliai" aria-label="Temos dalys">
+      <a href="#teorija">Teorija</a>
+      <a href="#klaidos">Klaidos</a>
+      <a href="#pavyzdziai">Pavyzdžiai</a>
+      <a href="#uzduotys">Užduotys</a>
+    </nav>
+    <span class="temos-progresas" aria-live="polite"></span>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">10 tema · Kompleksinė analizė, sumos ir
+asimptotika</p>
+    <h1>Integralo asimptotika: balno metodas ir Stirlingo formulė</h1>
+    <p class="hero-info">2 išspręsti pavyzdžiai · 7 užduotys · sprendimai atidengiami po žingsnį</p>
+    <div class="juosta"><div class="juosta-uzpildas"></div></div>
+  </div>
+</header>
+
+<main class="turinys">
+<div class="deze teorija" id="teorija"><div class="deze-antraste">Teorija</div>
+<h3 id="kada-to-reikia">Kada to reikia</h3>
+<p>Fizikoje dažnai pasitaiko integralų, kurie priklauso nuo didelio
+parametro <span class="math inline">w</span> ir kurių tiksliai
+suintegruoti nepavyksta: <span class="math display">I(w)=\int
+f(x)\,e^{w\,q(x)}\,dx,\qquad w\to\infty .</span> Mums pakanka
+<strong>asimptotinės vertės</strong>, t. y. formulės, kuri tampa vis
+tikslesnė, kai <span class="math inline">w</span> didėja.</p>
+<h3 id="idėja-greičiausio-nuolydžio-arba-balno-metodas">Idėja
+(greičiausio nuolydžio, arba balno, metodas)</h3>
+<p>Kai <span class="math inline">w</span> didelis, <span
+class="math inline">e^{wq(x)}</span> yra <strong>labai smailus</strong>
+ties tašku <span class="math inline">x_0</span>, kuriame <span
+class="math inline">q</span> pasiekia maksimumą. Kitur integrandas
+nykstamai mažas. Todėl:</p>
+<ol type="1">
+<li>Randame <span class="math inline">q</span> maksimumo tašką: <span
+class="math inline">q&#39;(x_0)=0</span>, <span
+class="math inline">q&#39;&#39;(x_0)&lt;0</span>.</li>
+<li>Taško aplinkoje išskleidžiame <span class="math inline">q(x)\approx
+q(x_0)+\tfrac12q&#39;&#39;(x_0)(x-x_0)^2</span>, o <span
+class="math inline">f(x)\approx f(x_0)</span>.</li>
+<li>Lieka Gauso integralas <span
+class="math inline">\displaystyle\int_{-\infty}^{\infty}e^{-as^2}ds=\sqrt{\frac\pi
+a}</span>.</li>
+</ol>
+<p>Rezultatas: <span class="math display">\boxed{\,I(w)\sim
+f(x_0)\,e^{wq(x_0)}\sqrt{\frac{-2\pi}{w\,q&#39;&#39;(x_0)}}\,}</span></p>
+<p>Kompleksinėje plokštumoje <span class="math inline">q(z)</span>
+analizinė, todėl jos realioji dalis neturi tikro maksimumo. Taškas <span
+class="math inline">q&#39;(z_0)=0</span> yra <strong>balno
+taškas</strong>: viena kryptimi maksimumas, kita minimumas. Kontūrą
+deformuojame per balno tašką ta kryptimi, kur <span
+class="math inline">\operatorname{Im}[wq(z)]=\text{const}</span> (nėra
+virpesių), o realioji dalis krenta greičiausiai. Iš čia ir pavadinimas
+„greičiausio nuolydžio metodas“. Formulė lieka ta pati.</p>
+<h3 id="stirlingo-formulė">Stirlingo formulė</h3>
+<p>Pritaikę metodą <span
+class="math inline">\Gamma(z+1)=z^{z+1}\displaystyle\int_0^\infty
+e^{z(\ln t-t)}dt</span> (čia <span class="math inline">q=\ln t-t</span>,
+<span class="math inline">t_0=1</span>, <span
+class="math inline">q(1)=-1</span>, <span
+class="math inline">q&#39;&#39;(1)=-1</span>) gauname <span
+class="math display">\Gamma(z+1)\sim
+z^{z+1}e^{-z}\sqrt{\frac{2\pi}{z}},\qquad n!\approx\sqrt{2\pi
+n}\left(\frac ne\right)^n .</span> Kai <span
+class="math inline">n\geq9</span>, paklaida jau mažesnė nei 1 %.</p>
+</div>
+<div class="deze klaidos" id="klaidos"><div class="deze-antraste">Dažniausios klaidos</div>
+<ul>
+<li><strong>Imamas minimumas, o ne maksimumas.</strong> Jei <span
+class="math inline">q&#39;&#39;(x_0)&gt;0</span>, taškas yra minimumas,
+ir formulė netinka (šaknyje atsirastų neigiamas skaičius).</li>
+<li><strong>Pamirštamas <span class="math inline">w</span> po
+šaknimi.</strong> Smailės plotis yra proporcingas <span
+class="math inline">1/\sqrt{w}</span>.</li>
+<li><strong>Rodiklis supainiojamas su priešeksponentiniu
+daugikliu.</strong> Didelis parametras turi būti
+<strong>rodiklyje</strong> (<span class="math inline">e^{wq}</span>).
+Jei jis yra kitur, pvz., <span class="math inline">x^{2w}=e^{2w\ln
+x}</span>, jį reikia perkelti į rodiklį.</li>
+<li><strong>Maksimumas intervalo gale.</strong> Tada integruojama tik
+pusė Gauso kreivės, ir rezultatą reikia padalyti iš 2.</li>
+</ul>
+</div>
+<h2 id="pavyzdziai">Išspręsti pavyzdžiai</h2>
+<div class="deze pavyzdys" id="pvz-10-1"><div class="deze-antraste">10.1 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Išveskite Stirlingo formulę <span
+class="math inline">n!\approx\sqrt{2\pi n}\,(n/e)^n</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">n!=\Gamma(n+1)=\displaystyle\int_0^\infty
+t^ne^{-t}dt</span>. Keitinys <span class="math inline">t=n\tau</span>,
+<span class="math inline">dt=n\,d\tau</span>: <span
+class="math display">n!=n^{n+1}\int_0^\infty\tau^ne^{-n\tau}d\tau=n^{n+1}\int_0^\infty
+e^{n(\ln\tau-\tau)}d\tau .</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Po keitinio didelis parametras <span class="math inline">n</span>
+atsiduria visame rodiklyje kaip daugiklis, todėl galima taikyti metodą.
+Be keitinio maksimumo taškas <span class="math inline">t=n</span>
+„slinktų“ kartu su <span class="math inline">n</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">q(\tau)=\ln\tau-\tau</span>. <span
+class="math inline">q&#39;=\tfrac1\tau-1=0</span>, todėl <span
+class="math inline">\tau_0=1</span>. <span
+class="math inline">q(1)=-1</span>, <span
+class="math inline">q&#39;&#39;=-\tfrac{1}{\tau^2}</span>, todėl <span
+class="math inline">q&#39;&#39;(1)=-1&lt;0</span>, t. y. tai
+maksimumas.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Pagal formulę su <span class="math inline">f=1</span>: <span
+class="math display">n!\sim
+n^{n+1}e^{-n}\sqrt{\frac{2\pi}{n}}=\sqrt{2\pi
+n}\,\frac{n^n}{e^n}.</span></p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">n!\approx\sqrt{2\pi n}\,(n/e)^n</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-10-2"><div class="deze-antraste">10.2 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Raskite <span
+class="math inline">\displaystyle I(w)=\int_0^\infty
+e^{-w\left(x+\frac1x\right)}dx</span> asimptotiką, kai <span
+class="math inline">w\to\infty</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">q(x)=-\left(x+\dfrac1x\right)</span>, <span
+class="math inline">q&#39;=-1+\dfrac{1}{x^2}=0</span>, todėl <span
+class="math inline">x_0=1</span> (teigiamas, nes integruojama per <span
+class="math inline">x&gt;0</span>).</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">q(1)=-2</span>, <span
+class="math inline">q&#39;&#39;=-\dfrac{2}{x^3}</span>, todėl <span
+class="math inline">q&#39;&#39;(1)=-2</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math display">I(w)\sim
+e^{-2w}\sqrt{\frac{2\pi}{2w}}=e^{-2w}\sqrt{\frac\pi w}.</span>
+Patikrinimas skaitmeniškai, kai <span class="math inline">w=30</span>:
+tikslus integralas <span
+class="math inline">\approx2{,}853\cdot10^{-27}</span>, o formulė duoda
+<span class="math inline">2{,}834\cdot10^{-27}</span> (paklaida 0,7
+%).</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">I(w)\sim\sqrt{\pi/w}\,e^{-2w}</span>.</p>
+</div>
+<h2 id="uzduotys">Savarankiškos užduotys</h2>
+<div class="deze uzduotis" id="uzd-10-1" data-nr="10.1"><div class="deze-antraste">10.1 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Stirlingo formule apskaičiuokite <span class="math inline">10!</span>
+ir raskite santykinę paklaidą (<span
+class="math inline">10!=3\,628\,800</span>).</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span
+class="math inline">\sqrt{20\pi}\,(10/e)^{10}\approx7{,}927\cdot453\,999\approx3\,598\,696</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Paklaida: <span
+class="math inline">\dfrac{3\,628\,800-3\,598\,696}{3\,628\,800}\approx0{,}83\%</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\approx3{,}599\cdot10^6</span>, paklaida apie 0,8
+%.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-10-2" data-nr="10.2"><div class="deze-antraste">10.2 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Raskite <span
+class="math inline">\displaystyle\int_0^1e^{w\,x(1-x)}dx</span>
+asimptotiką, kai <span class="math inline">w\to\infty</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">q=x-x^2</span>, <span
+class="math inline">q&#39;=1-2x=0</span>, todėl <span
+class="math inline">x_0=\tfrac12</span> (intervalo viduje). <span
+class="math inline">q(\tfrac12)=\tfrac14</span>, <span
+class="math inline">q&#39;&#39;=-2</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">I\sim
+e^{w/4}\sqrt{\dfrac{2\pi}{2w}}=e^{w/4}\sqrt{\dfrac\pi w}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">e^{w/4}\sqrt{\pi/w}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-10-3" data-nr="10.3"><div class="deze-antraste">10.3 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Raskite <span
+class="math inline">\displaystyle\int_{-\pi}^{\pi}e^{w\cos x}dx</span>
+asimptotiką.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">q=\cos x</span>, maksimumas <span
+class="math inline">x_0=0</span>, <span
+class="math inline">q(0)=1</span>, <span
+class="math inline">q&#39;&#39;(0)=-1</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">I\sim e^w\sqrt{\dfrac{2\pi}{w}}</span>.
+(Tikslus atsakymas yra <span class="math inline">2\pi I_0(w)</span>, kur
+<span class="math inline">I_0</span> yra modifikuota Beselio
+funkcija.)</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">e^w\sqrt{2\pi/w}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-10-4" data-nr="10.4"><div class="deze-antraste">10.4 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Raskite <span class="math inline">\displaystyle\int_0^\infty
+x^{2w}e^{-wx^2}dx</span> asimptotiką, kai <span
+class="math inline">w\to\infty</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Perkeliame laipsnį į rodiklį: <span
+class="math inline">x^{2w}=e^{2w\ln x}</span>, todėl <span
+class="math inline">q=2\ln x-x^2</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">q&#39;=\dfrac2x-2x=0</span>, todėl <span
+class="math inline">x_0=1</span>. <span
+class="math inline">q(1)=-1</span>, <span
+class="math inline">q&#39;&#39;=-\dfrac{2}{x^2}-2</span>, todėl <span
+class="math inline">q&#39;&#39;(1)=-4</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">I\sim
+e^{-w}\sqrt{\dfrac{2\pi}{4w}}=e^{-w}\sqrt{\dfrac{\pi}{2w}}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">e^{-w}\sqrt{\pi/(2w)}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-10-5" data-nr="10.5"><div class="deze-antraste">10.5 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Naudodamiesi Stirlingo formule, raskite binominio koeficiento <span
+class="math inline">\dbinom{2n}{n}=\dfrac{(2n)!}{(n!)^2}</span>
+asimptotiką.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">(2n)!\approx\sqrt{4\pi
+n}\,\dfrac{(2n)^{2n}}{e^{2n}}</span> ir <span
+class="math inline">(n!)^2\approx2\pi
+n\,\dfrac{n^{2n}}{e^{2n}}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Santykis: <span class="math inline">\dfrac{\sqrt{4\pi n}}{2\pi
+n}\cdot2^{2n}=\dfrac{4^n}{\sqrt{\pi n}}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\dbinom{2n}{n}\approx\dfrac{4^n}{\sqrt{\pi
+n}}</span> (pvz., kai <span class="math inline">n=20</span>: <span
+class="math inline">1{,}387\cdot10^{11}</span>, o tiksliai <span
+class="math inline">1{,}378\cdot10^{11}</span>).</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-10-6" data-nr="10.6"><div class="deze-antraste">10.6 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Raskite <span class="math inline">\displaystyle\int_0^\infty
+e^{-w\left(x^2+\frac{1}{x^2}\right)}dx</span> asimptotiką. (Įdomu tai,
+kad šiuo atveju ji sutampa su tiksliu atsakymu.)</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">q=-\left(x^2+x^{-2}\right)</span>, <span
+class="math inline">q&#39;=-2x+2x^{-3}=0</span>, todėl <span
+class="math inline">x_0=1</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">q(1)=-2</span>, <span
+class="math inline">q&#39;&#39;=-2-6x^{-4}</span>, todėl <span
+class="math inline">q&#39;&#39;(1)=-8</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">I\sim
+e^{-2w}\sqrt{\dfrac{2\pi}{8w}}=\dfrac12\sqrt{\dfrac\pi
+w}\,e^{-2w}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\dfrac12\sqrt{\pi/w}\,e^{-2w}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-10-7" data-nr="10.7"><div class="deze-antraste">10.7 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Raskite <span class="math inline">\Gamma(w+1)</span> asimptotiką
+tiesiogiai, be keitinio <span class="math inline">t=w\tau</span>:
+maksimumą ieškokite funkcijai <span class="math inline">\varphi(t)=w\ln
+t-t</span>. Paaiškinkite, kodėl atsakymas sutampa su Stirlingo
+formule.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">\Gamma(w+1)=\displaystyle\int_0^\infty
+e^{w\ln t-t}dt</span>. <span class="math inline">\varphi&#39;=\dfrac
+wt-1=0</span>, todėl <span class="math inline">t_0=w</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">\varphi(w)=w\ln w-w</span>, <span
+class="math inline">\varphi&#39;&#39;=-\dfrac{w}{t^2}</span>, todėl
+<span class="math inline">\varphi&#39;&#39;(w)=-\dfrac1w</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Gauso aproksimacija: <span class="math inline">\displaystyle\int
+e^{\varphi(t_0)-\frac{(t-t_0)^2}{2w}}dt=e^{w\ln w-w}\sqrt{2\pi
+w}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\Gamma(w+1)\sim\sqrt{2\pi w}\,w^we^{-w}</span>. Tai
+ta pati Stirlingo formulė, nes rezultatas nepriklauso nuo integravimo
+kintamojo pasirinkimo.</p>
+</div>
+</div>
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="tema-09.html"><span>← Ankstesnė tema</span><strong>9. Begalinės sumos, Hevisaido ir Dirako funkcijos</strong></a>
+  <a class="puslapis-kitas" href="tema-11.html"><span>Kita tema →</span><strong>11. Furjė transformacija ir sąsūka</strong></a>
+</nav>
+
+<script src="svetaine.js"></script>
+</body>
+</html>

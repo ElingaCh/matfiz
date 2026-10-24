@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3. Antros ir aukštesnės eilės tiesinės diferencialinės
+lygtys · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="temos-puslapis" data-tema="3" data-uzduociu="7">
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <a class="atgal" href="index.html">← Visos temos</a>
+    <nav class="skyreliai" aria-label="Temos dalys">
+      <a href="#teorija">Teorija</a>
+      <a href="#klaidos">Klaidos</a>
+      <a href="#pavyzdziai">Pavyzdžiai</a>
+      <a href="#uzduotys">Užduotys</a>
+    </nav>
+    <span class="temos-progresas" aria-live="polite"></span>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">3 tema · Koordinatės ir paprastosios
+diferencialinės lygtys</p>
+    <h1>Antros ir aukštesnės eilės tiesinės diferencialinės lygtys</h1>
+    <p class="hero-info">3 išspręsti pavyzdžiai · 7 užduotys · sprendimai atidengiami po žingsnį</p>
+    <div class="juosta"><div class="juosta-uzpildas"></div></div>
+  </div>
+</header>
+
+<main class="turinys">
+<div class="deze teorija" id="teorija"><div class="deze-antraste">Teorija</div>
+<h3 id="tiesinė-antros-eilės-lygtis">Tiesinė antros eilės lygtis</h3>
+<p><span
+class="math display">y&#39;&#39;+P_1(x)\,y&#39;+P_2(x)\,y=f(x).</span>
+Kai <span class="math inline">f\equiv0</span>, lygtis
+<strong>homogeninė</strong>, o kai <span
+class="math inline">f\neq0</span>, <strong>nehomogeninė</strong>. Kairę
+pusę žymime <span class="math inline">L[y]</span>. Operatorius <span
+class="math inline">L</span> yra <strong>tiesinis</strong>: <span
+class="math display">L[c_1y_1+c_2y_2]=c_1L[y_1]+c_2L[y_2].</span> Todėl,
+jei <span class="math inline">y_1</span> ir <span
+class="math inline">y_2</span> yra homogeninės lygties sprendiniai, tai
+ir <span class="math inline">c_1y_1+c_2y_2</span> yra sprendinys.</p>
+<h3 id="vronskio-determinantas-ir-fundamentalioji-sistema">Vronskio
+determinantas ir fundamentalioji sistema</h3>
+<p><span
+class="math display">W(y_1,y_2)=\begin{vmatrix}y_1&amp;y_2\\y_1&#39;&amp;y_2&#39;\end{vmatrix}=y_1y_2&#39;-y_1&#39;y_2
+.</span> Jei <span class="math inline">W\neq0</span>, sprendiniai <span
+class="math inline">y_1,y_2</span> yra <strong>tiesiškai
+nepriklausomi</strong> (vienas nėra kito kartotinis). Tada jie sudaro
+<strong>fundamentaliąją sistemą</strong>, o <span
+class="math display">y=c_1y_1+c_2y_2</span> yra homogeninės lygties
+<strong>bendrasis sprendinys</strong>.</p>
+<h3 id="liuvilio-formulė">Liuvilio formulė</h3>
+<p><span class="math inline">W(x)=C\,e^{-\int P_1\,dx}</span>. Iš jos
+išplaukia svarbi išvada: <strong>žinant vieną sprendinį <span
+class="math inline">y_1</span>, antrąjį galima rasti</strong>: <span
+class="math display">y_2=y_1\int\frac{e^{-\int P_1\,dx}}{y_1^2}\,dx
+.</span></p>
+<h3 id="lygtys-su-pastoviais-koeficientais-ypyqy0">Lygtys su pastoviais
+koeficientais <span
+class="math inline">y&#39;&#39;+py&#39;+qy=0</span></h3>
+<p>Ieškome <span class="math inline">y=e^{kx}</span> ir gauname
+<strong>charakteringąją lygtį</strong> <span
+class="math inline">k^2+pk+q=0</span>.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Šaknys</th>
+<th style="text-align: left;">Bendrasis sprendinys</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">realios, skirtingos <span
+class="math inline">k_1\neq k_2</span></td>
+<td style="text-align: left;"><span
+class="math inline">y=c_1e^{k_1x}+c_2e^{k_2x}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">realios, vienodos <span
+class="math inline">k_1=k_2=k</span></td>
+<td style="text-align: left;"><span
+class="math inline">y=(c_1+c_2x)e^{kx}</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">kompleksinės <span
+class="math inline">k=\alpha\pm i\beta</span></td>
+<td style="text-align: left;"><span class="math inline">y=e^{\alpha
+x}(c_1\cos\beta x+c_2\sin\beta x)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Aukštesnė eilė</strong> sprendžiama taip pat: <span
+class="math inline">n</span>-tos eilės lygtis turi <span
+class="math inline">n</span> šaknų. Kiekviena <span
+class="math inline">m</span>-kartotinė šaknis <span
+class="math inline">k</span> duoda <span
+class="math inline">e^{kx},xe^{kx},\dots,x^{m-1}e^{kx}</span>, o
+kartotinė kompleksinė pora <span class="math inline">\alpha\pm
+i\beta</span> duoda <span class="math inline">x^je^{\alpha x}\cos\beta
+x</span> ir <span class="math inline">x^je^{\alpha x}\sin\beta
+x</span>.</p>
+<h3 id="nehomogeninė-lygtis">Nehomogeninė lygtis</h3>
+<p><span class="math display">y=\bar y+\tilde y,</span> kur <span
+class="math inline">\bar y</span> yra homogeninės lygties bendrasis
+sprendinys, o <span class="math inline">\tilde y</span> yra <strong>bet
+kuris vienas</strong> nehomogeninės lygties (atskirasis) sprendinys.</p>
+<p><strong>Neapibrėžtųjų koeficientų metodas</strong> (tik pastoviems
+koeficientams). Jei <span class="math inline">f(x)=e^{\alpha
+x}\big(P_n(x)\cos\beta x+Q_m(x)\sin\beta x\big)</span>, tai <span
+class="math display">\tilde y=x^s\,e^{\alpha x}\big(U_l(x)\cos\beta
+x+V_l(x)\sin\beta x\big),\qquad l=\max(n,m),</span> kur <span
+class="math inline">U_l</span> ir <span class="math inline">V_l</span>
+yra <span class="math inline">l</span>-tojo laipsnio daugianariai su
+nežinomais koeficientais, o <span class="math inline">s</span> yra
+skaičiaus <span class="math inline">\alpha+i\beta</span> kartotinumas
+tarp charakteringosios lygties šaknų (<span
+class="math inline">s=0</span>, jei jis nėra šaknis). Kai <span
+class="math inline">s&gt;0</span>, tai vadinama
+<strong>rezonansu</strong>.</p>
+<p><strong>Konstantų varijavimo (Lagranžo) metodas</strong> (tinka
+visada). <span class="math inline">\tilde y=c_1(x)y_1+c_2(x)y_2</span>,
+kur <span class="math display">\begin{cases}c_1&#39;y_1+c_2&#39;y_2=0,\\
+c_1&#39;y_1&#39;+c_2&#39;y_2&#39;=f(x),\end{cases}\qquad\Longrightarrow\qquad
+c_1&#39;=-\frac{y_2f}{W},\quad c_2&#39;=\frac{y_1f}{W}.</span></p>
+<h3 id="eilės-mažinimas">Eilės mažinimas</h3>
+<ul>
+<li><span class="math inline">y&#39;&#39;=f(x,y&#39;)</span>, t. y. nėra
+<span class="math inline">y</span>: keitinys <span
+class="math inline">y&#39;=p(x)</span>, <span
+class="math inline">y&#39;&#39;=p&#39;</span>.</li>
+<li><span class="math inline">y&#39;&#39;=f(y,y&#39;)</span>, t. y. nėra
+<span class="math inline">x</span>: keitinys <span
+class="math inline">y&#39;=p(y)</span>, <span
+class="math inline">y&#39;&#39;=p\dfrac{dp}{dy}</span>.</li>
+</ul>
+</div>
+<div class="deze klaidos" id="klaidos"><div class="deze-antraste">Dažniausios klaidos</div>
+<ul>
+<li><strong>Rezonansas.</strong> Jei dešinės pusės <span
+class="math inline">e^{\alpha x}</span> arba <span
+class="math inline">\cos\beta x</span> jau yra tarp homogeninės lygties
+sprendinių, spėjinį reikia padauginti iš <span
+class="math inline">x^s</span>. Kitaip gaunama lygybė <span
+class="math inline">0=f</span>.</li>
+<li><strong>Spėjinyje trūksta narių.</strong> Kai dešinėje yra tik <span
+class="math inline">\cos3x</span>, spėjinyje vis tiek reikia ir <span
+class="math inline">\cos3x</span>, ir <span
+class="math inline">\sin3x</span>.</li>
+<li><strong>Konstantų varijavimo formulė</strong> galioja tik tada, kai
+koeficientas prie <span class="math inline">y&#39;&#39;</span> lygus 1.
+Prieš ją taikant reikia padalyti lygtį iš koeficiento prie <span
+class="math inline">y&#39;&#39;</span>.</li>
+<li><strong>Kartotinės šaknys.</strong> Šaknis <span
+class="math inline">k=0</span>, kurios kartotinumas 3, duoda <span
+class="math inline">1,x,x^2</span>, o ne tris konstantas.</li>
+<li><strong>Bendrajame sprendinyje</strong> turi būti tiek laisvų
+konstantų, kokia yra lygties eilė.</li>
+</ul>
+</div>
+<h2 id="pavyzdziai">Išspręsti pavyzdžiai</h2>
+<div class="deze pavyzdys" id="pvz-3-1"><div class="deze-antraste">3.1 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Išspręskite lygtį <span
+class="math inline">y&#39;&#39;-2y&#39;+10y=31\cos3x+\sin3x</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Homogeninė lygtis: <span class="math inline">k^2-2k+10=0</span>,
+todėl <span class="math inline">k=1\pm\sqrt{1-10}=1\pm3i</span>. <span
+class="math display">\bar y=e^x(C_1\cos3x+C_2\sin3x).</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Dešinė pusė yra <span class="math inline">e^{0\cdot
+x}(31\cos3x+\sin3x)</span>, t. y. <span
+class="math inline">\alpha+i\beta=3i</span>. Tai nėra charakteringosios
+lygties šaknis (<span class="math inline">1\pm3i\neq3i</span>), todėl
+<span class="math inline">s=0</span> ir spėjinys yra <span
+class="math display">\tilde y=A\cos3x+B\sin3x .</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Spėjinys turi turėti tą pačią formą kaip dešinė pusė.
+Diferencijuojant <span class="math inline">\cos</span> virsta <span
+class="math inline">\sin</span>, todėl reikia abiejų narių.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Diferencijuojame: <span class="math inline">\tilde
+y&#39;=-3A\sin3x+3B\cos3x</span> ir <span class="math inline">\tilde
+y&#39;&#39;=-9A\cos3x-9B\sin3x</span>. Įrašome į lygtį ir sugrupuojame:
+<span
+class="math display">\cos3x\,(-9A-6B+10A)+\sin3x\,(-9B+6A+10B)=31\cos3x+\sin3x
+.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p>Sulyginame koeficientus: <span
+class="math display">\begin{cases}A-6B=31,\\ 6A+B=1\end{cases}\
+\Longrightarrow\ A=1,\ B=-5.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p><span class="math inline">\cos3x</span> ir <span
+class="math inline">\sin3x</span> yra tiesiškai nepriklausomos
+funkcijos, todėl lygybė galioja visiems <span
+class="math inline">x</span> tik tada, kai sutampa koeficientai prie
+kiekvienos iš jų.</p>
+</div>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=e^x(C_1\cos3x+C_2\sin3x)+\cos3x-5\sin3x</span>.</p>
+<div class="pastaba"><span class="pastaba-zyme">Pastaba.</span>
+<p>Pratybų užrašuose atsakymas parašytas kaip „<span
+class="math inline">\cos(3x)\cdot5\sin(3x)</span>“. Teisinga <span
+class="math inline">\cos3x-5\sin3x</span>, o tai galima patikrinti
+įrašius į lygtį.</p>
+</div>
+</div>
+<div class="deze pavyzdys" id="pvz-3-2"><div class="deze-antraste">3.2 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Konstantų varijavimo metodu išspręskite
+lygtį <span class="math inline">y&#39;&#39;+y=\dfrac{1}{\cos
+x}</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Homogeninė lygtis: <span class="math inline">k^2+1=0</span>, todėl
+<span class="math inline">k=\pm i</span> ir <span
+class="math inline">y_1=\cos x</span>, <span
+class="math inline">y_2=\sin x</span>.</p>
+<p>Vronskio determinantas: <span class="math inline">W=\cos x\cdot\cos
+x-(-\sin x)\sin x=1</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Dešinė pusė <span class="math inline">1/\cos x</span> nėra
+„eksponentė × daugianaris × cos/sin“, todėl neapibrėžtųjų koeficientų
+metodas netinka, ir lieka konstantų varijavimas.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Sprendžiame sistemą: <span
+class="math display">c_1&#39;=-\frac{y_2f}{W}=-\frac{\sin x}{\cos
+x}=-\operatorname{tg}x,\qquad c_2&#39;=\frac{y_1f}{W}=\frac{\cos x}{\cos
+x}=1 .</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Integruojame: <span
+class="math inline">c_1=\displaystyle\int(-\operatorname{tg}x)\,dx=\ln|\cos
+x|+C_1</span> ir <span class="math inline">c_2=x+C_2</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><span class="math inline">y=c_1(x)\cos x+c_2(x)\sin x</span>: <span
+class="math display">y=C_1\cos x+C_2\sin x+\cos x\ln|\cos x|+x\sin x
+.</span></p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">y=C_1\cos
+x+C_2\sin x+\cos x\ln|\cos x|+x\sin x</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-3-3"><div class="deze-antraste">3.3 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Lygtis <span
+class="math inline">(1-x^2)y&#39;&#39;-2xy&#39;+2y=0</span> turi
+sprendinį <span class="math inline">y_1=x</span>. Raskite bendrąjį
+sprendinį.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Padaliname iš <span class="math inline">(1-x^2)</span>, kad
+koeficientas prie <span class="math inline">y&#39;&#39;</span> būtų
+lygus 1: <span class="math inline">P_1(x)=-\dfrac{2x}{1-x^2}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">-\displaystyle\int
+P_1dx=\int\frac{2x}{1-x^2}dx=-\ln|1-x^2|</span>, todėl <span
+class="math inline">e^{-\int P_1dx}=\dfrac{1}{1-x^2}</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Skaitiklis <span class="math inline">2x</span> yra vardiklio <span
+class="math inline">1-x^2</span> išvestinė su minusu, todėl integralas
+yra <span class="math inline">-\ln|1-x^2|</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Pagal Liuvilio formulę: <span
+class="math display">y_2=x\int\frac{dx}{x^2(1-x^2)}=x\int\left(\frac{1}{x^2}+\frac{1}{1-x^2}\right)dx=x\left(-\frac1x+\frac12\ln\left|\frac{1+x}{1-x}\right|\right).</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Paprastosios trupmenos: <span
+class="math inline">\dfrac{1}{x^2(1-x^2)}=\dfrac{1}{x^2}+\dfrac{1}{1-x^2}</span>.
+Tai patikrinama subendravardiklinus: <span
+class="math inline">\dfrac{1-x^2+x^2}{x^2(1-x^2)}</span>.</p>
+</div>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=C_1x+C_2\left(\dfrac
+x2\ln\left|\dfrac{1+x}{1-x}\right|-1\right)</span>.</p>
+</div>
+<h2 id="uzduotys">Savarankiškos užduotys</h2>
+<div class="deze uzduotis" id="uzd-3-1" data-nr="3.1"><div class="deze-antraste">3.1 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Išspręskite Košy uždavinį <span
+class="math inline">y&#39;&#39;-5y&#39;+6y=0</span>, <span
+class="math inline">y(0)=1</span>, <span
+class="math inline">y&#39;(0)=0</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">k^2-5k+6=0</span>, todėl <span
+class="math inline">k_1=2</span>, <span
+class="math inline">k_2=3</span>, o <span
+class="math inline">y=C_1e^{2x}+C_2e^{3x}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">y(0)=C_1+C_2=1</span>, <span
+class="math inline">y&#39;(0)=2C_1+3C_2=0</span>. Iš čia <span
+class="math inline">C_1=3</span>, <span
+class="math inline">C_2=-2</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=3e^{2x}-2e^{3x}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-3-2" data-nr="3.2"><div class="deze-antraste">3.2 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Išspręskite lygtį <span
+class="math inline">y&#39;&#39;+4y&#39;+4y=0</span> ir apskaičiuodami
+Vronskio determinantą įsitikinkite, kad gauti sprendiniai tiesiškai
+nepriklausomi.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">k^2+4k+4=(k+2)^2=0</span>, todėl <span
+class="math inline">k=-2</span> yra dviguba šaknis. <span
+class="math inline">y_1=e^{-2x}</span>, <span
+class="math inline">y_2=xe^{-2x}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span
+class="math display">W=\begin{vmatrix}e^{-2x}&amp;xe^{-2x}\\-2e^{-2x}&amp;(1-2x)e^{-2x}\end{vmatrix}=e^{-4x}(1-2x+2x)=e^{-4x}\neq0
+.</span></p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=(C_1+C_2x)e^{-2x}</span>, <span
+class="math inline">W=e^{-4x}\neq0</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-3-3" data-nr="3.3"><div class="deze-antraste">3.3 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Išspręskite lygtį <span
+class="math inline">y^{(5)}+2y&#39;&#39;&#39;+y&#39;=0</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Charakteringoji lygtis: <span
+class="math inline">k^5+2k^3+k=k(k^4+2k^2+1)=k(k^2+1)^2=0</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Šaknys: <span class="math inline">k=0</span> (paprasta) ir <span
+class="math inline">k=\pm i</span> (abi dvigubos).</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">k=0</span> duoda <span
+class="math inline">1</span>, o dviguba pora <span
+class="math inline">\pm i</span> duoda <span class="math inline">\cos
+x,\ \sin x,\ x\cos x,\ x\sin x</span>. Iš viso 5 funkcijos, tiek pat,
+kiek yra lygties eilė.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=C_1+(C_2+C_3x)\cos x+(C_4+C_5x)\sin x</span>.</p>
+<div class="pastaba"><span class="pastaba-zyme">Pastaba.</span>
+<p>Pratybų uždavinio <span
+class="math inline">y^{(7)}+2y^{(5)}+y&#39;&#39;&#39;=0</span> atsakyme
+yra rašybos klaidų. Teisingai: <span
+class="math inline">y=C_1+C_2x+C_3x^2+(C_4+C_5x)\cos x+(C_6+C_7x)\sin
+x</span>, nes <span class="math inline">k=0</span> yra triguba
+šaknis.</p>
+</div>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-3-4" data-nr="3.4"><div class="deze-antraste">3.4 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Išspręskite lygtį <span
+class="math inline">y&#39;&#39;+y&#39;-2y=6xe^x</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">k^2+k-2=(k+2)(k-1)=0</span>, todėl <span
+class="math inline">\bar y=C_1e^x+C_2e^{-2x}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Dešinėje yra <span class="math inline">e^{1\cdot x}\cdot6x</span>, o
+<span class="math inline">\alpha=1</span> yra paprasta šaknis, todėl
+<span class="math inline">s=1</span> (rezonansas). Spėjinys: <span
+class="math inline">\tilde y=x(Ax+B)e^x=(Ax^2+Bx)e^x</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Pažymime <span class="math inline">Q=Ax^2+Bx</span>. Tada <span
+class="math inline">(Qe^x)&#39;=(Q&#39;+Q)e^x</span> ir <span
+class="math inline">(Qe^x)&#39;&#39;=(Q&#39;&#39;+2Q&#39;+Q)e^x</span>.
+Įrašę gauname <span class="math display">(Q&#39;&#39;+3Q&#39;)e^x=6xe^x\
+\Longrightarrow\ 2A+3(2Ax+B)=6x .</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p>Sulyginame koeficientus: prie <span class="math inline">x</span>
+gauname <span class="math inline">6A=6</span>, todėl <span
+class="math inline">A=1</span>, o laisvasis narys duoda <span
+class="math inline">2A+3B=0</span>, todėl <span
+class="math inline">B=-\tfrac23</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=C_1e^x+C_2e^{-2x}+\left(x^2-\tfrac23x\right)e^x</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-3-5" data-nr="3.5"><div class="deze-antraste">3.5 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Išspręskite lygtį <span
+class="math inline">y&#39;&#39;+9y=6\cos3x</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">k=\pm3i</span>, todėl <span
+class="math inline">\bar y=C_1\cos3x+C_2\sin3x</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Dešinėje yra <span class="math inline">\cos3x</span>, t. y. <span
+class="math inline">\alpha+i\beta=3i</span>, o tai yra šaknis, todėl
+<span class="math inline">s=1</span> (rezonansas): <span
+class="math inline">\tilde y=x(A\cos3x+B\sin3x)</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">\tilde
+y&#39;&#39;=-6A\sin3x+6B\cos3x-9x(A\cos3x+B\sin3x)</span>. Įrašę gauname
+<span class="math inline">-6A\sin3x+6B\cos3x=6\cos3x</span>, todėl <span
+class="math inline">A=0</span>, <span
+class="math inline">B=1</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Nariai su <span class="math inline">x</span> susiprastina, nes <span
+class="math inline">\cos3x</span> ir <span
+class="math inline">\sin3x</span> tenkina homogeninę lygtį. Lieka tik
+nariai be <span class="math inline">x</span>.</p>
+</div>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=C_1\cos3x+C_2\sin3x+x\sin3x</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-3-6" data-nr="3.6"><div class="deze-antraste">3.6 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Konstantų varijavimo metodu išspręskite lygtį <span
+class="math inline">y&#39;&#39;-2y&#39;+y=\dfrac{e^x}{x}</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">(k-1)^2=0</span>, todėl <span
+class="math inline">y_1=e^x</span> ir <span
+class="math inline">y_2=xe^x</span>.</p>
+<p><span class="math inline">W=e^x(1+x)e^x-e^x\cdot
+xe^x=e^{2x}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">c_1&#39;=-\dfrac{y_2f}{W}=-\dfrac{xe^x\cdot
+e^x/x}{e^{2x}}=-1</span> ir <span
+class="math inline">c_2&#39;=\dfrac{y_1f}{W}=\dfrac{e^x\cdot
+e^x/x}{e^{2x}}=\dfrac1x</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">c_1=-x+C_1</span>, <span
+class="math inline">c_2=\ln|x|+C_2</span>. Tada <span
+class="math display">y=(-x+C_1)e^x+(\ln|x|+C_2)xe^x .</span> Narys <span
+class="math inline">-xe^x</span> yra homogeninis sprendinys, todėl jį
+galima įjungti į <span class="math inline">C_2xe^x</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=(C_1+C_2x)e^x+xe^x\ln|x|</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-3-7" data-nr="3.7"><div class="deze-antraste">3.7 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Išspręskite Košy uždavinį <span
+class="math inline">yy&#39;&#39;-(y&#39;)^2=y^3</span>, <span
+class="math inline">y(0)=-\tfrac12</span>, <span
+class="math inline">y&#39;(0)=0</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Lygtyje nėra <span class="math inline">x</span>, todėl naudojame
+keitinį <span class="math inline">y&#39;=p(y)</span>, <span
+class="math inline">y&#39;&#39;=p\dfrac{dp}{dy}</span>: <span
+class="math display">y\,p\,\frac{dp}{dy}-p^2=y^3 .</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Pažymime <span class="math inline">w=p^2</span>, tada <span
+class="math inline">\dfrac{dw}{dy}=2p\dfrac{dp}{dy}</span>. Gauname
+tiesinę lygtį <span class="math display">\frac y2\,w&#39;-w=y^3\
+\Longrightarrow\ w&#39;-\frac2y\,w=2y^2 .</span> Jos sprendinys: <span
+class="math inline">w=y^2(2y+C)</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Homogeninė lygtis duoda <span class="math inline">w=Ky^2</span>.
+Varijuojant gauname <span class="math inline">K&#39;y^2=2y^2</span>,
+todėl <span class="math inline">K=2y+C</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Kai <span class="math inline">y=-\tfrac12</span>, <span
+class="math inline">p=y&#39;=0</span>, todėl <span
+class="math inline">0=\tfrac14(-1+C)</span> ir <span
+class="math inline">C=1</span>. Taigi <span
+class="math inline">(y&#39;)^2=y^2(2y+1)</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p>Keitinys <span class="math inline">s=\sqrt{2y+1}</span>, <span
+class="math inline">y=\dfrac{s^2-1}{2}</span>, <span
+class="math inline">dy=s\,ds</span>: <span
+class="math display">\frac{dy}{y\sqrt{2y+1}}=\frac{2\,ds}{s^2-1}=\pm dx\
+\Longrightarrow\ \ln\left|\frac{s-1}{s+1}\right|=\pm x+c .</span> Kai
+<span class="math inline">x=0</span>, <span
+class="math inline">s=0</span>, todėl <span
+class="math inline">c=0</span>. Iš čia <span
+class="math inline">s=\left|\operatorname{th}\dfrac
+x2\right|</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">5 žingsnis</div>
+<p><span class="math inline">2y+1=\operatorname{th}^2\dfrac x2</span>,
+todėl <span
+class="math inline">y=\dfrac{\operatorname{th}^2(x/2)-1}{2}=-\dfrac{1}{2\operatorname{ch}^2(x/2)}</span>.
+Patikriname: <span class="math inline">y(0)=-\tfrac12</span>, <span
+class="math inline">y&#39;(0)=0</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=-\dfrac{1}{2\operatorname{ch}^2(x/2)}</span>.</p>
+</div>
+</div>
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="tema-02.html"><span>← Ankstesnė tema</span><strong>2. Pirmos eilės diferencialinės lygtys</strong></a>
+  <a class="puslapis-kitas" href="tema-04.html"><span>Kita tema →</span><strong>4. Kraštinis uždavinys ir Gryno funkcija</strong></a>
+</nav>
+
+<script src="svetaine.js"></script>
+</body>
+</html>

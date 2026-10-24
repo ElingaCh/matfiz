@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2. Pirmos eilės diferencialinės lygtys · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="temos-puslapis" data-tema="2" data-uzduociu="7">
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <a class="atgal" href="index.html">← Visos temos</a>
+    <nav class="skyreliai" aria-label="Temos dalys">
+      <a href="#teorija">Teorija</a>
+      <a href="#klaidos">Klaidos</a>
+      <a href="#pavyzdziai">Pavyzdžiai</a>
+      <a href="#uzduotys">Užduotys</a>
+    </nav>
+    <span class="temos-progresas" aria-live="polite"></span>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">2 tema · Koordinatės ir paprastosios
+diferencialinės lygtys</p>
+    <h1>Pirmos eilės diferencialinės lygtys</h1>
+    <p class="hero-info">3 išspręsti pavyzdžiai · 7 užduotys · sprendimai atidengiami po žingsnį</p>
+    <div class="juosta"><div class="juosta-uzpildas"></div></div>
+  </div>
+</header>
+
+<main class="turinys">
+<div class="deze teorija" id="teorija"><div class="deze-antraste">Teorija</div>
+<h3 id="kas-yra-diferencialinė-lygtis">Kas yra diferencialinė
+lygtis</h3>
+<p><strong>Diferencialinė lygtis (DL)</strong> yra lygtis, kurioje
+nežinoma yra <strong>funkcija</strong> <span
+class="math inline">y(x)</span>, o lygtyje dalyvauja jos išvestinės:
+<span class="math inline">F(x,y,y&#39;,\dots,y^{(n)})=0</span>.
+Aukščiausios išvestinės eilė vadinama <strong>lygties eile</strong>. Jei
+ieškoma vieno kintamojo funkcija, lygtis vadinama
+<strong>paprastąja</strong>.</p>
+<ul>
+<li><strong>Bendrasis sprendinys</strong> <span
+class="math inline">y=\varphi(x,C)</span> yra sprendinių šeima su laisva
+konstanta <span class="math inline">C</span>. Pirmos eilės lygtis turi
+vieną konstantą.</li>
+<li><strong>Atskirasis sprendinys</strong> gaunamas parinkus konkrečią
+<span class="math inline">C</span> reikšmę.</li>
+<li><strong>Košy uždavinys:</strong> rasti sprendinį, tenkinantį
+<strong>pradinę sąlygą</strong> <span
+class="math inline">y(x_0)=y_0</span>. Ji nustato <span
+class="math inline">C</span>.</li>
+<li><strong>Ypatingasis sprendinys</strong> yra sprendinys, kurio
+negalima gauti iš bendrojo su jokia <span class="math inline">C</span>
+reikšme. Dažniausiai jis „pametamas“ dalijant iš reiškinio, kuris gali
+būti lygus nuliui.</li>
+</ul>
+<h3 id="kintamųjų-atskyrimo-metodas">1. Kintamųjų atskyrimo metodas</h3>
+<p>Jei lygtį galima užrašyti kaip <span
+class="math inline">f(y)\,dy=g(x)\,dx</span> (visi <span
+class="math inline">y</span> vienoje pusėje, visi <span
+class="math inline">x</span> kitoje), integruojame abi puses: <span
+class="math display">\int f(y)\,dy=\int g(x)\,dx+C .</span> Prieš
+dalydami iš <span class="math inline">h(y)</span> patikriname, ar <span
+class="math inline">h(y)=0</span> nėra sprendinys.</p>
+<h3 id="homogeninė-lygtis-yfleftfrac-yxright">2. Homogeninė lygtis <span
+class="math inline">y&#39;=f\!\left(\frac yx\right)</span></h3>
+<p>Keitinys <span class="math inline">y=ux</span> (<span
+class="math inline">u</span> yra nauja nežinoma funkcija), tada <span
+class="math inline">y&#39;=u&#39;x+u</span>. Lygtis virsta lygtimi su
+atskiriamais kintamaisiais <span
+class="math inline">u&#39;x=f(u)-u</span>.</p>
+<h3 id="tiesinė-lygtis-ypxyqx">3. Tiesinė lygtis <span
+class="math inline">y&#39;+P(x)y=Q(x)</span></h3>
+<p>„Tiesinė“ reiškia, kad <span class="math inline">y</span> ir <span
+class="math inline">y&#39;</span> yra pirmo laipsnio ir nesudauginti
+tarpusavyje. Kai <span class="math inline">Q=0</span>, lygtis vadinama
+homogenine, o jos sprendinys yra <span class="math inline">y=Ce^{-\int
+P\,dx}</span>.</p>
+<p><strong>Bernulio metodas.</strong> Ieškome <span
+class="math inline">y=uv</span>. Tada <span
+class="math inline">u&#39;v+u\,(v&#39;+Pv)=Q</span>. Funkciją <span
+class="math inline">v</span> parenkame taip, kad skliaustas būtų lygus
+nuliui (<span class="math inline">v&#39;+Pv=0</span>), o tada lieka
+<span class="math inline">u&#39;v=Q</span>.</p>
+<p><strong>Konstantų varijavimo (Lagranžo) metodas.</strong> Homogeninės
+lygties sprendinyje konstantą pakeičiame funkcija: <span
+class="math inline">y=C(x)e^{-\int P\,dx}</span>, įrašome į lygtį ir
+randame <span class="math inline">C(x)</span>.</p>
+<p>Abu metodai duoda tą pačią formulę: <span
+class="math display">y=e^{-\int P\,dx}\left(\int Q\,e^{\int
+P\,dx}\,dx+C\right).</span></p>
+<h3 id="bernulio-lygtis-ypxyqxyn-nneq01">4. Bernulio lygtis <span
+class="math inline">y&#39;+P(x)y=Q(x)\,y^n</span> (<span
+class="math inline">n\neq0,1</span>)</h3>
+<p>Keitinys <span class="math inline">z=y^{1-n}</span> paverčia ją
+tiesine: <span class="math inline">z&#39;+(1-n)Pz=(1-n)Q</span>. Arba ją
+galima iš karto spręsti keitiniu <span
+class="math inline">y=uv</span>.</p>
+<h3 id="lygtis-tiesinė-x-atžvilgiu">5. Lygtis, tiesinė <span
+class="math inline">x</span> atžvilgiu</h3>
+<p>Kartais lygtis nėra tiesinė <span class="math inline">y</span>
+atžvilgiu, bet tampa tiesinė, jei <span class="math inline">y</span>
+laikome nepriklausomu kintamuoju, o <span
+class="math inline">x=x(y)</span> ieškoma funkcija. Tada naudojame <span
+class="math inline">\dfrac{dx}{dy}=\dfrac{1}{y&#39;}</span>.</p>
+<h3 id="kaip-atpažinti-tipą">Kaip atpažinti tipą</h3>
+<ol type="1">
+<li>Ar kintamuosius galima atskirti? Tada naudojame 1 metodą.</li>
+<li>Ar dešinė pusė priklauso tik nuo <span
+class="math inline">y/x</span>? Tada tai homogeninė lygtis (2
+metodas).</li>
+<li>Ar <span class="math inline">y</span> ir <span
+class="math inline">y&#39;</span> yra pirmo laipsnio? Tada lygtis
+tiesinė (3 metodas).</li>
+<li>Ar yra papildomas <span class="math inline">y^n</span> dešinėje?
+Tada tai Bernulio lygtis (4 metodas).</li>
+<li>Jei niekas netinka, pabandome sukeisti <span
+class="math inline">x</span> ir <span class="math inline">y</span>
+vaidmenis (5 metodas) arba ieškome keitinio, pvz., <span
+class="math inline">z=x+y</span>.</li>
+</ol>
+</div>
+<div class="deze klaidos" id="klaidos"><div class="deze-antraste">Dažniausios klaidos</div>
+<ul>
+<li><strong>Pametami sprendiniai.</strong> Dalijant iš <span
+class="math inline">y</span>, <span class="math inline">y+2</span> ir
+pan., būtina patikrinti, ar <span class="math inline">y=0</span>, <span
+class="math inline">y=-2</span> nėra sprendiniai.</li>
+<li><strong>Konstanta pridedama per vėlai.</strong> <span
+class="math inline">C</span> rašoma iškart po integravimo, o ne tada,
+kai <span class="math inline">y</span> jau išreikštas. Pavyzdžiui, <span
+class="math inline">\ln|y|=x^2+C</span> duoda <span
+class="math inline">y=C_1e^{x^2}</span>, o ne <span
+class="math inline">y=e^{x^2}+C</span>.</li>
+<li><strong>Neteisingas ženklas eksponentėje.</strong> Homogeninės
+tiesinės lygties sprendinys yra <span class="math inline">e^{-\int
+P\,dx}</span> (su minusu).</li>
+<li><strong>Rodiklinės funkcijos integralas:</strong> <span
+class="math inline">\displaystyle\int a^{-y}dy=-\frac{a^{-y}}{\ln
+a}</span>. Minusas dažnai pamirštamas.</li>
+<li><strong>Lygtis neperrašoma į standartinį pavidalą.</strong> Prieš
+naudojant formulę reikia gauti <span
+class="math inline">y&#39;+P(x)y=Q(x)</span>, t. y. koeficientas prie
+<span class="math inline">y&#39;</span> turi būti lygus 1.</li>
+</ul>
+</div>
+<h2 id="pavyzdziai">Išspręsti pavyzdžiai</h2>
+<div class="deze pavyzdys" id="pvz-2-1"><div class="deze-antraste">2.1 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Išspręskite lygtį <span
+class="math inline">y&#39;-xy^2=2xy</span>. Raskite ir ypatinguosius
+sprendinius.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Perkeliame narius ir iškeliame bendrą daugiklį: <span
+class="math display">y&#39;=xy^2+2xy=x\,y\,(y+2).</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Dešinė pusė yra sandauga „funkcija nuo <span
+class="math inline">x</span>“ × „funkcija nuo <span
+class="math inline">y</span>“, todėl kintamuosius galima atskirti.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Prieš dalydami iš <span class="math inline">y(y+2)</span>,
+patikriname, kada šis reiškinys lygus nuliui: <span
+class="math inline">y=0</span> ir <span class="math inline">y=-2</span>.
+Įrašę į lygtį matome, kad abi konstantos yra sprendiniai, nes tada <span
+class="math inline">y&#39;=0</span> ir dešinė pusė lygi 0.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Atskiriame kintamuosius ir išskaidome trupmeną paprastosiomis
+trupmenomis: <span class="math display">\frac{dy}{y(y+2)}=x\,dx,\qquad
+\frac{1}{y(y+2)}=\frac12\left(\frac1y-\frac{1}{y+2}\right).</span>
+Integruojame: <span
+class="math display">\frac12\ln\left|\frac{y}{y+2}\right|=\frac{x^2}{2}+c\
+\Longrightarrow\ \frac{y}{y+2}=Ce^{x^2}.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Padauginę iš 2 ir paėmę eksponentę gauname <span
+class="math inline">\left|\frac{y}{y+2}\right|=e^{2c}e^{x^2}</span>.
+Konstanta <span class="math inline">\pm e^{2c}</span> gali būti bet koks
+nenulinis skaičius, todėl ją žymime <span
+class="math inline">C</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p>Išreiškiame <span class="math inline">y</span>: <span
+class="math inline">y=Ce^{x^2}(y+2)</span>, todėl <span
+class="math inline">y\left(1-Ce^{x^2}\right)=2Ce^{x^2}</span> ir <span
+class="math display">y=\frac{2Ce^{x^2}}{1-Ce^{x^2}}.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">5 žingsnis</div>
+<p>Patikriname „pametimus“. <span class="math inline">y=0</span>
+gaunamas, kai <span class="math inline">C=0</span>, todėl jis įeina į
+bendrąjį sprendinį. O <span class="math inline">y=-2</span> negaunamas
+su jokia <span class="math inline">C</span>, todėl tai yra
+<strong>ypatingasis sprendinys</strong>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=\dfrac{2Ce^{x^2}}{1-Ce^{x^2}}</span>, ypatingasis
+sprendinys <span class="math inline">y=-2</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-2-2"><div class="deze-antraste">2.2 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Išspręskite lygtį <span
+class="math inline">y&#39;=\dfrac{2y}{x}+x^3e^x-1</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Perrašome standartiniu pavidalu <span
+class="math inline">y&#39;+P(x)y=Q(x)</span>: <span
+class="math display">y&#39;-\frac2x\,y=x^3e^x-1,\qquad P=-\frac2x,\quad
+Q=x^3e^x-1.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p><span class="math inline">y</span> ir <span
+class="math inline">y&#39;</span> yra pirmo laipsnio, todėl lygtis
+tiesinė. Ją spręsime Bernulio metodu <span
+class="math inline">y=uv</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Įrašome <span class="math inline">y=uv</span>, <span
+class="math inline">y&#39;=u&#39;v+uv&#39;</span>: <span
+class="math display">u&#39;v+u\left(v&#39;-\frac2xv\right)=x^3e^x-1
+.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Funkciją <span class="math inline">v</span> parenkame taip, kad
+skliaustas būtų lygus nuliui: <span
+class="math inline">v&#39;=\dfrac2xv</span>. Atskyrę kintamuosius
+gauname <span class="math inline">\dfrac{dv}{v}=\dfrac{2dx}{x}</span>,
+t. y. <span class="math inline">v=x^2</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Mums reikia <strong>bet kurios vienos</strong> funkcijos <span
+class="math inline">v</span>, kuri panaikina skliaustą, todėl
+integravimo konstantos čia nerašome. Visa laisvė liks funkcijoje <span
+class="math inline">u</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p>Lieka <span class="math inline">u&#39;x^2=x^3e^x-1</span>, t. y.
+<span class="math inline">u&#39;=xe^x-\dfrac{1}{x^2}</span>.
+Integruojame (pirmą narį dalimis): <span class="math display">u=\int
+xe^x\,dx-\int\frac{dx}{x^2}=xe^x-e^x+\frac1x+C .</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">5 žingsnis</div>
+<p><span
+class="math inline">y=uv=x^2\left(xe^x-e^x+\dfrac1x+C\right)=Cx^2+x^2e^x(x-1)+x.</span></p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=Cx^2+x^2e^x(x-1)+x</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-2-3"><div class="deze-antraste">2.3 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Išspręskite Košy uždavinį <span
+class="math inline">y\,dx-(3x+1+\ln y)\,dy=0</span>, <span
+class="math inline">y\!\left(-\tfrac13\right)=1</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Jei rašytume <span class="math inline">y&#39;=\dfrac{y}{3x+1+\ln
+y}</span>, lygtis nebūtų nei tiesinė, nei su atskiriamais kintamaisiais.
+Todėl sukeičiame vaidmenis: laikome <span
+class="math inline">x=x(y)</span>. <span
+class="math display">\frac{dx}{dy}=\frac{3x+1+\ln y}{y}\
+\Longrightarrow\ x&#39;-\frac3y\,x=\frac{1+\ln y}{y}.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p><span class="math inline">x</span> šioje lygtyje yra tik pirmo
+laipsnio, todėl <span class="math inline">x(y)</span> atžvilgiu lygtis
+tiesinė, ir ją galime spręsti įprastu metodu.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Homogeninė lygtis: <span class="math inline">x&#39;=\dfrac3yx</span>
+duoda <span class="math inline">x=Cy^3</span>.</p>
+<p>Konstantų varijavimas: <span class="math inline">x=C(y)y^3</span>.
+Įrašę gauname <span class="math inline">C&#39;(y)\,y^3=\dfrac{1+\ln
+y}{y}</span>, todėl <span class="math inline">C&#39;(y)=\dfrac{1+\ln
+y}{y^4}</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Įrašius <span class="math inline">x=C(y)y^3</span>, nariai su pačia
+<span class="math inline">C(y)</span> visada susiprastina, nes <span
+class="math inline">Cy^3</span> tenkina homogeninę lygtį. Lieka tik
+<span class="math inline">C&#39;</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Integruojame (<span class="math inline">\ln y</span> narį dalimis):
+<span class="math display">\int\frac{dy}{y^4}=-\frac{1}{3y^3},\qquad
+\int\frac{\ln y}{y^4}\,dy=-\frac{\ln y}{3y^3}-\frac{1}{9y^3}.</span>
+Taigi <span
+class="math inline">C(y)=-\dfrac{1}{y^3}\left(\dfrac49+\dfrac{\ln
+y}{3}\right)+K</span> ir <span
+class="math display">x=Ky^3-\frac49-\frac{\ln y}{3}.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p>Pradinė sąlyga: <span class="math inline">x=-\tfrac13</span>, kai
+<span class="math inline">y=1</span>. Gauname <span
+class="math inline">-\tfrac13=K-\tfrac49</span>, todėl <span
+class="math inline">K=\tfrac19</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">x=\dfrac{y^3}{9}-\dfrac49-\dfrac{\ln
+y}{3}</span>.</p>
+</div>
+<h2 id="uzduotys">Savarankiškos užduotys</h2>
+<div class="deze uzduotis" id="uzd-2-1" data-nr="2.1"><div class="deze-antraste">2.1 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Išspręskite Košy uždavinį <span
+class="math inline">y&#39;=3x^2y^2</span>, <span
+class="math inline">y(0)=\tfrac12</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Atskiriame kintamuosius: <span
+class="math inline">\dfrac{dy}{y^2}=3x^2dx</span>. (<span
+class="math inline">y=0</span> yra sprendinys, bet netenkina pradinės
+sąlygos.)</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Integruojame: <span class="math inline">-\dfrac1y=x^3+C</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Iš sąlygos <span class="math inline">y(0)=\tfrac12</span> gauname
+<span class="math inline">-2=C</span>. Todėl <span
+class="math inline">-\dfrac1y=x^3-2</span>, t. y. <span
+class="math inline">y=\dfrac{1}{2-x^3}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=\dfrac{1}{2-x^3}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-2-2" data-nr="2.2"><div class="deze-antraste">2.2 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Išspręskite lygtį <span
+class="math inline">3^{x+y}+2^{x-y}\,y&#39;=0</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Išskaidome laipsnius: <span
+class="math inline">3^x3^y+2^x2^{-y}y&#39;=0</span>. Daliname iš <span
+class="math inline">2^x3^y</span>: <span
+class="math display">\left(\tfrac32\right)^x+2^{-y}3^{-y}y&#39;=0\
+\Longrightarrow\ \left(\tfrac32\right)^xdx+6^{-y}dy=0.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Padaliję iš <span class="math inline">2^x3^y</span> kiekviename
+naryje paliekame tik vieną kintamąjį, todėl kintamieji atsiskiria.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Integruojame: <span
+class="math inline">\displaystyle\int\left(\tfrac32\right)^xdx=\frac{(3/2)^x}{\ln(3/2)}</span>
+ir <span
+class="math inline">\displaystyle\int6^{-y}dy=-\frac{6^{-y}}{\ln6}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\dfrac{(3/2)^x}{\ln(3/2)}-\dfrac{6^{-y}}{\ln6}=C</span>.</p>
+<div class="pastaba"><span class="pastaba-zyme">Pastaba.</span>
+<p>Panašiame pratybų uždavinyje atsakyme parašyta <span
+class="math inline">+\dfrac{(1/18)^y}{\ln18}</span>. Teisinga <span
+class="math inline">\dfrac{(1/18)^y}{\ln(1/18)}=-\dfrac{(1/18)^y}{\ln18}</span>,
+t. y. ženklas turi būti minusas, nes <span class="math inline">\int
+a^{-y}dy=-a^{-y}/\ln a</span>.</p>
+</div>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-2-3" data-nr="2.3"><div class="deze-antraste">2.3 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Išspręskite lygtį <span class="math inline">y&#39;=\dfrac
+yx+\operatorname{tg}\dfrac yx</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Dešinė pusė priklauso tik nuo <span class="math inline">y/x</span>,
+todėl lygtis homogeninė. Keitinys <span class="math inline">y=ux</span>,
+<span class="math inline">y&#39;=u&#39;x+u</span>: <span
+class="math display">u&#39;x+u=u+\operatorname{tg}u\ \Longrightarrow\
+u&#39;x=\operatorname{tg}u .</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Atskiriame kintamuosius: <span class="math inline">\dfrac{\cos
+u}{\sin u}du=\dfrac{dx}{x}</span>. Integruojame: <span
+class="math inline">\ln|\sin u|=\ln|x|+\ln|C|</span>, todėl <span
+class="math inline">\sin u=Cx</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p><span class="math inline">\displaystyle\int\frac{\cos u}{\sin
+u}du=\ln|\sin u|</span>, nes skaitiklis yra vardiklio išvestinė.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Grįžtame prie <span class="math inline">y</span>: <span
+class="math inline">\sin\dfrac yx=Cx</span>. Sprendiniai <span
+class="math inline">\sin u=0</span>, kurie buvo „pametami“ dalijant,
+gaunami, kai <span class="math inline">C=0</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\sin\dfrac
+yx=Cx</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-2-4" data-nr="2.4"><div class="deze-antraste">2.4 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Išspręskite Košy uždavinį <span
+class="math inline">y&#39;+2xy=2xe^{-x^2}</span>, <span
+class="math inline">y(0)=1</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Tiesinė lygtis, <span class="math inline">P=2x</span>, <span
+class="math inline">Q=2xe^{-x^2}</span>. Homogeninės lygties sprendinys:
+<span class="math inline">y=Ce^{-x^2}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Konstantų varijavimas: <span
+class="math inline">y=C(x)e^{-x^2}</span>, todėl <span
+class="math inline">C&#39;(x)e^{-x^2}=2xe^{-x^2}</span>, t. y. <span
+class="math inline">C&#39;=2x</span> ir <span
+class="math inline">C=x^2+K</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">y=(x^2+K)e^{-x^2}</span>. Iš <span
+class="math inline">y(0)=1</span> gauname <span
+class="math inline">K=1</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=(x^2+1)e^{-x^2}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-2-5" data-nr="2.5"><div class="deze-antraste">2.5 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Grandinėje nuosekliai sujungti rezistorius <span
+class="math inline">R</span> ir ritė <span class="math inline">L</span>.
+Nuo laiko <span class="math inline">t=0</span> prijungiama pastovi
+įtampa <span class="math inline">U_0</span>. Iš Kirchhofo dėsnio <span
+class="math inline">L\dfrac{di}{dt}+Ri=U_0</span>. Raskite srovę <span
+class="math inline">i(t)</span>, kai <span
+class="math inline">i(0)=0</span>, ir jos ribą, kai <span
+class="math inline">t\to\infty</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Standartinis pavidalas: <span
+class="math inline">\dfrac{di}{dt}+\dfrac RL\,i=\dfrac{U_0}{L}</span>.
+Homogeninė lygtis duoda <span
+class="math inline">i=Ce^{-Rt/L}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Konstantų varijavimas: <span
+class="math inline">C&#39;(t)e^{-Rt/L}=\dfrac{U_0}{L}</span>, todėl
+<span class="math inline">C&#39;=\dfrac{U_0}{L}e^{Rt/L}</span> ir <span
+class="math inline">C=\dfrac{U_0}{R}e^{Rt/L}+K</span>.</p>
+<p>Gauname <span
+class="math inline">i(t)=\dfrac{U_0}{R}+Ke^{-Rt/L}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Iš <span class="math inline">i(0)=0</span> gauname <span
+class="math inline">K=-\dfrac{U_0}{R}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">i(t)=\dfrac{U_0}{R}\left(1-e^{-Rt/L}\right)</span>.
+Kai <span class="math inline">t\to\infty</span>, <span
+class="math inline">i\to\dfrac{U_0}{R}</span> (Omo dėsnis, nes ritė
+nebetrukdo).</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-2-6" data-nr="2.6"><div class="deze-antraste">2.6 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Išspręskite Bernulio lygtį <span class="math inline">y&#39;+\dfrac
+yx=xy^2</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">n=2</span>, todėl naudojame keitinį <span
+class="math inline">z=y^{1-2}=\dfrac1y</span>. Tada <span
+class="math inline">z&#39;=-\dfrac{y&#39;}{y^2}</span>. Daliname lygtį
+iš <span class="math inline">-y^2</span>: <span
+class="math display">-\frac{y&#39;}{y^2}-\frac{1}{xy}=-x\
+\Longrightarrow\ z&#39;-\frac zx=-x.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Padalijus iš <span class="math inline">y^2</span> atsiranda <span
+class="math inline">y&#39;/y^2</span> ir <span
+class="math inline">1/y</span>, t. y. būtent <span
+class="math inline">z&#39;</span> ir <span class="math inline">z</span>.
+Taip lygtis tampa tiesine <span class="math inline">z</span>
+atžvilgiu.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Homogeninė lygtis duoda <span class="math inline">z=Cx</span>.
+Konstantų varijavimas: <span class="math inline">C&#39;(x)x=-x</span>,
+todėl <span class="math inline">C=-x+K</span> ir <span
+class="math inline">z=Kx-x^2</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">y=\dfrac1z=\dfrac{1}{Kx-x^2}</span>. Be to,
+<span class="math inline">y=0</span> irgi yra sprendinys (jis pametamas
+dalijant iš <span class="math inline">y^2</span>).</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=\dfrac{1}{Kx-x^2}</span> ir <span
+class="math inline">y=0</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-2-7" data-nr="2.7"><div class="deze-antraste">2.7 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Išspręskite Košy uždavinį <span
+class="math inline">y&#39;=\dfrac{y}{2y\ln y+y-x}</span>, <span
+class="math inline">y(-2)=1</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">y</span> atžvilgiu lygtis netiesinė, todėl
+ieškome <span class="math inline">x=x(y)</span>: <span
+class="math display">\frac{dx}{dy}=\frac{2y\ln y+y-x}{y}\
+\Longrightarrow\ x&#39;+\frac xy=2\ln y+1 .</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Homogeninė lygtis <span class="math inline">x&#39;+\dfrac xy=0</span>
+duoda <span class="math inline">x=\dfrac Cy</span>. Varijuojame: <span
+class="math inline">x=\dfrac{C(y)}{y}</span>, todėl <span
+class="math inline">\dfrac{C&#39;(y)}{y}=2\ln y+1</span>, t. y. <span
+class="math inline">C&#39;=2y\ln y+y</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">\displaystyle\int2y\ln y\,dy=y^2\ln
+y-\frac{y^2}{2}</span> (dalimis), o <span
+class="math inline">\displaystyle\int y\,dy=\frac{y^2}{2}</span>. Todėl
+<span class="math inline">C(y)=y^2\ln y+K</span> ir <span
+class="math display">x=y\ln y+\frac Ky .</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p>Iš sąlygos <span class="math inline">x=-2</span>, kai <span
+class="math inline">y=1</span>: <span class="math inline">-2=0+K</span>,
+todėl <span class="math inline">K=-2</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">x=y\ln
+y-\dfrac2y</span>.</p>
+<div class="pastaba"><span class="pastaba-zyme">Pastaba.</span>
+<p>Pratybų užrašuose pateikta tik homogeninės dalies išraiška <span
+class="math inline">x=c/y</span> ir <span
+class="math inline">c_0=-2</span>. Pilnas sprendinys turi ir
+nehomogeninę dalį <span class="math inline">y\ln y</span>.</p>
+</div>
+</div>
+</div>
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="tema-01.html"><span>← Ankstesnė tema</span><strong>1. Kreivinės koordinatės ir vektorinės operacijos</strong></a>
+  <a class="puslapis-kitas" href="tema-03.html"><span>Kita tema →</span><strong>3. Antros ir aukštesnės eilės tiesinės diferencialinės lygtys</strong></a>
+</nav>
+
+<script src="svetaine.js"></script>
+</body>
+</html>

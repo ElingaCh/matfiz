@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>11. Furjė transformacija ir sąsūka · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="temos-puslapis" data-tema="11" data-uzduociu="7">
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <a class="atgal" href="index.html">← Visos temos</a>
+    <nav class="skyreliai" aria-label="Temos dalys">
+      <a href="#teorija">Teorija</a>
+      <a href="#klaidos">Klaidos</a>
+      <a href="#pavyzdziai">Pavyzdžiai</a>
+      <a href="#uzduotys">Užduotys</a>
+    </nav>
+    <span class="temos-progresas" aria-live="polite"></span>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">11 tema · Integralinės transformacijos</p>
+    <h1>Furjė transformacija ir sąsūka</h1>
+    <p class="hero-info">3 išspręsti pavyzdžiai · 7 užduotys · sprendimai atidengiami po žingsnį</p>
+    <div class="juosta"><div class="juosta-uzpildas"></div></div>
+  </div>
+</header>
+
+<main class="turinys">
+<div class="deze teorija" id="teorija"><div class="deze-antraste">Teorija</div>
+<h3 id="kam-reikalinga-furjė-transformacija">Kam reikalinga Furjė
+transformacija</h3>
+<p>Ji išskaido funkciją į harmonikas <span
+class="math inline">e^{-ikx}</span> ir parodo, kokio „dažnio“ <span
+class="math inline">k</span> ir kiek yra signale. Svarbiausia praktinė
+nauda ta, kad <strong>diferencijavimas virsta daugyba iš <span
+class="math inline">k</span></strong>, todėl diferencialinė lygtis tampa
+algebrine.</p>
+<h3 id="apibrėžimas-konspekto-žymėjimai">Apibrėžimas (konspekto
+žymėjimai)</h3>
+<p><span class="math display">\tilde
+f(k)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{ikx}f(x)\,dx,\qquad
+f(x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-ikx}\tilde f(k)\,dk
+.</span> <span class="math inline">\tilde f(k)</span> vadinamas Furjė
+vaizdu, o <span class="math inline">f(x)</span> originalu. Kad
+atvirkštinė formulė veiktų, naudojama <span
+class="math inline">\delta</span> funkcija: <span
+class="math inline">\delta(x-x_1)=\frac{1}{2\pi}\int
+e^{ik(x-x_1)}dk</span>.</p>
+<p>Kitose knygose daugiklis <span
+class="math inline">\frac{1}{\sqrt{2\pi}}</span> ir ženklas eksponentėje
+gali būti kitokie, todėl formules visada reikia tikrinti pagal tą patį
+apibrėžimą.</p>
+<h3 id="savybės">Savybės</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Originalas</th>
+<th style="text-align: left;">Vaizdas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">af+bg</span></td>
+<td style="text-align: left;"><span class="math inline">a\tilde
+f+b\tilde g</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">f(x-a)</span>
+(poslinkis)</td>
+<td style="text-align: left;"><span class="math inline">e^{ika}\tilde
+f(k)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">f(ax)</span></td>
+<td style="text-align: left;"><span class="math inline">\frac{1}{\lvert
+a\rvert}\tilde f(k/a)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">f&#39;(x)</span></td>
+<td style="text-align: left;"><span class="math inline">-ik\,\tilde
+f(k)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">x\,f(x)</span></td>
+<td style="text-align: left;"><span
+class="math inline">-i\,\dfrac{d\tilde f}{dk}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">\dfrac{1}{\sqrt{2\pi}}\displaystyle\int
+f_1(x&#39;)f_2(x-x&#39;)dx&#39;</span> (sąsūka)</td>
+<td style="text-align: left;"><span class="math inline">\tilde
+f_1(k)\,\tilde f_2(k)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sąsūkos teorema</strong> sako, kad sąsūka originalų erdvėje
+virsta paprasta daugyba vaizdų erdvėje. Taip veikia, pavyzdžiui, signalų
+filtrai.</p>
+<h3 id="naudingi-vaizdai">Naudingi vaizdai</h3>
+<p><span class="math display">e^{-a|x|}\ \to\
+\frac{1}{\sqrt{2\pi}}\frac{2a}{a^2+k^2},\qquad e^{-x^2/2}\ \to\
+e^{-k^2/2},\qquad \delta(x)\ \to\ \frac{1}{\sqrt{2\pi}}.</span></p>
+<h3 id="furjė-integralas-kompleksinėje-plokštumoje">Furjė integralas
+kompleksinėje plokštumoje</h3>
+<p>Jei <span class="math inline">|f(x)|</span> mažėja eksponentiškai
+(<span class="math inline">\leq Ae^{\tau_-x}</span>, kai <span
+class="math inline">x\to+\infty</span>, ir <span
+class="math inline">\leq Be^{\tau_+x}</span>, kai <span
+class="math inline">x\to-\infty</span>), tai <span
+class="math inline">\tilde f(k)</span> analizinė
+<strong>juostoje</strong> <span
+class="math inline">\tau_-&lt;\operatorname{Im}k&lt;\tau_+</span>. Tada
+atvirkštinę transformaciją dažnai patogiausia skaičiuoti
+<strong>reziduumais</strong>: kai <span
+class="math inline">x&gt;0</span>, kontūrą uždarome apačioje (<span
+class="math inline">e^{-ikx}</span> ten mažėja), o kai <span
+class="math inline">x&lt;0</span>, viršuje.</p>
+</div>
+<div class="deze klaidos" id="klaidos"><div class="deze-antraste">Dažniausios klaidos</div>
+<ul>
+<li><strong>Supainiojami apibrėžimai.</strong> Ženklas <span
+class="math inline">e^{+ikx}</span> ar <span
+class="math inline">e^{-ikx}</span> ir daugiklis <span
+class="math inline">\frac{1}{\sqrt{2\pi}}</span> turi būti tokie pat
+kaip apibrėžime.</li>
+<li><strong>Išvestinės savybė.</strong> Su šiuo apibrėžimu <span
+class="math inline">f&#39;\to-ik\tilde f</span>, o ne <span
+class="math inline">+ik\tilde f</span>.</li>
+<li><strong>Kontūro uždarymas.</strong> <span
+class="math inline">e^{-ikx}</span> su <span
+class="math inline">x&gt;0</span> mažėja, kai <span
+class="math inline">\operatorname{Im}k&lt;0</span>, todėl kontūras
+uždaromas apačioje. Tada kontūras einamas pagal laikrodžio rodyklę, ir
+prieš reziduumų sumą atsiranda <strong>minusas</strong>.</li>
+<li><strong>Moduliai.</strong> <span class="math inline">\int
+e^{-a|x|}</span> reikia skaidyti į dvi dalis, <span
+class="math inline">x&gt;0</span> ir <span
+class="math inline">x&lt;0</span>.</li>
+</ul>
+</div>
+<h2 id="pavyzdziai">Išspręsti pavyzdžiai</h2>
+<div class="deze pavyzdys" id="pvz-11-1"><div class="deze-antraste">11.1 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Raskite <span
+class="math inline">f(x)=e^{-a|x|}</span> (<span
+class="math inline">a&gt;0</span>) Furjė vaizdą.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Skaidome integralą ties nuliu, nes modulis ten keičia formą: <span
+class="math display">\sqrt{2\pi}\,\tilde f=\int_0^\infty
+e^{(ik-a)x}dx+\int_{-\infty}^0e^{(ik+a)x}dx .</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">\displaystyle\int_0^\infty
+e^{(ik-a)x}dx=\left[\frac{e^{(ik-a)x}}{ik-a}\right]_0^\infty=\frac{0-1}{ik-a}=\frac{1}{a-ik}</span>,
+nes <span class="math inline">|e^{(ik-a)x}|=e^{-ax}\to0</span>.</p>
+<p>Analogiškai <span
+class="math inline">\displaystyle\int_{-\infty}^0e^{(ik+a)x}dx=\frac{1}{a+ik}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span
+class="math inline">\dfrac{1}{a-ik}+\dfrac{1}{a+ik}=\dfrac{2a}{a^2+k^2}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\tilde
+f(k)=\dfrac{1}{\sqrt{2\pi}}\cdot\dfrac{2a}{a^2+k^2}</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-11-2"><div class="deze-antraste">11.2 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Raskite Gauso funkcijos <span
+class="math inline">f(x)=e^{-x^2/2}</span> Furjė vaizdą.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Rodiklyje papildome iki pilno kvadrato: <span
+class="math display">-\frac{x^2}{2}+ikx=-\frac12(x-ik)^2-\frac{k^2}{2}.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Taip integrandas tampa paslinkta Gauso funkcija, kurios integralą
+žinome.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math display">\tilde
+f=\frac{e^{-k^2/2}}{\sqrt{2\pi}}\int_{-\infty}^\infty
+e^{-\frac12(x-ik)^2}dx=\frac{e^{-k^2/2}}{\sqrt{2\pi}}\cdot\sqrt{2\pi}=e^{-k^2/2}.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Poslinkis <span class="math inline">ik</span> yra menamas, bet <span
+class="math inline">e^{-z^2/2}</span> yra analizinė ir greitai mažėja,
+todėl pagal Košy teoremą integravimo tiesę galima paslinkti atgal į
+realiąją ašį.</p>
+</div>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\tilde
+f(k)=e^{-k^2/2}</span>. Gauso funkcija yra pati sau Furjė vaizdas.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-11-3"><div class="deze-antraste">11.3 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Reziduumais raskite originalą, kai <span
+class="math inline">\tilde f(k)=\dfrac{1}{1+k^2}</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span
+class="math inline">f(x)=\dfrac{1}{\sqrt{2\pi}}\displaystyle\int_{-\infty}^\infty\frac{e^{-ikx}}{1+k^2}dk</span>.
+Poliai yra <span class="math inline">k=\pm i</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Kai <span class="math inline">x&gt;0</span>, uždarome apačioje
+(polius <span class="math inline">-i</span>, kontūras pagal laikrodžio
+rodyklę): <span class="math display">\int=-2\pi
+i\operatorname*{Res}_{k=-i}\frac{e^{-ikx}}{(k-i)(k+i)}=-2\pi
+i\frac{e^{-x}}{-2i}=\pi e^{-x}.</span> Kai <span
+class="math inline">x&lt;0</span>, uždarome viršuje (polius <span
+class="math inline">+i</span>): <span class="math inline">2\pi
+i\dfrac{e^{x}}{2i}=\pi e^x</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Abu atvejus galima užrašyti kartu: <span class="math inline">\pi
+e^{-|x|}</span>. Todėl <span
+class="math inline">f(x)=\dfrac{\pi}{\sqrt{2\pi}}e^{-|x|}=\sqrt{\dfrac\pi2}\,e^{-|x|}</span>.</p>
+<p>Patikrinimas su 1 pavyzdžiu (<span class="math inline">a=1</span>):
+<span
+class="math inline">\sqrt{\tfrac\pi2}\cdot\dfrac{1}{\sqrt{2\pi}}\dfrac{2}{1+k^2}=\dfrac{1}{1+k^2}</span>
+✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">f(x)=\sqrt{\dfrac\pi2}\,e^{-|x|}</span>.</p>
+</div>
+<h2 id="uzduotys">Savarankiškos užduotys</h2>
+<div class="deze uzduotis" id="uzd-11-1" data-nr="11.1"><div class="deze-antraste">11.1 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Raskite stačiakampio impulso <span
+class="math inline">f(x)=\begin{cases}1,&amp;|x|&lt;a\\0,&amp;|x|&gt;a\end{cases}</span>
+Furjė vaizdą.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">\sqrt{2\pi}\,\tilde
+f=\displaystyle\int_{-a}^ae^{ikx}dx=\frac{e^{ika}-e^{-ika}}{ik}=\frac{2\sin
+ka}{k}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\tilde
+f(k)=\sqrt{\dfrac2\pi}\,\dfrac{\sin ka}{k}</span> (kai <span
+class="math inline">k=0</span>, riba yra <span
+class="math inline">\sqrt{2/\pi}\,a</span>).</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-11-2" data-nr="11.2"><div class="deze-antraste">11.2 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Naudodamiesi poslinkio savybe ir 1 pavyzdžiu, raskite <span
+class="math inline">f(x)=e^{-|x-3|}</span> Furjė vaizdą.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span
+class="math inline">e^{-|x|}\to\dfrac{1}{\sqrt{2\pi}}\dfrac{2}{1+k^2}</span>.
+Poslinkis <span class="math inline">a=3</span> prideda daugiklį <span
+class="math inline">e^{3ik}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\tilde
+f(k)=\sqrt{\dfrac2\pi}\,\dfrac{e^{3ik}}{1+k^2}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-11-3" data-nr="11.3"><div class="deze-antraste">11.3 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Raskite funkcijos <span
+class="math inline">f(t)=\begin{cases}te^{-\alpha
+t},&amp;t&gt;0\\0,&amp;t&lt;0\end{cases}</span> (<span
+class="math inline">\alpha&gt;0</span>) Furjė vaizdą.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">\sqrt{2\pi}\,\tilde
+f=\displaystyle\int_0^\infty te^{(ik-\alpha)t}dt</span>. Integruojame
+dalimis arba naudojame <span
+class="math inline">\displaystyle\int_0^\infty
+te^{-st}dt=\frac{1}{s^2}</span> su <span
+class="math inline">s=\alpha-ik</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\tilde
+f(k)=\dfrac{1}{\sqrt{2\pi}}\cdot\dfrac{1}{(\alpha-ik)^2}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-11-4" data-nr="11.4"><div class="deze-antraste">11.4 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Naudodamiesi išvestinės savybe ir 2 pavyzdžiu, raskite <span
+class="math inline">g(x)=xe^{-x^2/2}</span> Furjė vaizdą.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Pastebime, kad <span class="math inline">g=-f&#39;</span>, kai <span
+class="math inline">f=e^{-x^2/2}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">f&#39;\to-ik\tilde f=-ike^{-k^2/2}</span>,
+todėl <span class="math inline">g=-f&#39;\to ike^{-k^2/2}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\tilde
+g(k)=ik\,e^{-k^2/2}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-11-5" data-nr="11.5"><div class="deze-antraste">11.5 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Raskite dviejų Gauso funkcijų <span
+class="math inline">f_1=f_2=e^{-x^2/2}</span> sąsūką <span
+class="math inline">\dfrac{1}{\sqrt{2\pi}}\displaystyle\int
+f_1(x&#39;)f_2(x-x&#39;)dx&#39;</span> dviem būdais: tiesiogiai ir per
+sąsūkos teoremą.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Per teoremą: vaizdas yra <span class="math inline">e^{-k^2/2}\cdot
+e^{-k^2/2}=e^{-k^2}</span>. Funkcija <span
+class="math inline">e^{-ax^2}</span> turi vaizdą <span
+class="math inline">\dfrac{1}{\sqrt{2a}}e^{-k^2/(4a)}</span>, todėl, kai
+<span class="math inline">a=\tfrac14</span>, <span
+class="math inline">e^{-x^2/4}\to\sqrt2\,e^{-k^2}</span>. Taigi
+originalas yra <span
+class="math inline">\dfrac{1}{\sqrt2}e^{-x^2/4}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Tiesiogiai: <span
+class="math inline">x&#39;^2+(x-x&#39;)^2=2\left(x&#39;-\tfrac
+x2\right)^2+\tfrac{x^2}{2}</span>, todėl <span
+class="math display">\frac{1}{\sqrt{2\pi}}e^{-x^2/4}\int
+e^{-(x&#39;-x/2)^2}dx&#39;=\frac{\sqrt\pi}{\sqrt{2\pi}}e^{-x^2/4}=\frac{1}{\sqrt2}e^{-x^2/4}.</span></p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\dfrac{1}{\sqrt2}e^{-x^2/4}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-11-6" data-nr="11.6"><div class="deze-antraste">11.6 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Reziduumais raskite originalą, kai <span class="math inline">\tilde
+f(k)=\dfrac{1}{k^2+4}</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Poliai yra <span class="math inline">k=\pm2i</span>. Kai <span
+class="math inline">x&gt;0</span>, uždarome apačioje: <span
+class="math inline">-2\pi
+i\dfrac{e^{-i(-2i)x}}{-4i}=\dfrac\pi2e^{-2x}</span>. Kai <span
+class="math inline">x&lt;0</span>, uždarome viršuje: <span
+class="math inline">2\pi
+i\dfrac{e^{2x}}{4i}=\dfrac\pi2e^{2x}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span
+class="math inline">f(x)=\dfrac{1}{\sqrt{2\pi}}\cdot\dfrac\pi2e^{-2|x|}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">f(x)=\dfrac12\sqrt{\dfrac\pi2}\,e^{-2|x|}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-11-7" data-nr="11.7"><div class="deze-antraste">11.7 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Furjė transformacija išspręskite lygtį <span
+class="math inline">-u&#39;&#39;(x)+u(x)=\delta(x)</span>, kai <span
+class="math inline">u\to0</span>, <span
+class="math inline">x\to\pm\infty</span>. (Tai Gryno funkcija visoje
+tiesėje.)</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Transformuojame: <span
+class="math inline">u&#39;&#39;\to(-ik)^2\tilde u=-k^2\tilde u</span>,
+<span class="math inline">\delta\to\dfrac{1}{\sqrt{2\pi}}</span>.
+Gauname <span class="math inline">(k^2+1)\tilde
+u=\dfrac{1}{\sqrt{2\pi}}</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Diferencialinė lygtis virto algebrine, nes kiekviena išvestinė
+tiesiog dauginama iš <span class="math inline">-ik</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">\tilde
+u=\dfrac{1}{\sqrt{2\pi}}\cdot\dfrac{1}{1+k^2}</span>. Pagal 3 pavyzdį
+<span class="math inline">\dfrac{1}{1+k^2}</span> originalas yra <span
+class="math inline">\sqrt{\tfrac\pi2}e^{-|x|}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span
+class="math inline">u=\dfrac{1}{\sqrt{2\pi}}\sqrt{\dfrac\pi2}e^{-|x|}=\dfrac12e^{-|x|}</span>.
+Patikrinimas: kai <span class="math inline">x\neq0</span>, <span
+class="math inline">u&#39;&#39;=u</span>, o <span
+class="math inline">u&#39;</span> šuolis taške 0 lygus <span
+class="math inline">-\tfrac12-\tfrac12=-1</span>, kaip ir reikia lygčiai
+<span class="math inline">-u&#39;&#39;=\delta</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">u(x)=\dfrac12e^{-|x|}</span>.</p>
+</div>
+</div>
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="tema-10.html"><span>← Ankstesnė tema</span><strong>10. Integralo asimptotika: balno metodas ir Stirlingo formulė</strong></a>
+  <a class="puslapis-kitas" href="tema-12.html"><span>Kita tema →</span><strong>12. Laplaso transformacija</strong></a>
+</nav>
+
+<script src="svetaine.js"></script>
+</body>
+</html>

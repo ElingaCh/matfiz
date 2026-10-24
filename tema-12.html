@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>12. Laplaso transformacija · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="temos-puslapis" data-tema="12" data-uzduociu="7">
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <a class="atgal" href="index.html">← Visos temos</a>
+    <nav class="skyreliai" aria-label="Temos dalys">
+      <a href="#teorija">Teorija</a>
+      <a href="#klaidos">Klaidos</a>
+      <a href="#pavyzdziai">Pavyzdžiai</a>
+      <a href="#uzduotys">Užduotys</a>
+    </nav>
+    <span class="temos-progresas" aria-live="polite"></span>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">12 tema · Integralinės transformacijos</p>
+    <h1>Laplaso transformacija</h1>
+    <p class="hero-info">3 išspręsti pavyzdžiai · 7 užduotys · sprendimai atidengiami po žingsnį</p>
+    <div class="juosta"><div class="juosta-uzpildas"></div></div>
+  </div>
+</header>
+
+<main class="turinys">
+<div class="deze teorija" id="teorija"><div class="deze-antraste">Teorija</div>
+<h3 id="apibrėžimas">Apibrėžimas</h3>
+<p>Laplaso (operacinio skaičiavimo) transformacija skirta funkcijoms,
+kurios lygios nuliui, kai <span class="math inline">x&lt;0</span>, pvz.,
+procesams, kurie „įsijungia“ momentu <span
+class="math inline">x=0</span>: <span class="math display">\bar
+f(p)=\int_0^\infty e^{-px}f(x)\,dx,\qquad f(x)\ \to\ \bar f(p).</span>
+Čia <span class="math inline">p</span> yra kompleksinis skaičius, o
+integralas konverguoja, kai <span
+class="math inline">\operatorname{Re}p</span> pakankamai didelė. Ryšys
+su Furjė transformacija: <span class="math inline">\bar
+f(p)=\sqrt{2\pi}\,\tilde f(k)</span>, kai <span
+class="math inline">k=ip</span>.</p>
+<p><strong>Atvirkštinė (Rymano–Melino) formulė:</strong> <span
+class="math display">f(x)=\frac{1}{2\pi
+i}\int_{\sigma-i\infty}^{\sigma+i\infty}e^{px}\bar
+f(p)\,dp=\sum_k\operatorname*{Res}_{p=p_k}\left[e^{px}\bar
+f(p)\right],</span> kur sumuojama per visus <span
+class="math inline">\bar f</span> polius (kai <span
+class="math inline">\bar f</span> racionali).</p>
+<h3 id="pagrindiniai-vaizdai">Pagrindiniai vaizdai</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">f(x)</span></th>
+<th style="text-align: left;"><span class="math inline">\bar
+f(p)</span></th>
+<th style="text-align: left;"><span class="math inline">f(x)</span></th>
+<th style="text-align: left;"><span class="math inline">\bar
+f(p)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">\sigma(x)=1</span></td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac1p</span></td>
+<td style="text-align: left;"><span class="math inline">\sin\omega
+x</span></td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac{\omega}{p^2+\omega^2}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">e^{\lambda
+x}</span></td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac{1}{p-\lambda}</span></td>
+<td style="text-align: left;"><span class="math inline">\cos\omega
+x</span></td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac{p}{p^2+\omega^2}</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">x^n</span></td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac{n!}{p^{n+1}}</span></td>
+<td style="text-align: left;"><span
+class="math inline">\delta(x)</span></td>
+<td style="text-align: left;"><span class="math inline">1</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="savybės">Savybės</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Originalas</th>
+<th style="text-align: left;">Vaizdas</th>
+<th style="text-align: left;">Pavadinimas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">f&#39;(x)</span></td>
+<td style="text-align: left;"><span class="math inline">p\bar
+f-f(0)</span></td>
+<td style="text-align: left;">originalo diferencijavimas</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">f&#39;&#39;(x)</span></td>
+<td style="text-align: left;"><span class="math inline">p^2\bar
+f-pf(0)-f&#39;(0)</span></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">\int_0^xf(y)\,dy</span></td>
+<td style="text-align: left;"><span class="math inline">\dfrac{\bar
+f(p)}{p}</span></td>
+<td style="text-align: left;">originalo integravimas</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">\sigma(x-\tau)f(x-\tau)</span></td>
+<td style="text-align: left;"><span class="math inline">e^{-p\tau}\bar
+f(p)</span></td>
+<td style="text-align: left;">vėlavimo teorema</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">e^{\alpha
+x}f(x)</span></td>
+<td style="text-align: left;"><span class="math inline">\bar
+f(p-\alpha)</span></td>
+<td style="text-align: left;">poslinkio (dažnio) teorema</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">\int_0^xf_1(x&#39;)f_2(x-x&#39;)dx&#39;</span></td>
+<td style="text-align: left;"><span class="math inline">\bar
+f_1(p)\,\bar f_2(p)</span></td>
+<td style="text-align: left;">sąsūka</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">x\,f(x)</span></td>
+<td style="text-align: left;"><span class="math inline">-\dfrac{d\bar
+f}{dp}</span></td>
+<td style="text-align: left;">vaizdo diferencijavimas</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">\dfrac{f(x)}{x}</span></td>
+<td style="text-align: left;"><span
+class="math inline">\displaystyle\int_p^\infty\bar
+f(p_1)\,dp_1</span></td>
+<td style="text-align: left;">vaizdo integravimas</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Periodinė funkcija</strong> su periodu <span
+class="math inline">T</span>: <span class="math inline">\bar
+f(p)=\dfrac{\bar\psi(p)}{1-e^{-pT}}</span>, kur <span
+class="math inline">\psi</span> yra vienas periodas (<span
+class="math inline">\psi=f</span>, kai <span class="math inline">0\leq
+x\leq T</span>, kitur <span class="math inline">0</span>).</p>
+<h3 id="kaip-spręsti-dl-laplaso-metodu">Kaip spręsti DL Laplaso
+metodu</h3>
+<ol type="1">
+<li>Transformuojame abi lygties puses. Pradinės sąlygos įeina
+automatiškai per išvestinės savybę.</li>
+<li>Iš gautos <strong>algebrinės</strong> lygties išreiškiame <span
+class="math inline">\bar y(p)</span>.</li>
+<li>Išskaidome <span class="math inline">\bar y</span> paprastosiomis
+trupmenomis (arba imame reziduumus) ir pagal lentelę randame <span
+class="math inline">y(x)</span>.</li>
+</ol>
+</div>
+<div class="deze klaidos" id="klaidos"><div class="deze-antraste">Dažniausios klaidos</div>
+<ul>
+<li><strong>Pamirštamos pradinės sąlygos</strong> išvestinės vaizde:
+<span class="math inline">y&#39;&#39;\to p^2\bar
+y-py(0)-y&#39;(0)</span>.</li>
+<li><strong>Vėlavimo teorema</strong> galioja funkcijai <span
+class="math inline">f(x-\tau)\sigma(x-\tau)</span>, t. y.
+<strong>visa</strong> funkcija turi būti paslinkta. Pvz., <span
+class="math inline">x\,\sigma(x-1)</span> reikia perrašyti kaip <span
+class="math inline">\big((x-1)+1\big)\sigma(x-1)</span>.</li>
+<li><strong>Poslinkio teoremoje</strong> ženklas: <span
+class="math inline">e^{\alpha x}f\to\bar f(p-\alpha)</span>, su
+minusu.</li>
+<li><strong>Sąsūka Laplaso atveju</strong> integruojama nuo <span
+class="math inline">0</span> iki <span class="math inline">x</span> (be
+daugiklio <span class="math inline">1/\sqrt{2\pi}</span>), o Furjė
+atveju nuo <span class="math inline">-\infty</span> iki <span
+class="math inline">\infty</span>.</li>
+<li><strong>Kvadratinis vardiklis</strong> be realių šaknų: jį reikia
+papildyti iki pilno kvadrato, <span
+class="math inline">(p+a)^2+b^2</span>, ir taikyti poslinkio
+teoremą.</li>
+</ul>
+</div>
+<h2 id="pavyzdziai">Išspręsti pavyzdžiai</h2>
+<div class="deze pavyzdys" id="pvz-12-1"><div class="deze-antraste">12.1 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Laplaso metodu išspręskite Košy uždavinį
+<span class="math inline">y&#39;&#39;-3y&#39;+2y=e^{3x}</span>, <span
+class="math inline">y(0)=0</span>, <span
+class="math inline">y&#39;(0)=0</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Transformuojame: <span class="math inline">y&#39;&#39;\to p^2\bar
+y</span>, <span class="math inline">y&#39;\to p\bar y</span> (pradinės
+sąlygos nulinės), <span
+class="math inline">e^{3x}\to\dfrac{1}{p-3}</span>: <span
+class="math display">(p^2-3p+2)\,\bar y=\frac{1}{p-3}.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">p^2-3p+2=(p-1)(p-2)</span>, todėl <span
+class="math display">\bar
+y=\frac{1}{(p-1)(p-2)(p-3)}=\frac{1/2}{p-1}-\frac{1}{p-2}+\frac{1/2}{p-3}.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Koeficientus randame „uždengimo“ būdu: pvz., prie <span
+class="math inline">\frac{1}{p-1}</span> įrašome <span
+class="math inline">p=1</span> į likusią trupmeną <span
+class="math inline">\frac{1}{(p-2)(p-3)}</span> ir gauname <span
+class="math inline">\frac{1}{(-1)(-2)}=\frac12</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Pagal lentelę <span class="math inline">\dfrac{1}{p-\lambda}\to
+e^{\lambda x}</span>: <span
+class="math display">y=\tfrac12e^x-e^{2x}+\tfrac12e^{3x}.</span>
+Patikrinimas: <span
+class="math inline">y(0)=\tfrac12-1+\tfrac12=0</span> ✓, <span
+class="math inline">y&#39;(0)=\tfrac12-2+\tfrac32=0</span> ✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=\tfrac12e^x-e^{2x}+\tfrac12e^{3x}</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-12-2"><div class="deze-antraste">12.2 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Raskite periodinės funkcijos <span
+class="math inline">f(x)=|\sin x|</span> Laplaso vaizdą.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Periodas <span class="math inline">T=\pi</span>, o viename periode
+<span class="math inline">\psi=\sin x</span> (<span
+class="math inline">0\leq x\leq\pi</span>).</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math display">\bar\psi=\int_0^\pi e^{-px}\sin
+x\,dx=\frac{1+e^{-\pi p}}{p^2+1}.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Integruojame dalimis du kartus arba naudojame <span
+class="math inline">\sin x=\operatorname{Im}e^{ix}</span>: <span
+class="math inline">\displaystyle\int_0^\pi
+e^{(i-p)x}dx=\frac{e^{(i-p)\pi}-1}{i-p}=\frac{1+e^{-p\pi}}{p-i}</span>,
+o šios trupmenos menamoji dalis yra <span
+class="math inline">\dfrac{1+e^{-p\pi}}{p^2+1}</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math display">\bar f=\frac{\bar\psi}{1-e^{-\pi
+p}}=\frac{1}{p^2+1}\cdot\frac{1+e^{-\pi p}}{1-e^{-\pi
+p}}=\frac{\operatorname{cth}(\pi p/2)}{p^2+1}.</span></p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\bar
+f(p)=\dfrac{1}{p^2+1}\operatorname{cth}\dfrac{\pi p}{2}</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-12-3"><div class="deze-antraste">12.3 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Raskite originalą, kai <span
+class="math inline">\bar f(p)=\dfrac{1}{p(p^2+1)}</span>, dviem būdais:
+reziduumais ir originalo integravimo savybe.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Reziduumais. Poliai: <span class="math inline">p=0</span>, <span
+class="math inline">p=\pm i</span>. <span
+class="math display">\operatorname*{Res}_{p=0}=\frac{e^0}{1}=1,\qquad
+\operatorname*{Res}_{p=i}=\frac{e^{ix}}{i\cdot2i}=-\frac{e^{ix}}{2},\qquad
+\operatorname*{Res}_{p=-i}=-\frac{e^{-ix}}{2}.</span> Suma: <span
+class="math inline">1-\cos x</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Integravimo savybe: <span class="math inline">\dfrac{1}{p^2+1}\to\sin
+x</span>, o dalyba iš <span class="math inline">p</span> reiškia
+integravimą: <span class="math display">f=\int_0^x\sin y\,dy=1-\cos x
+.</span></p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">f(x)=1-\cos
+x</span>.</p>
+</div>
+<h2 id="uzduotys">Savarankiškos užduotys</h2>
+<div class="deze uzduotis" id="uzd-12-1" data-nr="12.1"><div class="deze-antraste">12.1 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Raskite vaizdus: a) <span class="math inline">x^2e^{-3x}</span>; b)
+<span class="math inline">e^{2x}\cos3x</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<ol type="a">
+<li><span class="math inline">x^2\to\dfrac{2}{p^3}</span>. Poslinkio
+teorema su <span class="math inline">\alpha=-3</span>: <span
+class="math inline">\dfrac{2}{(p+3)^3}</span>.</li>
+</ol>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<ol start="2" type="a">
+<li><span class="math inline">\cos3x\to\dfrac{p}{p^2+9}</span>.
+Poslinkis su <span class="math inline">\alpha=2</span>: <span
+class="math inline">\dfrac{p-2}{(p-2)^2+9}</span>.</li>
+</ol>
+</div>
+<p><strong>Atsakymas:</strong> a) <span
+class="math inline">\dfrac{2}{(p+3)^3}</span>; b) <span
+class="math inline">\dfrac{p-2}{(p-2)^2+9}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-12-2" data-nr="12.2"><div class="deze-antraste">12.2 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Laplaso metodu išspręskite <span
+class="math inline">y&#39;-y=e^x</span>, <span
+class="math inline">y(0)=1</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">p\bar y-1-\bar y=\dfrac{1}{p-1}</span>,
+todėl <span class="math inline">\bar
+y=\dfrac{1}{p-1}+\dfrac{1}{(p-1)^2}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">\dfrac{1}{(p-1)^2}\to xe^x</span> (iš <span
+class="math inline">x\to\frac{1}{p^2}</span> ir poslinkio).</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=(1+x)e^x</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-12-3" data-nr="12.3"><div class="deze-antraste">12.3 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Raskite vaizdus: a) <span
+class="math inline">(x-2)\sigma(x-2)</span>; b) stačiakampio impulso,
+lygaus 1, kai <span class="math inline">1\leq x\leq3</span>, ir 0
+kitur.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<ol type="a">
+<li><span class="math inline">x\to\dfrac{1}{p^2}</span>, o vėlavimas
+<span class="math inline">\tau=2</span> duoda <span
+class="math inline">\dfrac{e^{-2p}}{p^2}</span>.</li>
+</ol>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<ol start="2" type="a">
+<li>Impulsas <span class="math inline">=\sigma(x-1)-\sigma(x-3)</span>,
+todėl vaizdas <span
+class="math inline">\dfrac{e^{-p}-e^{-3p}}{p}</span>.</li>
+</ol>
+</div>
+<p><strong>Atsakymas:</strong> a) <span
+class="math inline">\dfrac{e^{-2p}}{p^2}</span>; b) <span
+class="math inline">\dfrac{e^{-p}-e^{-3p}}{p}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-12-4" data-nr="12.4"><div class="deze-antraste">12.4 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Raskite originalą, kai <span class="math inline">\bar
+f(p)=\dfrac{p+3}{p^2+2p+5}</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Papildome iki pilno kvadrato: <span
+class="math inline">p^2+2p+5=(p+1)^2+4</span>. Skaitiklis <span
+class="math inline">p+3=(p+1)+2</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">\dfrac{p+1}{(p+1)^2+4}\to
+e^{-x}\cos2x</span>, o <span class="math inline">\dfrac{2}{(p+1)^2+4}\to
+e^{-x}\sin2x</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">f(x)=e^{-x}(\cos2x+\sin2x)</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-12-5" data-nr="12.5"><div class="deze-antraste">12.5 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Sąsūkos teorema raskite originalą, kai <span class="math inline">\bar
+f(p)=\dfrac{1}{p^2(p^2+1)}</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">\dfrac{1}{p^2}\to x</span> ir <span
+class="math inline">\dfrac{1}{p^2+1}\to\sin x</span>, todėl <span
+class="math inline">f=\displaystyle\int_0^x(x-t)\sin t\,dt</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">=x\displaystyle\int_0^x\sin
+t\,dt-\int_0^xt\sin t\,dt=x(1-\cos x)-(\sin x-x\cos x)=x-\sin
+x</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">f(x)=x-\sin
+x</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-12-6" data-nr="12.6"><div class="deze-antraste">12.6 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Išspręskite <span
+class="math inline">y&#39;&#39;+y=\sigma(x-\pi)</span>, <span
+class="math inline">y(0)=y&#39;(0)=0</span> (jėga įjungiama momentu
+<span class="math inline">\pi</span>).</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">(p^2+1)\bar y=\dfrac{e^{-\pi p}}{p}</span>,
+todėl <span class="math inline">\bar y=e^{-\pi
+p}\cdot\dfrac{1}{p(p^2+1)}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Iš 3 pavyzdžio <span class="math inline">\dfrac{1}{p(p^2+1)}\to1-\cos
+x</span>. Vėlavimo teorema: <span
+class="math inline">y=\sigma(x-\pi)\big(1-\cos(x-\pi)\big)</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">\cos(x-\pi)=-\cos x</span>, todėl <span
+class="math inline">y=\sigma(x-\pi)(1+\cos x)</span>. Iki momento <span
+class="math inline">\pi</span> sistema ramybėje.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=\begin{cases}0,&amp;x&lt;\pi\\1+\cos
+x,&amp;x\geq\pi\end{cases}</span></p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-12-7" data-nr="12.7"><div class="deze-antraste">12.7 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Naudodamiesi vaizdo integravimo savybe, raskite <span
+class="math inline">\dfrac{\sin x}{x}</span> vaizdą ir apskaičiuokite
+<span class="math inline">\displaystyle\int_0^\infty\frac{\sin
+x}{x}dx</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">\sin x\to\dfrac{1}{p^2+1}</span>, todėl
+<span class="math inline">\dfrac{\sin
+x}{x}\to\displaystyle\int_p^\infty\frac{dq}{q^2+1}=\frac\pi2-\operatorname{arctg}p</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">\displaystyle\int_0^\infty\frac{\sin
+x}{x}dx</span> yra vaizdas, kai <span class="math inline">p=0</span>
+(nes <span class="math inline">e^{-0\cdot x}=1</span>): <span
+class="math inline">\dfrac\pi2-0=\dfrac\pi2</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\dfrac{\sin
+x}{x}\to\dfrac\pi2-\operatorname{arctg}p</span>, o integralas lygus
+<span class="math inline">\dfrac\pi2</span>.</p>
+</div>
+</div>
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="tema-11.html"><span>← Ankstesnė tema</span><strong>11. Furjė transformacija ir sąsūka</strong></a>
+  <a class="puslapis-kitas" href="tema-13.html"><span>Kita tema →</span><strong>13. Fizikinių vyksmų lygtys: styga ir difuzija</strong></a>
+</nav>
+
+<script src="svetaine.js"></script>
+</body>
+</html>

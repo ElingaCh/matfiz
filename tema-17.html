@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>17. Funkcionalas, variacija ir Eulerio
+lygtis · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="temos-puslapis" data-tema="17" data-uzduociu="7">
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <a class="atgal" href="index.html">← Visos temos</a>
+    <nav class="skyreliai" aria-label="Temos dalys">
+      <a href="#teorija">Teorija</a>
+      <a href="#klaidos">Klaidos</a>
+      <a href="#pavyzdziai">Pavyzdžiai</a>
+      <a href="#uzduotys">Užduotys</a>
+    </nav>
+    <span class="temos-progresas" aria-live="polite"></span>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">17 tema · Variacinis skaičiavimas</p>
+    <h1>Funkcionalas, variacija ir Eulerio lygtis</h1>
+    <p class="hero-info">3 išspręsti pavyzdžiai · 7 užduotys · sprendimai atidengiami po žingsnį</p>
+    <div class="juosta"><div class="juosta-uzpildas"></div></div>
+  </div>
+</header>
+
+<main class="turinys">
+<div class="deze teorija" id="teorija"><div class="deze-antraste">Teorija</div>
+<h3 id="kas-yra-funkcionalas">Kas yra funkcionalas</h3>
+<p>Įprasta funkcija skaičiui priskiria skaičių.
+<strong>Funkcionalas</strong> visai <strong>funkcijai</strong> priskiria
+skaičių. Pavyzdžiui, kreivės <span class="math inline">y(x)</span>,
+jungiančios taškus <span class="math inline">A</span> ir <span
+class="math inline">B</span>, ilgis <span
+class="math display">L[y]=\int_{x_1}^{x_2}\sqrt{1+y&#39;^2}\,dx</span>
+priklauso nuo to, kokią kreivę pasirinksime. Mes nagrinėsime
+funkcionalus <span
+class="math display">J[y]=\int_a^bF\big(x,\,y(x),\,y&#39;(x)\big)\,dx,\qquad
+y(a)=y_a,\ \ y(b)=y_b .</span> <strong>Variacinis uždavinys:</strong>
+rasti funkciją <span class="math inline">y(x)</span>, su kuria <span
+class="math inline">J</span> yra mažiausias arba didžiausias.</p>
+<h3 id="variacija">Variacija</h3>
+<p>Paimkime artimą kreivę <span class="math inline">\bar y=y+\delta
+y</span>. Skirtumas <span class="math inline">\delta y(x)</span>
+vadinamas <strong>variacija</strong>. Kadangi galai įtvirtinti, <span
+class="math inline">\delta y(a)=\delta y(b)=0</span>. Variacijos
+išvestinė lygi išvestinės variacijai: <span class="math inline">(\delta
+y)&#39;=\delta y&#39;</span>.</p>
+<p><strong>Funkcionalo variacija</strong> <span
+class="math inline">\delta J</span> yra tiesinė (pagal <span
+class="math inline">\delta y</span>) pokyčio <span
+class="math inline">J[y+\delta y]-J[y]</span> dalis. Patogi formulė:
+<span class="math display">\delta
+J=\frac{\partial}{\partial\varepsilon}J[y+\varepsilon\,\delta
+y]\Big|_{\varepsilon=0}.</span> <strong>Būtina ekstremumo
+sąlyga:</strong> <span class="math inline">\delta J=0</span>. Tai
+analogas funkcijos sąlygos <span
+class="math inline">f&#39;(x_0)=0</span>.</p>
+<h3 id="eulerio-lygtis">Eulerio lygtis</h3>
+<p>Integruodami dalimis gauname <span class="math inline">\delta
+J=\displaystyle\int_a^b\left(\frac{\partial F}{\partial
+y}-\frac{d}{dx}\frac{\partial F}{\partial y&#39;}\right)\delta
+y\,dx=0</span> su bet kokia <span class="math inline">\delta y</span>,
+todėl (pagrindinė variacinio skaičiavimo lema) <span
+class="math display">\boxed{\,\frac{\partial F}{\partial
+y}-\frac{d}{dx}\frac{\partial F}{\partial y&#39;}=0\,}</span> Tai
+<strong>Eulerio lygtis</strong>: antros eilės diferencialinė lygtis. Jos
+sprendiniai vadinami <strong>ekstremalėmis</strong>, o dvi konstantas
+<span class="math inline">C_1,C_2</span> randame iš <span
+class="math inline">y(a)=y_a</span>, <span
+class="math inline">y(b)=y_b</span>.</p>
+<h3 id="kaip-naudotis">Kaip naudotis</h3>
+<ol type="1">
+<li>Užrašome <span class="math inline">F(x,y,y&#39;)</span>.</li>
+<li>Skaičiuojame <span class="math inline">\dfrac{\partial F}{\partial
+y}</span> ir <span class="math inline">\dfrac{\partial F}{\partial
+y&#39;}</span>, laikydami <span class="math inline">x</span>, <span
+class="math inline">y</span>, <span class="math inline">y&#39;</span>
+<strong>nepriklausomais</strong> kintamaisiais.</li>
+<li><span class="math inline">\dfrac{d}{dx}</span> yra
+<strong>pilnoji</strong> išvestinė: joje <span
+class="math inline">y</span> ir <span class="math inline">y&#39;</span>
+jau yra <span class="math inline">x</span> funkcijos.</li>
+<li>Išsprendžiame gautą lygtį ir įstatome kraštines sąlygas.</li>
+</ol>
+<h3 id="supaprastinimai-pirmieji-integralai">Supaprastinimai (pirmieji
+integralai)</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">F</span>
+priklauso nuo</th>
+<th style="text-align: left;">Ką gauname</th>
+<th style="text-align: left;">Pavyzdys</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">x,\
+y&#39;</span> (nėra <span class="math inline">y</span>)</td>
+<td style="text-align: left;"><span class="math inline">\dfrac{\partial
+F}{\partial y&#39;}=C_1</span></td>
+<td style="text-align: left;"><span
+class="math inline">x^3y&#39;^2</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">y,\
+y&#39;</span> (nėra <span class="math inline">x</span>)</td>
+<td style="text-align: left;"><span
+class="math inline">F-y&#39;\dfrac{\partial F}{\partial
+y&#39;}=C_1</span></td>
+<td style="text-align: left;"><span
+class="math inline">y\sqrt{1+y&#39;^2}</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">tik <span
+class="math inline">y&#39;</span></td>
+<td style="text-align: left;"><span
+class="math inline">y=C_1x+C_2</span> (tiesės)</td>
+<td style="text-align: left;"><span
+class="math inline">\sqrt{1+y&#39;^2}</span></td>
+</tr>
+</tbody>
+</table>
+<p>Reiškinys <span class="math inline">H=F-y&#39;F_{y&#39;}</span>
+vadinamas <strong>variacinio skaičiavimo Hamiltono funkcija</strong>.
+Mechanikoje (<span class="math inline">F=L</span>, Lagranžo funkcija)
+jis susijęs su energija, kuri išlieka.</p>
+<h3 id="apibendrinimai">Apibendrinimai</h3>
+<ul>
+<li><strong>Kelios funkcijos</strong> <span
+class="math inline">y_1,y_2</span>: kiekvienai atskira Eulerio
+lygtis.</li>
+<li><strong>Aukštesnės išvestinės</strong> (Eulerio–Puasono lygtis):
+<span class="math inline">\dfrac{\partial F}{\partial
+y}-\dfrac{d}{dx}\dfrac{\partial F}{\partial
+y&#39;}+\dfrac{d^2}{dx^2}\dfrac{\partial F}{\partial
+y&#39;&#39;}-\dots=0</span> (reikia <span class="math inline">2n</span>
+kraštinių sąlygų).</li>
+<li><strong>Dvilypis integralas</strong> <span
+class="math inline">J=\iint_SF(x,y,u,u_x,u_y)\,dx\,dy</span>
+(Eulerio–Ostrogradskio lygtis): <span
+class="math display">\frac{\partial F}{\partial
+u}-\frac{\partial}{\partial x}\frac{\partial F}{\partial
+u_x}-\frac{\partial}{\partial y}\frac{\partial F}{\partial u_y}=0
+.</span></li>
+</ul>
+</div>
+<div class="deze klaidos" id="klaidos"><div class="deze-antraste">Dažniausios klaidos</div>
+<ul>
+<li><strong>Supainiojamos dalinė ir pilnoji išvestinės.</strong> <span
+class="math inline">\frac{\partial F}{\partial y&#39;}</span>
+skaičiuojame, laikydami <span class="math inline">y&#39;</span> paprasta
+raide, o <span class="math inline">\frac{d}{dx}</span> taikome jau
+gautam reiškiniui, kuriame <span class="math inline">y=y(x)</span>.</li>
+<li><strong>Pirmasis integralas <span
+class="math inline">F-y&#39;F_{y&#39;}=C</span> naudojamas, kai <span
+class="math inline">F</span> priklauso nuo <span
+class="math inline">x</span>.</strong> Jis galioja <strong>tik</strong>
+tada, kai <span class="math inline">x</span> neįeina į <span
+class="math inline">F</span> išreikštai.</li>
+<li><strong>Pamirštamos kraštinės sąlygos.</strong> Eulerio lygtis duoda
+ekstremalių šeimą, o konkrečią ekstremalę parenka <span
+class="math inline">y(a)</span> ir <span
+class="math inline">y(b)</span>.</li>
+<li><strong>Ekstremalė laikoma minimumu be patikrinimo.</strong> <span
+class="math inline">\delta J=0</span> yra tik <strong>būtina</strong>
+sąlyga, kaip ir <span class="math inline">f&#39;=0</span>
+funkcijoms.</li>
+</ul>
+</div>
+<h2 id="pavyzdziai">Išspręsti pavyzdžiai</h2>
+<div class="deze pavyzdys" id="pvz-17-1"><div class="deze-antraste">17.1 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Raskite funkcionalo <span
+class="math inline">J[y]=\displaystyle\int_0^1\left(y&#39;^2+y^2\right)dx</span>
+ekstremalę, kai <span class="math inline">y(0)=0</span>, <span
+class="math inline">y(1)=1</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">F=y&#39;^2+y^2</span>. Dalinės išvestinės:
+<span class="math inline">\dfrac{\partial F}{\partial y}=2y</span>,
+<span class="math inline">\dfrac{\partial F}{\partial
+y&#39;}=2y&#39;</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Eulerio lygtis: <span
+class="math inline">2y-\dfrac{d}{dx}(2y&#39;)=0</span>, t. y. <span
+class="math inline">y&#39;&#39;-y=0</span>. Sprendinys <span
+class="math inline">y=C_1\operatorname{ch}x+C_2\operatorname{sh}x</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Charakteringoji lygtis <span class="math inline">\alpha^2-1=0</span>
+duoda <span class="math inline">\alpha=\pm1</span>, t. y. <span
+class="math inline">e^{x}</span> ir <span
+class="math inline">e^{-x}</span>. Jų kombinacijas patogu užrašyti per
+<span class="math inline">\operatorname{ch}x</span> ir <span
+class="math inline">\operatorname{sh}x</span>, nes <span
+class="math inline">\operatorname{ch}0=1</span>, <span
+class="math inline">\operatorname{sh}0=0</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">y(0)=C_1=0</span>; <span
+class="math inline">y(1)=C_2\operatorname{sh}1=1</span>, todėl <span
+class="math inline">C_2=\dfrac1{\operatorname{sh}1}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=\dfrac{\operatorname{sh}x}{\operatorname{sh}1}</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-17-2"><div class="deze-antraste">17.2 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Kreivė <span
+class="math inline">y(x)&gt;0</span> sukama apie <span
+class="math inline">x</span> ašį. Sukinio paviršiaus plotas <span
+class="math inline">S=2\pi\displaystyle\int
+y\sqrt{1+y&#39;^2}\,dx</span>. Raskite kreives, su kuriomis plotas
+ekstremalus (muilo plėvelės forma).</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">F=y\sqrt{1+y&#39;^2}</span> nepriklauso nuo
+<span class="math inline">x</span>, todėl naudojame pirmąjį integralą
+<span class="math inline">F-y&#39;F_{y&#39;}=C</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span
+class="math inline">F_{y&#39;}=\dfrac{yy&#39;}{\sqrt{1+y&#39;^2}}</span>,
+todėl <span
+class="math display">y\sqrt{1+y&#39;^2}-\frac{yy&#39;^2}{\sqrt{1+y&#39;^2}}=\frac{y}{\sqrt{1+y&#39;^2}}=C
+.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Bendras vardiklis: <span
+class="math inline">\dfrac{y(1+y&#39;^2)-yy&#39;^2}{\sqrt{1+y&#39;^2}}=\dfrac{y}{\sqrt{1+y&#39;^2}}</span>.
+Pirmasis integralas sumažino lygties eilę nuo antros iki pirmos.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Išreiškiame <span
+class="math inline">y&#39;=\dfrac{\sqrt{y^2-C^2}}{C}</span> ir
+atskiriame kintamuosius: <span
+class="math inline">\displaystyle\int\frac{C\,dy}{\sqrt{y^2-C^2}}=x-C_2</span>,
+todėl <span class="math inline">C\,\mathrm{arch}\dfrac
+yC=x-C_2</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=C\operatorname{ch}\dfrac{x-C_2}{C}</span>
+(grandininė linija). Konstantos randamos iš galų padėties.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-17-3"><div class="deze-antraste">17.3 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Užrašykite Eulerio–Ostrogradskio lygtį
+funkcionalui <span
+class="math inline">J[u]=\displaystyle\iint_S\left(u_x^2+u_y^2\right)dx\,dy</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">\dfrac{\partial F}{\partial u}=0</span>,
+<span class="math inline">\dfrac{\partial F}{\partial u_x}=2u_x</span>,
+<span class="math inline">\dfrac{\partial F}{\partial
+u_y}=2u_y</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">0-\dfrac{\partial}{\partial
+x}(2u_x)-\dfrac{\partial}{\partial y}(2u_y)=0</span>, t. y. <span
+class="math inline">u_{xx}+u_{yy}=0</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\Delta
+u=0</span>. Taigi Laplaso lygties sprendinys minimizuoja „gradiento
+energiją“, todėl, pvz., elektrostatinis potencialas „renkasi“
+tolygiausią pasiskirstymą.</p>
+</div>
+<h2 id="uzduotys">Savarankiškos užduotys</h2>
+<div class="deze uzduotis" id="uzd-17-1" data-nr="17.1"><div class="deze-antraste">17.1 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Raskite funkcionalo <span
+class="math inline">J=\displaystyle\int_0^1y&#39;^2dx</span> ekstremalę,
+kai <span class="math inline">y(0)=0</span>, <span
+class="math inline">y(1)=2</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">F</span> priklauso tik nuo <span
+class="math inline">y&#39;</span>, todėl ekstremalės yra tiesės <span
+class="math inline">y=C_1x+C_2</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">y(0)=C_2=0</span>, <span
+class="math inline">y(1)=C_1=2</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=2x</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-17-2" data-nr="17.2"><div class="deze-antraste">17.2 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Raskite funkcionalo <span
+class="math inline">J=\displaystyle\int_0^1\left(y&#39;^2+12xy\right)dx</span>
+ekstremalę, kai <span class="math inline">y(0)=0</span>, <span
+class="math inline">y(1)=1</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">F_y=12x</span>, <span
+class="math inline">F_{y&#39;}=2y&#39;</span>. Eulerio lygtis: <span
+class="math inline">12x-2y&#39;&#39;=0</span>, todėl <span
+class="math inline">y&#39;&#39;=6x</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Integruojame du kartus: <span
+class="math inline">y=x^3+C_1x+C_2</span>. Iš sąlygų <span
+class="math inline">C_2=0</span>, <span
+class="math inline">1+C_1=1</span>, todėl <span
+class="math inline">C_1=0</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=x^3</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-17-3" data-nr="17.3"><div class="deze-antraste">17.3 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Raskite funkcionalo <span
+class="math inline">J=\displaystyle\int_0^{\pi/2}\left(y&#39;^2-y^2\right)dx</span>
+ekstremalę, kai <span class="math inline">y(0)=0</span>, <span
+class="math inline">y(\pi/2)=1</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">F_y=-2y</span>, <span
+class="math inline">F_{y&#39;}=2y&#39;</span>. Eulerio lygtis: <span
+class="math inline">-2y-2y&#39;&#39;=0</span>, t. y. <span
+class="math inline">y&#39;&#39;+y=0</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">y=C_1\cos x+C_2\sin x</span>. <span
+class="math inline">y(0)=C_1=0</span>; <span
+class="math inline">y(\pi/2)=C_2=1</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">y=\sin
+x</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-17-4" data-nr="17.4"><div class="deze-antraste">17.4 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Raskite funkcionalo <span
+class="math inline">J=\displaystyle\int_1^2x^3y&#39;^2dx</span>
+ekstremalę, kai <span class="math inline">y(1)=0</span>, <span
+class="math inline">y(2)=3</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">F</span> nepriklauso nuo <span
+class="math inline">y</span>, todėl <span
+class="math inline">F_{y&#39;}=2x^3y&#39;=\text{const}</span>, t. y.
+<span class="math inline">y&#39;=\dfrac{C}{x^3}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">y=-\dfrac{C}{2x^2}+D</span>. Pažymėję <span
+class="math inline">A=\frac C2</span>: <span
+class="math inline">y=D-\dfrac{A}{x^2}</span>. <span
+class="math inline">y(1)=D-A=0</span>, <span
+class="math inline">y(2)=D-\frac A4=3</span>, todėl <span
+class="math inline">A=D=4</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=4-\dfrac{4}{x^2}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-17-5" data-nr="17.5"><div class="deze-antraste">17.5 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Dalelės veikimas <span
+class="math inline">S=\displaystyle\int_{t_1}^{t_2}L\,dt</span>, kur
+<span class="math inline">L=\dfrac{m\dot x^2}{2}-\dfrac{kx^2}{2}</span>.
+Užrašykite Eulerio lygtį ir pirmąjį integralą. Ką jie reiškia
+fiziškai?</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">\dfrac{\partial L}{\partial x}=-kx</span>,
+<span class="math inline">\dfrac{\partial L}{\partial\dot x}=m\dot
+x</span>. Eulerio lygtis: <span
+class="math inline">-kx-\dfrac{d}{dt}(m\dot x)=0</span>, t. y. <span
+class="math inline">m\ddot x=-kx</span>. Tai Niutono dėsnis spyruoklei
+(harmoninis osciliatorius).</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">L</span> nepriklauso nuo <span
+class="math inline">t</span>, todėl <span class="math inline">L-\dot
+x\dfrac{\partial L}{\partial\dot x}=\dfrac{m\dot
+x^2}{2}-\dfrac{kx^2}{2}-m\dot x^2=-\left(\dfrac{m\dot
+x^2}{2}+\dfrac{kx^2}{2}\right)=\text{const}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">m\ddot
+x+kx=0</span>; pirmasis integralas reiškia, kad pilnoji energija <span
+class="math inline">\frac{m\dot x^2}{2}+\frac{kx^2}{2}</span>
+nekinta.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-17-6" data-nr="17.6"><div class="deze-antraste">17.6 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Raskite funkcionalo <span
+class="math inline">J=\displaystyle\int_0^1y&#39;&#39;^2dx</span>
+ekstremalę, kai <span class="math inline">y(0)=0</span>, <span
+class="math inline">y&#39;(0)=0</span>, <span
+class="math inline">y(1)=1</span>, <span
+class="math inline">y&#39;(1)=1</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Eulerio–Puasono lygtis: <span class="math inline">F_y=0</span>, <span
+class="math inline">F_{y&#39;}=0</span>, <span
+class="math inline">F_{y&#39;&#39;}=2y&#39;&#39;</span>, todėl <span
+class="math inline">\dfrac{d^2}{dx^2}(2y&#39;&#39;)=0</span>, t. y.
+<span class="math inline">y^{(4)}=0</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">y=ax^3+bx^2+cx+d</span>. Iš <span
+class="math inline">y(0)=y&#39;(0)=0</span> gauname <span
+class="math inline">c=d=0</span>. Toliau <span
+class="math inline">y(1)=a+b=1</span> ir <span
+class="math inline">y&#39;(1)=3a+2b=1</span>, todėl <span
+class="math inline">a=-1</span>, <span
+class="math inline">b=2</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=2x^2-x^3</span> (tamprios liniuotės forma).</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-17-7" data-nr="17.7"><div class="deze-antraste">17.7 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Užrašykite Eulerio–Ostrogradskio lygtį funkcionalui <span
+class="math inline">J[u]=\displaystyle\iint_S\left(u_x^2+u_y^2+2f(x,y)\,u\right)dx\,dy</span>,
+kur <span class="math inline">f</span> yra duota funkcija.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">\dfrac{\partial F}{\partial u}=2f</span>,
+<span class="math inline">\dfrac{\partial F}{\partial u_x}=2u_x</span>,
+<span class="math inline">\dfrac{\partial F}{\partial
+u_y}=2u_y</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">2f-2u_{xx}-2u_{yy}=0</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\Delta
+u=f(x,y)</span> (Puasono lygtis).</p>
+</div>
+</div>
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="tema-16.html"><span>← Ankstesnė tema</span><strong>16. Šturmo–Liuvilio uždavinys ir tikrinės funkcijos</strong></a>
+  <a class="puslapis-kitas" href="tema-18.html"><span>Kita tema →</span><strong>18. Sąlyginis ekstremumas ir stygos variacinis principas</strong></a>
+</nav>
+
+<script src="svetaine.js"></script>
+</body>
+</html>

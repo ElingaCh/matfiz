@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7. Integravimas kompleksinėje plokštumoje ir Lorano
+eilutė · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="temos-puslapis" data-tema="7" data-uzduociu="7">
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <a class="atgal" href="index.html">← Visos temos</a>
+    <nav class="skyreliai" aria-label="Temos dalys">
+      <a href="#teorija">Teorija</a>
+      <a href="#klaidos">Klaidos</a>
+      <a href="#pavyzdziai">Pavyzdžiai</a>
+      <a href="#uzduotys">Užduotys</a>
+    </nav>
+    <span class="temos-progresas" aria-live="polite"></span>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">7 tema · Kompleksinė analizė, sumos ir
+asimptotika</p>
+    <h1>Integravimas kompleksinėje plokštumoje ir Lorano eilutė</h1>
+    <p class="hero-info">3 išspręsti pavyzdžiai · 7 užduotys · sprendimai atidengiami po žingsnį</p>
+    <div class="juosta"><div class="juosta-uzpildas"></div></div>
+  </div>
+</header>
+
+<main class="turinys">
+<div class="deze teorija" id="teorija"><div class="deze-antraste">Teorija</div>
+<h3 id="kompleksinis-integralas">Kompleksinis integralas</h3>
+<p>Kreivę <span class="math inline">C</span> padaliname taškais <span
+class="math inline">z_0,z_1,\dots,z_n</span> ir sudarome integralinę
+sumą <span class="math inline">\sum f(\xi_i)\Delta z_i</span>. Jos riba
+yra <span class="math inline">\int_Cf(z)\,dz</span>. Praktiškai
+skaičiuojame <strong>parametrizuodami</strong> kreivę <span
+class="math inline">z=z(t)</span>, <span
+class="math inline">t\in[\alpha,\beta]</span>: <span
+class="math display">\int_Cf(z)\,dz=\int_\alpha^\beta
+f\big(z(t)\big)\,z&#39;(t)\,dt .</span> Apskritimui <span
+class="math inline">|z-a|=R</span> patogu imti <span
+class="math inline">z=a+Re^{i\varphi}</span>, <span
+class="math inline">dz=iRe^{i\varphi}d\varphi</span>, <span
+class="math inline">\varphi\in[0,2\pi]</span> (prieš laikrodžio
+rodyklę).</p>
+<p><strong>Svarbiausias integralas:</strong> <span
+class="math display">\oint_{|z-a|=R}(z-a)^n\,dz=\begin{cases}2\pi i,
+&amp; n=-1,\\ 0, &amp; n\neq-1\ (n\in\mathbb Z).\end{cases}</span></p>
+<h3 id="košy-teorema">Košy teorema</h3>
+<p>Jei <span class="math inline">f(z)</span> analizinė vienajungėje
+srityje <span class="math inline">S</span>, tai bet kuria uždara kreive
+<span class="math inline">C\subset S</span> <span
+class="math display">\oint_Cf(z)\,dz=0 .</span> Išvada:
+<strong>integralas nepriklauso nuo kelio</strong>. Tada galima naudoti
+pirmykštę funkciją: <span
+class="math inline">\int_{z_1}^{z_2}f\,dz=F(z_2)-F(z_1)</span>.</p>
+<h3 id="košy-integralinė-formulė">Košy integralinė formulė</h3>
+<p>Jei <span class="math inline">f</span> analizinė srityje, kurią
+riboja kontūras <span class="math inline">C</span>, tai <span
+class="math display">\oint_C\frac{f(z)}{z-a}\,dz=f(a)\cdot\begin{cases}0,
+&amp; a\ \text{už kontūro},\\ 2\pi i, &amp; a\ \text{kontūro viduje},\\
+\pi i, &amp; a\ \text{ant kontūro (pagrindinė
+reikšmė)}.\end{cases}</span> Išvestinėms: <span
+class="math display">\oint_C\frac{f(z)}{(z-a)^{n+1}}\,dz=\frac{2\pi
+i}{n!}\,f^{(n)}(a)\qquad(a\ \text{viduje}).</span> Mintis tokia:
+analizinės funkcijos reikšmės kontūro viduje visiškai nusakomos jos
+reikšmėmis ant kontūro.</p>
+<h3 id="lorano-eilutė">Lorano eilutė</h3>
+<p>Žiede <span class="math inline">r&lt;|z-z_0|&lt;R</span> analizinę
+funkciją galima išskleisti eilute su <strong>neigiamais</strong>
+laipsniais: <span
+class="math display">f(z)=\sum_{n=-\infty}^{\infty}c_n(z-z_0)^n=\underbrace{\dots+\frac{c_{-2}}{(z-z_0)^2}+\frac{c_{-1}}{z-z_0}}_{\text{pagrindinė
+dalis}}+\underbrace{c_0+c_1(z-z_0)+\dots}_{\text{reguliarioji
+dalis}}</span> Integruojant panariui išlieka tik narys su <span
+class="math inline">n=-1</span>: <span
+class="math display">\oint_Cf(z)\,dz=2\pi i\,c_{-1}.</span> Koeficientas
+<span class="math inline">c_{-1}</span> vadinamas
+<strong>reziduumu</strong> (8 tema).</p>
+<p><strong>Praktinis receptas:</strong> išskleidžiame funkciją į
+paprastąsias trupmenas ir kiekvieną trupmeną paverčiame geometrine
+eilute <span class="math inline">\dfrac{1}{1-q}=\sum q^n</span>, kur
+<span class="math inline">|q|&lt;1</span>. Ką imti <span
+class="math inline">q</span>, priklauso nuo žiedo.</p>
+</div>
+<div class="deze klaidos" id="klaidos"><div class="deze-antraste">Dažniausios klaidos</div>
+<ul>
+<li><strong>Neteisinga kontūro kryptis.</strong> Teigiama kryptis yra
+prieš laikrodžio rodyklę. Einant pagal laikrodžio rodyklę, ženklas
+pasikeičia.</li>
+<li><strong>Košy teorema taikoma neanalizinei funkcijai.</strong> Pvz.,
+<span class="math inline">\bar z</span> ir <span
+class="math inline">|z|</span> nėra analizinės, todėl jų integralas
+priklauso nuo kelio.</li>
+<li><strong>Neįvertinama, kurie taškai yra kontūro viduje.</strong>
+Visada reikia apskaičiuoti atstumą nuo centro: taškas <span
+class="math inline">a</span> yra viduje, jei <span
+class="math inline">|a-z_0|&lt;R</span>.</li>
+<li><strong>Lorano eilutė skirtinguose žieduose skiriasi.</strong> Ta
+pati funkcija žieduose <span class="math inline">0&lt;|z|&lt;1</span> ir
+<span class="math inline">|z|&gt;1</span> turi skirtingas eilutes.</li>
+<li><strong>Išvestinės formulėje</strong> pamirštamas <span
+class="math inline">n!</span> arba imamas vienetu didesnis
+laipsnis.</li>
+</ul>
+</div>
+<h2 id="pavyzdziai">Išspręsti pavyzdžiai</h2>
+<div class="deze pavyzdys" id="pvz-7-1"><div class="deze-antraste">7.1 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Apskaičiuokite <span
+class="math inline">\displaystyle\int_C|z|\,dz</span> nuo <span
+class="math inline">z=-1</span> iki <span
+class="math inline">z=1</span>: a) tiesės atkarpa; b) viršutiniu
+vienetinio apskritimo lanku. Ar rezultatai sutampa ir kodėl?</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><strong>a)</strong> Ant realiosios ašies <span
+class="math inline">z=x</span>, <span class="math inline">dz=dx</span>,
+<span class="math inline">|z|=|x|</span>: <span
+class="math display">\int_{-1}^{1}|x|\,dx=2\int_0^1x\,dx=1 .</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><strong>b)</strong> Lankas: <span
+class="math inline">z=e^{i\varphi}</span>, <span
+class="math inline">\varphi</span> kinta nuo <span
+class="math inline">\pi</span> iki <span class="math inline">0</span>,
+<span class="math inline">|z|=1</span>, <span
+class="math inline">dz=ie^{i\varphi}d\varphi</span>: <span
+class="math display">\int_\pi^0 1\cdot
+ie^{i\varphi}\,d\varphi=\Big[e^{i\varphi}\Big]_\pi^0=1-(-1)=2
+.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Ant vienetinio apskritimo <span class="math inline">|z|=1</span>,
+todėl integralas virsta <span class="math inline">\int dz</span>, o tai
+tiesiog galinio ir pradinio taškų skirtumas.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Rezultatai skirtingi (<span class="math inline">1\neq2</span>). Taip
+yra todėl, kad <span class="math inline">|z|</span> <strong>nėra
+analizinė</strong> funkcija (ji netenkina Košy–Rymano sąlygų), o Košy
+teorema galioja tik analizinėms funkcijoms.</p>
+</div>
+<p><strong>Atsakymas:</strong> a) <span class="math inline">1</span>; b)
+<span class="math inline">2</span>, nes integralas priklauso nuo
+kelio.</p>
+<div class="pastaba"><span class="pastaba-zyme">Pastaba.</span>
+<p>Jei, kaip pratybose, integruojama nuo <span
+class="math inline">1</span> iki <span class="math inline">-1</span>,
+abu atsakymai keičia ženklą: <span class="math inline">-1</span> ir
+<span class="math inline">-2</span>.</p>
+</div>
+</div>
+<div class="deze pavyzdys" id="pvz-7-2"><div class="deze-antraste">7.2 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Apskaičiuokite <span
+class="math inline">\displaystyle\oint_{|z-1|=1}\frac{dz}{z^2-1}</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Vardiklio nuliai: <span class="math inline">z=1</span> ir <span
+class="math inline">z=-1</span>. Kontūras yra apskritimas, kurio centras
+<span class="math inline">1</span>, o spindulys <span
+class="math inline">1</span>.</p>
+<ul>
+<li><span class="math inline">z=1</span> yra centras, todėl jis
+viduje.</li>
+<li><span class="math inline">z=-1</span>: atstumas iki centro <span
+class="math inline">|-1-1|=2&gt;1</span>, todėl jis už kontūro.</li>
+</ul>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Perrašome taip, kad matytųsi Košy formulė su vidiniu tašku <span
+class="math inline">a=1</span>: <span
+class="math display">\frac{1}{z^2-1}=\frac{1/(z+1)}{z-1},\qquad
+f(z)=\frac{1}{z+1}.</span> <span class="math inline">f</span> analizinė
+kontūro viduje, nes jos vienintelis „blogas“ taškas <span
+class="math inline">-1</span> yra už kontūro.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Košy formulę galima taikyti tik tada, kai visa likusi funkcijos dalis
+<span class="math inline">f(z)</span> yra analizinė kontūro viduje.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math display">\oint\frac{f(z)}{z-1}dz=2\pi i\,f(1)=2\pi
+i\cdot\frac12=\pi i .</span></p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\pi
+i</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-7-3"><div class="deze-antraste">7.3 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Išskleiskite <span
+class="math inline">f(z)=\dfrac{1}{(z-1)(z-2)}</span> Lorano eilute
+žiede <span class="math inline">1&lt;|z|&lt;2</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Paprastosios trupmenos: <span
+class="math inline">f=\dfrac{1}{z-2}-\dfrac{1}{z-1}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Žiede <span class="math inline">|z|&lt;2</span>, todėl <span
+class="math inline">\left|\tfrac z2\right|&lt;1</span>: <span
+class="math display">\frac{1}{z-2}=-\frac12\cdot\frac{1}{1-z/2}=-\frac12\sum_{n=0}^\infty\frac{z^n}{2^n}.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Geometrinė eilutė konverguoja tik kai <span
+class="math inline">|q|&lt;1</span>. Kadangi <span
+class="math inline">|z|&lt;2</span>, tinka <span
+class="math inline">q=z/2</span>, o ne <span
+class="math inline">q=2/z</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Žiede <span class="math inline">|z|&gt;1</span>, todėl <span
+class="math inline">\left|\tfrac1z\right|&lt;1</span>: <span
+class="math display">-\frac{1}{z-1}=-\frac1z\cdot\frac{1}{1-1/z}=-\sum_{n=0}^\infty\frac{1}{z^{n+1}}.</span></p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">f(z)=-\displaystyle\sum_{n=1}^{\infty}\frac{1}{z^n}-\sum_{n=0}^{\infty}\frac{z^n}{2^{n+1}}</span>,
+<span class="math inline">1&lt;|z|&lt;2</span>.</p>
+</div>
+<h2 id="uzduotys">Savarankiškos užduotys</h2>
+<div class="deze uzduotis" id="uzd-7-1" data-nr="7.1"><div class="deze-antraste">7.1 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Apskaičiuokite <span
+class="math inline">\displaystyle\oint_{|z|=1}\bar z\,dz</span> ir
+palyginkite su <span
+class="math inline">\displaystyle\oint_{|z|=1}z\,dz</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">z=e^{i\varphi}</span>, <span
+class="math inline">\bar z=e^{-i\varphi}</span>, <span
+class="math inline">dz=ie^{i\varphi}d\varphi</span>: <span
+class="math inline">\displaystyle\oint\bar
+z\,dz=\int_0^{2\pi}e^{-i\varphi}ie^{i\varphi}d\varphi=2\pi i</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">\displaystyle\oint
+z\,dz=\int_0^{2\pi}ie^{2i\varphi}d\varphi=0</span>. Tai sutampa su Košy
+teorema, nes <span class="math inline">z</span> analizinė, o <span
+class="math inline">\bar z</span> ne.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">2\pi i</span>
+ir <span class="math inline">0</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-7-2" data-nr="7.2"><div class="deze-antraste">7.2 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Apskaičiuokite <span class="math inline">\displaystyle\int
+z^2dz</span> nuo <span class="math inline">0</span> iki <span
+class="math inline">1+i</span>: a) tiese <span
+class="math inline">y=x</span>; b) laužte <span
+class="math inline">0\to1\to1+i</span>. Paaiškinkite rezultatą.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><strong>a)</strong> <span class="math inline">z=(1+i)t</span>, <span
+class="math inline">t\in[0,1]</span>: <span
+class="math inline">\displaystyle\int_0^1(1+i)^3t^2dt=\frac{(1+i)^3}{3}=\frac{-2+2i}{3}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><strong>b)</strong> Atkarpoje <span class="math inline">0\to1</span>:
+<span class="math inline">\int_0^1x^2dx=\tfrac13</span>. Atkarpoje <span
+class="math inline">1\to1+i</span>: <span
+class="math inline">z=1+iy</span>, <span
+class="math inline">dz=i\,dy</span>, <span
+class="math inline">\displaystyle\int_0^1(1+iy)^2i\,dy=\left[\frac{(1+iy)^3}{3}\right]_0^1=\frac{-2+2i}{3}-\frac13</span>.
+Sudėję gauname <span class="math inline">\dfrac{-2+2i}{3}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Rezultatai sutampa, nes <span class="math inline">z^2</span>
+analizinė, todėl integralas nepriklauso nuo kelio ir lygus <span
+class="math inline">F(1+i)-F(0)</span>, kur <span
+class="math inline">F=z^3/3</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> abiem atvejais <span
+class="math inline">\dfrac{-2+2i}{3}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-7-3" data-nr="7.3"><div class="deze-antraste">7.3 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Apskaičiuokite <span
+class="math inline">\displaystyle\oint_{|z-i|=1}\frac{dz}{z^2+1}</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">z^2+1=(z-i)(z+i)</span>. Taškas <span
+class="math inline">i</span> yra centras, todėl jis viduje. Taškui <span
+class="math inline">-i</span> atstumas iki centro <span
+class="math inline">|-i-i|=2&gt;1</span>, todėl jis už kontūro.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">f(z)=\dfrac{1}{z+i}</span>, todėl
+integralas lygus <span class="math inline">2\pi i\,f(i)=2\pi
+i\cdot\dfrac{1}{2i}=\pi</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\pi</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-7-4" data-nr="7.4"><div class="deze-antraste">7.4 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Apskaičiuokite <span
+class="math inline">\displaystyle\oint_{|z|=2}\frac{e^z}{z(z-1)}dz</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Abu taškai <span class="math inline">0</span> ir <span
+class="math inline">1</span> yra kontūro viduje. Paprastosios trupmenos:
+<span
+class="math inline">\dfrac{1}{z(z-1)}=\dfrac{1}{z-1}-\dfrac1z</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">\displaystyle\oint\frac{e^z}{z-1}dz=2\pi
+ie</span> ir <span
+class="math inline">\displaystyle\oint\frac{e^z}{z}dz=2\pi
+i\cdot1</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">2\pi
+i(e-1)</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-7-5" data-nr="7.5"><div class="deze-antraste">7.5 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Naudodamiesi Košy formule išvestinėms, apskaičiuokite <span
+class="math inline">\displaystyle\oint_{|z|=1}\frac{\cos
+z}{z^3}dz</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">\dfrac{\cos
+z}{z^3}=\dfrac{f(z)}{(z-0)^{2+1}}</span>, kur <span
+class="math inline">f=\cos z</span>, <span
+class="math inline">n=2</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">\dfrac{2\pi i}{2!}f&#39;&#39;(0)=\pi
+i\cdot(-\cos0)=-\pi i</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">-\pi
+i</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-7-6" data-nr="7.6"><div class="deze-antraste">7.6 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Išskleiskite <span class="math inline">f(z)=\dfrac{1}{z(z-1)}</span>
+Lorano eilute žieduose a) <span
+class="math inline">0&lt;|z|&lt;1</span>; b) <span
+class="math inline">|z|&gt;1</span>. Abiem atvejais raskite <span
+class="math inline">c_{-1}</span> ir paaiškinkite, kodėl <span
+class="math inline">\oint_{|z|=2}f\,dz=0</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><strong>a)</strong> <span class="math inline">|z|&lt;1</span>: <span
+class="math inline">\dfrac{1}{z(z-1)}=-\dfrac1z\cdot\dfrac{1}{1-z}=-\dfrac1z\sum_{n\geq0}z^n=-\dfrac1z-1-z-z^2-\dots</span>,
+todėl <span class="math inline">c_{-1}=-1</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><strong>b)</strong> <span class="math inline">|z|&gt;1</span>: <span
+class="math inline">\dfrac{1}{z(z-1)}=\dfrac{1}{z^2}\cdot\dfrac{1}{1-1/z}=\sum_{n\geq0}\dfrac{1}{z^{n+2}}=\dfrac{1}{z^2}+\dfrac{1}{z^3}+\dots</span>,
+todėl <span class="math inline">c_{-1}=0</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Kontūras <span class="math inline">|z|=2</span> yra žiede <span
+class="math inline">|z|&gt;1</span>, todėl <span
+class="math inline">\oint f\,dz=2\pi i\cdot c_{-1}=0</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> a) <span
+class="math inline">c_{-1}=-1</span>; b) <span
+class="math inline">c_{-1}=0</span>, todėl integralas lygus <span
+class="math inline">0</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-7-7" data-nr="7.7"><div class="deze-antraste">7.7 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Išskleiskite <span class="math inline">f(z)=z^2e^{1/z}</span> Lorano
+eilute taško <span class="math inline">z=0</span> aplinkoje ir
+apskaičiuokite <span
+class="math inline">\displaystyle\oint_{|z|=1}z^2e^{1/z}dz</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">e^w=\sum\dfrac{w^n}{n!}</span>, kai <span
+class="math inline">w=1/z</span>: <span
+class="math display">z^2e^{1/z}=z^2\left(1+\frac1z+\frac{1}{2z^2}+\frac{1}{6z^3}+\frac{1}{24z^4}+\dots\right)=z^2+z+\frac12+\frac{1}{6z}+\frac{1}{24z^2}+\dots</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Pagrindinė dalis yra begalinė, todėl <span
+class="math inline">z=0</span> yra <strong>esminis</strong> ypatingasis
+taškas. <span class="math inline">c_{-1}=\tfrac16</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">\oint f\,dz=2\pi i\cdot\tfrac16=\dfrac{\pi
+i}{3}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\dfrac{\pi
+i}{3}</span>.</p>
+</div>
+</div>
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="tema-06.html"><span>← Ankstesnė tema</span><strong>6. Analizinės funkcijos ir Gama funkcija</strong></a>
+  <a class="puslapis-kitas" href="tema-08.html"><span>Kita tema →</span><strong>8. Reziduumai ir jų taikymas integralams</strong></a>
+</nav>
+
+<script src="svetaine.js"></script>
+</body>
+</html>

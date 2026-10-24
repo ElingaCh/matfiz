@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>19. Judamieji rėžiai ir ekstremalės su lūžio
+taškais · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="temos-puslapis" data-tema="19" data-uzduociu="7">
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <a class="atgal" href="index.html">← Visos temos</a>
+    <nav class="skyreliai" aria-label="Temos dalys">
+      <a href="#teorija">Teorija</a>
+      <a href="#klaidos">Klaidos</a>
+      <a href="#pavyzdziai">Pavyzdžiai</a>
+      <a href="#uzduotys">Užduotys</a>
+    </nav>
+    <span class="temos-progresas" aria-live="polite"></span>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">19 tema · Variacinis skaičiavimas</p>
+    <h1>Judamieji rėžiai ir ekstremalės su lūžio taškais</h1>
+    <p class="hero-info">3 išspręsti pavyzdžiai · 7 užduotys · sprendimai atidengiami po žingsnį</p>
+    <div class="juosta"><div class="juosta-uzpildas"></div></div>
+  </div>
+</header>
+
+<main class="turinys">
+<div class="deze teorija" id="teorija"><div class="deze-antraste">Teorija</div>
+<h3 id="kas-pasikeičia-kai-galas-nefiksuotas">Kas pasikeičia, kai galas
+nefiksuotas</h3>
+<p>Iki šiol abu galai buvo įtvirtinti, todėl <span
+class="math inline">\delta y(a)=\delta y(b)=0</span>, o integruojant
+dalimis kraštinis narys <span
+class="math inline">\left[F_{y&#39;}\,\delta y\right]_a^b</span>
+išnykdavo. Jei galas <strong>gali judėti</strong>, šis narys
+nebeišnyksta. Jis turi būti lygus nuliui <strong>pats</strong>, ir taip
+gauname papildomą kraštinę sąlygą vietoje trūkstamos.</p>
+<p>Eulerio lygtis lieka ta pati. Keičiasi tik sąlygos, iš kurių randamos
+konstantos.</p>
+<h3 id="trys-atvejai-dešinysis-galas-xx_2">Trys atvejai (dešinysis galas
+<span class="math inline">x=x_2</span>)</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Kas laisva</th>
+<th style="text-align: left;">Sąlyga gale</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">x_2</span>
+fiksuotas, <span class="math inline">y(x_2)</span> laisvas</td>
+<td style="text-align: left;"><span
+class="math inline">F_{y&#39;}=0</span> (natūralioji sąlyga)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">galas slysta kreive <span
+class="math inline">y=\varphi(x)</span></td>
+<td style="text-align: left;"><span
+class="math inline">F+(\varphi&#39;-y&#39;)F_{y&#39;}=0</span>
+(transversalumas)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">x_2</span> ir
+<span class="math inline">y_2</span> laisvi nepriklausomai</td>
+<td style="text-align: left;"><span
+class="math inline">F_{y&#39;}=0</span> ir <span
+class="math inline">F-y&#39;F_{y&#39;}=0</span></td>
+</tr>
+</tbody>
+</table>
+<p>Kairiajam galui sąlygos tokios pačios.</p>
+<p><strong>Svarbus atvejis:</strong> jei <span
+class="math inline">F=A(x,y)\sqrt{1+y&#39;^2}</span> (ilgis, optinis
+kelias), transversalumo sąlyga virsta <span
+class="math inline">y&#39;\varphi&#39;=-1</span>, t. y.
+<strong>ekstremalė kerta kreivę statmenai</strong>.</p>
+<h3 id="ekstremalės-su-lūžio-taškais">Ekstremalės su lūžio taškais</h3>
+<p>Kartais geriausia kreivė turi <strong>kampą</strong> (lūžį) taške
+<span class="math inline">x_1</span>: išvestinės <span
+class="math inline">y&#39;(x_1-0)</span> ir <span
+class="math inline">y&#39;(x_1+0)</span> skiriasi. Abiejose lūžio pusėse
+kreivė tenkina Eulerio lygtį, o pačiame lūžio taške galioja
+<strong>Vejerštraso–Erdmano sąlygos</strong>: <span
+class="math display">F_{y&#39;}\Big|_{x_1-0}=F_{y&#39;}\Big|_{x_1+0},\qquad
+\big(F-y&#39;F_{y&#39;}\big)\Big|_{x_1-0}=\big(F-y&#39;F_{y&#39;}\big)\Big|_{x_1+0}.</span>
+Abu reiškiniai turi būti <strong>tolydūs</strong>, nors <span
+class="math inline">y&#39;</span> trūki.</p>
+<p><strong>Atspindys:</strong> jei kreivė turi atsispindėti nuo kreivės
+<span class="math inline">y=\varphi(x)</span>, iš panašių sąlygų
+gaunamas <strong>atspindžio dėsnis</strong>: kritimo kampas lygus
+atspindžio kampui.</p>
+</div>
+<div class="deze klaidos" id="klaidos"><div class="deze-antraste">Dažniausios klaidos</div>
+<ul>
+<li><strong>Galas laisvas, bet sąlyga nerašoma.</strong> Tada lieka
+viena neapibrėžta konstanta. Kiekvienam laisvam galui reikia savos
+sąlygos.</li>
+<li><strong>Natūralioji sąlyga supainiojama su <span
+class="math inline">y&#39;=0</span>.</strong> Sąlyga yra <span
+class="math inline">F_{y&#39;}=0</span>. Tik kai <span
+class="math inline">F_{y&#39;}=2y&#39;</span> (pvz., <span
+class="math inline">F=y&#39;^2+\dots</span>), ji sutampa su <span
+class="math inline">y&#39;=0</span>.</li>
+<li><strong>Transversalumo sąlygoje imama <span
+class="math inline">\varphi</span> vietoje <span
+class="math inline">\varphi&#39;</span>.</strong> Sąlygoje dalyvauja
+kreivės <strong>nuolydis</strong> <span
+class="math inline">\varphi&#39;(x_2)</span>.</li>
+<li><strong>Lūžiai ieškomi ten, kur jų negali būti.</strong> Jei <span
+class="math inline">F_{y&#39;}</span> yra griežtai monotoniška <span
+class="math inline">y&#39;</span> funkcija (pvz., <span
+class="math inline">2y&#39;</span>), iš jos tolydumo seka <span
+class="math inline">y&#39;</span> tolydumas, todėl lūžių nėra.</li>
+</ul>
+</div>
+<h2 id="pavyzdziai">Išspręsti pavyzdžiai</h2>
+<div class="deze pavyzdys" id="pvz-19-1"><div class="deze-antraste">19.1 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Raskite trumpiausią kelią nuo koordinačių
+pradžios iki tiesės <span class="math inline">y=2-x</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">F=\sqrt{1+y&#39;^2}</span> priklauso tik
+nuo <span class="math inline">y&#39;</span>, todėl ekstremalės yra
+tiesės. Kairysis galas <span class="math inline">(0,0)</span> fiksuotas,
+todėl <span class="math inline">y=kx</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Dešinysis galas slysta kreive <span
+class="math inline">\varphi=2-x</span>, <span
+class="math inline">\varphi&#39;=-1</span>. Kadangi <span
+class="math inline">F=1\cdot\sqrt{1+y&#39;^2}</span>, transversalumo
+sąlyga yra <span class="math inline">y&#39;\varphi&#39;=-1</span>, todėl
+<span class="math inline">k\cdot(-1)=-1</span> ir <span
+class="math inline">k=1</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Rezultatas atitinka geometriją: trumpiausias kelias iki tiesės yra
+statmuo jai.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Susikirtimas: <span class="math inline">x=2-x</span>, todėl <span
+class="math inline">x=1</span>, <span class="math inline">y=1</span>.
+Ilgis <span class="math inline">\sqrt{1^2+1^2}=\sqrt2</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">y=x</span>
+(<span class="math inline">0\le x\le1</span>), atstumas <span
+class="math inline">\sqrt2</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-19-2"><div class="deze-antraste">19.2 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Raskite funkcionalo <span
+class="math inline">J=\displaystyle\int_0^1\left(y&#39;^2+y^2\right)dx</span>
+ekstremalę, kai <span class="math inline">y(0)=1</span>, o <span
+class="math inline">y(1)</span> laisvas.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Eulerio lygtis (žr. 17.1 pavyzdį): <span
+class="math inline">y&#39;&#39;=y</span>, todėl <span
+class="math inline">y=C_1\operatorname{ch}x+C_2\operatorname{sh}x</span>.
+Iš <span class="math inline">y(0)=1</span> gauname <span
+class="math inline">C_1=1</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Natūralioji sąlyga: <span
+class="math inline">F_{y&#39;}=2y&#39;=0</span>, kai <span
+class="math inline">x=1</span>. Tada <span
+class="math inline">\operatorname{sh}1+C_2\operatorname{ch}1=0</span>,
+todėl <span class="math inline">C_2=-\operatorname{th}1</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Antrosios kraštinės sąlygos neturime, todėl ją pakeičia reikalavimas,
+kad kraštinis narys <span class="math inline">F_{y&#39;}\delta
+y\big|_{x=1}</span> išnyktų su bet kokia <span
+class="math inline">\delta y(1)</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span
+class="math inline">y=\operatorname{ch}x-\dfrac{\operatorname{sh}1}{\operatorname{ch}1}\operatorname{sh}x=\dfrac{\operatorname{ch}1\operatorname{ch}x-\operatorname{sh}1\operatorname{sh}x}{\operatorname{ch}1}=\dfrac{\operatorname{ch}(1-x)}{\operatorname{ch}1}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=\dfrac{\operatorname{ch}(1-x)}{\operatorname{ch}1}</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-19-3"><div class="deze-antraste">19.3 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Raskite funkcionalo <span
+class="math inline">J=\displaystyle\int_0^2\left(y&#39;^2-1\right)^2dx</span>
+minimumą, kai <span class="math inline">y(0)=y(2)=0</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">F</span> priklauso tik nuo <span
+class="math inline">y&#39;</span>, todėl glodžios ekstremalės yra
+tiesės. Su šiomis sąlygomis tai <span class="math inline">y=0</span>, ir
+tada <span class="math inline">J=\int_0^21\,dx=2</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Bet <span class="math inline">F\ge0</span>, o <span
+class="math inline">F=0</span>, kai <span
+class="math inline">y&#39;=\pm1</span>. Laužtė <span
+class="math inline">y=x</span> (<span class="math inline">0\le
+x\le1</span>) ir <span class="math inline">y=2-x</span> (<span
+class="math inline">1\le x\le2</span>) duoda <span
+class="math inline">J=0</span>, t. y. mažiau!</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Patikriname Vejerštraso–Erdmano sąlygas: <span
+class="math inline">F_{y&#39;}=4y&#39;(y&#39;^2-1)</span> ir <span
+class="math inline">F-y&#39;F_{y&#39;}=(y&#39;^2-1)(1-3y&#39;^2)</span>.
+Kai <span class="math inline">y&#39;=\pm1</span>, abu reiškiniai lygūs
+nuliui iš abiejų pusių, todėl jie tolydūs ✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> minimumas <span
+class="math inline">J=0</span>, kai <span class="math inline">y</span>
+yra laužtė su nuolydžiais <span class="math inline">\pm1</span> (pvz.,
+„stogelis“ su viršūne <span class="math inline">(1,1)</span>).</p>
+</div>
+<h2 id="uzduotys">Savarankiškos užduotys</h2>
+<div class="deze uzduotis" id="uzd-19-1" data-nr="19.1"><div class="deze-antraste">19.1 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Raskite funkcionalo <span
+class="math inline">J=\displaystyle\int_0^1\left(y&#39;^2+2y\right)dx</span>
+ekstremalę, kai <span class="math inline">y(0)=0</span>, o <span
+class="math inline">y(1)</span> laisvas.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Eulerio lygtis: <span class="math inline">2-2y&#39;&#39;=0</span>,
+todėl <span class="math inline">y=\frac{x^2}{2}+C_1x+C_2</span>, ir iš
+<span class="math inline">y(0)=0</span> gauname <span
+class="math inline">C_2=0</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Natūralioji sąlyga <span class="math inline">2y&#39;(1)=0</span>:
+<span class="math inline">1+C_1=0</span>, todėl <span
+class="math inline">C_1=-1</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=\dfrac{x^2}{2}-x</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-19-2" data-nr="19.2"><div class="deze-antraste">19.2 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Transversalumo sąlyga raskite trumpiausią atstumą nuo koordinačių
+pradžios iki tiesės <span class="math inline">y=3-2x</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">y=kx</span>, <span
+class="math inline">\varphi&#39;=-2</span>. Iš <span
+class="math inline">k\cdot(-2)=-1</span> gauname <span
+class="math inline">k=\frac12</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Susikirtimas: <span class="math inline">\frac x2=3-2x</span>, todėl
+<span class="math inline">x=\frac65</span>, <span
+class="math inline">y=\frac35</span>. Ilgis <span
+class="math inline">\sqrt{\frac{36}{25}+\frac{9}{25}}=\frac{3}{\sqrt5}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\dfrac3{\sqrt5}</span> (sutampa su formule <span
+class="math inline">|c|/\sqrt{a^2+b^2}</span>).</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-19-3" data-nr="19.3"><div class="deze-antraste">19.3 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Raskite funkcionalo <span
+class="math inline">J=\displaystyle\int_0^{\pi/4}\left(y&#39;^2-y^2\right)dx</span>
+ekstremalę, kai <span class="math inline">y(0)=1</span>, o <span
+class="math inline">y(\pi/4)</span> laisvas.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Eulerio lygtis <span class="math inline">y&#39;&#39;+y=0</span>,
+todėl <span class="math inline">y=C_1\cos x+C_2\sin x</span>, ir <span
+class="math inline">y(0)=1</span> duoda <span
+class="math inline">C_1=1</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Natūralioji sąlyga <span class="math inline">y&#39;(\pi/4)=0</span>:
+<span class="math inline">-\sin\frac\pi4+C_2\cos\frac\pi4=0</span>,
+todėl <span class="math inline">C_2=1</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">y=\cos x+\sin
+x</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-19-4" data-nr="19.4"><div class="deze-antraste">19.4 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Įrodykite, kad funkcionalui <span
+class="math inline">J=\displaystyle\int
+A(x,y)\sqrt{1+y&#39;^2}\,dx</span> (<span
+class="math inline">A\ne0</span>) transversalumo sąlyga reiškia
+statmenumą: <span class="math inline">y&#39;\varphi&#39;=-1</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span
+class="math inline">F_{y&#39;}=\dfrac{Ay&#39;}{\sqrt{1+y&#39;^2}}</span>.
+Įstatome į <span
+class="math inline">F+(\varphi&#39;-y&#39;)F_{y&#39;}=0</span>: <span
+class="math display">\frac{A\left[(1+y&#39;^2)+(\varphi&#39;-y&#39;)y&#39;\right]}{\sqrt{1+y&#39;^2}}=\frac{A\,(1+\varphi&#39;y&#39;)}{\sqrt{1+y&#39;^2}}=0
+.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Kadangi <span class="math inline">A\ne0</span>, lieka <span
+class="math inline">1+\varphi&#39;y&#39;=0</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y&#39;\varphi&#39;=-1</span>: ekstremalės ir kreivės
+liestinės statmenos.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-19-5" data-nr="19.5"><div class="deze-antraste">19.5 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Įrodykite, kad funkcionalo <span
+class="math inline">J=\displaystyle\int\left(y&#39;^2+y^2\right)dx</span>
+ekstremalės negali turėti lūžio taškų.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Pirmoji Vejerštraso–Erdmano sąlyga: <span
+class="math inline">F_{y&#39;}=2y&#39;</span> turi būti tolydi.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Iš <span class="math inline">2y&#39;(x_1-0)=2y&#39;(x_1+0)</span>
+seka <span class="math inline">y&#39;(x_1-0)=y&#39;(x_1+0)</span>, t. y.
+kampo nėra.</p>
+</div>
+<p><strong>Atsakymas:</strong> lūžių nėra, nes <span
+class="math inline">F_{y&#39;}=2y&#39;</span> vienareikšmiškai nusako
+<span class="math inline">y&#39;</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-19-6" data-nr="19.6"><div class="deze-antraste">19.6 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Raskite funkcionalo <span
+class="math inline">J=\displaystyle\int_0^2y&#39;^2(1-y&#39;)^2dx</span>
+minimumą, kai <span class="math inline">y(0)=0</span>, <span
+class="math inline">y(2)=1</span>. Palyginkite su tiese.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Tiesei <span class="math inline">y=\frac x2</span>: <span
+class="math inline">F=\frac14\cdot\frac14=\frac1{16}</span>, todėl <span
+class="math inline">J=\frac18</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">F\ge0</span> ir <span
+class="math inline">F=0</span>, kai <span
+class="math inline">y&#39;=0</span> arba <span
+class="math inline">y&#39;=1</span>. Laužtė <span
+class="math inline">y=0</span> (<span class="math inline">0\le
+x\le1</span>), <span class="math inline">y=x-1</span> (<span
+class="math inline">1\le x\le2</span>) tenkina sąlygas ir duoda <span
+class="math inline">J=0</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Vejerštraso–Erdmano sąlygos: <span
+class="math inline">F_{y&#39;}=2y&#39;(1-y&#39;)(1-2y&#39;)</span> ir
+<span class="math inline">F-y&#39;F_{y&#39;}</span>, kai <span
+class="math inline">y&#39;\in\{0,1\}</span>, abu lygūs 0 iš abiejų pusių
+✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">J_{\min}=0</span>, kai <span
+class="math inline">y</span> yra laužtė su nuolydžiais 0 ir 1 (pvz.,
+lūžis taške <span class="math inline">(1,0)</span>). Tiesė duoda <span
+class="math inline">\frac18</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-19-7" data-nr="19.7"><div class="deze-antraste">19.7 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Šviesos spindulys eina iš taško <span
+class="math inline">A(0,1)</span> į tašką <span
+class="math inline">B(3,2)</span>, atsispindėdamas nuo veidrodžio <span
+class="math inline">y=0</span>. Raskite atspindžio tašką ir kelio
+ilgį.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Abiejose atspindžio pusėse kelias yra tiesė (optinis kelias <span
+class="math inline">\int\sqrt{1+y&#39;^2}dx</span>). Atspindžio taške
+kampai lygūs.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Lygūs kampai reiškia, kad <span class="math inline">B</span>
+veidrodinis atvaizdas <span class="math inline">B&#39;(3,-2)</span> yra
+tiesėje, einančioje per <span class="math inline">A</span> ir atspindžio
+tašką. Tiesė <span class="math inline">AB&#39;</span>: <span
+class="math inline">y=1-x</span>, kuri kerta <span
+class="math inline">y=0</span> taške <span
+class="math inline">x=1</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Patikrinimas: nuolydžiai <span class="math inline">-1</span> ir <span
+class="math inline">+1</span>, todėl kampai su veidrodžiu po <span
+class="math inline">45^\circ</span> ✓. Ilgis <span
+class="math inline">|AB&#39;|=\sqrt{9+9}=3\sqrt2</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> atspindžio taškas <span
+class="math inline">(1,0)</span>, kelio ilgis <span
+class="math inline">3\sqrt2</span>.</p>
+</div>
+</div>
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="tema-18.html"><span>← Ankstesnė tema</span><strong>18. Sąlyginis ekstremumas ir stygos variacinis principas</strong></a>
+  <a class="puslapis-kitas" href="index.html"><span>Pabaiga →</span><strong>Visos temos</strong></a>
+</nav>
+
+<script src="svetaine.js"></script>
+</body>
+</html>

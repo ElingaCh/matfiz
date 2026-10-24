@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>16. Šturmo–Liuvilio uždavinys ir tikrinės
+funkcijos · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="temos-puslapis" data-tema="16" data-uzduociu="6">
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <a class="atgal" href="index.html">← Visos temos</a>
+    <nav class="skyreliai" aria-label="Temos dalys">
+      <a href="#teorija">Teorija</a>
+      <a href="#klaidos">Klaidos</a>
+      <a href="#pavyzdziai">Pavyzdžiai</a>
+      <a href="#uzduotys">Užduotys</a>
+    </nav>
+    <span class="temos-progresas" aria-live="polite"></span>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">16 tema · Dalinių išvestinių lygtys</p>
+    <h1>Šturmo–Liuvilio uždavinys ir tikrinės funkcijos</h1>
+    <p class="hero-info">2 išspręsti pavyzdžiai · 6 užduotys · sprendimai atidengiami po žingsnį</p>
+    <div class="juosta"><div class="juosta-uzpildas"></div></div>
+  </div>
+</header>
+
+<main class="turinys">
+<div class="deze teorija" id="teorija"><div class="deze-antraste">Teorija</div>
+<h3 id="kas-tai-yra">Kas tai yra</h3>
+<p>15 temoje matėme, kad kraštinės sąlygos leidžia ne bet kokią
+atskyrimo konstantą, o tik tam tikras vertes <span
+class="math inline">k_n</span>. Tai bendras reiškinys, kurį aprašo
+<strong>Šturmo–Liuvilio uždavinys</strong>: <span
+class="math display">-\big(p(x)\,\psi&#39;\big)&#39;+q(x)\,\psi=\lambda\,r(x)\,\psi,\qquad
+a\le x\le b,</span> su homogeninėmis kraštinėmis sąlygomis (pvz., <span
+class="math inline">\psi(a)=\psi(b)=0</span> arba <span
+class="math inline">\psi&#39;(a)=\psi&#39;(b)=0</span>). Čia <span
+class="math inline">p&gt;0</span>, <span
+class="math inline">r&gt;0</span> (<strong>svorio
+funkcija</strong>).</p>
+<ul>
+<li><span class="math inline">\lambda</span>, su kuriomis egzistuoja
+nenulinis sprendinys, vadinamos <strong>tikrinėmis vertėmis</strong>, o
+atitinkami sprendiniai <span class="math inline">\psi_n</span> yra
+<strong>tikrinės funkcijos</strong>.</li>
+<li>Tikrinės vertės yra <strong>realios</strong> ir sudaro didėjančią
+seką <span
+class="math inline">\lambda_1&lt;\lambda_2&lt;\dots\to\infty</span>.</li>
+</ul>
+<p>Paprasčiausias atvejis: <span class="math inline">p=1</span>, <span
+class="math inline">q=0</span>, <span class="math inline">r=1</span>, t.
+y. <span class="math inline">\psi&#39;&#39;+\lambda\psi=0</span>. Tai
+lygtis <span class="math inline">X&#39;&#39;+k^2X=0</span> iš 15 temos
+su <span class="math inline">\lambda=k^2</span>.</p>
+<h3 id="ortogonalumas-su-svoriu">Ortogonalumas su svoriu</h3>
+<p>Skirtingas tikrines vertes atitinkančios funkcijos yra
+<strong>ortogonalios su svoriu <span
+class="math inline">r</span></strong>: <span
+class="math display">\int_a^b r(x)\,\psi_n(x)\,\psi_m(x)\,dx=0,\qquad
+\lambda_n\ne\lambda_m .</span> Iš čia ir kilo formulė <span
+class="math inline">\int\sin\frac{n\pi x}{a}\sin\frac{m\pi x}{a}dx=\frac
+a2\delta_{nm}</span>.</p>
+<p><strong>Normavimas:</strong> padauginame <span
+class="math inline">\psi_n</span> iš konstantos taip, kad <span
+class="math inline">\int r\,\psi_n^2\,dx=1</span>.</p>
+<p><strong>Skleidimas:</strong> bet kokią (pakankamai gerą) funkciją
+galima išskleisti <span
+class="math display">f(x)=\sum_nc_n\psi_n(x),\qquad c_n=\frac{\int_a^b
+r\,f\,\psi_n\,dx}{\int_a^b r\,\psi_n^2\,dx}.</span></p>
+<h3 id="išsigimimas-ir-gramošmito-procesas">Išsigimimas ir Gramo–Šmito
+procesas</h3>
+<p>Jei tą pačią tikrinę vertę atitinka <strong>kelios</strong>
+nepriklausomos funkcijos (tikrinė vertė <strong>išsigimusi</strong>),
+jos nebūtinai ortogonalios. Tada jas ortogonalizuojame: <span
+class="math display">\varphi_1=\frac{f_1}{\|f_1\|},\qquad
+g_2=f_2-\big(f_2,\varphi_1\big)\varphi_1,\qquad
+\varphi_2=\frac{g_2}{\|g_2\|},</span> kur <span
+class="math inline">(f,g)=\int r\,f\,g</span>, o <span
+class="math inline">\|f\|=\sqrt{(f,f)}</span>. Kitaip tariant, iš
+antrosios funkcijos atimame jos „šešėlį“ ant pirmosios.</p>
+<h3 id="stačiakampė-membrana-helmholco-lygtis">Stačiakampė membrana
+(Helmholco lygtis)</h3>
+<p>Bangos lygtis dviem matmenims <span
+class="math inline">u_{tt}=c^2\Delta u</span>, ieškant sprendinio <span
+class="math inline">u=\psi(x,y)\cos\omega t</span>, virsta
+<strong>Helmholco lygtimi</strong> <span
+class="math display">\Delta\psi+k^2\psi=0,\qquad k=\frac\omega c
+.</span> Membranai <span class="math inline">a\times b</span> su
+įtvirtintu kraštu kintamųjų atskyrimas duoda <span
+class="math display">\psi_{nm}=\sin\frac{n\pi x}{a}\sin\frac{m\pi
+y}{b},\qquad
+k_{nm}^2=\left(\frac{n\pi}{a}\right)^2+\left(\frac{m\pi}{b}\right)^2,\qquad
+n,m=1,2,\dots</span> Kvadratinėje membranoje (<span
+class="math inline">a=b</span>) <span
+class="math inline">k_{nm}=k_{mn}</span>, todėl modos <span
+class="math inline">(n,m)</span> ir <span
+class="math inline">(m,n)</span>, kai <span class="math inline">n\ne
+m</span>, yra <strong>išsigimusios</strong>.</p>
+</div>
+<div class="deze klaidos" id="klaidos"><div class="deze-antraste">Dažniausios klaidos</div>
+<ul>
+<li><strong>Pamirštamas svoris.</strong> Jei <span
+class="math inline">r\ne1</span>, ortogonalumo integrale
+<strong>būtina</strong> <span class="math inline">r(x)</span>. Be jo
+funkcijos atrodys neortogonalios.</li>
+<li><strong>Prarandama <span
+class="math inline">\lambda=0</span>.</strong> Su sąlygomis <span
+class="math inline">\psi&#39;(a)=\psi&#39;(b)=0</span> konstanta <span
+class="math inline">\psi_0=1</span> yra tikrinė funkcija su <span
+class="math inline">\lambda_0=0</span>. Ją dažnai pamirštama.</li>
+<li><strong>Neteisingai normuojama.</strong> <span
+class="math inline">\int_0^l\sin^2(\dots)\,dx=\frac l2</span>, todėl
+normavimo daugiklis yra <span class="math inline">\sqrt{2/l}</span>, o
+ne <span class="math inline">\sqrt{1/l}</span> ar <span
+class="math inline">2/l</span>.</li>
+<li><strong>Lygtis neperrašoma į Šturmo–Liuvilio pavidalą.</strong>
+Prieš ieškant svorio <span class="math inline">r</span>, lygtį reikia
+padauginti iš tinkamos funkcijos, kad pirmi du nariai susijungtų į <span
+class="math inline">(p\psi&#39;)&#39;</span>.</li>
+</ul>
+</div>
+<h2 id="pavyzdziai">Išspręsti pavyzdžiai</h2>
+<div class="deze pavyzdys" id="pvz-16-1"><div class="deze-antraste">16.1 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Raskite uždavinio <span
+class="math inline">X&#39;&#39;+\lambda X=0</span>, <span
+class="math inline">X(0)=0</span>, <span
+class="math inline">X&#39;(l)=0</span> tikrines vertes ir
+<strong>normuotas</strong> tikrines funkcijas.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Kai <span class="math inline">\lambda&gt;0</span>: <span
+class="math inline">X=A\sin\sqrt\lambda x+B\cos\sqrt\lambda x</span>.
+Sąlyga <span class="math inline">X(0)=0</span> duoda <span
+class="math inline">B=0</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Kai <span class="math inline">\lambda\le0</span>, sprendiniai yra
+eksponentės arba tiesė. Patikrinę matome, kad su šiomis sąlygomis jie
+duoda tik <span class="math inline">X\equiv0</span>, todėl tokios <span
+class="math inline">\lambda</span> netinka.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">X&#39;(l)=A\sqrt\lambda\cos\sqrt\lambda
+l=0</span>, todėl <span
+class="math inline">\sqrt\lambda\,l=\dfrac\pi2,\dfrac{3\pi}{2},\dots</span>,
+t. y. <span
+class="math display">\lambda_n=\left(\frac{(2n-1)\pi}{2l}\right)^2,\qquad
+X_n=\sin\frac{(2n-1)\pi x}{2l}.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Normavimas: <span
+class="math inline">\displaystyle\int_0^lA^2\sin^2\frac{(2n-1)\pi
+x}{2l}dx=A^2\frac l2=1</span>, todėl <span
+class="math inline">A=\sqrt{2/l}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\lambda_n=\dfrac{(2n-1)^2\pi^2}{4l^2}</span>, <span
+class="math inline">X_n=\sqrt{\dfrac2l}\sin\dfrac{(2n-1)\pi
+x}{2l}</span>, <span class="math inline">n=1,2,\dots</span></p>
+</div>
+<div class="deze pavyzdys" id="pvz-16-2"><div class="deze-antraste">16.2 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Kvadratinė membrana <span
+class="math inline">a\times a</span> įtvirtinta pakraščiuose. Raskite
+tris žemiausius dažnius ir nurodykite, kurie išsigimę.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">\omega_{nm}=ck_{nm}=\dfrac{\pi
+c}{a}\sqrt{n^2+m^2}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Mažiausios <span class="math inline">n^2+m^2</span> vertės: <span
+class="math inline">(1,1)\to2</span>; <span
+class="math inline">(1,2),(2,1)\to5</span>; <span
+class="math inline">(2,2)\to8</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Indeksai prasideda nuo 1, nes <span
+class="math inline">\sin0=0</span> duotų nulinę funkciją.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Dažniui <span class="math inline">\omega=\frac{\pi c}{a}\sqrt5</span>
+tinka dvi skirtingos funkcijos, <span class="math inline">\sin\frac{\pi
+x}{a}\sin\frac{2\pi y}{a}</span> ir <span
+class="math inline">\sin\frac{2\pi x}{a}\sin\frac{\pi y}{a}</span>,
+todėl jis <strong>dvigubai išsigimęs</strong>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\omega=\dfrac{\pi c}{a}\sqrt2,\ \dfrac{\pi
+c}{a}\sqrt5</span> (išsigimęs), <span class="math inline">\dfrac{\pi
+c}{a}\sqrt8</span>.</p>
+</div>
+<h2 id="uzduotys">Savarankiškos užduotys</h2>
+<div class="deze uzduotis" id="uzd-16-1" data-nr="16.1"><div class="deze-antraste">16.1 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Raskite uždavinio <span class="math inline">X&#39;&#39;+\lambda
+X=0</span>, <span class="math inline">X&#39;(0)=X&#39;(l)=0</span>
+tikrines vertes ir funkcijas.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">\lambda=0</span>: <span
+class="math inline">X=A+Bx</span>, <span
+class="math inline">X&#39;=B=0</span>, todėl <span
+class="math inline">X_0=1</span> tinka.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">\lambda&gt;0</span>: <span
+class="math inline">X=A\sin\sqrt\lambda x+B\cos\sqrt\lambda x</span>.
+<span class="math inline">X&#39;(0)=0</span> duoda <span
+class="math inline">A=0</span>; <span
+class="math inline">X&#39;(l)=-B\sqrt\lambda\sin\sqrt\lambda l=0</span>
+duoda <span class="math inline">\sqrt\lambda l=n\pi</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\lambda_n=\left(\dfrac{n\pi}{l}\right)^2</span>,
+<span class="math inline">X_n=\cos\dfrac{n\pi x}{l}</span>, <span
+class="math inline">n=0,1,2,\dots</span> (įskaitant <span
+class="math inline">n=0</span>).</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-16-2" data-nr="16.2"><div class="deze-antraste">16.2 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Įrodykite, kad funkcijos <span class="math inline">\cos\dfrac{n\pi
+x}{l}</span> (<span class="math inline">n=0,1,2,\dots</span>)
+ortogonalios intervale <span class="math inline">[0,l]</span>, ir
+raskite <span class="math inline">\displaystyle\int_0^l\cos^2\frac{n\pi
+x}{l}dx</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span
+class="math inline">\cos\alpha\cos\beta=\tfrac12[\cos(\alpha-\beta)+\cos(\alpha+\beta)]</span>.
+Kai <span class="math inline">n\ne m</span>, abu nariai integruojasi į
+sinusus, kurie galuose lygūs nuliui, todėl integralas lygus 0.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Kai <span class="math inline">n=m\ge1</span>: <span
+class="math inline">\tfrac12\int_0^l\left(1+\cos\frac{2n\pi
+x}{l}\right)dx=\tfrac l2</span>. Kai <span
+class="math inline">n=m=0</span>: <span
+class="math inline">\int_0^l1\,dx=l</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> ortogonalios; <span
+class="math inline">\int\cos^2=\dfrac l2</span>, kai <span
+class="math inline">n\ge1</span>, ir <span class="math inline">l</span>,
+kai <span class="math inline">n=0</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-16-3" data-nr="16.3"><div class="deze-antraste">16.3 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Raskite uždavinio <span
+class="math inline">\Phi&#39;&#39;+\lambda\Phi=0</span> su
+<strong>periodinėmis</strong> sąlygomis <span
+class="math inline">\Phi(0)=\Phi(2\pi)</span>, <span
+class="math inline">\Phi&#39;(0)=\Phi&#39;(2\pi)</span> tikrines vertes
+ir funkcijas. Kurios tikrinės vertės išsigimusios?</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">\lambda=0</span>: <span
+class="math inline">\Phi=A+B\varphi</span>; periodiškumas duoda <span
+class="math inline">B=0</span>, todėl <span
+class="math inline">\Phi_0=1</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">\lambda=n^2&gt;0</span>: <span
+class="math inline">\Phi=A\cos n\varphi+B\sin n\varphi</span> yra
+periodinė su periodu <span class="math inline">2\pi</span> tik tada, kai
+<span class="math inline">n</span> sveikas. <strong>Abi</strong>
+funkcijos tenkina sąlygas.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\lambda_n=n^2</span>, <span
+class="math inline">n=0,1,2,\dots</span>; <span
+class="math inline">\lambda_0</span> atitinka <span
+class="math inline">1</span>, o kiekviena <span
+class="math inline">\lambda_n</span> (<span
+class="math inline">n\ge1</span>) atitinka dvi funkcijas <span
+class="math inline">\cos n\varphi</span> ir <span
+class="math inline">\sin n\varphi</span>, todėl jos dvigubai
+išsigimusios.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-16-4" data-nr="16.4"><div class="deze-antraste">16.4 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Membrana <span class="math inline">a\times b</span>, kur <span
+class="math inline">a=2b</span>, įtvirtinta pakraščiuose. Raskite tris
+žemiausius <span class="math inline">k^2</span> ir atitinkamas modas
+<span class="math inline">(n,m)</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span
+class="math inline">k^2=\dfrac{\pi^2}{b^2}\left(\dfrac{n^2}{4}+m^2\right)</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Reiškinio <span class="math inline">\frac{n^2}{4}+m^2</span> vertės:
+<span class="math inline">(1,1)\to1{,}25</span>; <span
+class="math inline">(2,1)\to2</span>; <span
+class="math inline">(3,1)\to3{,}25</span>; <span
+class="math inline">(1,2)\to4{,}25</span>; <span
+class="math inline">(4,1)\to5</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Didinti <span class="math inline">n</span> „pigiau“ nei <span
+class="math inline">m</span>, nes <span class="math inline">n</span>
+dalijamas iš 4 (membrana ilgesnė <span class="math inline">x</span>
+kryptimi).</p>
+</div>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">(1,1)</span>:
+<span class="math inline">1{,}25\pi^2/b^2</span>; <span
+class="math inline">(2,1)</span>: <span
+class="math inline">2\pi^2/b^2</span>; <span
+class="math inline">(3,1)</span>: <span
+class="math inline">3{,}25\pi^2/b^2</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-16-5" data-nr="16.5"><div class="deze-antraste">16.5 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Perrašykite lygtį <span
+class="math inline">x^2y&#39;&#39;+xy&#39;+\lambda y=0</span> intervale
+<span class="math inline">[1,e]</span> (<span
+class="math inline">y(1)=y(e)=0</span>) į Šturmo–Liuvilio pavidalą,
+raskite svorio funkciją, tikrines vertes ir funkcijas.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Padaliname iš <span class="math inline">x</span>: <span
+class="math inline">xy&#39;&#39;+y&#39;+\dfrac\lambda xy=0</span>.
+Kadangi <span
+class="math inline">xy&#39;&#39;+y&#39;=(xy&#39;)&#39;</span>, gauname
+<span class="math display">-(xy&#39;)&#39;=\lambda\,\frac1x\,y,\qquad
+p=x,\ q=0,\ r=\frac1x .</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Keitinys <span class="math inline">t=\ln x</span> (<span
+class="math inline">t\in[0,1]</span>): <span
+class="math inline">xy&#39;=\dfrac{dy}{dt}</span>, todėl lygtis virsta
+<span class="math inline">\dfrac{d^2y}{dt^2}+\lambda y=0</span>, <span
+class="math inline">y(0)=y(1)=0</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">\lambda_n=n^2\pi^2</span>, <span
+class="math inline">y_n=\sin(n\pi t)=\sin(n\pi\ln x)</span>.
+Ortogonalumas su svoriu: <span
+class="math inline">\displaystyle\int_1^e\sin(n\pi\ln x)\sin(m\pi\ln
+x)\frac{dx}{x}=\int_0^1\sin n\pi t\sin m\pi
+t\,dt=\frac12\delta_{nm}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">p=x</span>,
+<span class="math inline">r=1/x</span>; <span
+class="math inline">\lambda_n=n^2\pi^2</span>, <span
+class="math inline">y_n=\sin(n\pi\ln x)</span>, ortogonalios su svoriu
+<span class="math inline">1/x</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-16-6" data-nr="16.6"><div class="deze-antraste">16.6 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Kvadratinėje membranoje <span class="math inline">\pi\times\pi</span>
+tikrinę vertę <span class="math inline">k^2=5</span> atitinka funkcijos
+<span class="math inline">f_1=\sin x\sin2y</span> ir <span
+class="math inline">f_2=\sin x\sin2y+\sin2x\sin y</span>. Jos nėra
+ortogonalios. Gramo–Šmito procesu sudarykite dvi ortonormuotas
+funkcijas.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span
+class="math inline">\|f_1\|^2=\displaystyle\int_0^\pi\sin^2x\,dx\int_0^\pi\sin^22y\,dy=\frac\pi2\cdot\frac\pi2=\frac{\pi^2}{4}</span>,
+todėl <span class="math inline">\varphi_1=\dfrac2\pi\sin
+x\sin2y</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span
+class="math inline">(f_2,\varphi_1)=\dfrac2\pi\left(\dfrac{\pi^2}{4}+0\right)=\dfrac\pi2</span>
+(antrasis narys ortogonalus pirmajam). <span
+class="math inline">g_2=f_2-\dfrac\pi2\varphi_1=\sin2x\sin y</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">\|g_2\|^2=\dfrac{\pi^2}{4}</span>, todėl
+<span class="math inline">\varphi_2=\dfrac2\pi\sin2x\sin y</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\varphi_1=\dfrac2\pi\sin x\sin2y</span>, <span
+class="math inline">\varphi_2=\dfrac2\pi\sin2x\sin y</span>.</p>
+</div>
+</div>
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="tema-15.html"><span>← Ankstesnė tema</span><strong>15. Kintamųjų atskyrimo (Furjė) metodas</strong></a>
+  <a class="puslapis-kitas" href="tema-17.html"><span>Kita tema →</span><strong>17. Funkcionalas, variacija ir Eulerio lygtis</strong></a>
+</nav>
+
+<script src="svetaine.js"></script>
+</body>
+</html>

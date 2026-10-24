@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>15. Kintamųjų atskyrimo (Furjė)
+metodas · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="temos-puslapis" data-tema="15" data-uzduociu="7">
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <a class="atgal" href="index.html">← Visos temos</a>
+    <nav class="skyreliai" aria-label="Temos dalys">
+      <a href="#teorija">Teorija</a>
+      <a href="#klaidos">Klaidos</a>
+      <a href="#pavyzdziai">Pavyzdžiai</a>
+      <a href="#uzduotys">Užduotys</a>
+    </nav>
+    <span class="temos-progresas" aria-live="polite"></span>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">15 tema · Dalinių išvestinių lygtys</p>
+    <h1>Kintamųjų atskyrimo (Furjė) metodas</h1>
+    <p class="hero-info">2 išspręsti pavyzdžiai · 7 užduotys · sprendimai atidengiami po žingsnį</p>
+    <div class="juosta"><div class="juosta-uzpildas"></div></div>
+  </div>
+</header>
+
+<main class="turinys">
+<div class="deze teorija" id="teorija"><div class="deze-antraste">Teorija</div>
+<h3 id="idėja-vienu-sakiniu">Idėja vienu sakiniu</h3>
+<p>Ieškome sprendinio, kuris yra <strong>sandauga</strong> funkcijų,
+kurių kiekviena priklauso tik nuo vieno kintamojo, pvz., <span
+class="math inline">\psi(x,y)=X(x)\,Y(y)</span>. Tada viena dalinių
+išvestinių lygtis suskyla į dvi <strong>paprastąsias</strong>
+diferencialines lygtis, kurias jau mokame spręsti (3 tema).</p>
+<h3 id="receptas-penki-žingsniai">Receptas (penki žingsniai)</h3>
+<ol type="1">
+<li><strong>Įstatome</strong> <span
+class="math inline">\psi=X(x)Y(y)</span> į lygtį ir
+<strong>padaliname</strong> iš <span class="math inline">XY</span>.
+Kairėje lieka tik <span class="math inline">x</span>, dešinėje tik <span
+class="math inline">y</span>.</li>
+<li>Funkcija tik nuo <span class="math inline">x</span> gali būti lygi
+funkcijai tik nuo <span class="math inline">y</span> <strong>tik tada,
+kai abi lygios konstantai</strong>. Ją vadiname <strong>atskyrimo
+konstanta</strong> ir žymime <span class="math inline">-k^2</span>.</li>
+<li>Sprendžiame lygtį tam kintamajam, kurio <strong>abiejuose galuose
+sąlygos lygios nuliui</strong>. Kraštinės sąlygos leidžia tik tam tikras
+<span class="math inline">k</span> vertes <span
+class="math inline">k_n</span> (tikrines vertes).</li>
+<li>Sprendžiame antrąją lygtį su ta pačia <span
+class="math inline">k_n</span> ir <strong>sudedame</strong> visus
+sprendinius: <span class="math inline">\psi=\sum_n
+A_nX_n(x)Y_n(y)</span>. Galima sudėti, nes lygtis tiesinė.</li>
+<li>Koeficientus <span class="math inline">A_n</span> randame iš
+likusios (nenulinės) sąlygos, naudodami <strong>ortogonalumą</strong>:
+<span class="math display">\int_0^a\sin\frac{n\pi x}{a}\,\sin\frac{m\pi
+x}{a}\,dx=\frac a2\,\delta_{n,m}.</span></li>
+</ol>
+<h3 id="styga-su-įtvirtintais-galais">Styga su įtvirtintais galais</h3>
+<p><span class="math inline">y_{tt}=c^2y_{xx}</span>, <span
+class="math inline">y(0,t)=y(a,t)=0</span>. Su <span
+class="math inline">y=X(x)T(t)</span> gauname <span
+class="math inline">X&#39;&#39;+k^2X=0</span>, <span
+class="math inline">\ddot T+c^2k^2T=0</span>, todėl <span
+class="math display">y(x,t)=\sum_{n=1}^{\infty}\sin\frac{n\pi
+x}{a}\left(A_n\cos\omega_nt+B_n\sin\omega_nt\right),\qquad
+\omega_n=\frac{n\pi c}{a},</span> <span
+class="math display">A_n=\frac2a\int_0^ay_0(x)\sin\frac{n\pi
+x}{a}\,dx,\qquad B_n=\frac{2}{a\,\omega_n}\int_0^av_0(x)\sin\frac{n\pi
+x}{a}\,dx .</span> Kiekvienas narys yra <strong>stovinti banga</strong>
+(harmonika) su dažniu <span class="math inline">\omega_n</span>.
+Žemiausias, <span class="math inline">\omega_1=\pi c/a</span>, yra
+pagrindinis tonas.</p>
+<h3 id="laplaso-lygtis-stačiakampyje-dirichlė-uždavinys">Laplaso lygtis
+stačiakampyje (Dirichlė uždavinys)</h3>
+<p><span class="math inline">\psi_{xx}+\psi_{yy}=0</span> stačiakampyje
+<span class="math inline">0\le x\le a</span>, <span
+class="math inline">0\le y\le b</span>; <span
+class="math inline">\psi=0</span> trijose kraštinėse, o <span
+class="math inline">\psi(x,0)=\varphi(x)</span>. Tada <span
+class="math inline">X&#39;&#39;+k^2X=0</span>, <span
+class="math inline">Y&#39;&#39;-k^2Y=0</span> (ženklas skiriasi!), ir
+<span class="math display">\psi(x,y)=\sum_{n=1}^\infty A_n\sin\frac{n\pi
+x}{a}\,\operatorname{sh}\frac{n\pi(b-y)}{a},\qquad
+A_n=\frac{2}{a\,\operatorname{sh}\frac{n\pi
+b}{a}}\int_0^a\varphi(x)\sin\frac{n\pi x}{a}\,dx .</span> Funkciją <span
+class="math inline">\operatorname{sh}k(b-y)</span> pasirenkame todėl,
+kad ji automatiškai lygi nuliui, kai <span
+class="math inline">y=b</span>.</p>
+<p><strong>Noimano uždavinyje</strong> duotos išvestinės: <span
+class="math inline">\partial\psi/\partial x=0</span>, kai <span
+class="math inline">x=0,a</span>; <span
+class="math inline">\partial\psi/\partial y=0</span>, kai <span
+class="math inline">y=b</span>; <span
+class="math inline">\partial\psi/\partial y=N(x)</span>, kai <span
+class="math inline">y=0</span>. Tada sinusai virsta kosinusais, o <span
+class="math inline">\operatorname{sh}</span> virsta <span
+class="math inline">\operatorname{ch}</span>: <span
+class="math display">\psi=\sum_n B_n\cos\frac{n\pi
+x}{a}\,\operatorname{ch}\frac{n\pi(b-y)}{a},\qquad
+B_n=-\frac{2}{n\pi\,\operatorname{sh}\frac{n\pi
+b}{a}}\int_0^aN(x)\cos\frac{n\pi x}{a}\,dx .</span> Noimano sprendinys
+randamas tik iki <strong>konstantos</strong> tikslumu (konstantos
+išvestinė lygi nuliui).</p>
+<h3 id="laplaso-lygtis-skritulyje">Laplaso lygtis skritulyje</h3>
+<p>Polinėse koordinatėse <span
+class="math inline">\dfrac1r\dfrac{\partial}{\partial
+r}\!\left(r\dfrac{\partial u}{\partial
+r}\right)+\dfrac{1}{r^2}\dfrac{\partial^2u}{\partial\varphi^2}=0</span>.
+Atskyrus <span class="math inline">u=R(r)\Phi(\varphi)</span> ir
+pareikalavus periodiškumo <span
+class="math inline">\Phi(\varphi+2\pi)=\Phi(\varphi)</span> bei
+baigtinumo centre: <span
+class="math display">u(r,\varphi)=A_0+\sum_{n=1}^{\infty}r^n\left(A_n\cos
+n\varphi+B_n\sin n\varphi\right).</span></p>
+</div>
+<div class="deze klaidos" id="klaidos"><div class="deze-antraste">Dažniausios klaidos</div>
+<ul>
+<li><strong>Neteisingas atskyrimo konstantos ženklas.</strong> Ženklą
+renkamės taip, kad kintamajam su <strong>nulinėmis sąlygomis abiejuose
+galuose</strong> gautume <span class="math inline">\sin</span> ir <span
+class="math inline">\cos</span> (svyruojančias funkcijas). Su
+eksponentėmis nulio dviejuose taškuose negausime.</li>
+<li><strong>Pamirštamas <span
+class="math inline">\operatorname{sh}\frac{n\pi b}{a}</span>
+vardiklyje.</strong> Įstačius <span class="math inline">y=0</span>, prie
+<span class="math inline">A_n</span> atsiranda <span
+class="math inline">\operatorname{sh}\frac{n\pi b}{a}</span>, ir iš jo
+reikia padalyti.</li>
+<li><strong><span class="math inline">B_n</span> stygai.</strong> Prie
+greičio koeficiento yra papildomas daugiklis <span
+class="math inline">1/\omega_n</span>, nes <span
+class="math inline">\partial_t\sin\omega_nt=\omega_n\cos\omega_nt</span>.</li>
+<li><strong>Integralai skaičiuojami be reikalo.</strong> Jei <span
+class="math inline">\varphi(x)</span> jau yra sinusų suma, koeficientus
+galima <strong>perskaityti</strong> tiesiog palyginus (žr. 15.3
+užduotį).</li>
+</ul>
+</div>
+<h2 id="pavyzdziai">Išspręsti pavyzdžiai</h2>
+<div class="deze pavyzdys" id="pvz-15-1"><div class="deze-antraste">15.1 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Stygos (<span class="math inline">0\le x\le
+a</span>, galai įtvirtinti) pradinė forma yra parabolė <span
+class="math inline">y_0(x)=\dfrac{4h}{a^2}x(a-x)</span>, o pradinis
+greitis <span class="math inline">v_0=0</span>. Raskite <span
+class="math inline">y(x,t)</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Kadangi <span class="math inline">v_0=0</span>, visi <span
+class="math inline">B_n=0</span>. Lieka rasti <span
+class="math display">A_n=\frac2a\cdot\frac{4h}{a^2}\int_0^ax(a-x)\sin\frac{n\pi
+x}{a}\,dx .</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Ši formulė gaunama įstačius <span class="math inline">t=0</span> į
+bendrąjį sprendinį: <span class="math inline">y_0(x)=\sum
+A_n\sin\frac{n\pi x}{a}</span>. Padauginę iš <span
+class="math inline">\sin\frac{m\pi x}{a}</span> ir suintegravę, dėl
+ortogonalumo paliekame tik narį <span class="math inline">n=m</span>,
+kuris lygus <span class="math inline">A_m\cdot\frac a2</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Du kartus integruodami dalimis gauname <span
+class="math display">\int_0^ax(a-x)\sin\frac{n\pi
+x}{a}\,dx=\frac{2a^3}{n^3\pi^3}\left(1-(-1)^n\right).</span> Kai <span
+class="math inline">n</span> lyginis, tai lygu <span
+class="math inline">0</span>, o kai <span class="math inline">n</span>
+nelyginis, tai lygu <span
+class="math inline">\dfrac{4a^3}{n^3\pi^3}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span
+class="math display">A_n=\frac{8h}{a^3}\cdot\frac{4a^3}{n^3\pi^3}=\frac{32h}{n^3\pi^3}\quad(n\
+\text{nelyginis}),\qquad A_n=0\quad(n\ \text{lyginis}).</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Lyginių harmonikų nėra, nes parabolė simetriška centro <span
+class="math inline">x=a/2</span> atžvilgiu, o <span
+class="math inline">\sin\frac{2\pi x}{a}</span>, <span
+class="math inline">\sin\frac{4\pi x}{a}</span> ir t. t. yra
+antisimetriški.</p>
+</div>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=\dfrac{32h}{\pi^3}\displaystyle\sum_{n=1,3,5,\dots}\frac{1}{n^3}\sin\frac{n\pi
+x}{a}\cos\frac{n\pi ct}{a}</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-15-2"><div class="deze-antraste">15.2 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Išspręskite Laplaso lygtį stačiakampyje
+<span class="math inline">0\le x\le a</span>, <span
+class="math inline">0\le y\le b</span>, kai <span
+class="math inline">\psi(x,0)=\sin\dfrac{\pi x}{a}</span>, o kitose
+trijose kraštinėse <span class="math inline">\psi=0</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Atskiriame: <span class="math inline">\psi=XY</span>, <span
+class="math inline">\dfrac{X&#39;&#39;}{X}=-\dfrac{Y&#39;&#39;}{Y}=-k^2</span>.
+Sąlygos <span class="math inline">X(0)=X(a)=0</span> duoda <span
+class="math inline">X=\sin\dfrac{n\pi x}{a}</span>, <span
+class="math inline">k_n=\dfrac{n\pi}{a}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">Y&#39;&#39;-k_n^2Y=0</span>, o sąlyga <span
+class="math inline">Y(b)=0</span> duoda <span
+class="math inline">Y=\operatorname{sh}k_n(b-y)</span>. Bendrasis
+sprendinys: <span class="math display">\psi=\sum_n A_n\sin\frac{n\pi
+x}{a}\,\operatorname{sh}\frac{n\pi(b-y)}{a}.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Kai <span class="math inline">y=0</span>: <span
+class="math inline">\sum_nA_n\operatorname{sh}\dfrac{n\pi
+b}{a}\sin\dfrac{n\pi x}{a}=\sin\dfrac{\pi x}{a}</span>. Palyginę matome,
+kad tik <span class="math inline">A_1\ne0</span>: <span
+class="math inline">A_1=\dfrac{1}{\operatorname{sh}(\pi
+b/a)}</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Integruoti nereikia: kairėje yra sinusų suma, dešinėje vienas
+sinusas. Dvi tokios sumos lygios tik tada, kai sutampa koeficientai prie
+kiekvieno sinuso.</p>
+</div>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\psi(x,y)=\sin\dfrac{\pi
+x}{a}\cdot\dfrac{\operatorname{sh}\big(\pi(b-y)/a\big)}{\operatorname{sh}(\pi
+b/a)}</span>.</p>
+</div>
+<h2 id="uzduotys">Savarankiškos užduotys</h2>
+<div class="deze uzduotis" id="uzd-15-1" data-nr="15.1"><div class="deze-antraste">15.1 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Įrodykite, kad <span
+class="math inline">\displaystyle\int_0^a\sin\frac{n\pi
+x}{a}\sin\frac{m\pi x}{a}\,dx=\frac a2\,\delta_{n,m}</span> (<span
+class="math inline">n,m</span> natūralieji).</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Kai <span class="math inline">n\ne m</span>: <span
+class="math inline">\sin\alpha\sin\beta=\tfrac12\left[\cos(\alpha-\beta)-\cos(\alpha+\beta)\right]</span>,
+todėl <span class="math display">\frac12\int_0^a\left[\cos\frac{(n-m)\pi
+x}{a}-\cos\frac{(n+m)\pi
+x}{a}\right]dx=\frac12\left[\frac{a\sin(n-m)\pi}{(n-m)\pi}-\frac{a\sin(n+m)\pi}{(n+m)\pi}\right]=0
+.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Kai <span class="math inline">n=m</span>: <span
+class="math inline">\sin^2\alpha=\tfrac12(1-\cos2\alpha)</span>, todėl
+<span
+class="math inline">\dfrac12\displaystyle\int_0^a\left(1-\cos\frac{2n\pi
+x}{a}\right)dx=\dfrac a2</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> integralas lygus <span
+class="math inline">0</span>, kai <span class="math inline">n\ne
+m</span>, ir <span class="math inline">a/2</span>, kai <span
+class="math inline">n=m</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-15-2" data-nr="15.2"><div class="deze-antraste">15.2 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Styga pradžioje tiesi (<span class="math inline">y_0=0</span>), bet
+jai suteikiamas greitis <span
+class="math inline">v_0(x)=v\sin\dfrac{2\pi x}{a}</span>. Raskite <span
+class="math inline">y(x,t)</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">y_0=0</span>, todėl visi <span
+class="math inline">A_n=0</span>. Greitis jau yra viena harmonika (<span
+class="math inline">n=2</span>), todėl tik <span
+class="math inline">B_2\ne0</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span
+class="math inline">\partial_ty\big|_{t=0}=B_2\,\omega_2\sin\dfrac{2\pi
+x}{a}=v\sin\dfrac{2\pi x}{a}</span>, todėl <span
+class="math inline">B_2=\dfrac{v}{\omega_2}=\dfrac{va}{2\pi
+c}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=\dfrac{va}{2\pi c}\sin\dfrac{2\pi
+x}{a}\sin\dfrac{2\pi ct}{a}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-15-3" data-nr="15.3"><div class="deze-antraste">15.3 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Stygos pradinė forma <span
+class="math inline">y_0(x)=\sin^3\dfrac{\pi x}{a}</span>, <span
+class="math inline">v_0=0</span>. Raskite <span
+class="math inline">y(x,t)</span> <strong>neintegruodami</strong>.</p>
+<p><em>Nuoroda:</em> <span
+class="math inline">\sin^3\alpha=\tfrac14\left(3\sin\alpha-\sin3\alpha\right)</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">y_0=\tfrac34\sin\dfrac{\pi
+x}{a}-\tfrac14\sin\dfrac{3\pi x}{a}</span>. Tai jau sinusų suma, todėl
+<span class="math inline">A_1=\tfrac34</span>, <span
+class="math inline">A_3=-\tfrac14</span>, kiti lygūs nuliui.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">v_0=0</span>, todėl <span
+class="math inline">B_n=0</span>, ir kiekviena harmonika svyruoja pagal
+<span class="math inline">\cos\omega_nt</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=\tfrac34\sin\dfrac{\pi x}{a}\cos\dfrac{\pi
+ct}{a}-\tfrac14\sin\dfrac{3\pi x}{a}\cos\dfrac{3\pi ct}{a}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-15-4" data-nr="15.4"><div class="deze-antraste">15.4 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Išspręskite Laplaso lygtį stačiakampyje <span
+class="math inline">0\le x\le a</span>, <span class="math inline">0\le
+y\le b</span>, kai <span class="math inline">\psi(x,0)=2\sin\dfrac{\pi
+x}{a}-\sin\dfrac{3\pi x}{a}</span>, o kitose kraštinėse <span
+class="math inline">\psi=0</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Bendrasis sprendinys tas pats kaip 15.2 pavyzdyje: <span
+class="math inline">\psi=\sum A_n\sin\frac{n\pi
+x}{a}\operatorname{sh}\frac{n\pi(b-y)}{a}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Kai <span class="math inline">y=0</span>, palyginame koeficientus:
+<span class="math inline">A_1\operatorname{sh}\dfrac{\pi b}{a}=2</span>,
+<span class="math inline">A_3\operatorname{sh}\dfrac{3\pi
+b}{a}=-1</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\psi=2\sin\dfrac{\pi
+x}{a}\dfrac{\operatorname{sh}\frac{\pi(b-y)}{a}}{\operatorname{sh}\frac{\pi
+b}{a}}-\sin\dfrac{3\pi
+x}{a}\dfrac{\operatorname{sh}\frac{3\pi(b-y)}{a}}{\operatorname{sh}\frac{3\pi
+b}{a}}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-15-5" data-nr="15.5"><div class="deze-antraste">15.5 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Noimano uždavinys stačiakampyje: <span
+class="math inline">\partial_x\psi=0</span>, kai <span
+class="math inline">x=0</span> ir <span class="math inline">x=a</span>;
+<span class="math inline">\partial_y\psi=0</span>, kai <span
+class="math inline">y=b</span>; <span
+class="math inline">\partial_y\psi(x,0)=\cos\dfrac{\pi x}{a}</span>.
+Raskite <span class="math inline">\psi</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Sąlygos išvestinei, kai <span class="math inline">x=0,a</span>, duoda
+<span class="math inline">X=\cos\dfrac{n\pi x}{a}</span>. Sąlyga <span
+class="math inline">Y&#39;(b)=0</span> duoda <span
+class="math inline">Y=\operatorname{ch}\dfrac{n\pi(b-y)}{a}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span
+class="math inline">\partial_y\psi\big|_{y=0}=-\sum_nB_n\dfrac{n\pi}{a}\operatorname{sh}\dfrac{n\pi
+b}{a}\cos\dfrac{n\pi x}{a}</span>. Palyginę su <span
+class="math inline">\cos\frac{\pi x}{a}</span>: tik <span
+class="math inline">n=1</span>, <span class="math inline">-B_1\dfrac\pi
+a\operatorname{sh}\dfrac{\pi b}{a}=1</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Minuso ženklas atsiranda diferencijuojant <span
+class="math inline">\operatorname{ch}k(b-y)</span> pagal <span
+class="math inline">y</span>: <span
+class="math inline">\partial_y\operatorname{ch}k(b-y)=-k\operatorname{sh}k(b-y)</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Patikrinimas: <span
+class="math inline">\partial_x\psi\propto\sin\frac{\pi x}{a}=0</span>,
+kai <span class="math inline">x=0,a</span> ✓; <span
+class="math inline">\partial_y\psi\propto\operatorname{sh}0=0</span>,
+kai <span class="math inline">y=b</span> ✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\psi=-\dfrac{a}{\pi}\cos\dfrac{\pi
+x}{a}\,\dfrac{\operatorname{ch}\frac{\pi(b-y)}{a}}{\operatorname{sh}\frac{\pi
+b}{a}}+C</span>, kur <span class="math inline">C</span> yra bet kokia
+konstanta.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-15-6" data-nr="15.6"><div class="deze-antraste">15.6 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Styga atitraukiama per vidurį į aukštį <span
+class="math inline">h</span> ir paleidžiama (pradinė forma yra
+trikampis: <span class="math inline">y_0=\dfrac{2hx}{a}</span>, kai
+<span class="math inline">x\le\frac a2</span>, ir <span
+class="math inline">y_0=\dfrac{2h(a-x)}{a}</span>, kai <span
+class="math inline">x\ge\frac a2</span>; <span
+class="math inline">v_0=0</span>). Raskite <span
+class="math inline">A_n</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span
+class="math inline">A_n=\dfrac2a\left[\displaystyle\int_0^{a/2}\frac{2hx}{a}\sin\frac{n\pi
+x}{a}dx+\int_{a/2}^{a}\frac{2h(a-x)}{a}\sin\frac{n\pi
+x}{a}dx\right]</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Integruojame dalimis (<span class="math inline">k=n\pi/a</span>):
+<span class="math inline">\displaystyle\int_0^{a/2}x\sin
+kx\,dx=-\frac{a\cos\frac{n\pi}{2}}{2k}+\frac{\sin\frac{n\pi}{2}}{k^2}</span>.
+Antrame integrale pakeitę <span class="math inline">u=a-x</span> gauname
+tą patį reiškinį, padaugintą iš <span
+class="math inline">-(-1)^n</span>. Sudėjus nariai su <span
+class="math inline">\cos\frac{n\pi}{2}</span> išnyksta (nelyginiams
+<span class="math inline">n</span> pats kosinusas lygus nuliui,
+lyginiams nariai susiprastina), o nariai su <span
+class="math inline">\sin\frac{n\pi}{2}</span> susidvigubina.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span
+class="math inline">A_n=\dfrac2a\cdot\dfrac{2h}{a}\cdot2\cdot\dfrac{a^2}{n^2\pi^2}\sin\dfrac{n\pi}{2}=\dfrac{8h}{n^2\pi^2}\sin\dfrac{n\pi}{2}</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p><span class="math inline">\sin\frac{n\pi}{2}=0</span> lyginiams <span
+class="math inline">n</span> (simetrija, kaip 15.1 pavyzdyje), o
+nelyginiams kaitalioja ženklą: <span
+class="math inline">1,-1,1,\dots</span> Koeficientai mažėja kaip <span
+class="math inline">1/n^2</span>, lėčiau nei parabolei (<span
+class="math inline">1/n^3</span>), nes trikampis turi „kampą“.</p>
+</div>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">A_n=\dfrac{8h}{n^2\pi^2}\sin\dfrac{n\pi}{2}</span>,
+<span class="math inline">y=\displaystyle\sum_nA_n\sin\frac{n\pi
+x}{a}\cos\frac{n\pi ct}{a}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-15-7" data-nr="15.7"><div class="deze-antraste">15.7 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Raskite Laplaso lygties sprendinį skritulyje <span
+class="math inline">r&lt;R</span>, jei ant apskritimo <span
+class="math inline">u(R,\varphi)=\cos^2\varphi</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span
+class="math inline">\cos^2\varphi=\tfrac12+\tfrac12\cos2\varphi</span>.
+Tai jau Furjė eilutė pagal <span class="math inline">\varphi</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Bendrasis sprendinys <span class="math inline">u=A_0+\sum r^n(A_n\cos
+n\varphi+B_n\sin n\varphi)</span>. Kai <span
+class="math inline">r=R</span>: <span
+class="math inline">A_0=\tfrac12</span>, <span
+class="math inline">A_2R^2=\tfrac12</span>, kiti lygūs nuliui.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Patikrinimas: <span
+class="math inline">r^2\cos2\varphi=x^2-y^2</span>, o <span
+class="math inline">\Delta(x^2-y^2)=2-2=0</span> ✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">u=\dfrac12+\dfrac12\left(\dfrac
+rR\right)^2\cos2\varphi</span>.</p>
+</div>
+</div>
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="tema-14.html"><span>← Ankstesnė tema</span><strong>14. Dalinių išvestinių lygčių klasifikacija ir D'Alambero formulė</strong></a>
+  <a class="puslapis-kitas" href="tema-16.html"><span>Kita tema →</span><strong>16. Šturmo–Liuvilio uždavinys ir tikrinės funkcijos</strong></a>
+</nav>
+
+<script src="svetaine.js"></script>
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4. Kraštinis uždavinys ir Gryno
+funkcija · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="temos-puslapis" data-tema="4" data-uzduociu="7">
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <a class="atgal" href="index.html">← Visos temos</a>
+    <nav class="skyreliai" aria-label="Temos dalys">
+      <a href="#teorija">Teorija</a>
+      <a href="#klaidos">Klaidos</a>
+      <a href="#pavyzdziai">Pavyzdžiai</a>
+      <a href="#uzduotys">Užduotys</a>
+    </nav>
+    <span class="temos-progresas" aria-live="polite"></span>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">4 tema · Koordinatės ir paprastosios
+diferencialinės lygtys</p>
+    <h1>Kraštinis uždavinys ir Gryno funkcija</h1>
+    <p class="hero-info">2 išspręsti pavyzdžiai · 7 užduotys · sprendimai atidengiami po žingsnį</p>
+    <div class="juosta"><div class="juosta-uzpildas"></div></div>
+  </div>
+</header>
+
+<main class="turinys">
+<div class="deze teorija" id="teorija"><div class="deze-antraste">Teorija</div>
+<h3 id="košy-uždavinys-ir-kraštinis-uždavinys">Košy uždavinys ir
+kraštinis uždavinys</h3>
+<p>Antros eilės lygtis turi dvi laisvas konstantas, todėl jai reikia
+dviejų sąlygų.</p>
+<ul>
+<li><strong>Košy uždavinys:</strong> abi sąlygos tame pačiame taške,
+<span class="math inline">y(x_0)=y_0</span>, <span
+class="math inline">y&#39;(x_0)=y_0&#39;</span>.</li>
+<li><strong>Kraštinis uždavinys:</strong> sąlygos intervalo
+<strong>galuose</strong>, pvz., <span
+class="math inline">y(a)=\alpha</span>, <span
+class="math inline">y(b)=\beta</span>. Fizikoje tai, pavyzdžiui, styga,
+įtvirtinta abiejuose galuose.</li>
+</ul>
+<h3 id="gryno-funkcijos-idėja">Gryno funkcijos idėja</h3>
+<p>Nagrinėkime <span
+class="math inline">L[y]=y&#39;&#39;+a_1(x)y&#39;+a_0(x)y=f(x)</span> su
+<strong>homogeninėmis</strong> kraštinėmis sąlygomis (pvz., <span
+class="math inline">y(a)=y(b)=0</span>). Sprendinį galima užrašyti
+integralu <span class="math display">y(x)=\int_a^bG(x,s)\,f(s)\,ds
+.</span> <span class="math inline">G(x,s)</span> yra <strong>Gryno
+funkcija</strong>. Fizikinė prasmė: tai sistemos atsakas taške <span
+class="math inline">x</span> į vienetinį „smūgį“ taške <span
+class="math inline">s</span>. Bet kuri <span
+class="math inline">f</span> yra tokių smūgių suma, todėl sprendinys yra
+jų atsakų suma (integralas).</p>
+<h3 id="gryno-funkcijos-savybės">Gryno funkcijos savybės</h3>
+<ol type="1">
+<li><span class="math inline">G(x,s)</span> yra tolydi, kai <span
+class="math inline">a\leq x\leq b</span>.</li>
+<li>Kai <span class="math inline">x\neq s</span>, <span
+class="math inline">G</span> kaip <span class="math inline">x</span>
+funkcija tenkina <strong>homogeninę</strong> lygtį <span
+class="math inline">L[G]=0</span>.</li>
+<li><span class="math inline">G</span> tenkina kraštines sąlygas (kai
+<span class="math inline">x=a</span> ir <span
+class="math inline">x=b</span>).</li>
+<li>Taške <span class="math inline">x=s</span> išvestinė turi
+<strong>šuolį</strong>: <span
+class="math inline">G_x&#39;(s+0,s)-G_x&#39;(s-0,s)=1</span>.</li>
+</ol>
+<h3 id="kaip-sukonstruoti-g-receptas">Kaip sukonstruoti <span
+class="math inline">G</span> (receptas)</h3>
+<ol type="1">
+<li>Randame homogeninės lygties sprendinį <span
+class="math inline">y_1</span>, tenkinantį <strong>kairiąją</strong>
+sąlygą (taške <span class="math inline">a</span>), ir sprendinį <span
+class="math inline">y_2</span>, tenkinantį <strong>dešiniąją</strong>
+sąlygą (taške <span class="math inline">b</span>).</li>
+<li>Apskaičiuojame Vronskio determinantą <span
+class="math inline">W=y_1y_2&#39;-y_1&#39;y_2</span>.</li>
+<li>Tada <span
+class="math display">G(x,s)=\begin{cases}\dfrac{y_1(x)\,y_2(s)}{W(s)},
+&amp; a\leq x\leq s,\\[10pt] \dfrac{y_1(s)\,y_2(x)}{W(s)}, &amp; s\leq
+x\leq b.\end{cases}</span></li>
+</ol>
+<p>Ši formulė automatiškai tenkina visas 4 savybes. Paprasčiausiu atveju
+<span class="math inline">y&#39;&#39;=f</span>, <span
+class="math inline">y(a)=y(b)=0</span> gauname (žr. konspektą): <span
+class="math display">G(x,s)=\begin{cases}\dfrac{(x-a)(s-b)}{b-a}, &amp;
+x\leq s,\\[10pt] \dfrac{(s-a)(x-b)}{b-a}, &amp; x\geq
+s.\end{cases}</span></p>
+<h3 id="nehomogeninės-kraštinės-sąlygos">Nehomogeninės kraštinės
+sąlygos</h3>
+<p>Jei <span class="math inline">y(a)=\alpha</span>, <span
+class="math inline">y(b)=\beta</span>, ieškome <span
+class="math inline">y=w+u</span>, kur <span class="math inline">w</span>
+yra paprasta funkcija, tenkinanti šias sąlygas (pvz., tiesė <span
+class="math inline">w=\alpha+\dfrac{x-a}{b-a}(\beta-\alpha)</span>, kai
+<span class="math inline">L[y]=y&#39;&#39;</span>), o <span
+class="math inline">u</span> jau turi nulines sąlygas ir randamas su
+<span class="math inline">G</span>.</p>
+<h3 id="kada-gryno-funkcijos-nėra">Kada Gryno funkcijos nėra</h3>
+<p>Jei <span class="math inline">y_1</span> tenkina <strong>abi</strong>
+kraštines sąlygas iš karto, tai <span
+class="math inline">W\equiv0</span>, ir <span
+class="math inline">G</span> neegzistuoja. Tai reiškia, kad homogeninis
+uždavinys turi nenulinį sprendinį (tai rezonansas, susijęs su tikrinėmis
+reikšmėmis, kurios bus nagrinėjamos 16 temoje).</p>
+</div>
+<div class="deze klaidos" id="klaidos"><div class="deze-antraste">Dažniausios klaidos</div>
+<ul>
+<li><strong>Supainiojamos <span class="math inline">G</span>
+šakos.</strong> Šaka <span class="math inline">x\leq s</span> yra ta,
+kuri tenkina <strong>kairiąją</strong> sąlygą (taške <span
+class="math inline">a</span>).</li>
+<li><strong>Integruojant pagal <span class="math inline">s</span>, <span
+class="math inline">x</span> laikomas konstanta.</strong> Integralą
+reikia skaidyti į dvi dalis: <span class="math inline">\int_a^x</span>
+(ten <span class="math inline">s\leq x</span>) ir <span
+class="math inline">\int_x^b</span> (ten <span class="math inline">s\geq
+x</span>).</li>
+<li><strong>Pamirštamas <span class="math inline">W</span> arba jo
+ženklas.</strong> Šuolis turi būti lygus <span
+class="math inline">+1</span>, todėl visada verta jį patikrinti.</li>
+<li><strong>Formulė su šuoliu 1</strong> galioja, kai koeficientas prie
+<span class="math inline">y&#39;&#39;</span> lygus 1. Kitaip lygtį
+pirmiausia reikia padalyti iš jo.</li>
+</ul>
+</div>
+<h2 id="pavyzdziai">Išspręsti pavyzdžiai</h2>
+<div class="deze pavyzdys" id="pvz-4-1"><div class="deze-antraste">4.1 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Sukonstruokite Gryno funkciją uždaviniui
+<span class="math inline">y&#39;&#39;=f(x)</span>, <span
+class="math inline">y(0)=y(1)=0</span>, ir su ja išspręskite <span
+class="math inline">y&#39;&#39;=x</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Homogeninė lygtis <span class="math inline">y&#39;&#39;=0</span> turi
+sprendinius <span class="math inline">y=c_1+c_2x</span>. Kairioji sąlyga
+<span class="math inline">y(0)=0</span> tenkinama, kai <span
+class="math inline">y_1=x</span>. Dešinioji sąlyga <span
+class="math inline">y(1)=0</span> tenkinama, kai <span
+class="math inline">y_2=x-1</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Kiekviena <span class="math inline">G</span> šaka turi tenkinti
+„savo“ krašto sąlygą, todėl pirmiausia randame po vieną sprendinį
+kiekvienam kraštui.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span
+class="math inline">W=y_1y_2&#39;-y_1&#39;y_2=x\cdot1-1\cdot(x-1)=1</span>.
+Todėl <span class="math display">G(x,s)=\begin{cases}x(s-1), &amp; 0\leq
+x\leq s,\\ s(x-1), &amp; s\leq x\leq1.\end{cases}</span> Patikriname
+šuolį: <span class="math inline">G_x&#39;(s+0)-G_x&#39;(s-0)=s-(s-1)=1.\
+\checkmark</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span
+class="math inline">y(x)=\displaystyle\int_0^1G(x,s)\,s\,ds</span>.
+Skaidome integralą ties <span class="math inline">s=x</span>: <span
+class="math display">y=\int_0^x
+s(x-1)\,s\,ds+\int_x^1x(s-1)\,s\,ds=(x-1)\frac{x^3}{3}+x\left[\frac{s^3}{3}-\frac{s^2}{2}\right]_x^1
+.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Kai <span class="math inline">s&lt;x</span>, taškas <span
+class="math inline">x</span> yra <strong>dešiniau</strong> <span
+class="math inline">s</span>, todėl naudojame šaką <span
+class="math inline">s(x-1)</span>. Kai <span
+class="math inline">s&gt;x</span>, naudojame šaką <span
+class="math inline">x(s-1)</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><span
+class="math inline">x\left[-\tfrac16-\tfrac{x^3}{3}+\tfrac{x^2}{2}\right]=-\tfrac
+x6-\tfrac{x^4}{3}+\tfrac{x^3}{2}</span>. Sudėję su <span
+class="math inline">\tfrac{x^4}{3}-\tfrac{x^3}{3}</span> gauname <span
+class="math inline">y=\dfrac{x^3}{6}-\dfrac x6</span>.</p>
+<p>Patikrinimas: <span class="math inline">y&#39;&#39;=x</span> ✓, <span
+class="math inline">y(0)=0</span> ✓, <span
+class="math inline">y(1)=0</span> ✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=\dfrac{x^3-x}{6}</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-4-2"><div class="deze-antraste">4.2 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Sukonstruokite Gryno funkciją uždaviniui
+<span class="math inline">y&#39;&#39;+y=f(x)</span>, <span
+class="math inline">y(0)=0</span>, <span
+class="math inline">y\!\left(\tfrac\pi2\right)=0</span>, ir išspręskite
+jį, kai <span class="math inline">f=1</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Homogeninė lygtis turi sprendinius <span class="math inline">c_1\cos
+x+c_2\sin x</span>. Sąlygą <span class="math inline">y(0)=0</span>
+tenkina <span class="math inline">y_1=\sin x</span>, o sąlygą <span
+class="math inline">y(\pi/2)=0</span> tenkina <span
+class="math inline">y_2=\cos x</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">W=\sin x\cdot(-\sin x)-\cos x\cdot\cos
+x=-1</span>. Todėl <span class="math display">G(x,s)=\begin{cases}-\sin
+x\cos s, &amp; 0\leq x\leq s,\\ -\sin s\cos x, &amp; s\leq
+x\leq\tfrac\pi2 .\end{cases}</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Kai <span class="math inline">f=1</span>: <span
+class="math display">y=-\cos x\int_0^x\sin s\,ds-\sin
+x\int_x^{\pi/2}\cos s\,ds=-\cos x(1-\cos x)-\sin x(1-\sin x).</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p>Supaprastiname: <span class="math inline">y=-\cos x+\cos^2x-\sin
+x+\sin^2x=1-\cos x-\sin x</span>.</p>
+<p>Patikrinimas: <span class="math inline">y&#39;&#39;+y=(\cos x+\sin
+x)+(1-\cos x-\sin x)=1</span> ✓, <span
+class="math inline">y(0)=1-1-0=0</span> ✓, <span
+class="math inline">y(\pi/2)=1-0-1=0</span> ✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">G=-\sin(\min(x,s))\cos(\max(x,s))</span>, <span
+class="math inline">y=1-\cos x-\sin x</span>.</p>
+</div>
+<h2 id="uzduotys">Savarankiškos užduotys</h2>
+<div class="deze uzduotis" id="uzd-4-1" data-nr="4.1"><div class="deze-antraste">4.1 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Išspręskite kraštinį uždavinį <span
+class="math inline">y&#39;&#39;=1</span>, <span
+class="math inline">y(0)=y(1)=0</span> dviem būdais: tiesiogiai
+integruodami ir naudodami 1 pavyzdžio Gryno funkciją.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Tiesiogiai: <span
+class="math inline">y=\dfrac{x^2}{2}+C_1x+C_2</span>. Iš <span
+class="math inline">y(0)=0</span> gauname <span
+class="math inline">C_2=0</span>, o iš <span
+class="math inline">y(1)=0</span> gauname <span
+class="math inline">C_1=-\tfrac12</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Su <span class="math inline">G</span>: <span
+class="math inline">y=(x-1)\displaystyle\int_0^xs\,ds+x\int_x^1(s-1)\,ds=(x-1)\frac{x^2}{2}-x\frac{(x-1)^2}{2}=\frac{x(x-1)}{2}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=\dfrac{x^2-x}{2}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-4-2" data-nr="4.2"><div class="deze-antraste">4.2 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Išspręskite kraštinį uždavinį <span
+class="math inline">y&#39;&#39;=6x</span>, <span
+class="math inline">y(0)=1</span>, <span
+class="math inline">y(1)=3</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Integruojame du kartus: <span
+class="math inline">y&#39;=3x^2+C_1</span>, <span
+class="math inline">y=x^3+C_1x+C_2</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">y(0)=C_2=1</span>, <span
+class="math inline">y(1)=1+C_1+1=3</span>, todėl <span
+class="math inline">C_1=1</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=x^3+x+1</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-4-3" data-nr="4.3"><div class="deze-antraste">4.3 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Sukonstruokite Gryno funkciją uždaviniui <span
+class="math inline">y&#39;&#39;=f(x)</span>, <span
+class="math inline">y(0)=0</span>, <span
+class="math inline">y&#39;(1)=0</span>. Patikrinkite šuolio sąlygą ir
+išspręskite uždavinį, kai <span class="math inline">f=1</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Sąlygą <span class="math inline">y(0)=0</span> tenkina <span
+class="math inline">y_1=x</span>, o sąlygą <span
+class="math inline">y&#39;(1)=0</span> tenkina <span
+class="math inline">y_2=1</span> (konstanta). <span
+class="math inline">W=x\cdot0-1\cdot1=-1</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math display">G(x,s)=\begin{cases}-x, &amp; x\leq s,\\
+-s, &amp; x\geq s.\end{cases}</span> Šuolis: <span
+class="math inline">G_x&#39;(s+0)-G_x&#39;(s-0)=0-(-1)=1\
+\checkmark</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span
+class="math inline">y=\displaystyle\int_0^x(-s)\,ds+\int_x^1(-x)\,ds=-\frac{x^2}{2}-x(1-x)=\frac{x^2}{2}-x</span>.</p>
+<p>Patikrinimas: <span class="math inline">y&#39;&#39;=1</span>, <span
+class="math inline">y(0)=0</span>, <span
+class="math inline">y&#39;(1)=1-1=0</span> ✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">G=-\min(x,s)</span>, <span
+class="math inline">y=\dfrac{x^2}{2}-x</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-4-4" data-nr="4.4"><div class="deze-antraste">4.4 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Sukonstruokite Gryno funkciją uždaviniui <span
+class="math inline">y&#39;&#39;+4y=f(x)</span>, <span
+class="math inline">y(0)=0</span>, <span
+class="math inline">y\!\left(\tfrac\pi4\right)=0</span>, ir
+patikrinkite, kad ji tenkina šuolio sąlygą.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">y_1=\sin2x</span> (tenkina <span
+class="math inline">y(0)=0</span>), <span
+class="math inline">y_2=\cos2x</span> (tenkina <span
+class="math inline">y(\pi/4)=0</span>).</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span
+class="math inline">W=\sin2x\cdot(-2\sin2x)-2\cos2x\cdot\cos2x=-2</span>.
+<span class="math display">G(x,s)=\begin{cases}-\tfrac12\sin2x\cos2s,
+&amp; x\leq s,\\ -\tfrac12\sin2s\cos2x, &amp; x\geq
+s.\end{cases}</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Šuolis: <span
+class="math inline">G_x&#39;(s+0)-G_x&#39;(s-0)=\sin2s\sin2s-(-\cos2s\cos2s)=\sin^22s+\cos^22s=1\
+\checkmark</span></p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">G(x,s)=-\tfrac12\sin\big(2\min(x,s)\big)\cos\big(2\max(x,s)\big)</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-4-5" data-nr="4.5"><div class="deze-antraste">4.5 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Naudodamiesi 2 pavyzdžio Gryno funkcija, išspręskite <span
+class="math inline">y&#39;&#39;+y=x</span>, <span
+class="math inline">y(0)=0</span>, <span
+class="math inline">y\!\left(\tfrac\pi2\right)=0</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">y=-\cos x\displaystyle\int_0^xs\sin
+s\,ds-\sin x\int_x^{\pi/2}s\cos s\,ds</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Integruojame dalimis: <span class="math inline">\displaystyle\int
+s\sin s\,ds=\sin s-s\cos s</span> ir <span
+class="math inline">\displaystyle\int s\cos s\,ds=\cos s+s\sin s</span>.
+Gauname <span class="math display">\int_0^xs\sin s\,ds=\sin x-x\cos
+x,\qquad \int_x^{\pi/2}s\cos s\,ds=\frac\pi2-\cos x-x\sin x .</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">y=-\cos x\sin x+x\cos^2x-\dfrac\pi2\sin
+x+\sin x\cos x+x\sin^2x=x-\dfrac\pi2\sin x</span>.</p>
+<p>Patikrinimas: <span class="math inline">y&#39;&#39;+y=\tfrac\pi2\sin
+x+x-\tfrac\pi2\sin x=x</span> ✓, <span class="math inline">y(0)=0</span>
+✓, <span class="math inline">y(\pi/2)=0</span> ✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=x-\dfrac\pi2\sin x</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-4-6" data-nr="4.6"><div class="deze-antraste">4.6 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Sukonstruokite Gryno funkciją uždaviniui <span
+class="math inline">y&#39;&#39;-y=f(x)</span>, <span
+class="math inline">y(0)=y(1)=0</span>, ir išspręskite jį, kai <span
+class="math inline">f=1</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Homogeninės lygties sprendiniai yra <span
+class="math inline">\operatorname{ch}x</span> ir <span
+class="math inline">\operatorname{sh}x</span>. Sąlygą <span
+class="math inline">y(0)=0</span> tenkina <span
+class="math inline">y_1=\operatorname{sh}x</span>, o sąlygą <span
+class="math inline">y(1)=0</span> tenkina <span
+class="math inline">y_2=\operatorname{sh}(x-1)</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span
+class="math inline">W=\operatorname{sh}x\operatorname{ch}(x-1)-\operatorname{ch}x\operatorname{sh}(x-1)=\operatorname{sh}\big(x-(x-1)\big)=\operatorname{sh}1</span>.
+<span
+class="math display">G(x,s)=\begin{cases}\dfrac{\operatorname{sh}x\,\operatorname{sh}(s-1)}{\operatorname{sh}1},
+&amp; x\leq s,\\[8pt]
+\dfrac{\operatorname{sh}s\,\operatorname{sh}(x-1)}{\operatorname{sh}1},
+&amp; x\geq s.\end{cases}</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Naudojame hiperbolinio sinuso skirtumo formulę <span
+class="math inline">\operatorname{sh}(a-b)=\operatorname{sh}a\operatorname{ch}b-\operatorname{ch}a\operatorname{sh}b</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Kai <span class="math inline">f=1</span> paprasčiau spręsti
+tiesiogiai: <span
+class="math inline">y=-1+A\operatorname{ch}x+B\operatorname{sh}x</span>.
+Iš <span class="math inline">y(0)=0</span> gauname <span
+class="math inline">A=1</span>, o iš <span
+class="math inline">y(1)=0</span> gauname <span
+class="math inline">B=\dfrac{1-\operatorname{ch}1}{\operatorname{sh}1}</span>.
+Tą patį atsakymą duoda ir integralas su <span
+class="math inline">G</span>. Patogesnis užrašymas: <span
+class="math display">y=\frac{\operatorname{ch}\big(x-\tfrac12\big)}{\operatorname{ch}\tfrac12}-1
+.</span> Patikrinimas: <span class="math inline">y(0)=y(1)=0</span> (nes
+<span class="math inline">\operatorname{ch}</span> lyginė), <span
+class="math inline">y&#39;&#39;-y=1</span> ✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=\dfrac{\operatorname{ch}(x-1/2)}{\operatorname{ch}(1/2)}-1</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-4-7" data-nr="4.7"><div class="deze-antraste">4.7 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Paaiškinkite, kodėl uždaviniui <span
+class="math inline">y&#39;&#39;+y=f(x)</span>, <span
+class="math inline">y(0)=0</span>, <span
+class="math inline">y(\pi)=0</span> Gryno funkcijos sukonstruoti
+negalima. Kokia sąlyga turi būti tenkinama, kad <span
+class="math inline">y&#39;&#39;+y=f</span> su šiomis sąlygomis turėtų
+sprendinį?</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Sąlygą <span class="math inline">y(0)=0</span> tenkina <span
+class="math inline">y_1=\sin x</span>. Tačiau <span
+class="math inline">\sin\pi=0</span>, todėl tas pats <span
+class="math inline">\sin x</span> tenkina ir sąlygą <span
+class="math inline">y(\pi)=0</span>, t. y. <span
+class="math inline">y_2=\sin x</span> (su tikslumu iki daugiklio).</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Tada <span class="math inline">W=\sin x\cos x-\cos x\sin x=0</span>,
+ir formulėje tektų dalyti iš nulio. Gryno funkcija neegzistuoja.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Padauginkime lygtį iš <span class="math inline">\sin x</span> ir
+suintegruokime nuo <span class="math inline">0</span> iki <span
+class="math inline">\pi</span>. Integruojant dalimis du kartus su
+sąlygomis <span class="math inline">y(0)=y(\pi)=0</span>, <span
+class="math inline">\displaystyle\int_0^\pi(y&#39;&#39;+y)\sin
+x\,dx=0</span>. Todėl sprendinys gali egzistuoti tik tada, kai <span
+class="math display">\int_0^\pi f(x)\sin x\,dx=0 .</span></p>
+</div>
+<p><strong>Atsakymas:</strong> homogeninis uždavinys turi nenulinį
+sprendinį <span class="math inline">\sin x</span>, todėl <span
+class="math inline">W=0</span>. Sprendinys egzistuoja tik kai <span
+class="math inline">\int_0^\pi f\sin x\,dx=0</span>.</p>
+</div>
+</div>
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="tema-03.html"><span>← Ankstesnė tema</span><strong>3. Antros ir aukštesnės eilės tiesinės diferencialinės lygtys</strong></a>
+  <a class="puslapis-kitas" href="tema-05.html"><span>Kita tema →</span><strong>5. Paprastųjų diferencialinių lygčių sistemos</strong></a>
+</nav>
+
+<script src="svetaine.js"></script>
+</body>
+</html>

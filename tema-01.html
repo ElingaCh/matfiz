@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1. Kreivinės koordinatės ir vektorinės
+operacijos · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="temos-puslapis" data-tema="1" data-uzduociu="7">
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <a class="atgal" href="index.html">← Visos temos</a>
+    <nav class="skyreliai" aria-label="Temos dalys">
+      <a href="#teorija">Teorija</a>
+      <a href="#klaidos">Klaidos</a>
+      <a href="#pavyzdziai">Pavyzdžiai</a>
+      <a href="#uzduotys">Užduotys</a>
+    </nav>
+    <span class="temos-progresas" aria-live="polite"></span>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">1 tema · Koordinatės ir paprastosios
+diferencialinės lygtys</p>
+    <h1>Kreivinės koordinatės ir vektorinės operacijos</h1>
+    <p class="hero-info">3 išspręsti pavyzdžiai · 7 užduotys · sprendimai atidengiami po žingsnį</p>
+    <div class="juosta"><div class="juosta-uzpildas"></div></div>
+  </div>
+</header>
+
+<main class="turinys">
+<div class="deze teorija" id="teorija"><div class="deze-antraste">Teorija</div>
+<h3 id="kreivinės-apibendrintosios-koordinatės">Kreivinės
+(apibendrintosios) koordinatės</h3>
+<p>Taško padėtį erdvėje nebūtinai aprašome Dekarto koordinatėmis <span
+class="math inline">(x,y,z)</span>. Galime naudoti bet kokius tris
+skaičius <span class="math inline">(q_1,q_2,q_3)</span>, jei kiekvienam
+taškui atitinka <strong>vienas</strong> rinkinys <span
+class="math inline">(q_1,q_2,q_3)</span>: <span class="math display">
+x=x(q_1,q_2,q_3),\qquad y=y(q_1,q_2,q_3),\qquad z=z(q_1,q_2,q_3).
+</span></p>
+<ul>
+<li><strong>Koordinatinis paviršius</strong> – taškai, kuriuose viena
+koordinatė pastovi (pvz., <span
+class="math inline">q_1=\text{const}</span>).</li>
+<li><strong>Koordinatinė kreivė</strong> – dviejų koordinatinių paviršių
+susikirtimas: pastovios dvi koordinatės, o kinta tik viena.</li>
+<li><strong>Ortai</strong> <span
+class="math inline">\vec{q}_{10},\vec{q}_{20},\vec{q}_{30}</span> –
+vienetiniai vektoriai, liečiantys koordinatines kreives ir nukreipti
+koordinatės didėjimo kryptimi. Kreivinėse sistemose jie
+<strong>priklauso nuo taško</strong> (Dekarto sistemoje – ne).</li>
+</ul>
+<p>Sistema yra <strong>ortogonali</strong>, jei ortai kiekviename taške
+tarpusavyje statmeni: <span
+class="math inline">\vec{q}_{i0}\cdot\vec{q}_{j0}=\delta_{ij}</span>.
+Visos toliau pateiktos formulės galioja tik ortogonalioms sistemoms.</p>
+<h3 id="lamė-koeficientai">Lamė koeficientai</h3>
+<p>Lamė koeficientas <span class="math inline">h_i</span> parodo, kiek
+pasislenka taškas, kai koordinatė <span class="math inline">q_i</span>
+pakinta vienetu: <span class="math display">
+h_i=\left|\frac{\partial \vec r}{\partial
+q_i}\right|=\sqrt{\left(\frac{\partial x}{\partial
+q_i}\right)^2+\left(\frac{\partial y}{\partial
+q_i}\right)^2+\left(\frac{\partial z}{\partial q_i}\right)^2}.
+</span> Su jais užrašomi atstumo kvadratas ir tūrio elementas: <span
+class="math display">
+ds^2=(h_1dq_1)^2+(h_2dq_2)^2+(h_3dq_3)^2,\qquad
+dV=h_1h_2h_3\,dq_1dq_2dq_3 .
+</span> Ortogonalumą patikriname skaliarine sandauga: <span
+class="math inline">\frac{\partial \vec r}{\partial
+q_i}\cdot\frac{\partial \vec r}{\partial q_j}=0</span>, kai <span
+class="math inline">i\neq j</span>.</p>
+<h3
+id="diferencialinės-operacijos-ortogonaliose-kreivinėse-koordinatėse">Diferencialinės
+operacijos ortogonaliose kreivinėse koordinatėse</h3>
+<p><span class="math display">
+\begin{aligned}
+\operatorname{grad}f&amp;=\nabla f=\frac{1}{h_1}\frac{\partial
+f}{\partial q_1}\vec{q}_{10}+\frac{1}{h_2}\frac{\partial f}{\partial
+q_2}\vec{q}_{20}+\frac{1}{h_3}\frac{\partial f}{\partial
+q_3}\vec{q}_{30},\\[4pt]
+\operatorname{div}\vec a&amp;=\nabla\cdot\vec
+a=\frac{1}{h_1h_2h_3}\left[\frac{\partial }{\partial
+q_1}(h_2h_3a_1)+\frac{\partial }{\partial q_2}(h_1h_3a_2)+\frac{\partial
+}{\partial q_3}(h_1h_2a_3)\right],\\[4pt]
+\operatorname{rot}\vec a&amp;=\nabla\times\vec a=\frac{1}{h_1h_2h_3}
+\begin{vmatrix} h_1\vec{q}_{10} &amp; h_2\vec{q}_{20} &amp;
+h_3\vec{q}_{30}\\ \frac{\partial }{\partial q_1} &amp; \frac{\partial
+}{\partial q_2} &amp; \frac{\partial }{\partial q_3}\\ h_1a_1 &amp;
+h_2a_2 &amp; h_3a_3\end{vmatrix},\\[4pt]
+\Delta
+f&amp;=\operatorname{div}\operatorname{grad}f=\frac{1}{h_1h_2h_3}\sum_{i=1}^{3}\frac{\partial
+}{\partial q_i}\!\left(\frac{h_1h_2h_3}{h_i^2}\frac{\partial f}{\partial
+q_i}\right).
+\end{aligned}
+</span></p>
+<h3 id="cilindrinė-ir-sferinė-sistemos">Cilindrinė ir sferinė
+sistemos</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Cilindrinė <span
+class="math inline">(\rho,\varphi,z)</span></th>
+<th style="text-align: left;">Sferinė <span
+class="math inline">(r,\theta,\varphi)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Ryšys su <span
+class="math inline">x,y,z</span></td>
+<td style="text-align: left;"><span
+class="math inline">x=\rho\cos\varphi,\ y=\rho\sin\varphi,\
+z=z</span></td>
+<td style="text-align: left;"><span
+class="math inline">x=r\sin\theta\cos\varphi,\
+y=r\sin\theta\sin\varphi,\ z=r\cos\theta</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lamė koeficientai</td>
+<td style="text-align: left;"><span class="math inline">h_\rho=1,\
+h_\varphi=\rho,\ h_z=1</span></td>
+<td style="text-align: left;"><span class="math inline">h_r=1,\
+h_\theta=r,\ h_\varphi=r\sin\theta</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tūrio elementas</td>
+<td style="text-align: left;"><span
+class="math inline">dV=\rho\,d\rho\,d\varphi\,dz</span></td>
+<td style="text-align: left;"><span
+class="math inline">dV=r^2\sin\theta\,dr\,d\theta\,d\varphi</span></td>
+</tr>
+</tbody>
+</table>
+<p>Paskaitų santraukoje cilindrinės sistemos spindulys žymimas <span
+class="math inline">r</span>, o konspekte <span
+class="math inline">\rho</span>. Tai tas pats dydis.</p>
+<p>Cilindrinėje sistemoje: <span class="math display">
+\operatorname{div}\vec a=\frac1\rho\frac{\partial }{\partial \rho}(\rho
+a_\rho)+\frac1\rho\frac{\partial a_\varphi}{\partial
+\varphi}+\frac{\partial a_z}{\partial z},\qquad
+\Delta f=\frac1\rho\frac{\partial }{\partial
+\rho}\!\left(\rho\frac{\partial f}{\partial
+\rho}\right)+\frac{1}{\rho^2}\frac{\partial^2
+f}{\partial\varphi^2}+\frac{\partial^2 f}{\partial z^2}.
+</span> Sferinėje sistemoje: <span class="math display">
+\operatorname{div}\vec a=\frac{1}{r^2}\frac{\partial }{\partial
+r}(r^2a_r)+\frac{1}{r\sin\theta}\frac{\partial }{\partial
+\theta}(\sin\theta\,a_\theta)+\frac{1}{r\sin\theta}\frac{\partial
+a_\varphi}{\partial \varphi},
+</span> <span class="math display">
+\Delta f=\frac{1}{r^2}\frac{\partial }{\partial
+r}\!\left(r^2\frac{\partial f}{\partial
+r}\right)+\frac{1}{r^2\sin\theta}\frac{\partial }{\partial
+\theta}\!\left(\sin\theta\frac{\partial f}{\partial
+\theta}\right)+\frac{1}{r^2\sin^2\theta}\frac{\partial^2
+f}{\partial\varphi^2}.
+</span></p>
+<h3 id="veiksmai-su-nabla-nabla">Veiksmai su <span
+class="math inline">\nabla</span> (nabla)</h3>
+<p><span class="math inline">\nabla</span> yra <strong>ir
+diferencialinis operatorius, ir vektorius</strong>. Kai jis veikia
+sandaugą, diferencijuojame kiekvieną dauginamąjį paeiliui, o kitą
+laikome konstanta (pratybose ji žymima indeksu <span
+class="math inline">c</span>, pvz., <span
+class="math inline">f_c</span>). Tada pertvarkome reiškinį pagal
+vektorių algebros taisykles taip, kad <span
+class="math inline">\nabla</span> stovėtų prieš tą dauginamąjį, kurį
+diferencijuoja. Taip gaunamos formulės: <span class="math display">
+\begin{aligned}
+\operatorname{grad}(fg)&amp;=f\operatorname{grad}g+g\operatorname{grad}f,
+&amp;\operatorname{div}(f\vec a)&amp;=f\operatorname{div}\vec a+\vec
+a\cdot\operatorname{grad}f,\\
+\operatorname{rot}(f\vec a)&amp;=f\operatorname{rot}\vec
+a+\operatorname{grad}f\times\vec a, &amp;\operatorname{div}(\vec
+a\times\vec b)&amp;=\vec b\cdot\operatorname{rot}\vec a-\vec
+a\cdot\operatorname{rot}\vec b,\\
+\operatorname{rot}\operatorname{grad}f&amp;=0,
+&amp;\operatorname{div}\operatorname{rot}\vec a&amp;=0.
+\end{aligned}
+</span> Paskutinės dvi reiškia, kad potencialinis laukas yra besūkuris,
+o rotoriaus laukas yra solenoidinis.</p>
+<p>Naudingi faktai apie spindulį vektorių <span class="math inline">\vec
+r=(x,y,z)</span>, kurio ilgis <span class="math inline">r=|\vec
+r|</span>, ir jo ortą <span class="math inline">\vec{r}_0=\vec
+r/r</span>: <span class="math display">
+\operatorname{grad}r=\frac{\vec r}{r}=\vec{r}_0,\qquad
+\operatorname{grad}\varphi(r)=\varphi&#39;(r)\,\vec{r}_0,\qquad
+\operatorname{div}\vec r=3,\qquad \operatorname{rot}\vec r=0 .
+</span></p>
+</div>
+<div class="deze klaidos" id="klaidos"><div class="deze-antraste">Dažniausios klaidos</div>
+<ul>
+<li><strong>Kreivinėse koordinatėse divergencija ir rotorius nėra
+tiesiog dalinių išvestinių suma.</strong> Pavyzdžiui, cilindrinėje
+sistemoje <span class="math inline">\operatorname{div}\vec
+a\neq\frac{\partial a_\rho}{\partial \rho}+\frac{\partial
+a_\varphi}{\partial \varphi}+\frac{\partial a_z}{\partial z}</span>.
+Lamė koeficientų pamiršti negalima.</li>
+<li><strong>Ortai kreivinėse sistemose kinta.</strong> <span
+class="math inline">\frac{\partial \vec{\rho}_0}{\partial
+\varphi}=\vec{\varphi}_0\neq 0</span>, todėl jų negalima iškelti prieš
+išvestinę kaip konstantų.</li>
+<li><strong>Laplasas sferinėje sistemoje:</strong> dažnai parašoma <span
+class="math inline">\frac{\partial^2 f}{\partial r^2}</span>, nors turi
+būti <span class="math inline">\frac{1}{r^2}\frac{\partial }{\partial
+r}\big(r^2\frac{\partial f}{\partial r}\big)</span>.</li>
+<li><strong>Taikant <span class="math inline">\nabla</span>
+sandaugai,</strong> dažnai „pamirštamas“ vienas iš dviejų narių arba
+sumaišoma vektorinės sandaugos tvarka. <span class="math inline">\vec
+a\times\vec b=-\vec b\times\vec a</span>, todėl ženklai svarbūs.</li>
+<li><strong>Lamė koeficientas yra ilgis</strong> (<span
+class="math inline">h_i=|\partial\vec r/\partial q_i|</span>), ne
+kvadratas. Nepamirškite ištraukti šaknies.</li>
+</ul>
+</div>
+<h2 id="pavyzdziai">Išspręsti pavyzdžiai</h2>
+<div class="deze pavyzdys" id="pvz-1-1"><div class="deze-antraste">1.1 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Plokštumoje duota koordinačių sistema <span
+class="math display">x=\tfrac12\left(\alpha_1^2-\alpha_2^2\right),\qquad
+y=\alpha_1\alpha_2,\qquad \alpha_1,\alpha_2\geq 0 .</span> Raskite
+koordinatines kreives, patikrinkite, ar sistema ortogonali, ir raskite
+Lamė koeficientus.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Koordinatinė kreivė <span
+class="math inline">\alpha_1=c_1=\text{const}</span>. Iš antros lygties
+<span class="math inline">\alpha_2=y/c_1</span>, įrašome į pirmą: <span
+class="math display">x=\frac12\left(c_1^2-\frac{y^2}{c_1^2}\right)\
+\Longrightarrow\ y^2=-2c_1^2\left(x-\frac{c_1^2}{2}\right).</span> Tai
+parabolė, kurios viršūnė yra taške <span
+class="math inline">\left(\tfrac{c_1^2}{2},0\right)</span>, o šakos
+atsuktos į kairę.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Koordinatinė kreivė yra taškų aibė, kurioje kinta tik viena
+koordinatė. Norint ją atpažinti, reikia pašalinti kintantį parametrą
+<span class="math inline">\alpha_2</span> ir gauti ryšį tarp <span
+class="math inline">x</span> ir <span class="math inline">y</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Koordinatinė kreivė <span
+class="math inline">\alpha_2=c_2=\text{const}</span>. Dabar <span
+class="math inline">\alpha_1=y/c_2</span>: <span
+class="math display">x=\frac12\left(\frac{y^2}{c_2^2}-c_2^2\right)\
+\Longrightarrow\ y^2=2c_2^2\left(x+\frac{c_2^2}{2}\right).</span> Tai
+parabolė, kurios viršūnė yra taške <span
+class="math inline">\left(-\tfrac{c_2^2}{2},0\right)</span>, o šakos
+atsuktos į dešinę. Abi parabolių šeimos kertasi taške <span
+class="math inline">x_0=\tfrac12(c_1^2-c_2^2)</span>, <span
+class="math inline">y_0=c_1c_2</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Liestiniai vektoriai: <span class="math display">\frac{\partial \vec
+r}{\partial \alpha_1}=(\alpha_1,\ \alpha_2),\qquad \frac{\partial \vec
+r}{\partial \alpha_2}=(-\alpha_2,\ \alpha_1).</span> Jų skaliarinė
+sandauga <span
+class="math inline">-\alpha_1\alpha_2+\alpha_2\alpha_1=0</span>, todėl
+sistema <strong>ortogonali</strong>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p><span class="math inline">\partial\vec r/\partial\alpha_i</span> yra
+koordinatinės kreivės liestinė. Jei liestinės statmenos, statmeni ir
+ortai, nes ortai yra tos pačios liestinės, padalytos iš savo ilgio.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p>Lamė koeficientai yra liestinių vektorių ilgiai: <span
+class="math display">h_1=\sqrt{\alpha_1^2+\alpha_2^2},\qquad
+h_2=\sqrt{\alpha_2^2+\alpha_1^2}=h_1 .</span></p>
+</div>
+<p><strong>Atsakymas:</strong> koordinatinės kreivės yra dvi priešingai
+atsuktų parabolių šeimos, sistema ortogonali, <span
+class="math inline">h_1=h_2=\sqrt{\alpha_1^2+\alpha_2^2}</span>.</p>
+<div class="pastaba"><span class="pastaba-zyme">Pastaba.</span>
+<p>Pratybų užrašuose antrosios parabolės lygtis parašyta su minusu
+(<span class="math inline">y^2=-2c_2^2(\dots)</span>), o viršūnėje
+įrašytas <span class="math inline">c_1</span>. Teisinga lygtis yra <span
+class="math inline">y^2=+2c_2^2\big(x+\tfrac{c_2^2}{2}\big)</span>, o
+viršūnė <span
+class="math inline">\big(-\tfrac{c_2^2}{2},0\big)</span>.</p>
+</div>
+</div>
+<div class="deze pavyzdys" id="pvz-1-2"><div class="deze-antraste">1.2 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Įrodykite, kad <span
+class="math inline">\operatorname{div}(f\vec a)=f\operatorname{div}\vec
+a+\vec a\cdot\operatorname{grad}f</span>, ir apskaičiuokite <span
+class="math inline">\operatorname{div}\vec{r}_0=\nabla\cdot\dfrac{\vec
+r}{r}</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Rašome <span class="math inline">\nabla\cdot(f\vec a)</span> ir
+taikome sandaugos taisyklę. Pirmiausia diferencijuojame tik <span
+class="math inline">f</span> (o <span class="math inline">\vec a</span>
+laikome konstanta), paskui tik <span class="math inline">\vec a</span>:
+<span class="math display">\nabla\cdot(f\vec a)=\nabla\cdot(f\,\vec
+a_c)+\nabla\cdot(f_c\,\vec a).</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p><span class="math inline">\nabla</span> yra diferencijavimo
+operatorius, todėl sandaugai galioja Leibnizo taisyklė <span
+class="math inline">(uv)&#39;=u&#39;v+uv&#39;</span>. Indeksas <span
+class="math inline">c</span> tik primena, kuris dauginamasis tame narye
+nediferencijuojamas.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Konstantą iškeliame prieš <span class="math inline">\nabla</span>:
+<span class="math display">\nabla\cdot(f_c\vec a)=f\,(\nabla\cdot\vec
+a)=f\operatorname{div}\vec a,\qquad \nabla\cdot(f\vec a_c)=\vec
+a\cdot(\nabla f)=\vec a\cdot\operatorname{grad}f .</span> Gauname <span
+class="math inline">\operatorname{div}(f\vec a)=f\operatorname{div}\vec
+a+\vec a\cdot\operatorname{grad}f</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Antrame narye <span class="math inline">\nabla</span> diferencijuoja
+tik skaliarą <span class="math inline">f</span>, todėl gaunamas <span
+class="math inline">\nabla f</span>, o su konstantiniu vektoriumi <span
+class="math inline">\vec a</span> lieka skaliarinė sandauga.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Taikome formulę su <span class="math inline">f=\dfrac1r</span> ir
+<span class="math inline">\vec a=\vec r</span>. Žinome, kad <span
+class="math inline">\operatorname{div}\vec r=3</span>, o <span
+class="math display">\operatorname{grad}\frac1r=-\frac{1}{r^2}\operatorname{grad}r=-\frac{1}{r^2}\cdot\frac{\vec
+r}{r}=-\frac{\vec r}{r^3}.</span> Tada <span
+class="math display">\operatorname{div}\frac{\vec
+r}{r}=\frac1r\cdot3+\vec r\cdot\left(-\frac{\vec
+r}{r^3}\right)=\frac3r-\frac{r^2}{r^3}=\frac2r .</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p>Patikriname sferinėje sistemoje. Ten <span
+class="math inline">\vec{r}_0</span> turi tik radialinę komponentę <span
+class="math inline">a_r=1</span>: <span
+class="math display">\operatorname{div}\vec{r}_0=\frac{1}{r^2}\frac{\partial
+}{\partial r}\left(r^2\cdot1\right)=\frac{2r}{r^2}=\frac2r.\
+\checkmark</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Tą patį dydį apskaičiavus dviem skirtingais būdais ir gavus tą patį
+atsakymą, galima būti tikram, kad klaidų nėra.</p>
+</div>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\operatorname{div}\vec{r}_0=\dfrac{2}{r}</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-1-3"><div class="deze-antraste">1.3 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Apskaičiuokite <span
+class="math inline">\Delta f</span>, kai <span
+class="math inline">f=\rho^3\cos\varphi</span> (cilindrinės
+koordinatės), ir patikrinkite atsakymą Dekarto koordinatėse.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Funkcija nepriklauso nuo <span class="math inline">z</span>, todėl
+Laplaso operatoriuje lieka du nariai: <span class="math display">\Delta
+f=\frac1\rho\frac{\partial }{\partial \rho}\!\left(\rho\frac{\partial
+f}{\partial \rho}\right)+\frac{1}{\rho^2}\frac{\partial^2
+f}{\partial\varphi^2}.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Radialinė dalis: <span class="math inline">\frac{\partial f}{\partial
+\rho}=3\rho^2\cos\varphi</span>, todėl <span
+class="math display">\frac1\rho\frac{\partial }{\partial
+\rho}\left(3\rho^3\cos\varphi\right)=\frac1\rho\cdot9\rho^2\cos\varphi=9\rho\cos\varphi
+.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Pirmiausia dauginame iš <span class="math inline">\rho</span> ir tik
+tada diferencijuojame. Taip atsiranda <span
+class="math inline">h_\varphi=\rho</span>, nes cilindrinėje sistemoje
+ploto elementas proporcingas <span class="math inline">\rho</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Kampinė dalis: <span class="math inline">\dfrac{\partial^2
+f}{\partial\varphi^2}=-\rho^3\cos\varphi</span>, todėl <span
+class="math inline">\dfrac{1}{\rho^2}\cdot(-\rho^3\cos\varphi)=-\rho\cos\varphi</span>.</p>
+<p>Sudedame ir gauname <span class="math inline">\Delta
+f=9\rho\cos\varphi-\rho\cos\varphi=8\rho\cos\varphi</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p>Patikrinimas Dekarto koordinatėse: <span
+class="math inline">\rho\cos\varphi=x</span> ir <span
+class="math inline">\rho^2=x^2+y^2</span>, todėl <span
+class="math inline">f=(x^2+y^2)x=x^3+xy^2</span>. Tada <span
+class="math display">\Delta f=\frac{\partial^2}{\partial
+x^2}(x^3+xy^2)+\frac{\partial^2}{\partial
+y^2}(x^3+xy^2)=6x+2x=8x=8\rho\cos\varphi.\ \checkmark</span></p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\Delta(\rho^3\cos\varphi)=8\rho\cos\varphi</span>.</p>
+</div>
+<h2 id="uzduotys">Savarankiškos užduotys</h2>
+<div class="deze uzduotis" id="uzd-1-1" data-nr="1.1"><div class="deze-antraste">1.1 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Dekarto koordinatėse apskaičiuokite <span
+class="math inline">\operatorname{grad}r</span>, <span
+class="math inline">\operatorname{div}\vec r</span> ir <span
+class="math inline">\operatorname{rot}\vec r</span>, kai <span
+class="math inline">\vec r=(x,y,z)</span>, <span
+class="math inline">r=\sqrt{x^2+y^2+z^2}</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">\frac{\partial r}{\partial
+x}=\dfrac{2x}{2\sqrt{x^2+y^2+z^2}}=\dfrac{x}{r}</span>. Analogiškai
+<span class="math inline">\frac{\partial r}{\partial y}=\dfrac yr</span>
+ir <span class="math inline">\frac{\partial r}{\partial z}=\dfrac
+zr</span>, todėl <span
+class="math display">\operatorname{grad}r=\left(\frac xr,\frac yr,\frac
+zr\right)=\frac{\vec r}{r}=\vec{r}_0.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">\operatorname{div}\vec r=\frac{\partial
+x}{\partial x}+\frac{\partial y}{\partial y}+\frac{\partial z}{\partial
+z}=1+1+1=3.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">\operatorname{rot}\vec
+r=\left(\frac{\partial z}{\partial y}-\frac{\partial y}{\partial z},\
+\frac{\partial x}{\partial z}-\frac{\partial z}{\partial x},\
+\frac{\partial y}{\partial x}-\frac{\partial x}{\partial
+y}\right)=(0,0,0).</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Kiekviena komponentė priklauso tik nuo „savo“ kintamojo, todėl visos
+kryžminės išvestinės lygios nuliui.</p>
+</div>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\operatorname{grad}r=\vec r/r</span>, <span
+class="math inline">\operatorname{div}\vec r=3</span>, <span
+class="math inline">\operatorname{rot}\vec r=0</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-1-2" data-nr="1.2"><div class="deze-antraste">1.2 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Naudodamiesi <span class="math inline">\nabla</span> taisyklėmis,
+įrodykite, kad <span class="math inline">\operatorname{grad}\dfrac
+fg=\dfrac{g\operatorname{grad}f-f\operatorname{grad}g}{g^2}</span>.
+Pritaikykite formulę ir raskite <span
+class="math inline">\operatorname{grad}\dfrac zr</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">\dfrac fg=f\cdot g^{-1}</span>. Pagal
+sandaugos taisyklę <span class="math display">\operatorname{grad}\frac
+fg=\frac1g\operatorname{grad}f+f\operatorname{grad}\left(g^{-1}\right)=\frac1g\operatorname{grad}f-\frac{f}{g^2}\operatorname{grad}g=\frac{g\operatorname{grad}f-f\operatorname{grad}g}{g^2}.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p><span
+class="math inline">\operatorname{grad}(g^{-1})=-g^{-2}\operatorname{grad}g</span>
+pagal sudėtinės funkcijos diferencijavimo taisyklę <span
+class="math inline">\operatorname{grad}\varphi(g)=\varphi&#39;(g)\operatorname{grad}g</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Imame <span class="math inline">f=z</span> ir <span
+class="math inline">g=r</span>. Tada <span
+class="math inline">\operatorname{grad}z=\vec k</span> (orto <span
+class="math inline">z</span> kryptimi), o <span
+class="math inline">\operatorname{grad}r=\vec r/r</span>: <span
+class="math display">\operatorname{grad}\frac zr=\frac{r\vec k-z\,\vec
+r/r}{r^2}=\frac{\vec k}{r}-\frac{z\,\vec r}{r^3}.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Patikrinimas sferinėje sistemoje: <span
+class="math inline">z/r=\cos\theta</span>, todėl <span
+class="math inline">\operatorname{grad}\cos\theta=\dfrac1r\frac{\partial
+\cos\theta}{\partial
+\theta}\vec{\theta}_0=-\dfrac{\sin\theta}{r}\vec{\theta}_0</span>.
+Kadangi <span class="math inline">\vec
+k=\cos\theta\,\vec{r}_0-\sin\theta\,\vec{\theta}_0</span> ir <span
+class="math inline">z\vec r/r^3=\cos\theta\,\vec{r}_0/r</span>, abu
+reiškiniai sutampa.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\operatorname{grad}\dfrac zr=\dfrac{\vec
+k}{r}-\dfrac{z\vec
+r}{r^3}=-\dfrac{\sin\theta}{r}\vec{\theta}_0</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-1-3" data-nr="1.3"><div class="deze-antraste">1.3 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Tegul <span class="math inline">\varphi(r)</span> yra bet kuri
+diferencijuojama funkcija. Įrodykite, kad <span
+class="math inline">\operatorname{rot}\big(\varphi(r)\vec
+r\big)=0</span>, ir raskite <span
+class="math inline">\operatorname{div}\big(\varphi(r)\vec r\big)</span>.
+Su kokia funkcija <span class="math inline">\varphi(r)</span> šis laukas
+yra solenoidinis (kai <span class="math inline">r\neq0</span>)?</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Rotorius: <span class="math inline">\operatorname{rot}(\varphi\vec
+r)=\varphi\operatorname{rot}\vec r+\operatorname{grad}\varphi\times\vec
+r</span>. Kadangi <span class="math inline">\operatorname{rot}\vec
+r=0</span> ir <span
+class="math inline">\operatorname{grad}\varphi=\varphi&#39;(r)\dfrac{\vec
+r}{r}</span>, <span class="math display">\operatorname{rot}(\varphi\vec
+r)=\frac{\varphi&#39;(r)}{r}\,\vec r\times\vec r=0 .</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Vektoriaus vektorinė sandauga su pačiu savimi lygi nuliui, nes kampas
+tarp jų lygus 0.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Divergencija: <span
+class="math inline">\operatorname{div}(\varphi\vec
+r)=\varphi\operatorname{div}\vec r+\vec
+r\cdot\operatorname{grad}\varphi=3\varphi+\vec
+r\cdot\dfrac{\varphi&#39;\vec
+r}{r}=3\varphi+r\varphi&#39;(r)</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Solenoidinis reiškia, kad divergencija lygi nuliui: <span
+class="math inline">3\varphi+r\varphi&#39;=0</span>. Tai lygtis su
+atskiriamais kintamaisiais: <span
+class="math display">\frac{d\varphi}{\varphi}=-3\frac{dr}{r}\
+\Longrightarrow\ \ln|\varphi|=-3\ln r+\ln|C|\ \Longrightarrow\
+\varphi=\frac{C}{r^3}.</span></p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\operatorname{rot}(\varphi\vec r)=0</span>, <span
+class="math inline">\operatorname{div}(\varphi\vec
+r)=3\varphi+r\varphi&#39;</span>, o laukas solenoidinis, kai <span
+class="math inline">\varphi=C/r^3</span>, t. y. <span
+class="math inline">\vec E=C\vec r/r^3</span> (Kulono laukas).</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-1-4" data-nr="1.4"><div class="deze-antraste">1.4 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Cilindrinėse koordinatėse apskaičiuokite <span
+class="math inline">\Delta(\rho^2\cos2\varphi)</span>. Gautą rezultatą
+patikrinkite Dekarto koordinatėse.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Radialinė dalis: <span class="math inline">\frac{\partial f}{\partial
+\rho}=2\rho\cos2\varphi</span>, todėl <span
+class="math inline">\dfrac1\rho\frac{\partial }{\partial
+\rho}\left(2\rho^2\cos2\varphi\right)=\dfrac1\rho\cdot4\rho\cos2\varphi=4\cos2\varphi</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Kampinė dalis: <span class="math inline">\dfrac{\partial^2
+f}{\partial\varphi^2}=-4\rho^2\cos2\varphi</span>, todėl <span
+class="math inline">\dfrac{1}{\rho^2}\cdot(-4\rho^2\cos2\varphi)=-4\cos2\varphi</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Sudedame: <span class="math inline">\Delta
+f=4\cos2\varphi-4\cos2\varphi=0</span>. Funkcija yra
+<strong>harmoninė</strong>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p>Patikrinimas: <span
+class="math inline">\rho^2\cos2\varphi=\rho^2(\cos^2\varphi-\sin^2\varphi)=x^2-y^2</span>,
+o <span class="math inline">\Delta(x^2-y^2)=2-2=0.\
+\checkmark</span></p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\Delta(\rho^2\cos2\varphi)=0</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-1-5" data-nr="1.5"><div class="deze-antraste">1.5 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Sferinėse koordinatėse apskaičiuokite <span
+class="math inline">\Delta(r^n)</span>, kai <span
+class="math inline">n</span> yra bet koks realusis skaičius. Su kuriomis
+<span class="math inline">n</span> reikšmėmis <span
+class="math inline">\Delta(r^n)=0</span> (kai <span
+class="math inline">r\neq0</span>)?</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Funkcija priklauso tik nuo <span class="math inline">r</span>, todėl
+kampinių išvestinių nariai lygūs nuliui: <span
+class="math display">\Delta r^n=\frac{1}{r^2}\frac{\partial }{\partial
+r}\left(r^2\cdot nr^{n-1}\right)=\frac{n}{r^2}\frac{\partial }{\partial
+r}\left(r^{n+1}\right)=\frac{n(n+1)r^n}{r^2}=n(n+1)r^{n-2}.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">n(n+1)=0</span>, kai <span
+class="math inline">n=0</span> (konstanta) arba <span
+class="math inline">n=-1</span>. Taigi <span
+class="math inline">\Delta\dfrac1r=0</span>, kai <span
+class="math inline">r\neq0</span>, o tai yra taškinio krūvio
+potencialas.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\Delta
+r^n=n(n+1)r^{n-2}</span>, o nulis gaunamas, kai <span
+class="math inline">n=0</span> arba <span
+class="math inline">n=-1</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-1-6" data-nr="1.6"><div class="deze-antraste">1.6 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Eliptinės cilindrinės koordinatės apibrėžiamos taip: <span
+class="math display">x=a\operatorname{ch}u\cos v,\qquad
+y=a\operatorname{sh}u\sin v,\qquad z=z,\qquad a&gt;0,\ u\geq0,\ 0\leq
+v&lt;2\pi.</span> <strong>a)</strong> Raskite koordinatines kreives
+<span class="math inline">u=\text{const}</span> ir <span
+class="math inline">v=\text{const}</span> plokštumoje <span
+class="math inline">z=0</span>.<br />
+<strong>b)</strong> Patikrinkite, ar sistema ortogonali.<br />
+<strong>c)</strong> Raskite Lamė koeficientus, <span
+class="math inline">ds^2</span> ir <span
+class="math inline">dV</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><strong>a)</strong> Kai <span class="math inline">u=c</span>, iš
+<span class="math inline">\cos v=\dfrac{x}{a\operatorname{ch}c}</span>,
+<span class="math inline">\sin v=\dfrac{y}{a\operatorname{sh}c}</span>
+ir <span class="math inline">\cos^2v+\sin^2v=1</span>: <span
+class="math display">\frac{x^2}{a^2\operatorname{ch}^2c}+\frac{y^2}{a^2\operatorname{sh}^2c}=1\quad\text{(elipsė).}</span>
+Kai <span class="math inline">v=c</span>, iš <span
+class="math inline">\operatorname{ch}u=\dfrac{x}{a\cos c}</span>, <span
+class="math inline">\operatorname{sh}u=\dfrac{y}{a\sin c}</span> ir
+<span
+class="math inline">\operatorname{ch}^2u-\operatorname{sh}^2u=1</span>:
+<span
+class="math display">\frac{x^2}{a^2\cos^2c}-\frac{y^2}{a^2\sin^2c}=1\quad\text{(hiperbolė).}</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Kintantį parametrą pašaliname per pagrindinę tapatybę: trigonometrinę
+kintamajam <span class="math inline">v</span> ir hiperbolinę kintamajam
+<span class="math inline">u</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><strong>b)</strong> Liestiniai vektoriai: <span
+class="math display">\begin{gathered}\frac{\partial \vec r}{\partial
+u}=(a\operatorname{sh}u\cos v,\ a\operatorname{ch}u\sin v,\ 0),\qquad
+\frac{\partial \vec r}{\partial v}=(-a\operatorname{ch}u\sin v,\
+a\operatorname{sh}u\cos v,\ 0),\\ \frac{\partial \vec r}{\partial
+z}=(0,0,1).\end{gathered}</span> <span
+class="math inline">\frac{\partial \vec r}{\partial
+u}\cdot\frac{\partial \vec r}{\partial
+v}=-a^2\operatorname{sh}u\operatorname{ch}u\sin v\cos
+v+a^2\operatorname{sh}u\operatorname{ch}u\sin v\cos v=0</span>, o abu
+vektoriai statmeni <span class="math inline">\frac{\partial \vec
+r}{\partial z}</span>. Sistema <strong>ortogonali</strong>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><strong>c)</strong> <span
+class="math inline">h_u^2=a^2(\operatorname{sh}^2u\cos^2v+\operatorname{ch}^2u\sin^2v)</span>.
+Įrašę <span
+class="math inline">\operatorname{ch}^2u=1+\operatorname{sh}^2u</span>,
+gauname <span
+class="math display">h_u^2=a^2\big(\operatorname{sh}^2u(\cos^2v+\sin^2v)+\sin^2v\big)=a^2(\operatorname{sh}^2u+\sin^2v).</span>
+Taip pat gaunamas <span
+class="math inline">h_v^2=a^2(\operatorname{ch}^2u\sin^2v+\operatorname{sh}^2u\cos^2v)=a^2(\operatorname{sh}^2u+\sin^2v)</span>,
+o <span class="math inline">h_z=1</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><span
+class="math display">h_u=h_v=a\sqrt{\operatorname{sh}^2u+\sin^2v},\quad
+h_z=1,</span> <span
+class="math display">ds^2=a^2(\operatorname{sh}^2u+\sin^2v)(du^2+dv^2)+dz^2,\qquad
+dV=a^2(\operatorname{sh}^2u+\sin^2v)\,du\,dv\,dz.</span></p>
+</div>
+<p><strong>Atsakymas:</strong> elipsės ir hiperbolės (konfokalinės,
+židiniai <span class="math inline">(\pm a,0)</span>), sistema
+ortogonali, <span
+class="math inline">h_u=h_v=a\sqrt{\operatorname{sh}^2u+\sin^2v}</span>,
+<span class="math inline">h_z=1</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-1-7" data-nr="1.7"><div class="deze-antraste">1.7 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Įrodykite tapatybę <span class="math display">\operatorname{rot}(\vec
+a\times\vec b)=\vec a\operatorname{div}\vec b-\vec
+b\operatorname{div}\vec a+(\vec b\cdot\nabla)\vec a-(\vec
+a\cdot\nabla)\vec b .</span> Pritaikykite ją ir apskaičiuokite <span
+class="math inline">\operatorname{rot}(\vec r\times\vec c)</span>, kai
+<span class="math inline">\vec c</span> yra pastovus vektorius. Atsakymą
+patikrinkite Dekarto koordinatėse, kai <span class="math inline">\vec
+c=\vec k</span> (ašies <span class="math inline">z</span> ortas).</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">\nabla\times(\vec a\times\vec
+b)=\nabla\times(\vec a\times\vec b_c)+\nabla\times(\vec a_c\times\vec
+b)</span>. Kiekvienam nariui taikome dvigubos vektorinės sandaugos
+formulę <span class="math inline">\vec A\times(\vec B\times\vec C)=\vec
+B(\vec A\cdot\vec C)-\vec C(\vec A\cdot\vec B)</span>, rašydami
+kintamąjį dauginamąjį <strong>dešinėje</strong> nuo <span
+class="math inline">\nabla</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p><span class="math inline">\nabla</span> turi diferencijuoti tą
+vektorių, kuris nėra pažymėtas <span class="math inline">c</span>, todėl
+jis visada turi stovėti prieš jį. Konstantą galima perkelti bet kur.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Kai kinta <span class="math inline">\vec a</span>: <span
+class="math inline">\nabla\times(\vec a\times\vec b_c)=(\vec
+b_c\cdot\nabla)\vec a-\vec b_c(\nabla\cdot\vec a)=(\vec
+b\cdot\nabla)\vec a-\vec b\operatorname{div}\vec a</span>.</p>
+<p>Kai kinta <span class="math inline">\vec b</span>: <span
+class="math inline">\nabla\times(\vec a_c\times\vec b)=\vec
+a_c(\nabla\cdot\vec b)-(\vec a_c\cdot\nabla)\vec b=\vec
+a\operatorname{div}\vec b-(\vec a\cdot\nabla)\vec b</span>.</p>
+<p>Sudėję gauname tapatybę.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Su <span class="math inline">\vec a=\vec r</span> ir <span
+class="math inline">\vec b=\vec c=\text{const}</span>: <span
+class="math inline">\operatorname{div}\vec c=0</span>, <span
+class="math inline">(\vec r\cdot\nabla)\vec c=0</span>, <span
+class="math inline">\operatorname{div}\vec r=3</span> ir <span
+class="math inline">(\vec c\cdot\nabla)\vec r=c_x\frac{\partial \vec
+r}{\partial x}+c_y\frac{\partial \vec r}{\partial y}+c_z\frac{\partial
+\vec r}{\partial z}=\vec c</span>. Todėl <span
+class="math display">\operatorname{rot}(\vec r\times\vec c)=0-3\vec
+c+\vec c-0=-2\vec c.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p>Patikrinimas, kai <span class="math inline">\vec c=\vec k</span>:
+<span class="math inline">\vec r\times\vec k=(y,-x,0)</span>, todėl
+<span class="math display">\operatorname{rot}(y,-x,0)=\left(0-0,\ 0-0,\
+\frac{\partial (-x)}{\partial x}-\frac{\partial y}{\partial
+y}\right)=(0,0,-2)=-2\vec k.\ \checkmark</span></p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\operatorname{rot}(\vec r\times\vec c)=-2\vec
+c</span>.</p>
+<div class="pastaba"><span class="pastaba-zyme">Pastaba.</span>
+<p>Pratybų užrašuose paskutiniai du nariai užrašyti netiksliai. Teisinga
+jų forma: <span class="math inline">+(\vec b\cdot\nabla)\vec a-(\vec
+a\cdot\nabla)\vec b</span>. Tai patvirtina ir aukščiau atliktas
+patikrinimas.</p>
+</div>
+</div>
+</div>
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="index.html"><span>← Pradžia</span><strong>Visos temos</strong></a>
+  <a class="puslapis-kitas" href="tema-02.html"><span>Kita tema →</span><strong>2. Pirmos eilės diferencialinės lygtys</strong></a>
+</nav>
+
+<script src="svetaine.js"></script>
+</body>
+</html>

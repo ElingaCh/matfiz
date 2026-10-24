@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>8. Reziduumai ir jų taikymas
+integralams · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="temos-puslapis" data-tema="8" data-uzduociu="7">
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <a class="atgal" href="index.html">← Visos temos</a>
+    <nav class="skyreliai" aria-label="Temos dalys">
+      <a href="#teorija">Teorija</a>
+      <a href="#klaidos">Klaidos</a>
+      <a href="#pavyzdziai">Pavyzdžiai</a>
+      <a href="#uzduotys">Užduotys</a>
+    </nav>
+    <span class="temos-progresas" aria-live="polite"></span>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">8 tema · Kompleksinė analizė, sumos ir
+asimptotika</p>
+    <h1>Reziduumai ir jų taikymas integralams</h1>
+    <p class="hero-info">3 išspręsti pavyzdžiai · 7 užduotys · sprendimai atidengiami po žingsnį</p>
+    <div class="juosta"><div class="juosta-uzpildas"></div></div>
+  </div>
+</header>
+
+<main class="turinys">
+<div class="deze teorija" id="teorija"><div class="deze-antraste">Teorija</div>
+<h3 id="izoliuotieji-ypatingieji-taškai">Izoliuotieji ypatingieji
+taškai</h3>
+<p>Taškas <span class="math inline">z_0</span>, kurio aplinkoje <span
+class="math inline">f</span> analizinė, bet pačiame taške ne, vadinamas
+<strong>izoliuotuoju ypatinguoju tašku</strong>. Jo tipą nusako Lorano
+eilutės pagrindinė dalis:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Tipas</th>
+<th style="text-align: left;">Pagrindinė dalis</th>
+<th style="text-align: left;">Pavyzdys</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">pašalinamas</td>
+<td style="text-align: left;">nėra neigiamų laipsnių</td>
+<td style="text-align: left;"><span class="math inline">\dfrac{\sin
+z}{z}</span>, <span class="math inline">z_0=0</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">n</span>-tos
+eilės polius</td>
+<td style="text-align: left;">baigtinė, iki <span
+class="math inline">(z-z_0)^{-n}</span></td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac{1}{(z-1)^2}</span>, <span
+class="math inline">z_0=1</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">esminis</td>
+<td style="text-align: left;">begalinė</td>
+<td style="text-align: left;"><span class="math inline">e^{1/z}</span>,
+<span class="math inline">z_0=0</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="reziduumas">Reziduumas</h3>
+<p><strong>Reziduumas</strong> yra Lorano eilutės koeficientas <span
+class="math inline">c_{-1}</span>: <span
+class="math display">\operatorname*{Res}_{z=z_0}f(z)=c_{-1}=\frac{1}{2\pi
+i}\oint_Cf(z)\,dz .</span></p>
+<p>Kaip jį rasti be visos eilutės:</p>
+<ol type="1">
+<li><strong>Pirmos eilės polius:</strong> <span
+class="math inline">\operatorname{Res}f=\lim\limits_{z\to
+z_0}(z-z_0)f(z)</span>.</li>
+<li><strong>Trupmena <span
+class="math inline">f=\dfrac{\varphi(z)}{\psi(z)}</span></strong>, kai
+<span class="math inline">\psi(z_0)=0</span>, <span
+class="math inline">\psi&#39;(z_0)\neq0</span> ir <span
+class="math inline">\varphi(z_0)\neq0</span>: <span
+class="math inline">\operatorname{Res}f=\dfrac{\varphi(z_0)}{\psi&#39;(z_0)}</span>.</li>
+<li><strong><span class="math inline">n</span>-tos eilės
+polius:</strong> <span
+class="math display">\operatorname*{Res}_{z=z_0}f=\frac{1}{(n-1)!}\lim_{z\to
+z_0}\frac{d^{\,n-1}}{dz^{n-1}}\Big[(z-z_0)^nf(z)\Big].</span></li>
+<li><strong>Esminis taškas:</strong> tik per Lorano eilutę.</li>
+</ol>
+<h3 id="pagrindinė-reziduumų-teorema">Pagrindinė reziduumų teorema</h3>
+<p>Jei <span class="math inline">f</span> analizinė srityje, išskyrus
+baigtinį skaičių taškų <span class="math inline">z_1,\dots,z_n</span>
+kontūro <span class="math inline">C</span> viduje, tai <span
+class="math display">\oint_Cf(z)\,dz=2\pi
+i\sum_{k=1}^n\operatorname*{Res}_{z=z_k}f .</span> Reziduumas
+begalybėje: <span
+class="math inline">\operatorname*{Res}_{z=\infty}f=-c_{-1}</span>
+(išskleidus taško <span class="math inline">\infty</span> aplinkoje).
+Visų reziduumų, įskaitant <span class="math inline">\infty</span>, suma
+lygi nuliui.</p>
+<h3 id="taikymas-realiesiems-integralams">Taikymas realiesiems
+integralams</h3>
+<p><strong>A. <span
+class="math inline">\displaystyle\int_0^{2\pi}R(\cos\theta,\sin\theta)\,d\theta</span>.</strong>
+Keitinys <span class="math inline">z=e^{i\theta}</span>: <span
+class="math display">\cos\theta=\frac12\left(z+\frac1z\right),\quad
+\sin\theta=\frac{1}{2i}\left(z-\frac1z\right),\quad
+d\theta=\frac{dz}{iz}.</span> Integralas virsta <span
+class="math inline">\oint_{|z|=1}</span>, todėl sumuojame reziduumus
+<strong>vienetinio skritulio viduje</strong>.</p>
+<p><strong>B. <span
+class="math inline">\displaystyle\int_{-\infty}^{\infty}f(x)\,dx</span></strong>,
+kai <span class="math inline">f</span> racionali ir vardiklio laipsnis
+bent 2 didesnis už skaitiklio. Uždarome kontūrą viršutiniu
+pusapskritimiu <span class="math inline">C_R</span>, kurio integralas,
+kai <span class="math inline">R\to\infty</span>, lygus nuliui: <span
+class="math display">\int_{-\infty}^{\infty}f(x)\,dx=2\pi
+i\sum_{\operatorname{Im}z_k&gt;0}\operatorname{Res}f .</span></p>
+<p><strong>C. <span
+class="math inline">\displaystyle\int_{-\infty}^{\infty}f(x)e^{i\lambda
+x}dx</span></strong> (<span class="math inline">\lambda&gt;0</span>).
+Tas pats viršutinis pusapskritimis (Žordano lema). Integralai su <span
+class="math inline">\cos\lambda x</span> arba <span
+class="math inline">\sin\lambda x</span> yra šio integralo realioji arba
+menamoji dalis.</p>
+<p><strong>D. <span
+class="math inline">\displaystyle\int_0^{\infty}x^{\mu-1}f(x)\,dx</span></strong>
+(<span class="math inline">0&lt;\mu&lt;1</span>). Kontūras apeina pjūvį
+išilgai teigiamosios realiosios ašies, o <span class="math inline">\arg
+z\in(0,2\pi)</span>. Gauname <span class="math display">I\left(1-e^{2\pi
+i(\mu-1)}\right)=2\pi
+i\sum\operatorname{Res}\left\{z^{\mu-1}f(z)\right\}.</span></p>
+</div>
+<div class="deze klaidos" id="klaidos"><div class="deze-antraste">Dažniausios klaidos</div>
+<ul>
+<li><strong>Sumuojami ne tie poliai.</strong> B ir C atvejais imami tik
+viršutinės pusplokštumės poliai, o A atveju tik esantys vienetinio
+skritulio viduje.</li>
+<li><strong>Kartotinis polius laikomas paprastu.</strong> Polius <span
+class="math inline">\frac{1}{(z-i)^2}</span> yra antros eilės, todėl
+reikia formulės su išvestine.</li>
+<li><strong>Pamirštamas <span
+class="math inline">\frac{1}{iz}</span></strong> keitinyje <span
+class="math inline">d\theta=\frac{dz}{iz}</span>.</li>
+<li><strong>Integralui su <span class="math inline">\cos
+x</span></strong> negalima tiesiog įrašyti <span
+class="math inline">\cos z</span>, nes <span class="math inline">\cos
+z</span> didėja menamoje kryptyje. Reikia imti <span
+class="math inline">e^{iz}</span> ir paskui realiąją dalį.</li>
+<li><strong>Kompleksinė šaknis.</strong> Skaičiuojant <span
+class="math inline">z^{\mu-1}</span>, reikia naudoti tą pačią <span
+class="math inline">\arg z</span> šaką, kaip ir kontūre: <span
+class="math inline">-1=e^{i\pi}</span>, o ne <span
+class="math inline">e^{-i\pi}</span>.</li>
+</ul>
+</div>
+<h2 id="pavyzdziai">Išspręsti pavyzdžiai</h2>
+<div class="deze pavyzdys" id="pvz-8-1"><div class="deze-antraste">8.1 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Raskite funkcijos <span
+class="math inline">f(z)=\dfrac{e^z}{z^2(z-1)}</span> reziduumus ir
+apskaičiuokite <span
+class="math inline">\displaystyle\oint_{|z|=2}f\,dz</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Ypatingieji taškai: <span class="math inline">z=1</span> yra pirmos
+eilės polius, o <span class="math inline">z=0</span> yra antros eilės
+polius (dėl <span class="math inline">z^2</span>).</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">z=1</span>: <span
+class="math inline">\operatorname{Res}=\lim\limits_{z\to1}(z-1)f=\dfrac{e^1}{1^2}=e</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">z=0</span>, <span
+class="math inline">n=2</span>: <span
+class="math display">\operatorname{Res}=\frac{1}{1!}\frac{d}{dz}\left[z^2f\right]_{z=0}=\frac{d}{dz}\left[\frac{e^z}{z-1}\right]_{z=0}=\left[\frac{e^z(z-1)-e^z}{(z-1)^2}\right]_{z=0}=\frac{-1-1}{1}=-2
+.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Padauginę iš <span class="math inline">(z-z_0)^n</span>,
+„panaikiname“ polių. Gautos funkcijos <span
+class="math inline">(n-1)</span>-oji išvestinė, padalyta iš <span
+class="math inline">(n-1)!</span>, yra būtent koeficientas <span
+class="math inline">c_{-1}</span> (tai Teiloro eilutės
+koeficientas).</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p>Abu taškai yra skritulio <span class="math inline">|z|&lt;2</span>
+viduje: <span class="math inline">\oint f\,dz=2\pi i(e-2)</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\operatorname{Res}_{z=1}=e</span>, <span
+class="math inline">\operatorname{Res}_{z=0}=-2</span>, integralas lygus
+<span class="math inline">2\pi i(e-2)</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-8-2"><div class="deze-antraste">8.2 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Apskaičiuokite <span
+class="math inline">\displaystyle\int_0^{2\pi}\frac{d\theta}{2+\cos\theta}</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Keitinys <span class="math inline">z=e^{i\theta}</span>: <span
+class="math inline">2+\cos\theta=2+\frac12\left(z+\frac1z\right)=\dfrac{z^2+4z+1}{2z}</span>,
+<span class="math inline">d\theta=\dfrac{dz}{iz}</span>. <span
+class="math display">I=\oint_{|z|=1}\frac{2z}{z^2+4z+1}\cdot\frac{dz}{iz}=\frac2i\oint_{|z|=1}\frac{dz}{z^2+4z+1}.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Vardiklio šaknys: <span class="math inline">z=-2\pm\sqrt3</span>.
+<span class="math inline">|-2+\sqrt3|\approx0{,}27&lt;1</span>, todėl ši
+šaknis viduje, o <span
+class="math inline">|-2-\sqrt3|\approx3{,}73&gt;1</span>, todėl ši už
+skritulio.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Reziduumas taške <span class="math inline">z_1=-2+\sqrt3</span>
+(pagal 2 formulę): <span
+class="math inline">\dfrac{1}{2z_1+4}=\dfrac{1}{2\sqrt3}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><span class="math inline">I=\dfrac2i\cdot2\pi
+i\cdot\dfrac{1}{2\sqrt3}=\dfrac{2\pi}{\sqrt3}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\dfrac{2\pi}{\sqrt3}</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-8-3"><div class="deze-antraste">8.3 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Apskaičiuokite <span
+class="math inline">\displaystyle\int_{-\infty}^{\infty}\frac{dx}{(x^2+1)^2}</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Vardiklio laipsnis 4, skaitiklio 0, todėl integralas pusapskritimiu
+nyksta ir galima taikyti B atvejį.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">(z^2+1)^2=(z-i)^2(z+i)^2</span>.
+Viršutinėje pusplokštumėje yra tik <span class="math inline">z=i</span>,
+ir tai antros eilės polius.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span
+class="math display">\operatorname*{Res}_{z=i}=\frac{d}{dz}\left[\frac{1}{(z+i)^2}\right]_{z=i}=\left[\frac{-2}{(z+i)^3}\right]_{z=i}=\frac{-2}{(2i)^3}=\frac{-2}{-8i}=\frac{1}{4i}.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><span class="math inline">I=2\pi
+i\cdot\dfrac{1}{4i}=\dfrac\pi2</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\dfrac\pi2</span>.</p>
+</div>
+<h2 id="uzduotys">Savarankiškos užduotys</h2>
+<div class="deze uzduotis" id="uzd-8-1" data-nr="8.1"><div class="deze-antraste">8.1 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Raskite visus funkcijos <span
+class="math inline">f(z)=\dfrac{z}{(z-1)(z+2)}</span> ypatinguosius
+taškus, jų tipus ir reziduumus. Apskaičiuokite <span
+class="math inline">\oint_{|z|=3}f\,dz</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">z=1</span> ir <span
+class="math inline">z=-2</span> yra pirmos eilės poliai.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span
+class="math inline">\operatorname{Res}_{z=1}=\dfrac{1}{1+2}=\dfrac13</span>,
+<span
+class="math inline">\operatorname{Res}_{z=-2}=\dfrac{-2}{-2-1}=\dfrac23</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Abu yra skritulio viduje: <span class="math inline">\oint=2\pi
+i\left(\tfrac13+\tfrac23\right)=2\pi i</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\tfrac13</span>, <span
+class="math inline">\tfrac23</span>, integralas lygus <span
+class="math inline">2\pi i</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-8-2" data-nr="8.2"><div class="deze-antraste">8.2 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Raskite funkcijos <span
+class="math inline">f(z)=\dfrac{1}{z^2+4}</span> reziduumus taškuose
+<span class="math inline">z=\pm2i</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Pagal formulę <span class="math inline">\varphi/\psi&#39;</span>:
+<span class="math inline">\operatorname{Res}=\dfrac{1}{2z}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Kai <span class="math inline">z=2i</span>, gauname <span
+class="math inline">\dfrac{1}{4i}=-\dfrac i4</span>, o kai <span
+class="math inline">z=-2i</span>, gauname <span
+class="math inline">\dfrac{1}{-4i}=\dfrac i4</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\mp\dfrac
+i4</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-8-3" data-nr="8.3"><div class="deze-antraste">8.3 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Apskaičiuokite <span
+class="math inline">\displaystyle\int_0^{2\pi}\frac{d\theta}{5-4\cos\theta}</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span
+class="math inline">5-4\cos\theta=5-2\left(z+\frac1z\right)=\dfrac{-2z^2+5z-2}{z}</span>,
+todėl <span
+class="math display">I=\oint\frac{z}{-2z^2+5z-2}\cdot\frac{dz}{iz}=\frac1i\oint\frac{dz}{-(2z-1)(z-2)}.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Viduje yra tik <span class="math inline">z=\tfrac12</span>. <span
+class="math inline">\dfrac{-1}{(2z-1)(z-2)}=\dfrac{-1/2}{(z-\frac12)(z-2)}</span>,
+todėl <span
+class="math inline">\operatorname{Res}=\dfrac{-1/2}{\frac12-2}=\dfrac13</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">I=\dfrac1i\cdot2\pi
+i\cdot\dfrac13=\dfrac{2\pi}{3}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\dfrac{2\pi}{3}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-8-4" data-nr="8.4"><div class="deze-antraste">8.4 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Apskaičiuokite <span
+class="math inline">\displaystyle\int_{-\infty}^{\infty}\frac{dx}{x^2+2x+2}</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">z^2+2z+2=0</span>, todėl <span
+class="math inline">z=-1\pm i</span>. Viršuje yra <span
+class="math inline">z_1=-1+i</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span
+class="math inline">\operatorname{Res}=\dfrac{1}{2z_1+2}=\dfrac{1}{2i}</span>,
+todėl <span class="math inline">I=2\pi
+i\cdot\dfrac{1}{2i}=\pi</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\pi</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-8-5" data-nr="8.5"><div class="deze-antraste">8.5 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Apskaičiuokite <span
+class="math inline">\displaystyle\int_{-\infty}^{\infty}\frac{\cos
+x}{x^2+1}dx</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Nagrinėjame <span
+class="math inline">\displaystyle\int\frac{e^{ix}}{x^2+1}dx</span>, o
+ieškomas integralas yra jo realioji dalis. Viršutinėje pusplokštumėje
+<span class="math inline">|e^{iz}|=e^{-y}\leq1</span>, todėl
+pusapskritimio integralas nyksta.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Polius <span class="math inline">z=i</span>: <span
+class="math inline">\operatorname{Res}=\dfrac{e^{i\cdot
+i}}{2i}=\dfrac{e^{-1}}{2i}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">2\pi i\cdot\dfrac{e^{-1}}{2i}=\dfrac\pi
+e</span>. Rezultatas realus, todėl tai ir yra ieškomas integralas (o
+<span class="math inline">\sin</span> dalis lygi nuliui, nes funkcija
+nelyginė).</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\dfrac\pi
+e</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-8-6" data-nr="8.6"><div class="deze-antraste">8.6 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Apskaičiuokite <span
+class="math inline">\displaystyle\int_0^{\infty}\frac{dx}{x^4+1}</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Funkcija lyginė, todėl <span
+class="math inline">I=\dfrac12\displaystyle\int_{-\infty}^{\infty}\frac{dx}{x^4+1}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">z^4=-1</span>, todėl <span
+class="math inline">z_k=e^{i\pi(2k+1)/4}</span>. Viršuje yra <span
+class="math inline">z_0=e^{i\pi/4}</span> ir <span
+class="math inline">z_1=e^{3i\pi/4}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span
+class="math inline">\operatorname{Res}=\dfrac{1}{4z^3}=\dfrac{z}{4z^4}=-\dfrac
+z4</span>, nes <span class="math inline">z^4=-1</span>. Suma: <span
+class="math inline">-\dfrac14\left(e^{i\pi/4}+e^{3i\pi/4}\right)=-\dfrac14\cdot
+i\sqrt2</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p><span
+class="math inline">e^{i\pi/4}+e^{3i\pi/4}=\left(\tfrac{\sqrt2}{2}+i\tfrac{\sqrt2}{2}\right)+\left(-\tfrac{\sqrt2}{2}+i\tfrac{\sqrt2}{2}\right)=i\sqrt2</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><span class="math inline">\displaystyle\int_{-\infty}^\infty=2\pi
+i\cdot\left(-\frac{i\sqrt2}{4}\right)=\frac{\pi\sqrt2}{2}</span>, todėl
+<span
+class="math inline">I=\dfrac{\pi\sqrt2}{4}=\dfrac{\pi}{2\sqrt2}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\dfrac{\pi}{2\sqrt2}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-8-7" data-nr="8.7"><div class="deze-antraste">8.7 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Įrodykite, kad <span
+class="math inline">\displaystyle\int_0^{\infty}\frac{x^{\mu-1}}{1+x}dx=\frac{\pi}{\sin\pi\mu}</span>,
+kai <span class="math inline">0&lt;\mu&lt;1</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Taikome D formulę su <span
+class="math inline">f=\dfrac{1}{1+z}</span>. Vienintelis polius yra
+<span class="math inline">z=-1=e^{i\pi}</span> (šaka <span
+class="math inline">\arg z\in(0,2\pi)</span>).</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span
+class="math inline">\operatorname{Res}\left\{\dfrac{z^{\mu-1}}{1+z}\right\}_{z=-1}=\left(e^{i\pi}\right)^{\mu-1}=e^{i\pi(\mu-1)}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math display">I=\frac{2\pi i\,e^{i\pi(\mu-1)}}{1-e^{2\pi
+i(\mu-1)}}=\frac{2\pi i}{e^{-i\pi(\mu-1)}-e^{i\pi(\mu-1)}}=\frac{2\pi
+i}{-2i\sin\pi(\mu-1)}=\frac{\pi}{\sin\pi\mu}.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Skaitiklį ir vardiklį padalijome iš <span
+class="math inline">e^{i\pi(\mu-1)}</span>, o paskui pritaikėme <span
+class="math inline">e^{i\alpha}-e^{-i\alpha}=2i\sin\alpha</span> ir
+<span class="math inline">\sin(\pi\mu-\pi)=-\sin\pi\mu</span>.</p>
+</div>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\dfrac{\pi}{\sin\pi\mu}</span> (pvz., kai <span
+class="math inline">\mu=\tfrac12</span>, gauname <span
+class="math inline">\pi</span>).</p>
+</div>
+</div>
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="tema-07.html"><span>← Ankstesnė tema</span><strong>7. Integravimas kompleksinėje plokštumoje ir Lorano eilutė</strong></a>
+  <a class="puslapis-kitas" href="tema-09.html"><span>Kita tema →</span><strong>9. Begalinės sumos, Hevisaido ir Dirako funkcijos</strong></a>
+</nav>
+
+<script src="svetaine.js"></script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>9. Begalinės sumos, Hevisaido ir Dirako
+funkcijos · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="temos-puslapis" data-tema="9" data-uzduociu="7">
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <a class="atgal" href="index.html">← Visos temos</a>
+    <nav class="skyreliai" aria-label="Temos dalys">
+      <a href="#teorija">Teorija</a>
+      <a href="#klaidos">Klaidos</a>
+      <a href="#pavyzdziai">Pavyzdžiai</a>
+      <a href="#uzduotys">Užduotys</a>
+    </nav>
+    <span class="temos-progresas" aria-live="polite"></span>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">9 tema · Kompleksinė analizė, sumos ir
+asimptotika</p>
+    <h1>Begalinės sumos, Hevisaido ir Dirako funkcijos</h1>
+    <p class="hero-info">3 išspręsti pavyzdžiai · 7 užduotys · sprendimai atidengiami po žingsnį</p>
+    <div class="juosta"><div class="juosta-uzpildas"></div></div>
+  </div>
+</header>
+
+<main class="turinys">
+<div class="deze teorija" id="teorija"><div class="deze-antraste">Teorija</div>
+<h3 id="begalinių-sumų-skaičiavimas-reziduumais">Begalinių sumų
+skaičiavimas reziduumais</h3>
+<p>Norime rasti <span
+class="math display">S_1=\sum_{n=-\infty}^{\infty}f(n),\qquad
+S_2=\sum_{n=-\infty}^{\infty}(-1)^nf(n).</span> Idėja: parenkame
+<strong>pagalbinę funkciją</strong> <span
+class="math inline">p(z)</span>, kuri turi pirmos eilės polius visuose
+sveikuosiuose taškuose <span class="math inline">z=n</span>, o jos
+reziduumai ten lygūs <span class="math inline">1</span> arba <span
+class="math inline">(-1)^n</span>: <span
+class="math display">\operatorname*{Res}_{z=n}\big[\pi\operatorname{ctg}\pi
+z\big]=1,\qquad \operatorname*{Res}_{z=n}\left[\frac{\pi}{\sin\pi
+z}\right]=(-1)^n .</span> Integruojame <span
+class="math inline">p(z)f(z)</span> vis didėjančiu kvadratiniu kontūru.
+Integralas artėja prie nulio, todėl visų reziduumų suma lygi nuliui. Iš
+to gauname <span
+class="math display">S_1=-\sum_k\operatorname*{Res}_{z=z_k}\big[\pi\operatorname{ctg}(\pi
+z)\,f(z)\big],\qquad
+S_2=-\sum_k\operatorname*{Res}_{z=z_k}\left[\frac{\pi f(z)}{\sin\pi
+z}\right],</span> kur <span class="math inline">z_k</span> yra funkcijos
+<span class="math inline">f</span> poliai.</p>
+<p>Sąlygos: <span class="math inline">f</span> turi baigtinį polių
+skaičių ir greitai mažėja, <span class="math inline">|f(z)|\leq
+M/|z|^k</span>, kur <span class="math inline">k&gt;1</span>.</p>
+<p>Jei <span class="math inline">f</span> lyginė, <span
+class="math inline">\displaystyle\sum_{n=1}^{\infty}f(n)=\frac12\left(S_1-f(0)\right)</span>.</p>
+<h3 id="hevisaido-funkcija">Hevisaido funkcija</h3>
+<p><span
+class="math display">\sigma(x)=\begin{cases}1,&amp;x\geq0,\\0,&amp;x&lt;0.\end{cases}</span>
+Tai „įjungimo“ funkcija: <span
+class="math inline">f(x)\sigma(x-a)</span> yra <span
+class="math inline">f</span>, įjungta nuo momento <span
+class="math inline">a</span>. Integralinis atvaizdas: <span
+class="math inline">\sigma(x)=\dfrac{1}{2\pi
+i}\displaystyle\oint_Ce^{ixk}\dfrac{dk}{k}</span>.</p>
+<h3 id="dirako-delta-funkcija">Dirako <span
+class="math inline">\delta</span> funkcija</h3>
+<p>Fizikinė intuicija: tai labai siauras ir labai aukštas impulsas,
+kurio plotas lygus 1 (pvz., taškinio krūvio tankis). Formaliai: <span
+class="math display">\delta(x)=\frac{d\sigma}{dx},\qquad \delta(x)=0\
+(x\neq0),\qquad \int_{-\infty}^\infty\delta(x)\,dx=1,\qquad
+\delta(x)=\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{ikx}dk .</span></p>
+<p><strong>Savybės</strong> (taikomos pagal integralą):</p>
+<ol type="1">
+<li><strong>Išrinkimo savybė:</strong> <span
+class="math inline">\displaystyle\int_{-\infty}^{\infty}f(x)\,\delta(x-c)\,dx=f(c)</span>.
+Jei <span class="math inline">c</span> nepatenka į integravimo
+intervalą, integralas lygus <span class="math inline">0</span>.</li>
+<li><strong>Lyginumas:</strong> <span
+class="math inline">\delta(-x)=\delta(x)</span>.</li>
+<li><strong>Mastelis:</strong> <span
+class="math inline">\delta(ax)=\dfrac{1}{|a|}\delta(x)</span>.</li>
+<li><strong>Funkcijos argumentas:</strong> <span
+class="math inline">\delta\big(g(x)\big)=\displaystyle\sum_i\frac{\delta(x-x_i)}{|g&#39;(x_i)|}</span>,
+kur <span class="math inline">x_i</span> yra <span
+class="math inline">g</span> nuliai. Pvz., <span
+class="math inline">\delta(x^2-c^2)=\dfrac{\delta(x-c)+\delta(x+c)}{2|c|}</span>.</li>
+<li><strong>Išvestinė:</strong> <span
+class="math inline">\displaystyle\int
+f(x)\,\delta&#39;(x-c)\,dx=-f&#39;(c)</span> (integruojant
+dalimis).</li>
+</ol>
+<p>Daugiamatė: <span class="math inline">\delta(\vec
+r)=\delta(x)\delta(y)\delta(z)=\dfrac{1}{(2\pi)^3}\displaystyle\iiint
+e^{i\vec k\cdot\vec r}d^3k</span>.</p>
+</div>
+<div class="deze klaidos" id="klaidos"><div class="deze-antraste">Dažniausios klaidos</div>
+<ul>
+<li><strong>Begalinėse sumose</strong> pamirštamas minusas formulėje
+<span class="math inline">S_1=-\sum\operatorname{Res}</span>.</li>
+<li><strong>Sumuojant nuo <span class="math inline">n=1</span></strong>
+pamirštama atimti narį <span class="math inline">f(0)</span> ir padalyti
+iš 2.</li>
+<li><strong><span class="math inline">\delta(ax)</span>:</strong>
+daliklis yra <span class="math inline">|a|</span>, ne <span
+class="math inline">a</span>. Jei <span
+class="math inline">a&lt;0</span>, ženklas nesikeičia.</li>
+<li><strong><span class="math inline">\delta(g(x))</span>:</strong>
+reikia surasti <strong>visus</strong> <span class="math inline">g</span>
+nulius integravimo intervale.</li>
+<li><strong><span class="math inline">\delta</span> funkcija nėra
+įprasta funkcija.</strong> Prasmę turi tik jos integralai, todėl
+negalima rašyti <span class="math inline">\delta(0)=\infty</span> kaip
+skaičiaus.</li>
+</ul>
+</div>
+<h2 id="pavyzdziai">Išspręsti pavyzdžiai</h2>
+<div class="deze pavyzdys" id="pvz-9-1"><div class="deze-antraste">9.1 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Įrodykite, kad <span
+class="math inline">\displaystyle\sum_{n=-\infty}^{\infty}\frac{1}{n^2+a^2}=\frac{\pi}{a}\operatorname{cth}\pi
+a</span> (<span class="math inline">a&gt;0</span>), ir raskite <span
+class="math inline">\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">f(z)=\dfrac{1}{z^2+a^2}</span> turi polius
+<span class="math inline">z=\pm ia</span> ir mažėja kaip <span
+class="math inline">1/|z|^2</span>, todėl formulė tinka.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Reziduumai funkcijos <span
+class="math inline">\dfrac{\pi\operatorname{ctg}\pi z}{z^2+a^2}</span>
+taškuose <span class="math inline">\pm ia</span> (pagal formulę <span
+class="math inline">\varphi/\psi&#39;</span>): <span
+class="math display">\operatorname*{Res}_{z=ia}=\frac{\pi\operatorname{ctg}(i\pi
+a)}{2ia}=\frac{\pi(-i\operatorname{cth}\pi
+a)}{2ia}=-\frac{\pi}{2a}\operatorname{cth}\pi a .</span> Taške <span
+class="math inline">-ia</span> gaunamas tas pats rezultatas (ctg yra
+nelyginė funkcija, <span class="math inline">2z</span> taip pat).</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p><span class="math inline">\operatorname{ctg}(iy)=\dfrac{\cos iy}{\sin
+iy}=\dfrac{\operatorname{ch}y}{i\operatorname{sh}y}=-i\operatorname{cth}y</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span
+class="math inline">S_1=-\left(-\dfrac{\pi}{2a}\operatorname{cth}\pi
+a\cdot2\right)=\dfrac\pi a\operatorname{cth}\pi a</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p>Kai <span class="math inline">a=1</span>, <span
+class="math inline">f</span> lyginė ir <span
+class="math inline">f(0)=1</span>: <span
+class="math display">\sum_{n=1}^\infty\frac{1}{n^2+1}=\frac12\left(\pi\operatorname{cth}\pi-1\right)\approx1{,}077
+.</span></p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\dfrac\pi
+a\operatorname{cth}\pi a</span> ir <span
+class="math inline">\tfrac12(\pi\operatorname{cth}\pi-1)</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-9-2"><div class="deze-antraste">9.2 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Apskaičiuokite <span
+class="math inline">\displaystyle\sum_{n=-\infty}^{\infty}\frac{(-1)^n}{n^2+4}</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Naudojame <span class="math inline">p(z)=\dfrac{\pi}{\sin\pi
+z}</span>, nes ženklai kaitaliojasi. Poliai yra <span
+class="math inline">z=\pm2i</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span
+class="math display">\operatorname*{Res}_{z=2i}\frac{\pi}{(z^2+4)\sin\pi
+z}=\frac{\pi}{4i\sin(2\pi i)}=\frac{\pi}{4i\cdot
+i\operatorname{sh}2\pi}=-\frac{\pi}{4\operatorname{sh}2\pi}.</span>
+Taške <span class="math inline">-2i</span> gaunamas tas pats.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p><span class="math inline">\sin(iy)=i\operatorname{sh}y</span>. Abu
+daugikliai <span class="math inline">4i</span> ir <span
+class="math inline">\sin(2\pi i)</span> keičia ženklą kartu, kai <span
+class="math inline">z\to-z</span>, todėl reziduumai sutampa.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span
+class="math inline">S_2=-2\cdot\left(-\dfrac{\pi}{4\operatorname{sh}2\pi}\right)=\dfrac{\pi}{2\operatorname{sh}2\pi}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\dfrac{\pi}{2\operatorname{sh}2\pi}\approx0{,}0059</span>.</p>
+</div>
+<div class="deze pavyzdys" id="pvz-9-3"><div class="deze-antraste">9.3 pavyzdys</div>
+<p><strong>Sąlyga.</strong> Apskaičiuokite a) <span
+class="math inline">\displaystyle\int_{-\infty}^{\infty}x^2\delta(3x-6)\,dx</span>;
+b) <span
+class="math inline">\displaystyle\int_{-\infty}^{\infty}e^x\delta(x^2-1)\,dx</span>.</p>
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<ol type="a">
+<li><span
+class="math inline">\delta(3x-6)=\delta\big(3(x-2)\big)=\dfrac13\delta(x-2)</span>.
+Todėl integralas lygus <span
+class="math inline">\dfrac13\cdot2^2=\dfrac43</span>.</li>
+</ol>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Pirmiausia iškeliame daugiklį, kad gautume įprastą <span
+class="math inline">\delta(x-c)</span>, o tada naudojame išrinkimo
+savybę.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<ol start="2" type="a">
+<li><span class="math inline">g(x)=x^2-1</span> turi nulius <span
+class="math inline">x=\pm1</span>, o <span
+class="math inline">|g&#39;(\pm1)|=2</span>. Todėl <span
+class="math inline">\delta(x^2-1)=\dfrac{\delta(x-1)+\delta(x+1)}{2}</span>
+ir <span class="math display">\int
+e^x\delta(x^2-1)dx=\frac{e+e^{-1}}{2}=\operatorname{ch}1 .</span></li>
+</ol>
+</div>
+<p><strong>Atsakymas:</strong> a) <span
+class="math inline">\dfrac43</span>; b) <span
+class="math inline">\operatorname{ch}1</span>.</p>
+</div>
+<h2 id="uzduotys">Savarankiškos užduotys</h2>
+<div class="deze uzduotis" id="uzd-9-1" data-nr="9.1"><div class="deze-antraste">9.1 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Apskaičiuokite a) <span
+class="math inline">\displaystyle\int_{-\infty}^{\infty}(x^3+1)\,\delta(x-2)\,dx</span>;
+b) <span class="math inline">\displaystyle\int_0^5\sin
+x\,\delta(x+1)\,dx</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<ol type="a">
+<li>Išrinkimo savybė: <span class="math inline">2^3+1=9</span>.</li>
+</ol>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<ol start="2" type="a">
+<li>Taškas <span class="math inline">x=-1</span> nepatenka į <span
+class="math inline">[0,5]</span>, todėl integralas lygus <span
+class="math inline">0</span>.</li>
+</ol>
+</div>
+<p><strong>Atsakymas:</strong> a) <span class="math inline">9</span>; b)
+<span class="math inline">0</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-9-2" data-nr="9.2"><div class="deze-antraste">9.2 užduotis <span class="lygis lygis-1">★☆☆ Lengva</span></div>
+<p>Apskaičiuokite <span
+class="math inline">\displaystyle\int_{-\infty}^{\infty}e^{-x^2}\delta(2x)\,dx</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">\delta(2x)=\tfrac12\delta(x)</span>, todėl
+integralas lygus <span
+class="math inline">\tfrac12e^0=\tfrac12</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\tfrac12</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-9-3" data-nr="9.3"><div class="deze-antraste">9.3 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Apskaičiuokite <span
+class="math inline">\displaystyle\int_{-\infty}^{\infty}\cos
+x\,\delta(x^2-\pi^2)\,dx</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Nuliai <span class="math inline">x=\pm\pi</span>, <span
+class="math inline">|g&#39;|=2\pi</span>. <span
+class="math inline">\delta(x^2-\pi^2)=\dfrac{\delta(x-\pi)+\delta(x+\pi)}{2\pi}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span
+class="math inline">\dfrac{\cos\pi+\cos(-\pi)}{2\pi}=\dfrac{-2}{2\pi}=-\dfrac1\pi</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">-\dfrac1\pi</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-9-4" data-nr="9.4"><div class="deze-antraste">9.4 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Apskaičiuokite <span
+class="math inline">\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+4}</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Pagal 1 pavyzdį su <span class="math inline">a=2</span>: <span
+class="math inline">\displaystyle\sum_{-\infty}^{\infty}\frac{1}{n^2+4}=\frac\pi2\operatorname{cth}2\pi</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">f</span> lyginė, <span
+class="math inline">f(0)=\tfrac14</span>: <span
+class="math inline">\displaystyle\sum_{n=1}^\infty=\frac12\left(\frac\pi2\operatorname{cth}2\pi-\frac14\right)</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\dfrac\pi4\operatorname{cth}2\pi-\dfrac18\approx0{,}6604</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-9-5" data-nr="9.5"><div class="deze-antraste">9.5 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Apskaičiuokite <span
+class="math inline">\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^n}{n^2+1}</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Kaip 2 pavyzdyje, tik su <span class="math inline">a=1</span>: <span
+class="math inline">\operatorname{Res}_{z=\pm
+i}\dfrac{\pi}{(z^2+1)\sin\pi z}=\dfrac{\pi}{2i\cdot
+i\operatorname{sh}\pi}=-\dfrac{\pi}{2\operatorname{sh}\pi}</span>, todėl
+<span
+class="math inline">S_2=\dfrac{\pi}{\operatorname{sh}\pi}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Funkcija lyginė, o narys su <span class="math inline">n=0</span>
+lygus <span class="math inline">1</span>: <span
+class="math inline">\displaystyle\sum_{n=1}^\infty=\frac12\left(\frac{\pi}{\operatorname{sh}\pi}-1\right)</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\dfrac12\left(\dfrac{\pi}{\operatorname{sh}\pi}-1\right)\approx-0{,}364</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-9-6" data-nr="9.6"><div class="deze-antraste">9.6 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Įrodykite, kad <span
+class="math inline">\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{\pi^2}{6}</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">f(z)=\dfrac{1}{z^2}</span> turi polių taške
+<span class="math inline">z=0</span>, kuris sutampa su <span
+class="math inline">\operatorname{ctg}</span> poliumi. Todėl sumuojame
+per <span class="math inline">n\neq0</span>, o <span
+class="math inline">\pi\operatorname{ctg}\pi z/z^2</span> taške <span
+class="math inline">0</span> turi trečios eilės polių: <span
+class="math display">\sum_{n\neq0}\frac{1}{n^2}=-\operatorname*{Res}_{z=0}\frac{\pi\operatorname{ctg}\pi
+z}{z^2}.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Lorano eilutė: <span class="math inline">\pi\operatorname{ctg}\pi
+z=\dfrac1z-\dfrac{\pi^2z}{3}-\dots</span>, todėl <span
+class="math inline">\dfrac{\pi\operatorname{ctg}\pi
+z}{z^2}=\dfrac{1}{z^3}-\dfrac{\pi^2}{3z}-\dots</span> ir <span
+class="math inline">c_{-1}=-\dfrac{\pi^2}{3}</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p><span class="math inline">\operatorname{ctg}w=\dfrac1w-\dfrac
+w3-\dfrac{w^3}{45}-\dots</span> Įrašę <span class="math inline">w=\pi
+z</span> ir padauginę iš <span class="math inline">\pi</span> gauname
+nurodytą eilutę.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span
+class="math inline">\displaystyle\sum_{n\neq0}\frac{1}{n^2}=\frac{\pi^2}{3}</span>,
+o suma nuo <span class="math inline">n=1</span> yra pusė šios sumos.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\dfrac{\pi^2}{6}</span>.</p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-9-7" data-nr="9.7"><div class="deze-antraste">9.7 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Naudodamiesi savybe <span class="math inline">\displaystyle\int
+f(x)\delta&#39;(x-c)\,dx=-f&#39;(c)</span>, apskaičiuokite <span
+class="math inline">\displaystyle\int_{-\infty}^{\infty}x^2e^x\,\delta&#39;(x-1)\,dx</span>.
+Įrodykite pačią savybę.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Įrodymas: integruojame dalimis, <span
+class="math inline">\displaystyle\int
+f\delta&#39;(x-c)dx=\Big[f\delta(x-c)\Big]_{-\infty}^{\infty}-\int
+f&#39;\delta(x-c)dx=0-f&#39;(c)</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">f=x^2e^x</span>, <span
+class="math inline">f&#39;=(2x+x^2)e^x</span>, <span
+class="math inline">f&#39;(1)=3e</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">-3e</span>.</p>
+</div>
+</div>
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="tema-08.html"><span>← Ankstesnė tema</span><strong>8. Reziduumai ir jų taikymas integralams</strong></a>
+  <a class="puslapis-kitas" href="tema-10.html"><span>Kita tema →</span><strong>10. Integralo asimptotika: balno metodas ir Stirlingo formulė</strong></a>
+</nav>
+
+<script src="svetaine.js"></script>
+</body>
+</html>
