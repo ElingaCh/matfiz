@@ -1,0 +1,93 @@
+:root {
+  --fonas: #fbfaf7; --tekstas: #1d1d1f; --pilka: #666; --linija: #ddd;
+  --teorija: #1F5FA8; --klaidos: #B3261E; --pavyzdys: #2E7D32;
+  --uzduotis: #C76A00; --sprendimas: #5B3F9E;
+  --dezes-fonas: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --fonas: #18191b; --tekstas: #e8e6e3; --pilka: #a0a0a0; --linija: #3a3a3a;
+    --teorija: #6ea8f0; --klaidos: #f08078; --pavyzdys: #73c47a;
+    --uzduotis: #f0a24a; --sprendimas: #b39cf0; --dezes-fonas: #222326;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--fonas); color: var(--tekstas);
+  font: 17px/1.6 "Source Serif 4", Georgia, serif;
+}
+header#title-block-header { padding: 2.5rem 1rem 1rem; text-align: center; }
+header#title-block-header .title { font-family: system-ui, sans-serif; margin: 0; }
+header#title-block-header .subtitle { color: var(--pilka); margin: .3rem 0 0; font-family: system-ui, sans-serif; }
+header#title-block-header .date { display: none; }
+
+nav#TOC {
+  font-family: system-ui, sans-serif; font-size: 15px;
+  background: var(--dezes-fonas); border: 1px solid var(--linija); border-radius: 8px;
+  padding: .6rem 1rem; margin: 1rem auto; max-width: 820px;
+}
+nav#TOC ul { list-style: none; padding-left: 0; margin: 0; }
+nav#TOC li { margin: .25rem 0; }
+nav#TOC a { color: var(--tekstas); text-decoration: none; }
+nav#TOC a:hover { color: var(--teorija); }
+nav#TOC .progresas { color: var(--pilka); font-size: 13px; margin-left: .4rem; }
+#bendras-progresas { font-weight: 600; margin-bottom: .4rem; }
+
+main, body > .turinys { max-width: 820px; margin: 0 auto; padding: 0 16px 4rem; }
+@media (min-width: 1200px) {
+  nav#TOC { position: fixed; top: 1rem; left: 1rem; width: 260px; max-height: calc(100vh - 2rem); overflow-y: auto; margin: 0; }
+  body { padding-left: 290px; }
+}
+
+h1 {
+  font-family: system-ui, sans-serif; color: var(--teorija);
+  border-bottom: 2px solid var(--teorija); padding-bottom: .3rem; margin-top: 3.5rem;
+}
+h2 { font-family: system-ui, sans-serif; color: var(--teorija); margin-top: 2.2rem; }
+h3 { font-family: system-ui, sans-serif; font-size: 1.05rem; margin: 1.2rem 0 .3rem; }
+
+.deze {
+  background: var(--dezes-fonas); border: 1.5px solid var(--c); border-radius: 8px;
+  margin: 1.2rem 0; padding: 0 1rem .6rem; overflow-x: auto;
+}
+.deze-antraste {
+  font-family: system-ui, sans-serif; font-weight: 700; color: #fff; background: var(--c);
+  margin: 0 -1rem .6rem; padding: .35rem 1rem; border-radius: 6px 6px 0 0;
+  display: flex; justify-content: space-between; align-items: center; gap: .5rem;
+}
+.teorija { --c: var(--teorija); }
+.klaidos { --c: var(--klaidos); }
+.pavyzdys { --c: var(--pavyzdys); }
+.uzduotis { --c: var(--uzduotis); }
+.lygis { font-weight: 400; font-size: .85rem; white-space: nowrap; }
+
+.zingsnis { margin: .7rem 0; }
+.zingsnis-nr { font-family: system-ui, sans-serif; font-size: .8rem; font-weight: 700; color: var(--pilka); text-transform: uppercase; letter-spacing: .03em; }
+.kodel { border-left: 3px solid var(--linija); padding: .1rem 0 .1rem .8rem; font-style: italic; font-size: .93rem; margin: .4rem 0; }
+.kodel p { margin: .2rem 0; }
+.kodel-zyme { font-style: normal; font-weight: 700; font-family: system-ui, sans-serif; margin-right: .3rem; float: left; }
+.pastaba { background: rgba(240, 200, 40, .14); border: 1px solid rgba(180, 140, 0, .5); border-radius: 6px; padding: .3rem .7rem; font-size: .93rem; margin: .6rem 0; }
+.pastaba-zyme { font-weight: 700; font-family: system-ui, sans-serif; margin-right: .3rem; float: left; }
+
+.sprendimas { border-top: 1px dashed var(--sprendimas); margin-top: .8rem; padding-top: .4rem; }
+.sprendimas.paslepta > * { display: none; }
+.sprendimas > .rodomas { display: block !important; }
+.sprendimas .valdymas { display: flex !important; flex-wrap: wrap; gap: .5rem; margin: .5rem 0; }
+button {
+  font: 600 14px system-ui, sans-serif; border-radius: 6px; padding: .4rem .8rem; cursor: pointer;
+  border: 1.5px solid var(--sprendimas); background: transparent; color: var(--sprendimas);
+}
+button.pagrindinis { background: var(--sprendimas); color: #fff; }
+label.isspresta { font: 14px system-ui, sans-serif; display: inline-flex; gap: .35rem; align-items: center; color: var(--pilka); cursor: pointer; }
+.uzduotis.atlikta { opacity: .75; }
+.uzduotis.atlikta .deze-antraste::after { content: "✓"; }
+
+table { border-collapse: collapse; width: 100%; font-size: .93rem; margin: .6rem 0; display: block; overflow-x: auto; }
+th, td { border: 1px solid var(--linija); padding: .35rem .5rem; text-align: left; vertical-align: top; }
+.katex-display { overflow-x: auto; overflow-y: hidden; padding: .2rem 0; }
+@media print {
+  nav#TOC, .valdymas, label.isspresta { display: none !important; }
+  body { padding-left: 0; }
+  .sprendimas.paslepta > * { display: block; }
+}
