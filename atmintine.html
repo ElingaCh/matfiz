@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formulių atmintinė · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="priedo-puslapis su-sonine">
+<aside class="sonine" id="sonine" aria-label="Temos">
+<div class="sonine-virsus"><a class="sonine-namai" href="index.html">Matfizo pratybos</a><button class="sonine-uzdaryti" type="button" aria-label="Uždaryti">×</button></div>
+<a class="sonine-atmintine aktyvi" href="atmintine.html">∑ Formulių atmintinė</a>
+<div class="sonine-dalis">I dalis · Koordinatės ir paprastosios diferencialinės lygtys</div><ol class="sonine-temos">
+<li><a href="tema-01.html" data-tema="1" data-uzduociu="7"><span class="st-nr">1</span><span class="st-pav">Kreivinės koordinatės ir vektorinės operacijos</span><span class="st-prog"></span></a></li>
+<li><a href="tema-02.html" data-tema="2" data-uzduociu="7"><span class="st-nr">2</span><span class="st-pav">Pirmos eilės diferencialinės lygtys</span><span class="st-prog"></span></a></li>
+<li><a href="tema-03.html" data-tema="3" data-uzduociu="7"><span class="st-nr">3</span><span class="st-pav">Antros ir aukštesnės eilės tiesinės diferencialinės lygtys</span><span class="st-prog"></span></a></li>
+<li><a href="tema-04.html" data-tema="4" data-uzduociu="7"><span class="st-nr">4</span><span class="st-pav">Kraštinis uždavinys ir Gryno funkcija</span><span class="st-prog"></span></a></li>
+<li><a href="tema-05.html" data-tema="5" data-uzduociu="7"><span class="st-nr">5</span><span class="st-pav">Paprastųjų diferencialinių lygčių sistemos</span><span class="st-prog"></span></a></li>
+</ol>
+<div class="sonine-dalis">II dalis · Kompleksinė analizė, sumos ir asimptotika</div><ol class="sonine-temos">
+<li><a href="tema-06.html" data-tema="6" data-uzduociu="7"><span class="st-nr">6</span><span class="st-pav">Analizinės funkcijos ir Gama funkcija</span><span class="st-prog"></span></a></li>
+<li><a href="tema-07.html" data-tema="7" data-uzduociu="7"><span class="st-nr">7</span><span class="st-pav">Integravimas kompleksinėje plokštumoje ir Lorano eilutė</span><span class="st-prog"></span></a></li>
+<li><a href="tema-08.html" data-tema="8" data-uzduociu="7"><span class="st-nr">8</span><span class="st-pav">Reziduumai ir jų taikymas integralams</span><span class="st-prog"></span></a></li>
+<li><a href="tema-09.html" data-tema="9" data-uzduociu="7"><span class="st-nr">9</span><span class="st-pav">Begalinės sumos, Hevisaido ir Dirako funkcijos</span><span class="st-prog"></span></a></li>
+<li><a href="tema-10.html" data-tema="10" data-uzduociu="7"><span class="st-nr">10</span><span class="st-pav">Integralo asimptotika: balno metodas ir Stirlingo formulė</span><span class="st-prog"></span></a></li>
+</ol>
+<div class="sonine-dalis">III dalis · Integralinės transformacijos</div><ol class="sonine-temos">
+<li><a href="tema-11.html" data-tema="11" data-uzduociu="7"><span class="st-nr">11</span><span class="st-pav">Furjė transformacija ir sąsūka</span><span class="st-prog"></span></a></li>
+<li><a href="tema-12.html" data-tema="12" data-uzduociu="7"><span class="st-nr">12</span><span class="st-pav">Laplaso transformacija</span><span class="st-prog"></span></a></li>
+</ol>
+<div class="sonine-dalis">IV dalis · Dalinių išvestinių lygtys</div><ol class="sonine-temos">
+<li><a href="tema-13.html" data-tema="13" data-uzduociu="7"><span class="st-nr">13</span><span class="st-pav">Fizikinių vyksmų lygtys: styga ir difuzija</span><span class="st-prog"></span></a></li>
+<li><a href="tema-14.html" data-tema="14" data-uzduociu="7"><span class="st-nr">14</span><span class="st-pav">Dalinių išvestinių lygčių klasifikacija ir D&#x27;Alambero formulė</span><span class="st-prog"></span></a></li>
+<li><a href="tema-15.html" data-tema="15" data-uzduociu="7"><span class="st-nr">15</span><span class="st-pav">Kintamųjų atskyrimo (Furjė) metodas</span><span class="st-prog"></span></a></li>
+<li><a href="tema-16.html" data-tema="16" data-uzduociu="6"><span class="st-nr">16</span><span class="st-pav">Šturmo–Liuvilio uždavinys ir tikrinės funkcijos</span><span class="st-prog"></span></a></li>
+</ol>
+<div class="sonine-dalis">V dalis · Variacinis skaičiavimas</div><ol class="sonine-temos">
+<li><a href="tema-17.html" data-tema="17" data-uzduociu="7"><span class="st-nr">17</span><span class="st-pav">Funkcionalas, variacija ir Eulerio lygtis</span><span class="st-prog"></span></a></li>
+<li><a href="tema-18.html" data-tema="18" data-uzduociu="7"><span class="st-nr">18</span><span class="st-pav">Sąlyginis ekstremumas ir stygos variacinis principas</span><span class="st-prog"></span></a></li>
+<li><a href="tema-19.html" data-tema="19" data-uzduociu="7"><span class="st-nr">19</span><span class="st-pav">Judamieji rėžiai ir ekstremalės su lūžio taškais</span><span class="st-prog"></span></a></li>
+</ol>
+</aside>
+<div class="sonine-uzdanga" hidden></div>
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <button class="meniu" type="button" aria-controls="sonine" aria-expanded="false">☰ Temos</button>
+    <a class="atgal" href="index.html">← Visos temos</a>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">Priedas</p>
+    <h1>Formulių atmintinė</h1>
+    <nav class="atmintines-turinys" aria-label="Atmintinės skyriai">
+<ul>
+<li><a href="#laipsniai" id="toc-laipsniai">Laipsniai ir šaknys</a></li>
+<li><a href="#logaritmai" id="toc-logaritmai">Logaritmai</a></li>
+<li><a href="#kampai" id="toc-kampai">Kampai</a></li>
+<li><a href="#trigonometrija"
+id="toc-trigonometrija">Trigonometrija</a></li>
+<li><a href="#hiperbolines" id="toc-hiperbolines">Hiperbolinės
+funkcijos</a></li>
+<li><a href="#kompleksiniai" id="toc-kompleksiniai">Kompleksiniai
+skaičiai</a></li>
+<li><a href="#isvestines" id="toc-isvestines">Išvestinės</a></li>
+<li><a href="#integralai" id="toc-integralai">Integralai</a></li>
+<li><a href="#eilutes" id="toc-eilutes">Eilutės</a></li>
+<li><a href="#algebra" id="toc-algebra">Algebra</a></li>
+</ul>
+    </nav>
+  </div>
+</header>
+
+<main class="turinys atmintine">
+<p>Čia surinktos taisyklės, kurių dažniausiai prireikia sprendžiant
+sąsiuvinio užduotis. Jos skirtos greitai pasitikrinti, o ne mokytis iš
+naujo.</p>
+<h2 id="laipsniai">Laipsniai ir šaknys</h2>
+<div class="formules">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Taisyklė</th>
+<th style="text-align: left;">Pavyzdys</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">a^m\cdot
+a^n=a^{m+n}</span></td>
+<td style="text-align: left;"><span class="math inline">x^2\cdot
+x^3=x^5</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">\dfrac{a^m}{a^n}=a^{m-n}</span></td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac{e^{5t}}{e^{2t}}=e^{3t}</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">(a^m)^n=a^{mn}</span></td>
+<td style="text-align: left;"><span
+class="math inline">(e^{x})^2=e^{2x}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">(ab)^n=a^nb^n</span>, <span
+class="math inline">\left(\dfrac
+ab\right)^n=\dfrac{a^n}{b^n}</span></td>
+<td style="text-align: left;"><span
+class="math inline">(2x)^3=8x^3</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">a^0=1</span>,
+<span class="math inline">a^{-n}=\dfrac1{a^n}</span></td>
+<td style="text-align: left;"><span
+class="math inline">x^{-2}=\dfrac1{x^2}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">a^{m/n}=\sqrt[n]{a^m}</span></td>
+<td style="text-align: left;"><span class="math inline">x^{3/2}=x\sqrt
+x</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\sqrt{ab}=\sqrt
+a\sqrt b</span> (kai <span class="math inline">a,b\ge0</span>)</td>
+<td style="text-align: left;"><span class="math inline">\sqrt{4x}=2\sqrt
+x</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">\sqrt{a^2}=\lvert a\rvert</span></td>
+<td style="text-align: left;"><span
+class="math inline">\sqrt{x^2}=\lvert x\rvert</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="logaritmai">Logaritmai</h2>
+<div class="formules">
+<p><span class="math inline">\log_ab=c\iff a^c=b</span> (<span
+class="math inline">a&gt;0</span>, <span
+class="math inline">a\ne1</span>, <span
+class="math inline">b&gt;0</span>). Natūrinis logaritmas <span
+class="math inline">\ln x=\log_ex</span>, <span
+class="math inline">e\approx2{,}71828</span>.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Taisyklė</th>
+<th style="text-align: left;">Pavyzdys</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\ln(ab)=\ln
+a+\ln b</span></td>
+<td style="text-align: left;"><span class="math inline">\ln(2x)=\ln2+\ln
+x</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\ln\dfrac ab=\ln
+a-\ln b</span></td>
+<td style="text-align: left;"><span
+class="math inline">\ln\dfrac{x}{x+1}=\ln x-\ln(x+1)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\ln a^n=n\ln
+a</span></td>
+<td style="text-align: left;"><span class="math inline">\ln\sqrt
+x=\tfrac12\ln x</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">e^{\ln
+a}=a</span>, <span class="math inline">\ln e^a=a</span></td>
+<td style="text-align: left;"><span class="math inline">e^{2\ln
+x}=x^2</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\ln1=0</span>,
+<span class="math inline">\ln e=1</span></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">\log_ab=\dfrac{\ln b}{\ln a}</span> (pagrindo
+keitimas)</td>
+<td style="text-align: left;"><span class="math inline">\log_2
+8=\dfrac{\ln8}{\ln2}=3</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">a^x=e^{x\ln
+a}</span></td>
+<td style="text-align: left;"><span
+class="math inline">2^x=e^{x\ln2}</span></td>
+</tr>
+</tbody>
+</table>
+<p>Sprendžiant DL: <span class="math inline">\ln|y|=\ln|x|+C\
+\Rightarrow\ y=Cx</span> (konstanta „sugeria“ ženklą ir <span
+class="math inline">e^C</span>).</p>
+</div>
+<h2 id="kampai">Kampai</h2>
+<div class="formules">
+<p><span class="math display">\pi\ \text{rad}=180^\circ,\qquad 1\
+\text{rad}\approx57{,}3^\circ,\qquad
+\alpha_{\text{rad}}=\frac{\pi}{180}\,\alpha_{\circ}.</span></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Kampas</th>
+<th style="text-align: left;"><span class="math inline">0</span></th>
+<th style="text-align: left;"><span class="math inline">\frac\pi6</span>
+(<span class="math inline">30^\circ</span>)</th>
+<th style="text-align: left;"><span class="math inline">\frac\pi4</span>
+(<span class="math inline">45^\circ</span>)</th>
+<th style="text-align: left;"><span class="math inline">\frac\pi3</span>
+(<span class="math inline">60^\circ</span>)</th>
+<th style="text-align: left;"><span class="math inline">\frac\pi2</span>
+(<span class="math inline">90^\circ</span>)</th>
+<th style="text-align: left;"><span class="math inline">\pi</span>
+(<span class="math inline">180^\circ</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\sin</span></td>
+<td style="text-align: left;"><span class="math inline">0</span></td>
+<td style="text-align: left;"><span
+class="math inline">\frac12</span></td>
+<td style="text-align: left;"><span
+class="math inline">\frac{\sqrt2}{2}</span></td>
+<td style="text-align: left;"><span
+class="math inline">\frac{\sqrt3}{2}</span></td>
+<td style="text-align: left;"><span class="math inline">1</span></td>
+<td style="text-align: left;"><span class="math inline">0</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\cos</span></td>
+<td style="text-align: left;"><span class="math inline">1</span></td>
+<td style="text-align: left;"><span
+class="math inline">\frac{\sqrt3}{2}</span></td>
+<td style="text-align: left;"><span
+class="math inline">\frac{\sqrt2}{2}</span></td>
+<td style="text-align: left;"><span
+class="math inline">\frac12</span></td>
+<td style="text-align: left;"><span class="math inline">0</span></td>
+<td style="text-align: left;"><span class="math inline">-1</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">\operatorname{tg}</span></td>
+<td style="text-align: left;"><span class="math inline">0</span></td>
+<td style="text-align: left;"><span
+class="math inline">\frac{\sqrt3}{3}</span></td>
+<td style="text-align: left;"><span class="math inline">1</span></td>
+<td style="text-align: left;"><span
+class="math inline">\sqrt3</span></td>
+<td style="text-align: left;">–</td>
+<td style="text-align: left;"><span class="math inline">0</span></td>
+</tr>
+</tbody>
+</table>
+<p>Sveikiesiems <span class="math inline">n</span>: <span
+class="math inline">\sin n\pi=0</span>, <span class="math inline">\cos
+n\pi=(-1)^n</span>, <span
+class="math inline">\sin\dfrac{n\pi}{2}=0,1,0,-1,\dots</span> (kai <span
+class="math inline">n=0,1,2,3,\dots</span>).</p>
+</div>
+<h2 id="trigonometrija">Trigonometrija</h2>
+<div class="formules">
+<p><strong>Pagrindinės tapatybės</strong> <span
+class="math display">\sin^2x+\cos^2x=1,\qquad
+\operatorname{tg}x=\frac{\sin x}{\cos x},\qquad
+\operatorname{ctg}x=\frac{\cos x}{\sin x},</span> <span
+class="math display">1+\operatorname{tg}^2x=\frac{1}{\cos^2x},\qquad
+1+\operatorname{ctg}^2x=\frac1{\sin^2x}.</span></p>
+<p><strong>Lyginumas ir redukcija</strong> <span
+class="math display">\sin(-x)=-\sin x,\qquad \cos(-x)=\cos x,</span>
+<span class="math display">\sin(\pi-x)=\sin x,\qquad \cos(\pi-x)=-\cos
+x,</span> <span
+class="math display">\sin\!\left(\tfrac\pi2-x\right)=\cos x,\qquad
+\cos\!\left(\tfrac\pi2-x\right)=\sin x,\qquad \sin(x+2\pi)=\sin x
+.</span></p>
+<p><strong>Sumos ir skirtumo formulės</strong> <span
+class="math display">\sin(\alpha\pm\beta)=\sin\alpha\cos\beta\pm\cos\alpha\sin\beta,</span>
+<span
+class="math display">\cos(\alpha\pm\beta)=\cos\alpha\cos\beta\mp\sin\alpha\sin\beta,</span>
+<span
+class="math display">\operatorname{tg}(\alpha\pm\beta)=\frac{\operatorname{tg}\alpha\pm\operatorname{tg}\beta}{1\mp\operatorname{tg}\alpha\operatorname{tg}\beta}.</span></p>
+<p><strong>Dvigubas ir trigubas kampas</strong> <span
+class="math display">\sin2x=2\sin x\cos x,\qquad \sin3x=3\sin
+x-4\sin^3x,</span> <span
+class="math display">\cos2x=\cos^2x-\sin^2x=2\cos^2x-1=1-2\sin^2x,</span>
+<span class="math display">\cos3x=4\cos^3x-3\cos x .</span></p>
+<p><strong>Laipsnio mažinimas</strong> (labai dažnai integruojant) <span
+class="math display">\sin^2x=\frac{1-\cos2x}{2},\qquad
+\cos^2x=\frac{1+\cos2x}{2},\qquad \sin^3x=\frac{3\sin
+x-\sin3x}{4}.</span></p>
+<p><strong>Sandauga į sumą</strong> <span
+class="math display">\sin\alpha\sin\beta=\tfrac12\left[\cos(\alpha-\beta)-\cos(\alpha+\beta)\right],</span>
+<span
+class="math display">\cos\alpha\cos\beta=\tfrac12\left[\cos(\alpha-\beta)+\cos(\alpha+\beta)\right],</span>
+<span
+class="math display">\sin\alpha\cos\beta=\tfrac12\left[\sin(\alpha+\beta)+\sin(\alpha-\beta)\right].</span></p>
+<p><strong>Suma į sandaugą</strong> <span
+class="math display">\sin\alpha+\sin\beta=2\sin\tfrac{\alpha+\beta}{2}\cos\tfrac{\alpha-\beta}{2},</span>
+<span
+class="math display">\sin\alpha-\sin\beta=2\cos\tfrac{\alpha+\beta}{2}\sin\tfrac{\alpha-\beta}{2},</span>
+<span
+class="math display">\cos\alpha+\cos\beta=2\cos\tfrac{\alpha+\beta}{2}\cos\tfrac{\alpha-\beta}{2},</span>
+<span
+class="math display">\cos\alpha-\cos\beta=-2\sin\tfrac{\alpha+\beta}{2}\sin\tfrac{\alpha-\beta}{2}.</span></p>
+<p><strong>Harmonikų sudėtis</strong>: <span class="math inline">A\cos
+x+B\sin x=\sqrt{A^2+B^2}\,\cos(x-\varphi)</span>, kur <span
+class="math inline">\operatorname{tg}\varphi=\dfrac BA</span>.</p>
+</div>
+<h2 id="hiperbolines">Hiperbolinės funkcijos</h2>
+<div class="formules">
+<p><span
+class="math display">\operatorname{ch}x=\frac{e^x+e^{-x}}{2},\qquad
+\operatorname{sh}x=\frac{e^x-e^{-x}}{2},</span> <span
+class="math display">\operatorname{th}x=\frac{\operatorname{sh}x}{\operatorname{ch}x},\qquad
+\operatorname{cth}x=\frac{\operatorname{ch}x}{\operatorname{sh}x}.</span></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Savybė</th>
+<th style="text-align: left;">Formulė</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Pagrindinė tapatybė</td>
+<td style="text-align: left;"><span
+class="math inline">\operatorname{ch}^2x-\operatorname{sh}^2x=1</span>
+(ženklas <strong>minus</strong>, kitaip nei trigonometrijoje)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Išvestinės</td>
+<td style="text-align: left;"><span
+class="math inline">(\operatorname{sh}x)&#39;=\operatorname{ch}x</span>,
+<span
+class="math inline">(\operatorname{ch}x)&#39;=\operatorname{sh}x</span>
+(be minuso)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reikšmės nulyje</td>
+<td style="text-align: left;"><span
+class="math inline">\operatorname{sh}0=0</span>, <span
+class="math inline">\operatorname{ch}0=1</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dvigubas argumentas</td>
+<td style="text-align: left;"><span
+class="math inline">\operatorname{sh}2x=2\operatorname{sh}x\operatorname{ch}x</span>,
+<span
+class="math inline">\operatorname{ch}2x=\operatorname{ch}^2x+\operatorname{sh}^2x</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Suma</td>
+<td style="text-align: left;"><span
+class="math inline">\operatorname{sh}(a\pm
+b)=\operatorname{sh}a\operatorname{ch}b\pm\operatorname{ch}a\operatorname{sh}b</span>,
+<span class="math inline">\operatorname{ch}(a\pm
+b)=\operatorname{ch}a\operatorname{ch}b\pm\operatorname{sh}a\operatorname{sh}b</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ryšys su trigonometrija</td>
+<td style="text-align: left;"><span
+class="math inline">\operatorname{ch}ix=\cos x</span>, <span
+class="math inline">\operatorname{sh}ix=i\sin x</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Atvirkštinės</td>
+<td style="text-align: left;"><span
+class="math inline">\operatorname{arsh}x=\ln\!\left(x+\sqrt{x^2+1}\right)</span>,
+<span
+class="math inline">\operatorname{arch}x=\ln\!\left(x+\sqrt{x^2-1}\right)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="kompleksiniai">Kompleksiniai skaičiai</h2>
+<div class="formules">
+<p><span class="math inline">z=x+iy=r\,e^{i\varphi}</span>, kur <span
+class="math inline">r=|z|=\sqrt{x^2+y^2}</span>, <span
+class="math inline">\varphi=\arg z</span>, <span
+class="math inline">i^2=-1</span>.</p>
+<p><span
+class="math display">e^{i\varphi}=\cos\varphi+i\sin\varphi\quad(\text{Oilerio
+formulė}),</span> <span
+class="math display">\cos\varphi=\frac{e^{i\varphi}+e^{-i\varphi}}{2},\qquad
+\sin\varphi=\frac{e^{i\varphi}-e^{-i\varphi}}{2i}.</span></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Veiksmas</th>
+<th style="text-align: left;">Formulė</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Jungtinis</td>
+<td style="text-align: left;"><span class="math inline">\bar
+z=x-iy</span>, <span class="math inline">z\bar z=\lvert
+z\rvert^2</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dalyba</td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac{1}{x+iy}=\dfrac{x-iy}{x^2+y^2}</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Daugyba trigonometrine forma</td>
+<td style="text-align: left;"><span
+class="math inline">r_1e^{i\varphi_1}\cdot
+r_2e^{i\varphi_2}=r_1r_2\,e^{i(\varphi_1+\varphi_2)}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Muavro formulė</td>
+<td style="text-align: left;"><span
+class="math inline">(\cos\varphi+i\sin\varphi)^n=\cos n\varphi+i\sin
+n\varphi</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">n</span>-tojo
+laipsnio šaknys</td>
+<td style="text-align: left;"><span
+class="math inline">\sqrt[n]{z}=\sqrt[n]{r}\,e^{i(\varphi+2\pi
+k)/n}</span>, <span class="math inline">k=0,1,\dots,n-1</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Naudingos reikšmės</td>
+<td style="text-align: left;"><span
+class="math inline">e^{i\pi}=-1</span>, <span
+class="math inline">e^{i\pi/2}=i</span>, <span
+class="math inline">e^{2\pi i}=1</span>, <span class="math inline">\ln
+z=\ln r+i(\varphi+2\pi k)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="isvestines">Išvestinės</h2>
+<div class="formules">
+<p><strong>Taisyklės</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Taisyklė</th>
+<th style="text-align: left;">Formulė</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Suma ir konstanta</td>
+<td style="text-align: left;"><span
+class="math inline">(cu+v)&#39;=cu&#39;+v&#39;</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sandauga</td>
+<td style="text-align: left;"><span
+class="math inline">(uv)&#39;=u&#39;v+uv&#39;</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dalmuo</td>
+<td style="text-align: left;"><span class="math inline">\left(\dfrac
+uv\right)&#39;=\dfrac{u&#39;v-uv&#39;}{v^2}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sudėtinė funkcija</td>
+<td style="text-align: left;"><span
+class="math inline">\big(f(g(x))\big)&#39;=f&#39;(g(x))\cdot
+g&#39;(x)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Atvirkštinė funkcija</td>
+<td style="text-align: left;"><span
+class="math inline">x&#39;(y)=\dfrac{1}{y&#39;(x)}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Parametrinė</td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac{dy}{dx}=\dfrac{\dot y}{\dot x}</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Integralas su kintamuoju rėžiu</td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac{d}{dx}\displaystyle\int_a^{x}f(t)\,dt=f(x)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lentelė</strong></p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">f(x)</span></th>
+<th style="text-align: left;"><span
+class="math inline">f&#39;(x)</span></th>
+<th style="text-align: left;"><span class="math inline">f(x)</span></th>
+<th style="text-align: left;"><span
+class="math inline">f&#39;(x)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">x^n</span></td>
+<td style="text-align: left;"><span
+class="math inline">nx^{n-1}</span></td>
+<td style="text-align: left;"><span class="math inline">\sin
+x</span></td>
+<td style="text-align: left;"><span class="math inline">\cos
+x</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">e^{x}</span></td>
+<td style="text-align: left;"><span
+class="math inline">e^{x}</span></td>
+<td style="text-align: left;"><span class="math inline">\cos
+x</span></td>
+<td style="text-align: left;"><span class="math inline">-\sin
+x</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">e^{kx}</span></td>
+<td style="text-align: left;"><span
+class="math inline">ke^{kx}</span></td>
+<td style="text-align: left;"><span
+class="math inline">\operatorname{tg}x</span></td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac1{\cos^2x}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">a^x</span></td>
+<td style="text-align: left;"><span class="math inline">a^x\ln
+a</span></td>
+<td style="text-align: left;"><span
+class="math inline">\operatorname{ctg}x</span></td>
+<td style="text-align: left;"><span
+class="math inline">-\dfrac1{\sin^2x}</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\ln\lvert
+x\rvert</span></td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac1x</span></td>
+<td style="text-align: left;"><span class="math inline">\arcsin
+x</span></td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac{1}{\sqrt{1-x^2}}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">\log_ax</span></td>
+<td style="text-align: left;"><span class="math inline">\dfrac{1}{x\ln
+a}</span></td>
+<td style="text-align: left;"><span class="math inline">\arccos
+x</span></td>
+<td style="text-align: left;"><span
+class="math inline">-\dfrac{1}{\sqrt{1-x^2}}</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\sqrt
+x</span></td>
+<td style="text-align: left;"><span class="math inline">\dfrac{1}{2\sqrt
+x}</span></td>
+<td style="text-align: left;"><span
+class="math inline">\operatorname{arctg}x</span></td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac1{1+x^2}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">\dfrac1x</span></td>
+<td style="text-align: left;"><span
+class="math inline">-\dfrac1{x^2}</span></td>
+<td style="text-align: left;"><span
+class="math inline">\operatorname{sh}x</span>, <span
+class="math inline">\operatorname{ch}x</span></td>
+<td style="text-align: left;"><span
+class="math inline">\operatorname{ch}x</span>, <span
+class="math inline">\operatorname{sh}x</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Dalinės išvestinės</strong>: <span
+class="math inline">\dfrac{\partial f}{\partial x}</span> skaičiuojame
+laikydami kitus kintamuosius konstantomis. Pilnoji išvestinė: <span
+class="math inline">\dfrac{d}{dt}f\big(x(t),y(t)\big)=f_x\,\dot
+x+f_y\,\dot y</span>.</p>
+</div>
+<h2 id="integralai">Integralai</h2>
+<div class="formules">
+<p><strong>Taisyklės</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Metodas</th>
+<th style="text-align: left;">Formulė</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Tiesiškumas</td>
+<td style="text-align: left;"><span
+class="math inline">\int(cf+g)\,dx=c\int f\,dx+\int g\,dx</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Integravimas dalimis</td>
+<td style="text-align: left;"><span class="math inline">\int
+u\,dv=uv-\int v\,du</span>; apibrėžtiniam <span
+class="math inline">\int_a^bu\,dv=\big[uv\big]_a^b-\int_a^bv\,du</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Keitinys</td>
+<td style="text-align: left;"><span class="math inline">\int
+f\big(g(x)\big)g&#39;(x)\,dx=\int f(t)\,dt</span>, <span
+class="math inline">t=g(x)</span> (keičiasi ir rėžiai!)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">„Išvestinė skaitiklyje“</td>
+<td style="text-align: left;"><span
+class="math inline">\int\dfrac{f&#39;(x)}{f(x)}dx=\ln\lvert
+f(x)\rvert+C</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tiesinis argumentas</td>
+<td style="text-align: left;"><span class="math inline">\int
+f(kx+b)\,dx=\dfrac1kF(kx+b)+C</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lyginė / nelyginė</td>
+<td style="text-align: left;"><span
+class="math inline">\int_{-a}^af\,dx=2\int_0^af\,dx</span> (lyginė),
+<span class="math inline">=0</span> (nelyginė)</td>
+</tr>
+</tbody>
+</table>
+<p>Dalimis gerai integruoti: <span class="math inline">x^ne^{x}</span>,
+<span class="math inline">x^n\sin x</span>, <span
+class="math inline">x^n\cos x</span> (imame <span
+class="math inline">u=x^n</span>); <span class="math inline">x^n\ln
+x</span>, <span class="math inline">\operatorname{arctg}x</span> (imame
+<span class="math inline">u=\ln x</span> arba <span
+class="math inline">u=\operatorname{arctg}x</span>).</p>
+<p><strong>Lentelė</strong> (visur <span
+class="math inline">+C</span>)</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">f(x)</span></th>
+<th style="text-align: left;"><span class="math inline">\int
+f\,dx</span></th>
+<th style="text-align: left;"><span class="math inline">f(x)</span></th>
+<th style="text-align: left;"><span class="math inline">\int
+f\,dx</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">x^n</span>
+(<span class="math inline">n\ne-1</span>)</td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac{x^{n+1}}{n+1}</span></td>
+<td style="text-align: left;"><span class="math inline">\sin
+x</span></td>
+<td style="text-align: left;"><span class="math inline">-\cos
+x</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">\dfrac1x</span></td>
+<td style="text-align: left;"><span class="math inline">\ln\lvert
+x\rvert</span></td>
+<td style="text-align: left;"><span class="math inline">\cos
+x</span></td>
+<td style="text-align: left;"><span class="math inline">\sin
+x</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">e^{kx}</span></td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac{e^{kx}}{k}</span></td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac1{\cos^2x}</span></td>
+<td style="text-align: left;"><span
+class="math inline">\operatorname{tg}x</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">a^x</span></td>
+<td style="text-align: left;"><span class="math inline">\dfrac{a^x}{\ln
+a}</span></td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac1{\sin^2x}</span></td>
+<td style="text-align: left;"><span
+class="math inline">-\operatorname{ctg}x</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">\dfrac1{x^2+a^2}</span></td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac1a\operatorname{arctg}\dfrac xa</span></td>
+<td style="text-align: left;"><span
+class="math inline">\operatorname{tg}x</span></td>
+<td style="text-align: left;"><span class="math inline">-\ln\lvert\cos
+x\rvert</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">\dfrac1{x^2-a^2}</span></td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac1{2a}\ln\left\lvert\dfrac{x-a}{x+a}\right\rvert</span></td>
+<td style="text-align: left;"><span
+class="math inline">\sin^2x</span></td>
+<td style="text-align: left;"><span class="math inline">\dfrac
+x2-\dfrac{\sin2x}{4}</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">\dfrac1{\sqrt{a^2-x^2}}</span></td>
+<td style="text-align: left;"><span class="math inline">\arcsin\dfrac
+xa</span></td>
+<td style="text-align: left;"><span
+class="math inline">\cos^2x</span></td>
+<td style="text-align: left;"><span class="math inline">\dfrac
+x2+\dfrac{\sin2x}{4}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">\dfrac1{\sqrt{x^2\pm a^2}}</span></td>
+<td style="text-align: left;"><span class="math inline">\ln\left\lvert
+x+\sqrt{x^2\pm a^2}\right\rvert</span></td>
+<td style="text-align: left;"><span
+class="math inline">\operatorname{sh}x</span>, <span
+class="math inline">\operatorname{ch}x</span></td>
+<td style="text-align: left;"><span
+class="math inline">\operatorname{ch}x</span>, <span
+class="math inline">\operatorname{sh}x</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\ln
+x</span></td>
+<td style="text-align: left;"><span class="math inline">x\ln
+x-x</span></td>
+<td style="text-align: left;"><span
+class="math inline">xe^{x}</span></td>
+<td style="text-align: left;"><span
+class="math inline">(x-1)e^{x}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">e^{ax}\cos
+bx</span></td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac{e^{ax}(a\cos bx+b\sin
+bx)}{a^2+b^2}</span></td>
+<td style="text-align: left;"><span class="math inline">e^{ax}\sin
+bx</span></td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac{e^{ax}(a\sin bx-b\cos
+bx)}{a^2+b^2}</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Naudingi apibrėžtiniai integralai</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Integralas</th>
+<th style="text-align: left;">Reikšmė</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Gauso</td>
+<td style="text-align: left;"><span
+class="math inline">\displaystyle\int_{-\infty}^{\infty}e^{-ax^2}dx=\sqrt{\frac\pi
+a}</span>, <span
+class="math inline">\displaystyle\int_{-\infty}^{\infty}x^2e^{-ax^2}dx=\frac{1}{2a}\sqrt{\frac\pi
+a}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gama funkcija</td>
+<td style="text-align: left;"><span
+class="math inline">\displaystyle\int_0^\infty
+x^ne^{-x}dx=\Gamma(n+1)=n!</span>, <span
+class="math inline">\Gamma\!\left(\tfrac12\right)=\sqrt\pi</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Eksponentė</td>
+<td style="text-align: left;"><span
+class="math inline">\displaystyle\int_0^\infty e^{-ax}dx=\frac1a</span>
+(<span class="math inline">a&gt;0</span>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Periodo vidurkis</td>
+<td style="text-align: left;"><span
+class="math inline">\displaystyle\int_0^{2\pi}\sin^2x\,dx=\int_0^{2\pi}\cos^2x\,dx=\pi</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ortogonalumas</td>
+<td style="text-align: left;"><span
+class="math inline">\displaystyle\int_0^a\sin\frac{n\pi
+x}{a}\sin\frac{m\pi x}{a}dx=\frac a2\delta_{nm}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dirichlė</td>
+<td style="text-align: left;"><span
+class="math inline">\displaystyle\int_0^\infty\frac{\sin
+x}{x}dx=\frac\pi2</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lorenco</td>
+<td style="text-align: left;"><span
+class="math inline">\displaystyle\int_{-\infty}^{\infty}\frac{dx}{x^2+a^2}=\frac\pi
+a</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Racionaliųjų trupmenų skaidymas</strong> <span
+class="math display">\frac{1}{(x-a)(x-b)}=\frac{1}{a-b}\left(\frac{1}{x-a}-\frac{1}{x-b}\right),\qquad
+\frac{1}{x(x^2+1)}=\frac1x-\frac{x}{x^2+1}.</span> Bendru atveju:
+kiekvienam daugikliui <span class="math inline">(x-a)^k</span> rašome
+<span
+class="math inline">\dfrac{A_1}{x-a}+\dots+\dfrac{A_k}{(x-a)^k}</span>,
+o daugikliui <span class="math inline">x^2+px+q</span> rašome <span
+class="math inline">\dfrac{Bx+C}{x^2+px+q}</span>.</p>
+</div>
+<h2 id="eilutes">Eilutės</h2>
+<div class="formules">
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Funkcija</th>
+<th style="text-align: left;">Teiloro eilutė (prie <span
+class="math inline">x=0</span>)</th>
+<th style="text-align: left;">Galioja</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">\dfrac1{1-x}</span></td>
+<td style="text-align: left;"><span
+class="math inline">1+x+x^2+\dots=\sum x^n</span></td>
+<td style="text-align: left;"><span class="math inline">\lvert
+x\rvert&lt;1</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">e^{x}</span></td>
+<td style="text-align: left;"><span
+class="math inline">1+x+\dfrac{x^2}{2!}+\dfrac{x^3}{3!}+\dots</span></td>
+<td style="text-align: left;">visiems <span
+class="math inline">x</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\sin
+x</span></td>
+<td style="text-align: left;"><span
+class="math inline">x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\dots</span></td>
+<td style="text-align: left;">visiems <span
+class="math inline">x</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\cos
+x</span></td>
+<td style="text-align: left;"><span
+class="math inline">1-\dfrac{x^2}{2!}+\dfrac{x^4}{4!}-\dots</span></td>
+<td style="text-align: left;">visiems <span
+class="math inline">x</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">\ln(1+x)</span></td>
+<td style="text-align: left;"><span
+class="math inline">x-\dfrac{x^2}{2}+\dfrac{x^3}{3}-\dots</span></td>
+<td style="text-align: left;"><span
+class="math inline">-1&lt;x\le1</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">(1+x)^\alpha</span></td>
+<td style="text-align: left;"><span class="math inline">1+\alpha
+x+\dfrac{\alpha(\alpha-1)}{2}x^2+\dots</span></td>
+<td style="text-align: left;"><span class="math inline">\lvert
+x\rvert&lt;1</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">\operatorname{arctg}x</span></td>
+<td style="text-align: left;"><span
+class="math inline">x-\dfrac{x^3}{3}+\dfrac{x^5}{5}-\dots</span></td>
+<td style="text-align: left;"><span class="math inline">\lvert
+x\rvert\le1</span></td>
+</tr>
+</tbody>
+</table>
+<p>Bendra formulė: <span
+class="math inline">f(x)=\displaystyle\sum_{n=0}^\infty\frac{f^{(n)}(a)}{n!}(x-a)^n</span>.
+Naudingos sumos: <span
+class="math inline">\displaystyle\sum_{n=1}^\infty\frac1{n^2}=\frac{\pi^2}{6}</span>,
+<span class="math inline">\displaystyle\sum_{n=0}^\infty
+q^n=\frac1{1-q}</span> (<span class="math inline">\lvert
+q\rvert&lt;1</span>).</p>
+</div>
+<h2 id="algebra">Algebra</h2>
+<div class="formules">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Tema</th>
+<th style="text-align: left;">Formulė</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Kvadratinė lygtis</td>
+<td style="text-align: left;"><span class="math inline">ax^2+bx+c=0\
+\Rightarrow\ x_{1,2}=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Vijeto teorema</td>
+<td style="text-align: left;"><span class="math inline">x_1+x_2=-\dfrac
+ba</span>, <span class="math inline">x_1x_2=\dfrac ca</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Greitosios daugybos</td>
+<td style="text-align: left;"><span class="math inline">(a\pm
+b)^2=a^2\pm2ab+b^2</span>, <span
+class="math inline">a^2-b^2=(a-b)(a+b)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Kubai</td>
+<td style="text-align: left;"><span class="math inline">a^3\pm b^3=(a\pm
+b)(a^2\mp ab+b^2)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Kvadrato išskyrimas</td>
+<td style="text-align: left;"><span
+class="math inline">x^2+px+q=\left(x+\tfrac
+p2\right)^2+q-\tfrac{p^2}{4}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Determinantas <span
+class="math inline">2\times2</span></td>
+<td style="text-align: left;"><span
+class="math inline">\begin{vmatrix}a&amp;b\\c&amp;d\end{vmatrix}=ad-bc</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="index.html"><span>← Pradžia</span><strong>Visos temos</strong></a>
+  <a class="puslapis-kitas" href="tema-01.html"><span>Pradėti →</span><strong>1. tema</strong></a>
+</nav>
+
+<script src="svetaine.js"></script>
+</body>
+</html>

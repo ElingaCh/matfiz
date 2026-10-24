@@ -219,8 +219,130 @@ td { border-bottom: 1px solid var(--linija); padding: .55rem .7rem; vertical-ali
   .titulo-hero { padding-top: 3.5rem; }
 }
 
+
+/* ---------- Citata tituliniame ---------- */
+.citata {
+  margin: 0 0 2.2rem; padding: .2rem 0 .2rem 1.4rem; border-left: 3px solid var(--uzduotis); max-width: 34em;
+}
+.citata p {
+  margin: 0; font-family: "Cormorant Garamond", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  font-style: italic; font-weight: 500; font-size: clamp(1.45rem, 3.6vw, 2rem); line-height: 1.35; color: var(--tekstas);
+}
+
+/* ---------- „Išspręsta“ / „Nepavyko“ ---------- */
+.zymes { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; margin-top: .75rem; }
+.zymes label.isspresta { margin-top: 0; }
+label.nepavyko-zyme {
+  display: inline-flex; align-items: center; gap: .5rem; cursor: pointer;
+  font: 500 .92rem var(--ui-sriftas); color: var(--pilka); user-select: none;
+}
+label.nepavyko-zyme input { width: 1.15rem; height: 1.15rem; accent-color: var(--klaidos); }
+.uzduotis.nepavyko { --c: var(--klaidos); }
+.uzduotis.nepavyko label.nepavyko-zyme { color: var(--klaidos); font-weight: 600; }
+.nejuokaukit {
+  display: flex; flex-direction: column; gap: .15rem; margin: .4rem 0 .6rem; padding: .8rem 1.1rem;
+  border-radius: 10px; border: 1px solid var(--klaidos);
+  background: rgba(179, 38, 30, .08); background: color-mix(in srgb, var(--klaidos) 9%, var(--pavirsius));
+  animation: atsiranda .25s ease;
+}
+.nejuokaukit strong { font: 700 1.25rem var(--ui-sriftas); color: var(--klaidos); letter-spacing: .01em; }
+.nejuokaukit span { font: .9rem/1.5 var(--ui-sriftas); color: var(--pilka); }
+.sprendimas > .nejuokaukit { display: flex !important; }
+.sprendimas > .nejuokaukit[hidden], .nejuokaukit[hidden] { display: none !important; }
+.kortele-nepavyko { font: 600 .82rem var(--ui-sriftas); color: var(--klaidos); }
+.kortele-nepavyko:empty { display: none; }
+
+/* ---------- Brėžiniai ---------- */
+figure.brezinys {
+  margin: 2rem 0; padding: 1.2rem 1.2rem .9rem; background: var(--pavirsius);
+  border: 1px solid var(--linija); border-radius: var(--spindulys); box-shadow: var(--seselis);
+}
+figure.brezinys figcaption { font: .9rem/1.6 var(--ui-sriftas); color: var(--pilka); margin-top: .6rem; }
+figure.brezinys figcaption p { margin: 0; }
+svg.grafikas { display: block; width: 100%; height: auto; overflow: visible; }
+svg.grafikas text { font-family: var(--ui-sriftas); fill: var(--tekstas); }
+svg.grafikas .zym { font-size: 13px; fill: var(--pilka); }
+svg.grafikas .asies-pav { font-size: 14px; font-style: italic; }
+svg.grafikas .t { font-size: 13.5px; }
+svg.grafikas .tinklas { stroke: var(--linija); stroke-width: 1; }
+svg.grafikas .asis { stroke: var(--pilka); stroke-width: 1.3; }
+svg.grafikas .pag { stroke: var(--pilka); stroke-width: 1.2; opacity: .7; }
+svg.grafikas .legendos-fonas { fill: var(--pavirsius); stroke: var(--linija); opacity: .94; }
+svg.grafikas .s1 { stroke: var(--teorija); color: var(--teorija); }
+svg.grafikas .s2 { stroke: var(--uzduotis); color: var(--uzduotis); }
+svg.grafikas .s3 { stroke: var(--pavyzdys); color: var(--pavyzdys); }
+svg.grafikas .s4 { stroke: var(--sprendimas); color: var(--sprendimas); }
+svg.grafikas .s5 { stroke: var(--klaidos); color: var(--klaidos); }
+svg.grafikas polygon { stroke: none; }
+
+/* ---------- Šoninė juosta ---------- */
+.sonine {
+  position: fixed; top: 0; left: 0; bottom: 0; width: 290px; z-index: 30; overflow-y: auto;
+  background: var(--pavirsius); border-right: 1px solid var(--linija);
+  padding: 0 .75rem 2rem; font-family: var(--ui-sriftas);
+  transform: translateX(-100%); transition: transform .25s ease; visibility: hidden;
+}
+.sonine-atidaryta .sonine { transform: none; visibility: visible; box-shadow: 0 0 40px rgba(0, 0, 0, .2); }
+.sonine-uzdanga { position: fixed; inset: 0; z-index: 25; background: rgba(10, 12, 20, .35); }
+.sonine-uzdanga[hidden] { display: none; }
+.sonine-virsus {
+  position: sticky; top: 0; background: var(--pavirsius); display: flex; align-items: center;
+  justify-content: space-between; padding: 1rem .5rem .75rem; z-index: 1;
+}
+.sonine-namai { font-weight: 700; font-size: 1rem; color: var(--tekstas); text-decoration: none; }
+.sonine-namai:hover { color: var(--akcentas); }
+.sonine-uzdaryti { border: 0; background: transparent; font-size: 1.6rem; line-height: 1; padding: .2rem .5rem; color: var(--pilka); }
+.sonine-uzdaryti:hover { box-shadow: none; color: var(--tekstas); }
+.sonine-atmintine {
+  display: block; margin: 0 .25rem .5rem; padding: .6rem .75rem; border-radius: 10px; text-decoration: none;
+  font-weight: 600; font-size: .9rem; color: var(--tekstas); border: 1px solid var(--linija);
+}
+.sonine-atmintine:hover, .sonine-atmintine.aktyvi { border-color: var(--akcentas); color: var(--akcentas); }
+.sonine-dalis {
+  font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--pilka);
+  margin: 1.3rem .5rem .4rem; line-height: 1.4;
+}
+.sonine-temos { list-style: none; margin: 0; padding: 0; }
+.sonine-temos a {
+  display: grid; grid-template-columns: 1.8rem 1fr auto; gap: .4rem; align-items: baseline;
+  padding: .45rem .5rem; border-radius: 8px; text-decoration: none; color: var(--tekstas);
+  font-size: .86rem; line-height: 1.35;
+}
+.sonine-temos a:hover { background: var(--fonas); }
+.sonine-temos a.aktyvi { background: color-mix(in srgb, var(--akcentas) 12%, var(--pavirsius)); color: var(--akcentas); font-weight: 600; }
+.st-nr { font-weight: 700; color: var(--akcentas); }
+.st-prog { font-size: .75rem; color: var(--pilka); }
+.sonine-temos a.baigta .st-prog { color: var(--pavyzdys); font-weight: 600; }
+.sonine-temos a.baigta .st-prog::after { content: " ✓"; }
+.meniu { padding: .45rem .8rem; font-size: .9rem; }
+@media (min-width: 1200px) {
+  .su-sonine { padding-left: 290px; }
+  .su-sonine .sonine { transform: none; visibility: visible; }
+  .su-sonine .meniu, .su-sonine .sonine-uzdaryti, .sonine-uzdanga { display: none !important; }
+}
+@media (max-width: 720px) {
+  .su-sonine .atgal { display: none; }
+}
+
+/* ---------- Formulių atmintinė ---------- */
+.atmintines-turinys ul { list-style: none; padding: 0; margin: 1.2rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.atmintines-turinys a {
+  display: inline-block; font: 500 .88rem var(--ui-sriftas); padding: .4rem .85rem; border-radius: 99px;
+  background: var(--pavirsius); border: 1px solid var(--linija); color: var(--tekstas); text-decoration: none;
+}
+.atmintines-turinys a:hover { border-color: var(--akcentas); color: var(--akcentas); }
+.atmintine .formules {
+  background: var(--pavirsius); border: 1px solid var(--linija); border-radius: var(--spindulys);
+  padding: 1.2rem 1.6rem; box-shadow: var(--seselis); margin-bottom: 1rem;
+}
+.atmintine .formules { overflow-x: auto; position: relative; }
+.atmintine .formules table { font-family: var(--teksto-sriftas); font-size: .98rem; display: table; width: 100%; }
+.atmintine .formules td { padding: .6rem .7rem; }
+.atmintine > h2 { margin-top: 3.5rem; }
+
 @media print {
-  .virsus, .valdymas, label.isspresta, .puslapiai { display: none !important; }
+  .virsus, .valdymas, label.isspresta, .zymes, .nejuokaukit, .sonine, .puslapiai { display: none !important; }
+  .su-sonine { padding-left: 0; }
   .sprendimas.paslepta > * { display: block; }
   .deze { box-shadow: none; break-inside: avoid; }
 }
