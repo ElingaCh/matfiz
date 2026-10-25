@@ -220,6 +220,50 @@ td { border-bottom: 1px solid var(--linija); padding: .55rem .7rem; vertical-ali
 }
 
 
+/* ---------- Giliau, Pagrindiniai žingsniai, Pasitikrink ---------- */
+:root { --algoritmas: #00796B; --pasitikrink: #8E3B8A; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --algoritmas: #5fc9b9; --pasitikrink: #d99bd5; }
+}
+:root[data-theme="dark"] { --algoritmas: #5fc9b9; --pasitikrink: #d99bd5; }
+.algoritmas { --c: var(--algoritmas); }
+.pasitikrink { --c: var(--pasitikrink); }
+.giliau { --c: var(--teorija); border-style: dashed; border-left-style: solid; box-shadow: none; }
+.giliau > summary {
+  cursor: pointer; list-style: none; margin: -.2rem 0; padding: .2rem 0; user-select: none;
+}
+.giliau > summary::-webkit-details-marker { display: none; }
+.giliau-rodykle::after { content: "Skaityti ▾"; font-weight: 600; letter-spacing: .04em; color: var(--pilka); }
+.giliau[open] .giliau-rodykle::after { content: "Suskleisti ▴"; }
+.giliau[open] > summary { margin-bottom: .9rem; }
+.algoritmas h3 { color: var(--algoritmas); }
+.algoritmas ol { counter-reset: alg; list-style: none; padding-left: 0; }
+.algoritmas ol > li { counter-increment: alg; position: relative; padding-left: 2.4rem; margin: .7rem 0; }
+.algoritmas ol > li::before {
+  content: counter(alg); position: absolute; left: 0; top: .15rem; width: 1.6rem; height: 1.6rem; border-radius: 50%;
+  display: grid; place-items: center; font: 700 .8rem var(--ui-sriftas); color: #fff; background: var(--algoritmas);
+}
+.algoritmas .tikrinimas { font-size: .95rem; color: var(--pilka); }
+.klausimas { display: flex; gap: .9rem; padding: 1rem 0; border-top: 1px solid var(--linija); }
+.deze-antraste + .klausimas, .deze-antraste + p + .klausimas { border-top: 0; }
+.klausimas-nr {
+  flex: none; width: 1.8rem; height: 1.8rem; border-radius: 50%; display: grid; place-items: center; margin-top: .2rem;
+  font: 700 .85rem var(--ui-sriftas); color: var(--pasitikrink); border: 1.5px solid var(--pasitikrink);
+}
+.klausimas-tekstas { min-width: 0; flex: 1; }
+.klausimas-tekstas > p:first-child { margin-top: .1rem; }
+details.atsakymas > summary {
+  display: inline-block; cursor: pointer; list-style: none; user-select: none;
+  font: 600 .88rem var(--ui-sriftas); color: var(--pasitikrink); padding: .3rem .8rem; border-radius: 99px;
+  border: 1px solid var(--pasitikrink);
+}
+details.atsakymas > summary::-webkit-details-marker { display: none; }
+details.atsakymas[open] > summary { background: var(--pasitikrink); color: #fff; }
+details.atsakymas[open] { animation: atsiranda .25s ease; }
+details.atsakymas > :not(summary) { padding-left: .9rem; border-left: 2px solid var(--pasitikrink); }
+.panasi { margin-right: .4rem; padding: .05rem .5rem; border-radius: 99px; border: 1px solid var(--linija); }
+.panasi::after { content: ""; }
+
 /* ---------- Citata tituliniame ---------- */
 .citata {
   margin: 0 0 2.2rem; padding: .2rem 0 .2rem 1.4rem; border-left: 3px solid var(--uzduotis); max-width: 34em;
