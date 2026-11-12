@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2 rinkinys · Pasiruošimas 1 atsiskaitymui · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css?v=3">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="priedo-puslapis su-sonine pasiruosimas">
+<aside class="sonine" id="sonine" aria-label="Temos">
+<div class="sonine-virsus"><a class="sonine-namai" href="index.html">Matfizo pratybos</a><button class="sonine-uzdaryti" type="button" aria-label="Uždaryti">×</button></div>
+<a class="sonine-atmintine" href="atmintine.html">∑ Formulių atmintinė</a>
+<a class="sonine-atmintine sonine-svarbu aktyvi" href="pasiruosimas-1.html">🎯 Pasiruošimas 1 atsiskaitymui</a>
+<a class="sonine-atmintine" href="pratybos-09.html">✎ 9 pratybų sprendimai</a>
+<div class="sonine-dalis">I dalis · Koordinatės ir paprastosios diferencialinės lygtys</div><ol class="sonine-temos">
+<li><a href="tema-01.html" data-tema="1" data-uzduociu="13"><span class="st-nr">1</span><span class="st-pav">Kreivinės koordinatės ir vektorinės operacijos</span><span class="st-prog"></span></a></li>
+<li><a href="tema-02.html" data-tema="2" data-uzduociu="12"><span class="st-nr">2</span><span class="st-pav">Pirmos eilės diferencialinės lygtys</span><span class="st-prog"></span></a></li>
+<li><a href="tema-03.html" data-tema="3" data-uzduociu="12"><span class="st-nr">3</span><span class="st-pav">Antros ir aukštesnės eilės tiesinės diferencialinės lygtys</span><span class="st-prog"></span></a></li>
+<li><a href="tema-04.html" data-tema="4" data-uzduociu="12"><span class="st-nr">4</span><span class="st-pav">Kraštinis uždavinys ir Gryno funkcija</span><span class="st-prog"></span></a></li>
+<li><a href="tema-05.html" data-tema="5" data-uzduociu="12"><span class="st-nr">5</span><span class="st-pav">Paprastųjų diferencialinių lygčių sistemos</span><span class="st-prog"></span></a></li>
+</ol>
+<div class="sonine-dalis">II dalis · Kompleksinė analizė, sumos ir asimptotika</div><ol class="sonine-temos">
+<li><a href="tema-06.html" data-tema="6" data-uzduociu="12"><span class="st-nr">6</span><span class="st-pav">Analizinės funkcijos ir Gama funkcija</span><span class="st-prog"></span></a></li>
+<li><a href="tema-07.html" data-tema="7" data-uzduociu="12"><span class="st-nr">7</span><span class="st-pav">Integravimas kompleksinėje plokštumoje ir Lorano eilutė</span><span class="st-prog"></span></a></li>
+<li><a href="tema-08.html" data-tema="8" data-uzduociu="15"><span class="st-nr">8</span><span class="st-pav">Reziduumai ir jų taikymas integralams</span><span class="st-prog"></span></a></li>
+<li><a href="tema-09.html" data-tema="9" data-uzduociu="12"><span class="st-nr">9</span><span class="st-pav">Begalinės sumos, Hevisaido ir Dirako funkcijos</span><span class="st-prog"></span></a></li>
+<li><a href="tema-10.html" data-tema="10" data-uzduociu="12"><span class="st-nr">10</span><span class="st-pav">Integralo asimptotika: balno metodas ir Stirlingo formulė</span><span class="st-prog"></span></a></li>
+</ol>
+<div class="sonine-dalis">III dalis · Integralinės transformacijos</div><ol class="sonine-temos">
+<li><a href="tema-11.html" data-tema="11" data-uzduociu="12"><span class="st-nr">11</span><span class="st-pav">Furjė transformacija ir sąsūka</span><span class="st-prog"></span></a></li>
+<li><a href="tema-12.html" data-tema="12" data-uzduociu="12"><span class="st-nr">12</span><span class="st-pav">Laplaso transformacija</span><span class="st-prog"></span></a></li>
+</ol>
+<div class="sonine-dalis">IV dalis · Dalinių išvestinių lygtys</div><ol class="sonine-temos">
+<li><a href="tema-13.html" data-tema="13" data-uzduociu="12"><span class="st-nr">13</span><span class="st-pav">Fizikinių vyksmų lygtys: styga ir difuzija</span><span class="st-prog"></span></a></li>
+<li><a href="tema-14.html" data-tema="14" data-uzduociu="12"><span class="st-nr">14</span><span class="st-pav">Dalinių išvestinių lygčių klasifikacija ir D&#x27;Alambero formulė</span><span class="st-prog"></span></a></li>
+<li><a href="tema-15.html" data-tema="15" data-uzduociu="12"><span class="st-nr">15</span><span class="st-pav">Kintamųjų atskyrimo (Furjė) metodas</span><span class="st-prog"></span></a></li>
+<li><a href="tema-16.html" data-tema="16" data-uzduociu="11"><span class="st-nr">16</span><span class="st-pav">Šturmo–Liuvilio uždavinys ir tikrinės funkcijos</span><span class="st-prog"></span></a></li>
+</ol>
+<div class="sonine-dalis">V dalis · Variacinis skaičiavimas</div><ol class="sonine-temos">
+<li><a href="tema-17.html" data-tema="17" data-uzduociu="12"><span class="st-nr">17</span><span class="st-pav">Funkcionalas, variacija ir Eulerio lygtis</span><span class="st-prog"></span></a></li>
+<li><a href="tema-18.html" data-tema="18" data-uzduociu="12"><span class="st-nr">18</span><span class="st-pav">Sąlyginis ekstremumas ir stygos variacinis principas</span><span class="st-prog"></span></a></li>
+<li><a href="tema-19.html" data-tema="19" data-uzduociu="12"><span class="st-nr">19</span><span class="st-pav">Judamieji rėžiai ir ekstremalės su lūžio taškais</span><span class="st-prog"></span></a></li>
+</ol>
+</aside>
+<div class="sonine-uzdanga" hidden></div>
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <button class="meniu" type="button" aria-controls="sonine" aria-expanded="false">☰ Temos</button>
+    <a class="atgal" href="index.html">← Visos temos</a>
+  </div>
+</header>
+<header class="hero">
+  <div class="hero-vidus">
+    <a class="mygtukas grizti" href="pasiruosimas-1.html">← Atgal į rinkinius</a>
+    <p class="antzenklis">Pasiruošimas 1 atsiskaitymui · A-2 ir B-2</p>
+    <h1>2 rinkinys: daugiau tų pačių metodų su posūkiais</h1>
+    <p class="hero-info">7 DL · 6 reziduumų · sprendimai atidengiami po žingsnį</p>
+    <div class="juosta"><div class="juosta-uzpildas"></div></div>
+  </div>
+</header>
+<main class="turinys">
+<p class="rinkinio-intro">Tie patys metodai, tik su kitais posūkiais: trečios eilės lygtis, rezonansas su kompleksinėmis šaknimis, išpjovos kontūras, gudrybė „visų reziduumų suma lygi 0“.</p>
+<div class="rinkinio-pdf"><a class="mygtukas" href="pasiruosimas-1/rinkiniai-2-salygos.pdf" download>⤓ Sąlygos (PDF)</a> <a class="mygtukas" href="pasiruosimas-1/rinkiniai-2-sprendimai.pdf" download>⤓ Sprendimai (PDF)</a></div>
+<details class="atsakymai"><summary>Visi atsakymai (greitam pasitikrinimui)</summary><table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Atsakymas</th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Atsakymas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A2-1</td>
+<td style="text-align: left;"><span
+class="math inline">y=\sqrt{1+2\ln\dfrac{1+e^x}{2}}</span></td>
+<td style="text-align: left;">B2-1</td>
+<td style="text-align: left;"><span class="math inline">\dfrac{8\pi
+i}{25}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A2-2</td>
+<td style="text-align: left;"><span class="math inline">x=y^2\ln
+y</span></td>
+<td style="text-align: left;">B2-2</td>
+<td style="text-align: left;"><span class="math inline">3\pi
+i</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A2-3</td>
+<td style="text-align: left;"><span
+class="math inline">y=xe^x</span></td>
+<td style="text-align: left;">B2-3</td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac{\pi}{e}\approx1{,}1557</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A2-4</td>
+<td style="text-align: left;"><span class="math inline">y=e^x\left(\cos
+x+\dfrac x2\sin x\right)</span></td>
+<td style="text-align: left;">B2-4</td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac{\pi}{6}</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A2-5</td>
+<td style="text-align: left;"><span class="math inline">y=e^x(1-x+x\ln
+x)</span></td>
+<td style="text-align: left;">B2-5</td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac{2\pi}{3\sqrt3}\approx1{,}2092</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A2-6</td>
+<td style="text-align: left;"><span class="math inline">x=\cos t-\sin
+t,\ y=\cos t</span></td>
+<td style="text-align: left;">B2-6</td>
+<td style="text-align: left;"><span
+class="math inline">\dfrac{\pi\operatorname{cth}2\pi}{4}-\dfrac18\approx0{,}6604</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A2-7</td>
+<td style="text-align: left;"><span
+class="math inline">y=\dfrac{x^3}{6}-\dfrac x2</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table></details>
+<h2 class="rinkinio-dalis">Diferencialinės lygtys</h2>
+<div class="deze uzduotis" id="ps1-2-A2-1" data-nr="ps1-2.A2-1">
+<div class="deze-antraste">A2-1 · Atskiriami kintamieji</div>
+<p><span class="math inline">\;(1+e^x)\,y\,y&#39;=e^x,\qquad
+y(0)=1.</span></p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">y\,dy=\dfrac{e^x}{1+e^x}dx\ \Rightarrow\
+\dfrac{y^2}{2}=\ln(1+e^x)+C</span>. Kai <span
+class="math inline">x=0</span>, <span class="math inline">y=1</span>:
+<span class="math inline">\frac12=\ln2+C</span>. Todėl <span
+class="math inline">y^2=1+2\ln(1+e^x)-2\ln2</span>, o šaknies ženklą
+renkamės pagal <span class="math inline">y(0)=1&gt;0</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=\sqrt{1+2\ln\frac{1+e^x}{2}}</span>.</p>
+</div></div>
+<div class="deze uzduotis" id="ps1-2-A2-2" data-nr="ps1-2.A2-2">
+<div class="deze-antraste">A2-2 · Lygtis, tiesinė $x$ atžvilgiu</div>
+<p><span class="math inline">\;y&#39;=\dfrac{y}{2x+y^2},\qquad
+y(0)=1.</span></p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">y</span> atžvilgiu lygtis netiesinė, bet
+apvertę gauname <span
+class="math inline">\dfrac{dx}{dy}=\dfrac{2x+y^2}{y}</span>, t. y. <span
+class="math display">x&#39;-\frac2y\,x=y\qquad(x=x(y)).</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Integruojantis daugiklis <span class="math inline">e^{-\int
+2/y\,dy}=\frac1{y^2}</span>: <span
+class="math inline">\left(\frac{x}{y^2}\right)&#39;=\frac1y</span>,
+todėl <span class="math inline">\frac{x}{y^2}=\ln y+C</span>. Sąlyga:
+kai <span class="math inline">x=0</span>, <span
+class="math inline">y=1</span>, todėl <span
+class="math inline">C=0</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">x=y^2\ln
+y</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<blockquote>
+<p>Požymis: jei <span class="math inline">y&#39;</span> lygus trupmenai,
+kurios <strong>vardiklyje</strong> <span class="math inline">x</span>
+yra tiesiškai, verta apversti lygtį.</p>
+</blockquote>
+</div>
+</div></div>
+<div class="deze uzduotis" id="ps1-2-A2-3" data-nr="ps1-2.A2-3">
+<div class="deze-antraste">A2-3 · Trečios eilės lygtis su rezonansu</div>
+<p><span class="math inline">\;y&#39;&#39;&#39;-y&#39;=2e^x,\qquad
+y(0)=0,\ y&#39;(0)=1,\ y&#39;&#39;(0)=2.</span></p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span
+class="math inline">\lambda^3-\lambda=\lambda(\lambda-1)(\lambda+1)=0</span>:
+<span class="math inline">y_h=C_1+C_2e^x+C_3e^{-x}</span>. Dešinėje
+<span class="math inline">e^x</span>, o 1 yra paprastoji šaknis, todėl
+<span class="math inline">y_p=Axe^x</span>. <span
+class="math inline">y_p&#39;=A(1+x)e^x</span>, <span
+class="math inline">y_p&#39;&#39;&#39;=A(3+x)e^x</span>, todėl <span
+class="math inline">y_p&#39;&#39;&#39;-y_p&#39;=2Ae^x=2e^x</span> ir
+<span class="math inline">A=1</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">y=C_1+C_2e^x+C_3e^{-x}+xe^x</span>.
+Sąlygos: <span class="math inline">y(0)=C_1+C_2+C_3=0</span>, <span
+class="math inline">y&#39;(0)=C_2-C_3+1=1</span>, <span
+class="math inline">y&#39;&#39;(0)=C_2+C_3+2=2</span>. Iš čia <span
+class="math inline">C_2=C_3=0</span>, <span
+class="math inline">C_1=0</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=xe^x</span>.</p>
+</div></div>
+<div class="deze uzduotis" id="ps1-2-A2-4" data-nr="ps1-2.A2-4">
+<div class="deze-antraste">A2-4 · Rezonansas su kompleksinėmis šaknimis</div>
+<p><span class="math inline">\;y&#39;&#39;-2y&#39;+2y=e^x\cos x,\qquad
+y(0)=1,\ y&#39;(0)=1.</span></p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">\lambda^2-2\lambda+2=0</span>, <span
+class="math inline">\lambda=1\pm i</span>. Dešinė pusė <span
+class="math inline">e^x\cos x</span> atitinka <span
+class="math inline">1\pm i</span>, todėl rezonansas: <span
+class="math inline">y_p=xe^x(A\cos x+B\sin x)</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Greitas būdas: <span class="math inline">y=u\,e^x</span>. Tada <span
+class="math inline">D\to D+1</span>: <span
+class="math inline">(D+1)^2-2(D+1)+2=D^2+1</span>, todėl lygtis virsta
+<span class="math display">u&#39;&#39;+u=\cos x\quad\Rightarrow\quad
+u_p=\frac x2\sin x</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>(nes <span class="math inline">(D^2+1)[x\sin x]=2\cos x</span>).
+Bendrasis sprendinys <span class="math inline">y=e^x\left(C_1\cos
+x+C_2\sin x+\frac x2\sin x\right)</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><span class="math inline">y(0)=C_1=1</span>. <span
+class="math inline">y&#39;=e^x(u+u&#39;)</span>, <span
+class="math inline">u&#39;(0)=C_2</span>, todėl <span
+class="math inline">y&#39;(0)=1+C_2=1</span>, <span
+class="math inline">C_2=0</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">y=e^x\left(\cos
+x+\frac x2\sin x\right)</span>.</p>
+</div></div>
+<div class="deze uzduotis" id="ps1-2-A2-5" data-nr="ps1-2.A2-5">
+<div class="deze-antraste">A2-5 · Konstantų varijavimas</div>
+<p><span
+class="math inline">\;y&#39;&#39;-2y&#39;+y=\dfrac{e^x}{x},\qquad
+y(1)=0,\ y&#39;(1)=0.</span></p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">\lambda=1</span> (dviguba): <span
+class="math inline">y_1=e^x</span>, <span
+class="math inline">y_2=xe^x</span>, <span
+class="math inline">W=e^{2x}</span>, <span
+class="math inline">f=\frac{e^x}{x}</span>. <span
+class="math display">C_1&#39;=-\frac{y_2f}{W}=-1,\qquad
+C_2&#39;=\frac{y_1f}{W}=\frac1x.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">C_1=-x+A</span>, <span
+class="math inline">C_2=\ln x+B</span>, todėl <span
+class="math inline">y=e^x\left(A+(B-1)x+x\ln x\right)</span>, t. y.
+<span class="math inline">y=e^x(C_1+C_2x+x\ln x)</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">y(1)=e(C_1+C_2)=0</span>. <span
+class="math inline">y&#39;=e^x(u+u&#39;)</span>, <span
+class="math inline">u&#39;=C_2+\ln x+1</span>, todėl <span
+class="math inline">y&#39;(1)=e(C_1+2C_2+1)=0</span>. Iš čia <span
+class="math inline">C_2=-1</span>, <span
+class="math inline">C_1=1</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">y=e^x(1-x+x\ln
+x)</span>.</p>
+</div></div>
+<div class="deze uzduotis" id="ps1-2-A2-6" data-nr="ps1-2.A2-6">
+<div class="deze-antraste">A2-6 · Sistema su kompleksinėmis tikrinėmis reikšmėmis</div>
+<p><span class="math inline">\;\begin{cases}x&#39;=x-2y,\\
+y&#39;=x-y,\end{cases}\qquad x(0)=1,\ y(0)=1.</span></p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Iš pirmos lygties <span
+class="math inline">y=\frac{x-x&#39;}{2}</span>, <span
+class="math inline">y&#39;=\frac{x&#39;-x&#39;&#39;}{2}</span>. Įstatome
+į antrą: <span
+class="math display">\frac{x&#39;-x&#39;&#39;}{2}=x-\frac{x-x&#39;}{2}\quad\Rightarrow\quad
+x&#39;&#39;+x=0.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">x=C_1\cos t+C_2\sin t</span>. <span
+class="math inline">x(0)=C_1=1</span>, <span
+class="math inline">x&#39;(0)=x(0)-2y(0)=-1=C_2</span>. Taigi <span
+class="math inline">x=\cos t-\sin t</span>, <span
+class="math inline">x&#39;=-\sin t-\cos t</span>, <span
+class="math display">y=\frac{x-x&#39;}{2}=\frac{2\cos t}{2}=\cos
+t.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">x=\cos t-\sin
+t</span>, <span class="math inline">y=\cos t</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<blockquote>
+<p>Patikrinimas per matricą: <span
+class="math inline">\operatorname{tr}=0</span>, <span
+class="math inline">\det=-1+2=1</span>, todėl <span
+class="math inline">\lambda^2+1=0</span>, <span
+class="math inline">\lambda=\pm i</span> ✓.</p>
+</blockquote>
+</div>
+</div></div>
+<div class="deze uzduotis" id="ps1-2-A2-7" data-nr="ps1-2.A2-7">
+<div class="deze-antraste">A2-7 · Gryno funkcija su mišria sąlyga</div>
+<p>Sukonstruokite Gryno funkciją uždaviniui <span
+class="math inline">y&#39;&#39;=f(x)</span>, <span
+class="math inline">y(0)=0</span>, <span
+class="math inline">y&#39;(1)=0</span>, ir su ja išspręskite uždavinį,
+kai <span class="math inline">f(x)=x</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">y_1</span> tenkina <span
+class="math inline">y(0)=0</span>: <span
+class="math inline">y_1=x</span>. <span class="math inline">y_2</span>
+tenkina <span class="math inline">y&#39;(1)=0</span>: <span
+class="math inline">y_2=1</span>. <span
+class="math inline">W=y_1y_2&#39;-y_1&#39;y_2=-1</span>. <span
+class="math display">G(x,s)=\begin{cases}-x, &amp; 0\le x\le s,\\ -s,
+&amp; s\le x\le1.\end{cases}</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Kai <span class="math inline">f=x</span>: <span
+class="math display">y=\int_0^1G(x,s)\,s\,ds=-\int_0^x s\cdot
+s\,ds-x\int_x^1 s\,ds=-\frac{x^3}{3}-\frac{x(1-x^2)}{2}.</span></p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">y=\dfrac{x^3}{6}-\dfrac x2</span>. Patikrinimas:
+<span class="math inline">y&#39;&#39;=x</span>, <span
+class="math inline">y(0)=0</span>, <span
+class="math inline">y&#39;(1)=\frac12-\frac12=0</span> ✓.</p>
+</div></div>
+<h2 class="rinkinio-dalis">Reziduumai</h2>
+<div class="deze uzduotis" id="ps1-2-B2-1" data-nr="ps1-2.B2-1">
+<div class="deze-antraste">B2-1 · Du keliai: tiesiogiai arba per likusį polių</div>
+<p><span
+class="math inline">\displaystyle\oint_{|z|=3/2}\frac{dz}{(z^2+1)(z-2)^2}.</span></p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Kontūro <span class="math inline">|z|=\frac32</span> viduje yra <span
+class="math inline">\pm i</span>, o <span class="math inline">z=2</span>
+yra išorėje.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><strong>Tiesiogiai:</strong> <span
+class="math inline">\operatorname*{Res}_i=\frac{1}{2i(i-2)^2}=\frac{1}{2i(3-4i)}=\frac{1}{8+6i}=\frac{8-6i}{100}</span>,
+<span
+class="math inline">\operatorname*{Res}_{-i}=\frac{1}{-2i(3+4i)}=\frac{1}{8-6i}=\frac{8+6i}{100}</span>.
+Suma <span class="math inline">\frac{16}{100}=\frac{4}{25}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><strong>Greičiau:</strong> funkcija begalybėje mažėja kaip <span
+class="math inline">\frac1{z^4}</span>, todėl visų reziduumų suma lygi 0
+ir <span
+class="math display">\operatorname*{Res}_i+\operatorname*{Res}_{-i}=-\operatorname*{Res}_{2}=-\frac{d}{dz}\frac{1}{z^2+1}\Big|_{z=2}=\frac{2z}{(z^2+1)^2}\Big|_{2}=\frac{4}{25}.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">2\pi
+i\cdot\frac{4}{25}=\dfrac{8\pi i}{25}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">5 žingsnis</div>
+<blockquote>
+<p>Taisyklė: jei <span class="math inline">f\sim\frac{1}{z^2}</span> ar
+greičiau begalybėje, tai visų baigtinių polių reziduumų suma lygi 0. Tai
+leidžia skaičiuoti vieną lengvą reziduumą vietoje kelių sunkių.</p>
+</blockquote>
+</div>
+</div></div>
+<div class="deze uzduotis" id="ps1-2-B2-2" data-nr="ps1-2.B2-2">
+<div class="deze-antraste">B2-2 · Esminis taškas ne nulyje</div>
+<p><span
+class="math inline">\displaystyle\oint_{|z|=2}z\,e^{\frac{1}{z-1}}\,dz.</span></p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span class="math inline">z=1</span> yra esminis taškas (jis kontūro
+viduje). Pažymime <span class="math inline">w=z-1</span>, tada <span
+class="math inline">z=w+1</span> ir <span
+class="math display">(w+1)\,e^{1/w}=(w+1)\left(1+\frac1w+\frac1{2w^2}+\dots\right).</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Narys <span class="math inline">w^{-1}</span>: iš <span
+class="math inline">w\cdot\frac{1}{2w^2}</span> gauname <span
+class="math inline">\frac12</span>, o iš <span
+class="math inline">1\cdot\frac1w</span> gauname <span
+class="math inline">1</span>. Taigi <span
+class="math inline">c_{-1}=\frac32</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">2\pi
+i\cdot\frac32=3\pi i</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<blockquote>
+<p>Dažna klaida: paimti tik <span class="math inline">\frac1w</span>
+narį ir pamiršti, kad daugiklį <span class="math inline">z</span> irgi
+reikia išreikšti per <span class="math inline">w</span>.</p>
+</blockquote>
+</div>
+</div></div>
+<div class="deze uzduotis" id="ps1-2-B2-3" data-nr="ps1-2.B2-3">
+<div class="deze-antraste">B2-3 · Žordano lema ir antros eilės polius</div>
+<p><span
+class="math inline">\displaystyle\int_{-\infty}^{\infty}\frac{\cos
+x}{(x^2+1)^2}\,dx.</span></p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span
+class="math inline">I=\operatorname{Re}\displaystyle\int_{-\infty}^{\infty}\frac{e^{ix}}{(x^2+1)^2}dx</span>.
+Viršutinėje pusplokštumėje yra <span class="math inline">z=i</span>,
+antros eilės polius: <span
+class="math display">\operatorname*{Res}_{i}=\frac{d}{dz}\frac{e^{iz}}{(z+i)^2}\Big|_{z=i}=\frac{ie^{iz}(z+i)-2e^{iz}}{(z+i)^3}\Big|_{z=i}=\frac{e^{-1}(i\cdot2i-2)}{(2i)^3}=\frac{-4e^{-1}}{-8i}=-\frac{i}{2e}.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">\displaystyle\int=2\pi
+i\cdot\left(-\frac{i}{2e}\right)=\frac{\pi}{e}</span>, ir jis jau
+realus.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">I=\dfrac{\pi}{e}</span>.</p>
+</div></div>
+<div class="deze uzduotis" id="ps1-2-B2-4" data-nr="ps1-2.B2-4">
+<div class="deze-antraste">B2-4 · $\int_0^{2\pi}$ su $\cos2\theta$ skaitiklyje</div>
+<p><span
+class="math inline">\displaystyle\int_0^{2\pi}\frac{\cos2\theta}{5-4\cos\theta}\,d\theta.</span></p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Kadangi vardiklis realus, <span
+class="math inline">I=\operatorname{Re}\displaystyle\int_0^{2\pi}\frac{e^{2i\theta}}{5-4\cos\theta}d\theta</span>,
+o <span class="math inline">e^{2i\theta}=z^2</span>. Taip išvengiame
+trečios eilės poliaus nulyje, kurį duotų <span
+class="math inline">\cos2\theta=\frac{z^2+z^{-2}}{2}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span
+class="math inline">5-4\cos\theta=5-2z-\frac2z=-\frac{(2z-1)(z-2)}{z}</span>,
+todėl <span
+class="math display">\oint_{|z|=1}z^2\cdot\frac{-z}{(2z-1)(z-2)}\cdot\frac{dz}{iz}=\oint_{|z|=1}\frac{i\,z^2\,dz}{(2z-1)(z-2)}.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Viduje tik <span class="math inline">z=\frac12</span>: <span
+class="math inline">\operatorname{Res}=\dfrac{i\cdot\frac14}{2\left(\frac12-2\right)}=-\dfrac{i}{12}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><span class="math inline">2\pi
+i\cdot\left(-\frac{i}{12}\right)=\frac\pi6</span>.
+<strong>Atsakymas:</strong> <span
+class="math inline">I=\dfrac{\pi}{6}</span>.</p>
+</div>
+</div></div>
+<div class="deze uzduotis" id="ps1-2-B2-5" data-nr="ps1-2.B2-5">
+<div class="deze-antraste">B2-5 · Išpjovos kontūras</div>
+<p><span
+class="math inline">\displaystyle\int_0^{\infty}\frac{dx}{1+x^3}</span>
+(kontūras: išpjova su kampu <span
+class="math inline">\frac{2\pi}{3}</span>).</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Kontūras: <span class="math inline">[0,R]</span>, lankas <span
+class="math inline">|z|=R</span> iki kampo <span
+class="math inline">\frac{2\pi}{3}</span> ir spindulys atgal į 0. Ant
+spindulio <span class="math inline">z=re^{2\pi i/3}</span>, <span
+class="math inline">z^3=r^3</span>, <span class="math inline">dz=e^{2\pi
+i/3}dr</span>, todėl jis duoda <span class="math inline">-e^{2\pi
+i/3}I</span>. Lanko indėlis <span class="math inline">\to0</span>
+(vardiklio laipsnis 3).</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Viduje tik <span class="math inline">z_0=e^{i\pi/3}</span>: <span
+class="math inline">\operatorname{Res}=\frac{1}{3z_0^2}=\frac{z_0}{3z_0^3}=-\frac{e^{i\pi/3}}{3}</span>.
+<span class="math display">\left(1-e^{2\pi i/3}\right)I=-\frac{2\pi
+i}{3}e^{i\pi/3}.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><span class="math inline">1-e^{2\pi
+i/3}=e^{i\pi/3}\left(e^{-i\pi/3}-e^{i\pi/3}\right)=-2i\sin\frac\pi3\,e^{i\pi/3}</span>,
+todėl <span class="math display">I=\frac{-\frac{2\pi
+i}{3}}{-2i\sin\frac\pi3}=\frac{\pi}{3\sin\frac\pi3}=\frac{2\pi}{3\sqrt3}.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">I=\dfrac{2\pi}{3\sqrt3}\approx1{,}2092</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">5 žingsnis</div>
+<blockquote>
+<p>Kampą renkamės taip, kad ant antro spindulio <span
+class="math inline">z^3</span> liktų tas pats: <span
+class="math inline">e^{3i\varphi}=1</span>, <span
+class="math inline">\varphi=\frac{2\pi}{3}</span>.</p>
+</blockquote>
+</div>
+</div></div>
+<div class="deze uzduotis" id="ps1-2-B2-6" data-nr="ps1-2.B2-6">
+<div class="deze-antraste">B2-6 · Suma</div>
+<p><span
+class="math inline">\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+4}.</span></p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span
+class="math inline">\displaystyle\sum_{n=-\infty}^{\infty}\frac{1}{n^2+4}=-\sum_{z=\pm2i}\operatorname{Res}\frac{\pi\operatorname{ctg}\pi
+z}{z^2+4}.</span> Naudojame <span
+class="math inline">\operatorname{ctg}(iy)=-i\operatorname{cth}y</span>:
+<span
+class="math display">\operatorname*{Res}_{2i}=\frac{\pi\operatorname{ctg}(2\pi
+i)}{4i}=\frac{-i\pi\operatorname{cth}2\pi}{4i}=-\frac{\pi\operatorname{cth}2\pi}{4},\qquad
+\operatorname*{Res}_{-2i}=\frac{\pi\cdot
+i\operatorname{cth}2\pi}{-4i}=-\frac{\pi\operatorname{cth}2\pi}{4}.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Todėl <span
+class="math inline">\displaystyle\sum_{-\infty}^{\infty}=\frac{\pi\operatorname{cth}2\pi}{2}</span>.
+Atimame narį <span class="math inline">n=0</span> (<span
+class="math inline">\frac14</span>) ir daliname iš 2: <span
+class="math display">\sum_{n=1}^{\infty}\frac{1}{n^2+4}=\frac{\pi\operatorname{cth}2\pi}{4}-\frac18\approx0{,}6604.</span></p>
+</div>
+</div></div>
+</main>
+<nav class="puslapiai" aria-label="Kiti rinkiniai">
+  <a class="puslapis-ankstesnis" href="pasiruosimas-1.html"><span>← Atgal</span><strong>Visi rinkiniai</strong></a>
+  <a class="puslapis-kitas" href="pasiruosimas-1-rinkinys-3.html"><span>Kitas →</span><strong>3 rinkinys</strong></a>
+</nav>
+<script src="svetaine.js?v=3"></script>
+
+</body>
+</html>
