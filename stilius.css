@@ -424,26 +424,34 @@ svg.grafikas polygon { stroke: none; }
 .pasiruosimas .planas > summary::after { content: "Rodyti ▾"; font-weight: 600; text-transform: none; letter-spacing: 0; color: var(--pilka); }
 .pasiruosimas .planas[open] > summary::after { content: "Slėpti ▴"; }
 .pasiruosimas .planas[open] > summary { margin-bottom: .9rem; }
-.pasiruosimas .planas table, .pasiruosimas .atsakymai table { width: 100%; border-collapse: collapse; font-size: .92rem; display: block; overflow-x: auto; }
-.pasiruosimas .planas td, .pasiruosimas .planas th, .pasiruosimas .atsakymai td, .pasiruosimas .atsakymai th {
+.pasiruosimas .metodai table, .pasiruosimas .atsakymai table { width: 100%; border-collapse: collapse; font-size: .92rem; display: block; overflow-x: auto; }
+.pasiruosimas .metodai td, .pasiruosimas .metodai th, .pasiruosimas .atsakymai td, .pasiruosimas .atsakymai th {
   border-bottom: 1px solid var(--linija); padding: .5rem .6rem; text-align: left; vertical-align: top;
 }
-.pasiruosimas .planas th, .pasiruosimas .atsakymai th { font-family: var(--ui-sriftas); font-size: .82rem; color: var(--pilka); }
+.pasiruosimas .metodai th, .pasiruosimas .atsakymai th { font-family: var(--ui-sriftas); font-size: .82rem; color: var(--pilka); }
 .pasiruosimas .bandomieji { font: .92rem/1.7 var(--ui-sriftas); }
 
 .pasirink { font-size: 1.35rem; margin: 3rem 0 1rem; }
 .rinkiniu-pasirinkimas { display: grid; gap: .9rem; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); margin-bottom: 1rem; }
 .rinkinio-mygtukas {
-  display: flex; flex-direction: column; align-items: flex-start; gap: .35rem; text-align: left;
-  padding: 1.1rem 1.2rem; border-radius: var(--spindulys); font-weight: 400; line-height: 1.35;
+  display: flex; flex-direction: column; align-items: flex-start; gap: .4rem; text-align: left;
+  padding: 1.2rem 1.25rem 1.1rem; border-radius: var(--spindulys); line-height: 1.35;
+  background: var(--pavirsius); border: 1.5px solid var(--linija); color: var(--tekstas);
+  text-decoration: none; box-shadow: var(--seselis); transition: transform .15s ease, border-color .15s ease;
 }
+.rinkinio-mygtukas:hover { transform: translateY(-3px); border-color: var(--akcentas); }
+.rinkinio-mygtukas.rm-klases:hover { border-color: var(--pavyzdys); }
+.rinkinio-mygtukas > span { display: block; }
+.rm-eiti { margin-top: auto; padding-top: .4rem; font: 600 .9rem var(--ui-sriftas); color: var(--akcentas); }
+.rm-klases .rm-eiti { color: var(--pavyzdys); }
+.grizti { margin-bottom: 1.5rem; font-size: 14px; padding: .55rem .9rem; }
 .rinkinio-mygtukas.pasirinktas {
   border-color: var(--akcentas); box-shadow: 0 0 0 1.5px var(--akcentas), var(--seselis);
   background: color-mix(in srgb, var(--akcentas) 6%, var(--pavirsius));
 }
 .rm-zenklas { font: 700 .72rem/1 var(--ui-sriftas); text-transform: uppercase; letter-spacing: .1em; color: var(--akcentas);
   background: color-mix(in srgb, var(--akcentas) 12%, transparent); padding: .3rem .5rem; border-radius: 6px; }
-.rm-zenklas.rm-klase { color: var(--pavyzdys); background: color-mix(in srgb, var(--pavyzdys) 14%, transparent); }
+.rm-klases .rm-zenklas { color: var(--pavyzdys); background: color-mix(in srgb, var(--pavyzdys) 14%, transparent); }
 .rm-pav { font: 700 1.1rem var(--ui-sriftas); }
 .rm-apr { font: .9rem/1.4 var(--ui-sriftas); color: var(--pilka); }
 .rm-info { font: 500 .8rem var(--ui-sriftas); color: var(--pilka); }
@@ -452,7 +460,7 @@ svg.grafikas polygon { stroke: none; }
 .rinkinio-antraste { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: .75rem 1rem;
   margin: 2.5rem 0 1rem; padding-bottom: .6rem; border-bottom: 1px solid var(--linija); }
 .rinkinio-antraste h2 { margin: 0; font-size: 1.5rem; }
-.rinkinio-pdf { display: flex; flex-wrap: wrap; gap: .5rem; }
+.rinkinio-pdf { margin: 1rem 0; display: flex; flex-wrap: wrap; gap: .5rem; }
 .rinkinio-pdf .mygtukas { font-size: 13px; padding: .5rem .8rem; }
 .rinkinio-intro { font-size: 1rem; color: var(--pilka); }
 .rinkinio-intro.klases { color: var(--tekstas); padding: .9rem 1.1rem; border-radius: 10px;
@@ -460,8 +468,12 @@ svg.grafikas polygon { stroke: none; }
 .atsakymai { margin: 1rem 0 0; font-family: var(--ui-sriftas); }
 .atsakymai summary { cursor: pointer; font-weight: 600; font-size: .92rem; color: var(--akcentas); }
 .atsakymai[open] summary { margin-bottom: .6rem; }
-.rinkinio-dalis { font-size: 1.15rem; margin: 2.5rem 0 -.5rem; color: var(--pilka); text-transform: uppercase; letter-spacing: .08em; font-size: .85rem; }
+.turinys > h2.rinkinio-dalis { border: 0; padding: 0; margin: 3rem 0 -.5rem; color: var(--pilka); text-transform: uppercase; letter-spacing: .08em; font-size: .85rem; }
 .pasiruosimas .uzduotis .deze-antraste .lygis { font-style: italic; }
 @media (max-width: 560px) {
   .deze { padding: 1.1rem 1.1rem 1.2rem; }
 }
+
+.rm-zenklas { align-self: flex-start; width: auto; }
+.pasiruosimas .bandomieji { margin: .5rem 0 2.5rem; }
+.pasiruosimas .rinkiniu-pasirinkimas { margin-bottom: 1.25rem; }
