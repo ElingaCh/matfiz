@@ -25,12 +25,11 @@ integralams · Matfizo pratybos</title>
 </script>
 <link rel="stylesheet" href="katex/katex.min.css" />
 </head>
-<body class="temos-puslapis su-sonine" data-tema="8" data-uzduociu="15">
+<body class="temos-puslapis su-sonine" data-tema="8" data-uzduociu="18">
 <aside class="sonine" id="sonine" aria-label="Temos">
 <div class="sonine-virsus"><a class="sonine-namai" href="index.html">Matfizo pratybos</a><button class="sonine-uzdaryti" type="button" aria-label="Uždaryti">×</button></div>
 <a class="sonine-atmintine" href="atmintine.html">∑ Formulių atmintinė</a>
 <a class="sonine-atmintine sonine-svarbu" href="pasiruosimas-1.html">🎯 Pasiruošimas 1 atsiskaitymui</a>
-<a class="sonine-atmintine" href="pratybos-09.html">✎ 9 pratybų sprendimai</a>
 <a class="sonine-atmintine" href="kotletas.html">🍽 Kotleto receptas</a>
 <div class="sonine-dalis">I dalis · Koordinatės ir paprastosios diferencialinės lygtys</div><ol class="sonine-temos">
 <li><a href="tema-01.html" data-tema="1" data-uzduociu="13"><span class="st-nr">1</span><span class="st-pav">Kreivinės koordinatės ir vektorinės operacijos</span><span class="st-prog"></span></a></li>
@@ -42,7 +41,7 @@ integralams · Matfizo pratybos</title>
 <div class="sonine-dalis">II dalis · Kompleksinė analizė, sumos ir asimptotika</div><ol class="sonine-temos">
 <li><a href="tema-06.html" data-tema="6" data-uzduociu="12"><span class="st-nr">6</span><span class="st-pav">Analizinės funkcijos ir Gama funkcija</span><span class="st-prog"></span></a></li>
 <li><a href="tema-07.html" data-tema="7" data-uzduociu="12"><span class="st-nr">7</span><span class="st-pav">Integravimas kompleksinėje plokštumoje ir Lorano eilutė</span><span class="st-prog"></span></a></li>
-<li><a href="tema-08.html" data-tema="8" data-uzduociu="15" class="aktyvi" aria-current="page"><span class="st-nr">8</span><span class="st-pav">Reziduumai ir jų taikymas integralams</span><span class="st-prog"></span></a></li>
+<li><a href="tema-08.html" data-tema="8" data-uzduociu="18" class="aktyvi" aria-current="page"><span class="st-nr">8</span><span class="st-pav">Reziduumai ir jų taikymas integralams</span><span class="st-prog"></span></a></li>
 <li><a href="tema-09.html" data-tema="9" data-uzduociu="12"><span class="st-nr">9</span><span class="st-pav">Begalinės sumos, Hevisaido ir Dirako funkcijos</span><span class="st-prog"></span></a></li>
 <li><a href="tema-10.html" data-tema="10" data-uzduociu="12"><span class="st-nr">10</span><span class="st-pav">Integralo asimptotika: balno metodas ir Stirlingo formulė</span><span class="st-prog"></span></a></li>
 </ol>
@@ -76,6 +75,7 @@ integralams · Matfizo pratybos</title>
       <a href="#pavyzdziai">Pavyzdžiai</a>
       <a href="#uzduotys">Užduotys</a>
       <a href="#papildomi">Papildomi</a>
+      <a href="#pratybų-uždaviniai">Pratybos</a>
     </nav>
     <span class="temos-progresas" aria-live="polite"></span>
   </div>
@@ -86,7 +86,7 @@ integralams · Matfizo pratybos</title>
     <p class="antzenklis">8 tema · Kompleksinė analizė, sumos ir
 asimptotika</p>
     <h1>Reziduumai ir jų taikymas integralams</h1>
-    <p class="hero-info">3 išspręsti pavyzdžiai · 15 užduotys · sprendimai atidengiami po žingsnį</p>
+    <p class="hero-info">3 išspręsti pavyzdžiai · 18 užduotys · sprendimai atidengiami po žingsnį</p>
     <div class="juosta"><div class="juosta-uzpildas"></div></div>
   </div>
 </header>
@@ -1026,6 +1026,133 @@ class="math inline">z=ia</span> yra antros eilės polius).</p>
 </div>
 <p><strong>Atsakymas:</strong> <span class="math inline">\displaystyle
 I=\frac{\pi}{b^2-a^2}\left(\frac{e^{-a}}{a}-\frac{e^{-b}}{b}\right)</span>.</p>
+</div>
+</div>
+<h2 id="pratybos-9">9 pratybų uždaviniai</h2>
+<div class="deze uzduotis" id="uzd-8-16" data-nr="8.16"><div class="deze-antraste">8.16 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Apskaičiuokite <span class="math inline">\displaystyle
+I=\int_0^{2\pi}e^{\cos\theta}\cos(n\theta-\sin\theta)\,d\theta</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Keitinys <span class="math inline">z=e^{i\theta}</span>, <span
+class="math inline">d\theta=\dfrac{dz}{iz}</span>: <span
+class="math inline">e^{\cos\theta}e^{i(n\theta-\sin\theta)}=e^{\cos\theta-i\sin\theta}e^{in\theta}=e^{1/z}z^n</span>,
+todėl</p>
+<p><span
+class="math display">I=\operatorname{Re}\frac1i\oint_{|z|=1}z^{n-1}e^{1/z}\,dz
+.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">z=0</span> yra esminis taškas. <span
+class="math inline">e^{1/z}=\sum_k \dfrac{1}{k!\,z^k}</span>,
+koeficientas prie <span class="math inline">1/z</span> gaunamas iš nario
+<span class="math inline">k=n</span>: <span
+class="math inline">\operatorname{Res}_{0}=\dfrac1{n!}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math display">I=\frac1i\cdot2\pi
+i\cdot\frac1{n!}=\boxed{\frac{2\pi}{n!}}</span></p>
+<blockquote>
+<p>Pratybose užrašytas „<span
+class="math inline">\frac1{n!}\cdot\frac1z</span>“ yra Lorano eilutės
+narys su <span class="math inline">1/z</span> (t. y. reziduumas), o pats
+integralas lygus <span class="math inline">2\pi/n!</span>. Skaitiškai:
+<span class="math inline">n=2</span> duoda <span
+class="math inline">\pi</span>.</p>
+</blockquote>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-8-17" data-nr="8.17"><div class="deze-antraste">8.17 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Apskaičiuokite <span class="math inline">\displaystyle
+I=\int_0^{2\pi}\frac{\sin^2\theta\,d\theta}{a+b\cos\theta},\quad
+a&gt;b&gt;0</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><span
+class="math inline">\sin^2\theta=-\dfrac{(z^2-1)^2}{4z^2}</span>, <span
+class="math inline">a+b\cos\theta=\dfrac{bz^2+2az+b}{2z}</span>:</p>
+<p><span
+class="math display">I=\oint_{|z|=1}\frac{i\,(z^2-1)^2\,dz}{2b\,z^2(z-z_1)(z-z_2)},\qquad
+z_{1,2}=\frac{-a\pm\sqrt{a^2-b^2}}{b},\ z_1z_2=1.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Viduje: <span class="math inline">z=0</span> (II eilės polius) ir
+<span class="math inline">z_1=\frac{-a+\sqrt{a^2-b^2}}{b}</span>. <span
+class="math inline">\operatorname{Res}_0=-\dfrac{ia}{b^2}</span>, <span
+class="math inline">\operatorname{Res}_{z_1}=\dfrac{i\sqrt{a^2-b^2}}{b^2}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math display">I=2\pi
+i\left(\operatorname{Res}_0+\operatorname{Res}_{z_1}\right)=\boxed{\frac{2\pi\left(a-\sqrt{a^2-b^2}\right)}{b^2}}</span></p>
+<blockquote>
+<p>Pratybose užrašytas „<span
+class="math inline">2\pi^2(a-\sqrt{a^2-b^2})</span>“ greičiausiai
+klaidingas: turi būti <span class="math inline">\pi</span> (ne <span
+class="math inline">\pi^2</span>) ir dar dalyba iš <span
+class="math inline">b^2</span>. Patikrinimai: kai <span
+class="math inline">b\to0</span>, gaunam <span
+class="math inline">\pi/a</span> (teisinga); <span
+class="math inline">a=3,\ b=2</span> duoda <span
+class="math inline">\approx1{,}2000</span>, kaip ir skaitinis
+integralas.</p>
+</blockquote>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-8-18" data-nr="8.18"><div class="deze-antraste">8.18 užduotis (namų darbas) <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Apskaičiuokite <span class="math inline">\displaystyle
+I=\int_{-\infty}^{\infty}\frac{\cos px-\cos qx}{x^2}\,dx,\quad
+p,q&gt;0</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><strong>Kosinusus keičiame eksponentėmis:</strong> <span
+class="math inline">f(z)=\dfrac{e^{ipz}-e^{iqz}}{z^2}</span>, <span
+class="math inline">I=\operatorname{Re}\,\mathrm{v.p.}\!\int_{-\infty}^{\infty}f(x)\,dx</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><strong>Kuri eksponentė kur gęsta:</strong> <span
+class="math inline">|e^{ipz}|=e^{-py}</span>. Kai <span
+class="math inline">p&gt;0</span> (ir <span
+class="math inline">q&gt;0</span>) abi eksponentės gęsta viršutinėje
+pusplokštumėje, todėl kontūrą uždarome viršutiniu pusapskritimiu; pagal
+Žordano lemą jo integralas <span class="math inline">\to0</span>. Jei
+<span class="math inline">p&lt;0</span>, <span
+class="math inline">e^{ipz}</span> gęstų apatinėje pusplokštumėje;
+kadangi <span class="math inline">\cos</span> lyginė, visada galima imti
+<span class="math inline">|p|,|q|</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><strong>Ypatingas taškas</strong> <span
+class="math inline">z=0</span> (vardiklis <span
+class="math inline">z^2</span>) guli ant kontūro. Skaitiklis taške 0
+lygus 0, todėl polius iš tikrųjų pirmos eilės: <span
+class="math display">e^{ipz}-e^{iqz}=i(p-q)z+\frac{q^2-p^2}{2}z^2+\dots\
+\Rightarrow\ f(z)=\frac{i(p-q)}{z}+\frac{q^2-p^2}{2}+\dots,\qquad
+\operatorname{Res}_0=i(p-q).</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><strong>Kontūras:</strong> <span
+class="math inline">[-R,-\varepsilon]</span> + mažas viršutinis
+pusapskritimis aplink 0 + <span
+class="math inline">[\varepsilon,R]</span> + didelis pusapskritimis.
+Viduje ypatingų taškų nėra, todėl suma lygi 0. Mažas pusapskritimis
+(pagal laikrodžio rodyklę) duoda <span class="math inline">-\pi
+i\operatorname{Res}_0</span>, taigi polius ant kontūro įneša <span
+class="math inline">\pi i\operatorname{Res}</span>: <span
+class="math display">\mathrm{v.p.}\!\int_{-\infty}^{\infty}f(x)\,dx=\pi
+i\cdot i(p-q)=\pi(q-p).</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">5 žingsnis</div>
+<p>Rezultatas realus. Menamoji dalis <span
+class="math inline">\int\frac{\sin px-\sin qx}{x^2}dx</span> yra
+nelyginės funkcijos integralas, lygus 0. Pradinis integrandas taške 0
+baigtinis (<span class="math inline">\to\frac{q^2-p^2}{2}</span>), todėl
+<span class="math inline">I</span> yra paprastas konverguojantis
+integralas.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math display">\boxed{I=\pi(q-p)}\qquad\text{bendrai }
+I=\pi\left(|q|-|p|\right).</span></p>
+<blockquote>
+<p>Skaitiškai: <span class="math inline">p=1,\ q=3</span> duoda <span
+class="math inline">2\pi\approx6{,}283</span>.</p>
+</blockquote>
 </div>
 </div>
 </main>
