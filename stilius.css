@@ -477,3 +477,12 @@ svg.grafikas polygon { stroke: none; }
 .rm-zenklas { align-self: flex-start; width: auto; }
 .pasiruosimas .bandomieji { margin: .5rem 0 2.5rem; }
 .pasiruosimas .rinkiniu-pasirinkimas { margin-bottom: 1.25rem; }
+
+/* ---------- Kotleto receptas ---------- */
+.citatos-nuoroda { display: inline-block; margin-top: .5rem; font: 500 .9rem var(--ui-sriftas); font-style: normal; color: var(--akcentas); text-decoration: none; }
+.citatos-nuoroda:hover { text-decoration: underline; }
+.kotleto-puslapis .deze table { width: 100%; border-collapse: collapse; font-size: .95rem; display: block; overflow-x: auto; }
+.kotleto-puslapis .deze td, .kotleto-puslapis .deze th { border-bottom: 1px solid var(--linija); padding: .5rem .6rem; text-align: left; vertical-align: top; }
+.kotleto-puslapis .deze th { font-family: var(--ui-sriftas); font-size: .82rem; color: var(--pilka); }
+.kotleto-puslapis .hero .citata { margin: 0 0 1rem; }
+.receptas { --c: var(--uzduotis); }
