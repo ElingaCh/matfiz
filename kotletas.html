@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kotleto receptas · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css?v=4">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="priedo-puslapis su-sonine kotleto-puslapis">
+<aside class="sonine" id="sonine" aria-label="Temos">
+<div class="sonine-virsus"><a class="sonine-namai" href="index.html">Matfizo pratybos</a><button class="sonine-uzdaryti" type="button" aria-label="Uždaryti">×</button></div>
+<a class="sonine-atmintine" href="atmintine.html">∑ Formulių atmintinė</a>
+<a class="sonine-atmintine sonine-svarbu" href="pasiruosimas-1.html">🎯 Pasiruošimas 1 atsiskaitymui</a>
+<a class="sonine-atmintine" href="pratybos-09.html">✎ 9 pratybų sprendimai</a>
+<a class="sonine-atmintine aktyvi" href="kotletas.html">🍽 Kotleto receptas</a>
+<div class="sonine-dalis">I dalis · Koordinatės ir paprastosios diferencialinės lygtys</div><ol class="sonine-temos">
+<li><a href="tema-01.html" data-tema="1" data-uzduociu="13"><span class="st-nr">1</span><span class="st-pav">Kreivinės koordinatės ir vektorinės operacijos</span><span class="st-prog"></span></a></li>
+<li><a href="tema-02.html" data-tema="2" data-uzduociu="12"><span class="st-nr">2</span><span class="st-pav">Pirmos eilės diferencialinės lygtys</span><span class="st-prog"></span></a></li>
+<li><a href="tema-03.html" data-tema="3" data-uzduociu="12"><span class="st-nr">3</span><span class="st-pav">Antros ir aukštesnės eilės tiesinės diferencialinės lygtys</span><span class="st-prog"></span></a></li>
+<li><a href="tema-04.html" data-tema="4" data-uzduociu="12"><span class="st-nr">4</span><span class="st-pav">Kraštinis uždavinys ir Gryno funkcija</span><span class="st-prog"></span></a></li>
+<li><a href="tema-05.html" data-tema="5" data-uzduociu="12"><span class="st-nr">5</span><span class="st-pav">Paprastųjų diferencialinių lygčių sistemos</span><span class="st-prog"></span></a></li>
+</ol>
+<div class="sonine-dalis">II dalis · Kompleksinė analizė, sumos ir asimptotika</div><ol class="sonine-temos">
+<li><a href="tema-06.html" data-tema="6" data-uzduociu="12"><span class="st-nr">6</span><span class="st-pav">Analizinės funkcijos ir Gama funkcija</span><span class="st-prog"></span></a></li>
+<li><a href="tema-07.html" data-tema="7" data-uzduociu="12"><span class="st-nr">7</span><span class="st-pav">Integravimas kompleksinėje plokštumoje ir Lorano eilutė</span><span class="st-prog"></span></a></li>
+<li><a href="tema-08.html" data-tema="8" data-uzduociu="15"><span class="st-nr">8</span><span class="st-pav">Reziduumai ir jų taikymas integralams</span><span class="st-prog"></span></a></li>
+<li><a href="tema-09.html" data-tema="9" data-uzduociu="12"><span class="st-nr">9</span><span class="st-pav">Begalinės sumos, Hevisaido ir Dirako funkcijos</span><span class="st-prog"></span></a></li>
+<li><a href="tema-10.html" data-tema="10" data-uzduociu="12"><span class="st-nr">10</span><span class="st-pav">Integralo asimptotika: balno metodas ir Stirlingo formulė</span><span class="st-prog"></span></a></li>
+</ol>
+<div class="sonine-dalis">III dalis · Integralinės transformacijos</div><ol class="sonine-temos">
+<li><a href="tema-11.html" data-tema="11" data-uzduociu="12"><span class="st-nr">11</span><span class="st-pav">Furjė transformacija ir sąsūka</span><span class="st-prog"></span></a></li>
+<li><a href="tema-12.html" data-tema="12" data-uzduociu="12"><span class="st-nr">12</span><span class="st-pav">Laplaso transformacija</span><span class="st-prog"></span></a></li>
+</ol>
+<div class="sonine-dalis">IV dalis · Dalinių išvestinių lygtys</div><ol class="sonine-temos">
+<li><a href="tema-13.html" data-tema="13" data-uzduociu="12"><span class="st-nr">13</span><span class="st-pav">Fizikinių vyksmų lygtys: styga ir difuzija</span><span class="st-prog"></span></a></li>
+<li><a href="tema-14.html" data-tema="14" data-uzduociu="12"><span class="st-nr">14</span><span class="st-pav">Dalinių išvestinių lygčių klasifikacija ir D&#x27;Alambero formulė</span><span class="st-prog"></span></a></li>
+<li><a href="tema-15.html" data-tema="15" data-uzduociu="12"><span class="st-nr">15</span><span class="st-pav">Kintamųjų atskyrimo (Furjė) metodas</span><span class="st-prog"></span></a></li>
+<li><a href="tema-16.html" data-tema="16" data-uzduociu="11"><span class="st-nr">16</span><span class="st-pav">Šturmo–Liuvilio uždavinys ir tikrinės funkcijos</span><span class="st-prog"></span></a></li>
+</ol>
+<div class="sonine-dalis">V dalis · Variacinis skaičiavimas</div><ol class="sonine-temos">
+<li><a href="tema-17.html" data-tema="17" data-uzduociu="12"><span class="st-nr">17</span><span class="st-pav">Funkcionalas, variacija ir Eulerio lygtis</span><span class="st-prog"></span></a></li>
+<li><a href="tema-18.html" data-tema="18" data-uzduociu="12"><span class="st-nr">18</span><span class="st-pav">Sąlyginis ekstremumas ir stygos variacinis principas</span><span class="st-prog"></span></a></li>
+<li><a href="tema-19.html" data-tema="19" data-uzduociu="12"><span class="st-nr">19</span><span class="st-pav">Judamieji rėžiai ir ekstremalės su lūžio taškais</span><span class="st-prog"></span></a></li>
+</ol>
+</aside>
+<div class="sonine-uzdanga" hidden></div>
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <button class="meniu" type="button" aria-controls="sonine" aria-expanded="false">☰ Temos</button>
+    <a class="atgal" href="index.html">← Visos temos</a>
+  </div>
+</header>
+
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">Priedas · praktinis taikymas</p>
+    <h1>Kotleto receptas</h1>
+    <blockquote class="citata"><p>„Man nerūpi, ką jūs darote virtuvėje, man svarbu tik kotletas.“</p></blockquote>
+    <p class="hero-info">Kraštinis uždavinys su šilumos laidumo lygtimi · ≈ 40 min. · 8 kotletai</p>
+  </div>
+</header>
+
+<main class="turinys">
+<div class="deze teorija">
+<div class="deze-antraste">
+Uždavinio formuluotė
+</div>
+<p>Raskite funkciją <span class="math inline">K(\vec r,t)</span>
+(<em>kotletą</em>), kuri tenkina šilumos laidumo lygtį <span
+class="math display">\frac{\partial T}{\partial t}=a\,\Delta T</span> su
+kraštine sąlyga „keptuvė įkaitusi“ ir galine sąlyga <span
+class="math display">T_{\text{centro}}(t_{\text{pab}})\ge
+71\,{}^{\circ}\mathrm{C}.</span></p>
+<p>Primename pagrindinį principą: <strong>kas vyksta virtuvėje,
+nesvarbu, svarbu tik kotletas.</strong> Vis dėlto žemiau pateikiamas ir
+sprendimas, nes be jo kotleto negausi.</p>
+</div>
+<div class="deze pavyzdys">
+<div class="deze-antraste">
+Pradinės sąlygos (8 kotletams)
+</div>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Dydis</th>
+<th style="text-align: left;">Reikšmė</th>
+<th style="text-align: left;">Pastaba</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Malta mėsa (kiauliena ir jautiena)</td>
+<td style="text-align: left;">500 g</td>
+<td style="text-align: left;">pagrindinis kintamasis</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Svogūnas</td>
+<td style="text-align: left;">1 vnt.</td>
+<td style="text-align: left;">smulkiai supjaustytas arba
+sutarkuotas</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Kiaušinis</td>
+<td style="text-align: left;">1 vnt.</td>
+<td style="text-align: left;">rišiklis, užtikrina vientisumą</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Batono riekė</td>
+<td style="text-align: left;">1–2 (≈ 50 g)</td>
+<td style="text-align: left;">išmirkyta 100 ml pieno</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Česnako skiltelė</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">neprivaloma, bet rekomenduojama</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Druska</td>
+<td style="text-align: left;">≈ 1 a. š.</td>
+<td style="text-align: left;">normavimo konstanta</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pipirai</td>
+<td style="text-align: left;">pagal skonį</td>
+<td style="text-align: left;">laisvasis parametras</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Džiūvėsėliai</td>
+<td style="text-align: left;">apvoliojimui</td>
+<td style="text-align: left;">kraštinis sluoksnis</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Aliejus</td>
+<td style="text-align: left;">2–3 v. š.</td>
+<td style="text-align: left;">kontaktinė terpė</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="deze receptas">
+<div class="deze-antraste">
+Sprendimas
+</div>
+<div class="zingsnis">
+<div class="zingsnis-nr">
+1 žingsnis · Superpozicija
+</div>
+<p>Išmirkytą batoną nuspausk ir sutrupink. Sudėk į dubenį su mėsa,
+svogūnu, kiaušiniu, česnaku, druska ir pipirais. Kadangi uždavinys
+netiesinis, superpozicijos principas negalioja, todėl masę reikia gerai
+<strong>išminkyti</strong> (2–3 min.), kol ji taps vientisa.</p>
+</div>
+<div class="zingsnis">
+<div class="zingsnis-nr">
+2 žingsnis · Diskretizacija
+</div>
+<p>Šlapiomis rankomis padalyk masę į 8 lygias dalis ir suformuok
+paplotėlius, maždaug 1,5 cm storio. Apvoliok džiūvėsėliuose.</p>
+</div>
+<div class="zingsnis">
+<div class="zingsnis-nr">
+3 žingsnis · Kraštinė sąlyga
+</div>
+<p>Įkaitink aliejų keptuvėje ant vidutinės ugnies. Dėk kotletus tik į
+<strong>įkaitusią</strong> keptuvę, kitaip kraštinė sąlyga netenkinama
+ir kotletas sugeria aliejų.</p>
+</div>
+<div class="zingsnis">
+<div class="zingsnis-nr">
+4 žingsnis · Evoliucija laike
+</div>
+<p>Kepk po 4–5 min. iš kiekvienos pusės, kol apskrus. Tada uždenk
+dangčiu, sumažink ugnį ir palaikyk dar 5–8 min., kad šiluma difunduotų
+iki centro.</p>
+</div>
+<div class="zingsnis">
+<div class="zingsnis-nr">
+5 žingsnis · Patikrinimas
+</div>
+<p>Įpjauk storiausią kotletą: sultys turi būti skaidrios, o viduje
+neturi likti rausvos spalvos. Su termometru centre turi būti bent <span
+class="math inline">71\,{}^{\circ}\mathrm{C}</span>.</p>
+</div>
+<p><strong>Atsakymas:</strong> kotletas. <span
+class="math inline">\blacksquare</span></p>
+</div>
+<div class="deze teorija">
+<div class="deze-antraste">
+Kodėl storas kotletas kepa taip ilgai?
+</div>
+<p>Iš šilumos laidumo lygties matmenų analizės gauname būdingą įšilimo
+laiką <span class="math display">t\sim\frac{L^2}{a},</span> kur <span
+class="math inline">L</span> yra kotleto storis, o <span
+class="math inline">a\approx1{,}3\cdot10^{-7}\ \mathrm{m^2/s}</span> yra
+mėsos temperatūros laidumo koeficientas. Taigi <strong>dvigubai
+storesnis kotletas kepa maždaug keturis kartus ilgiau.</strong> Todėl
+kotletus verta formuoti plonesnius ir vienodo storio.</p>
+</div>
+<div class="deze klaidos">
+<div class="deze-antraste">
+Dažniausios klaidos
+</div>
+<ul>
+<li><strong>Per karšta keptuvė.</strong> Paviršius sudega anksčiau, nei
+šiluma pasiekia centrą (<span class="math inline">t\sim L^2/a</span>
+nepaiso tavo skubėjimo).</li>
+<li><strong>Kotleto spaudimas mentele.</strong> Išteka sultys, o kartu
+ir visas sprendinio prasmingumas.</li>
+<li><strong>Kotletai per arti vienas kito.</strong> Jie ne kepa, o
+troškinasi. Palik tarp jų tarpą.</li>
+<li><strong>Pamiršta druska.</strong> Sprendinys egzistuoja, bet yra
+neskanus.</li>
+<li><strong>Dažnas vartymas.</strong> Apversk tik vieną kartą, kai
+apačia apskrunda ir lengvai atšoka nuo keptuvės.</li>
+</ul>
+</div>
+<div class="deze pavyzdys">
+<div class="deze-antraste">
+Teorema (be įrodymo)
+</div>
+<p>Jei pradinės sąlygos tenkintos, keptuvė įkaitusi, o kepama pakankamai
+ilgai, tai kotletas <strong>egzistuoja ir yra vienintelis</strong> (iki
+prieskonių tikslumo). Įrodymas paliekamas skaitytojui kaip praktinė
+užduotis.</p>
+</div>
+
+</main>
+
+<nav class="puslapiai" aria-label="Kitos temos">
+  <a class="puslapis-ankstesnis" href="index.html"><span>← Pradžia</span><strong>Visos temos</strong></a>
+  <a class="puslapis-kitas" href="tema-13.html"><span>Daugiau apie difuziją →</span><strong>13. Styga ir difuzija</strong></a>
+</nav>
+
+<script src="svetaine.js?v=3"></script>
+</body>
+</html>
