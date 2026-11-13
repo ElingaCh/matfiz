@@ -486,3 +486,36 @@ svg.grafikas polygon { stroke: none; }
 .kotleto-puslapis .deze th { font-family: var(--ui-sriftas); font-size: .82rem; color: var(--pilka); }
 .kotleto-puslapis .hero .citata { margin: 0 0 1rem; }
 .receptas { --c: var(--uzduotis); }
+
+/* ---------- Atmintinė prieš atsiskaitymą ---------- */
+.atmintine-baneris {
+  display: flex; align-items: center; gap: 1rem; margin: 2rem 0 0; padding: 1.1rem 1.3rem;
+  border-radius: var(--spindulys); text-decoration: none; color: var(--tekstas);
+  border: 1.5px solid var(--uzduotis); box-shadow: var(--seselis);
+  background: color-mix(in srgb, var(--uzduotis) 8%, var(--pavirsius));
+  transition: transform .15s ease;
+}
+.atmintine-baneris:hover { transform: translateY(-2px); }
+.ab-ikona { font-size: 1.7rem; line-height: 1; }
+.ab-tekstas { flex: 1; display: flex; flex-direction: column; gap: .2rem; font-family: var(--ui-sriftas); }
+.ab-tekstas strong { font-size: 1.05rem; }
+.ab-tekstas span { font-size: .88rem; color: var(--pilka); line-height: 1.4; }
+.ab-eiti { font: 600 .9rem var(--ui-sriftas); color: var(--uzduotis); white-space: nowrap; }
+@media (max-width: 560px) { .atmintine-baneris { flex-wrap: wrap; } .ab-eiti { width: 100%; } }
+.atsiskaitymas-blokas .atmintine-baneris { margin: 0; }
+
+.atmintine-ps .deze { margin-top: 1.5rem; }
+.atmintine-ps .metodai td:first-child { white-space: nowrap; }
+.atmintine-ps .metodai td { line-height: 1.75; }
+.patikra { display: grid; gap: .45rem; margin-top: .8rem; }
+.patikra details { border: 1px solid var(--linija); border-radius: 10px; background: var(--pavirsius); padding: .55rem .85rem; }
+.patikra summary { cursor: pointer; list-style: none; font-size: 1.02rem; }
+.patikra summary::-webkit-details-marker { display: none; }
+.patikra summary::after { content: "Atsakymas ▾"; float: right; font: 600 .8rem var(--ui-sriftas); color: var(--pilka); margin-top: .25rem; }
+.patikra details[open] summary::after { content: "Slėpti ▴"; }
+.patikra details[open] { border-color: var(--klaidos); }
+.patikra details > :not(summary), .patikra details { line-height: 1.7; }
+.atmintine-ps .deze { overflow-x: auto; }
+.atmintine-ps .planas table { width: 100%; border-collapse: collapse; font-size: .92rem; display: block; overflow-x: auto; }
+.atmintine-ps .planas td, .atmintine-ps .planas th { border-bottom: 1px solid var(--linija); padding: .5rem .6rem; text-align: left; vertical-align: top; }
+.atmintine-ps .dl-lentele td:nth-child(2) { white-space: nowrap; }

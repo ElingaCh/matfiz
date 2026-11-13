@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atmintinė prieš 1 atsiskaitymą · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css?v=5">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="priedo-puslapis su-sonine pasiruosimas">
+<aside class="sonine" id="sonine" aria-label="Temos">
+<div class="sonine-virsus"><a class="sonine-namai" href="index.html">Matfizo pratybos</a><button class="sonine-uzdaryti" type="button" aria-label="Uždaryti">×</button></div>
+<a class="sonine-atmintine" href="atmintine.html">∑ Formulių atmintinė</a>
+<a class="sonine-atmintine sonine-svarbu aktyvi" href="pasiruosimas-1.html">🎯 Pasiruošimas 1 atsiskaitymui</a>
+<a class="sonine-atmintine" href="kotletas.html">🍽 Kotleto receptas</a>
+<div class="sonine-dalis">I dalis · Koordinatės ir paprastosios diferencialinės lygtys</div><ol class="sonine-temos">
+<li><a href="tema-01.html" data-tema="1" data-uzduociu="13"><span class="st-nr">1</span><span class="st-pav">Kreivinės koordinatės ir vektorinės operacijos</span><span class="st-prog"></span></a></li>
+<li><a href="tema-02.html" data-tema="2" data-uzduociu="12"><span class="st-nr">2</span><span class="st-pav">Pirmos eilės diferencialinės lygtys</span><span class="st-prog"></span></a></li>
+<li><a href="tema-03.html" data-tema="3" data-uzduociu="12"><span class="st-nr">3</span><span class="st-pav">Antros ir aukštesnės eilės tiesinės diferencialinės lygtys</span><span class="st-prog"></span></a></li>
+<li><a href="tema-04.html" data-tema="4" data-uzduociu="12"><span class="st-nr">4</span><span class="st-pav">Kraštinis uždavinys ir Gryno funkcija</span><span class="st-prog"></span></a></li>
+<li><a href="tema-05.html" data-tema="5" data-uzduociu="12"><span class="st-nr">5</span><span class="st-pav">Paprastųjų diferencialinių lygčių sistemos</span><span class="st-prog"></span></a></li>
+</ol>
+<div class="sonine-dalis">II dalis · Kompleksinė analizė, sumos ir asimptotika</div><ol class="sonine-temos">
+<li><a href="tema-06.html" data-tema="6" data-uzduociu="12"><span class="st-nr">6</span><span class="st-pav">Analizinės funkcijos ir Gama funkcija</span><span class="st-prog"></span></a></li>
+<li><a href="tema-07.html" data-tema="7" data-uzduociu="12"><span class="st-nr">7</span><span class="st-pav">Integravimas kompleksinėje plokštumoje ir Lorano eilutė</span><span class="st-prog"></span></a></li>
+<li><a href="tema-08.html" data-tema="8" data-uzduociu="18"><span class="st-nr">8</span><span class="st-pav">Reziduumai ir jų taikymas integralams</span><span class="st-prog"></span></a></li>
+<li><a href="tema-09.html" data-tema="9" data-uzduociu="12"><span class="st-nr">9</span><span class="st-pav">Begalinės sumos, Hevisaido ir Dirako funkcijos</span><span class="st-prog"></span></a></li>
+<li><a href="tema-10.html" data-tema="10" data-uzduociu="12"><span class="st-nr">10</span><span class="st-pav">Integralo asimptotika: balno metodas ir Stirlingo formulė</span><span class="st-prog"></span></a></li>
+</ol>
+<div class="sonine-dalis">III dalis · Integralinės transformacijos</div><ol class="sonine-temos">
+<li><a href="tema-11.html" data-tema="11" data-uzduociu="12"><span class="st-nr">11</span><span class="st-pav">Furjė transformacija ir sąsūka</span><span class="st-prog"></span></a></li>
+<li><a href="tema-12.html" data-tema="12" data-uzduociu="12"><span class="st-nr">12</span><span class="st-pav">Laplaso transformacija</span><span class="st-prog"></span></a></li>
+</ol>
+<div class="sonine-dalis">IV dalis · Dalinių išvestinių lygtys</div><ol class="sonine-temos">
+<li><a href="tema-13.html" data-tema="13" data-uzduociu="12"><span class="st-nr">13</span><span class="st-pav">Fizikinių vyksmų lygtys: styga ir difuzija</span><span class="st-prog"></span></a></li>
+<li><a href="tema-14.html" data-tema="14" data-uzduociu="12"><span class="st-nr">14</span><span class="st-pav">Dalinių išvestinių lygčių klasifikacija ir D&#x27;Alambero formulė</span><span class="st-prog"></span></a></li>
+<li><a href="tema-15.html" data-tema="15" data-uzduociu="12"><span class="st-nr">15</span><span class="st-pav">Kintamųjų atskyrimo (Furjė) metodas</span><span class="st-prog"></span></a></li>
+<li><a href="tema-16.html" data-tema="16" data-uzduociu="11"><span class="st-nr">16</span><span class="st-pav">Šturmo–Liuvilio uždavinys ir tikrinės funkcijos</span><span class="st-prog"></span></a></li>
+</ol>
+<div class="sonine-dalis">V dalis · Variacinis skaičiavimas</div><ol class="sonine-temos">
+<li><a href="tema-17.html" data-tema="17" data-uzduociu="12"><span class="st-nr">17</span><span class="st-pav">Funkcionalas, variacija ir Eulerio lygtis</span><span class="st-prog"></span></a></li>
+<li><a href="tema-18.html" data-tema="18" data-uzduociu="12"><span class="st-nr">18</span><span class="st-pav">Sąlyginis ekstremumas ir stygos variacinis principas</span><span class="st-prog"></span></a></li>
+<li><a href="tema-19.html" data-tema="19" data-uzduociu="12"><span class="st-nr">19</span><span class="st-pav">Judamieji rėžiai ir ekstremalės su lūžio taškais</span><span class="st-prog"></span></a></li>
+</ol>
+</aside>
+<div class="sonine-uzdanga" hidden></div>
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <button class="meniu" type="button" aria-controls="sonine" aria-expanded="false">☰ Temos</button>
+    <a class="atgal" href="pasiruosimas-1.html">← Pasiruošimas</a>
+  </div>
+</header>
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">1 atsiskaitymas</p>
+    <h1>Atmintinė prieš atsiskaitymą</h1>
+    <p class="hero-info">Svarbiausia vienoje vietoje: kaip atpažinti DL tipą ir kaip suskaičiuoti reziduumus.</p>
+  </div>
+</header>
+<main class="turinys atmintine-ps">
+<a class="mygtukas grizti" href="pasiruosimas-1.html">← Atgal į pasiruošimą</a>
+<p class="rinkinio-pdf"><a class="mygtukas" href="pasiruosimas-1/tipu-lentele-kalimui.pdf" download>Atsisiųsti PDF (2 lapai: lentelės ir pasitikrinimas)</a></p>
+<div class="deze teorija metodai dl-lentele">
+<div class="deze-antraste">
+<p>DL, pirma eilė: „Ar Haris Tikrai Bus Atsiskaityme?“</p>
+</div>
+<p>Tikrink <strong>šia tvarka</strong> ir sustok ties pirmu „taip“. Jei
+lygtis tinka keliems tipams (pvz. <span
+class="math inline">y&#39;=y+2</span> yra ir A, ir T), imk ankstesnį,
+nes jis paprastesnis.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Tipas</th>
+<th style="text-align: left;">Taip atrodo</th>
+<th style="text-align: left;">Kaip pastebėti</th>
+<th style="text-align: left;">Ką darai</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>A</strong>tskirk</td>
+<td style="text-align: left;"><span
+class="math inline">y&#39;=xy^2</span><br><span
+class="math inline">y&#39;=e^{x+y}</span><br><span
+class="math inline">(1+x^2)\,y&#39;=2xy</span></td>
+<td style="text-align: left;">dešinė <span class="math inline">=</span>
+(tik <span class="math inline">x</span>) <span
+class="math inline">\cdot</span> (tik <span
+class="math inline">y</span>); <span
+class="math inline">e^{x+y}=e^xe^y</span></td>
+<td style="text-align: left;"><span
+class="math inline">\frac{dy}{g(y)}=f(x)\,dx</span>, integruok</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>H</strong>omogeninė</td>
+<td style="text-align: left;"><span
+class="math inline">y&#39;=\frac{x+y}{x-y}</span><br><span
+class="math inline">y&#39;=\frac yx+e^{y/x}</span><br><span
+class="math inline">xy&#39;=y+\sqrt{x^2-y^2}</span></td>
+<td style="text-align: left;">visi nariai to paties laipsnio; yra <span
+class="math inline">\frac yx</span></td>
+<td style="text-align: left;"><span class="math inline">y=ux</span>,
+<span class="math inline">y&#39;=u+xu&#39;</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>T</strong>iesinė</td>
+<td style="text-align: left;"><span class="math inline">y&#39;+\frac
+yx=x^2</span><br><span class="math inline">y&#39;-2y=e^x</span><br><span
+class="math inline">y&#39;\cos x+y\sin x=1</span></td>
+<td style="text-align: left;"><span class="math inline">y</span> ir
+<span class="math inline">y&#39;</span> tik pirmu laipsniu, nėra <span
+class="math inline">y^2</span>, <span class="math inline">e^y</span>,
+<span class="math inline">\ln y</span></td>
+<td style="text-align: left;">padalyk, kad prie <span
+class="math inline">y&#39;</span> būtų 1; <span
+class="math inline">\mu=e^{\int P\,dx}</span>, <span
+class="math inline">(\mu y)&#39;=\mu Q</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>B</strong>ernulis</td>
+<td style="text-align: left;"><span class="math inline">y&#39;+\frac
+yx=xy^2</span><br><span class="math inline">y&#39;-y=x\sqrt
+y</span><br><span class="math inline">xy&#39;+y=y^2\ln x</span></td>
+<td style="text-align: left;">tiesinė, bet vienas narys dar su <span
+class="math inline">y^n</span></td>
+<td style="text-align: left;"><span class="math inline">z=y^{1-n}</span>
+(<span class="math inline">y^2\to z=\frac1y</span>), gausi T</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>A</strong>pversk</td>
+<td style="text-align: left;"><span
+class="math inline">y&#39;=\frac{y}{2x+y^2}</span><br><span
+class="math inline">y&#39;=\frac{1}{2x-y^2}</span><br><span
+class="math inline">y\,dx-(2x+\ln y)\,dy=0</span></td>
+<td style="text-align: left;">trupmena: vardiklyje <span
+class="math inline">x</span> tik pirmu laipsniu, o <span
+class="math inline">y</span> „bjaurus“ (<span
+class="math inline">y^2</span>, <span class="math inline">\ln
+y</span>)</td>
+<td style="text-align: left;"><span
+class="math inline">\frac{dx}{dy}=\frac1{y&#39;}</span>, gausi <span
+class="math inline">x&#39;+P(y)\,x=Q(y)</span>, T su <span
+class="math inline">x(y)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">keitinys</td>
+<td style="text-align: left;"><span
+class="math inline">y&#39;=(x+y)^2</span><br><span
+class="math inline">y&#39;=\cos(x-y)</span><br><span
+class="math inline">y&#39;=\sqrt{4x+2y-1}</span></td>
+<td style="text-align: left;">ta pati kombinacija <span
+class="math inline">ax+by</span> funkcijos viduje</td>
+<td style="text-align: left;"><span class="math inline">u=ax+by</span>,
+<span class="math inline">u&#39;=a+by&#39;</span>, gausi A</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Apversk vienu sakiniu:</strong> jei <span
+class="math inline">y&#39;=\frac{y}{2x+y^2}</span>, tai <span
+class="math inline">\frac{dx}{dy}=\frac{2x+y^2}{y}=\frac2y\,x+y</span>,
+t. y. <span class="math inline">x&#39;-\frac2y\,x=y</span>. Tai tiesinė
+lygtis, tik <span class="math inline">x</span> ir <span
+class="math inline">y</span> susikeitė vietomis.</p>
+</div>
+<div class="deze teorija metodai">
+<div class="deze-antraste">
+<p>Reziduumai: kurie poliai skaičiuojami</p>
+</div>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Kas parašyta</th>
+<th style="text-align: left;">Ką darai</th>
+<th style="text-align: left;">Kuriuos polius imi</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\oint_C</span>,
+<span class="math inline">C:\lvert z-a\rvert=r</span></td>
+<td style="text-align: left;">tiesiog reziduumai</td>
+<td style="text-align: left;">viduje: <span class="math inline">\lvert
+z_0-a\rvert&lt;r</span>; ant kontūro <span class="math inline">\pi
+i\operatorname{Res}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">\int_0^{2\pi}</span> su <span
+class="math inline">\cos\theta</span>, <span
+class="math inline">\sin\theta</span></td>
+<td style="text-align: left;"><span
+class="math inline">z=e^{i\theta}</span>, <span
+class="math inline">\cos\theta=\frac{z^2+1}{2z}</span>, <span
+class="math inline">\sin\theta=\frac{z^2-1}{2iz}</span>, <span
+class="math inline">d\theta=\frac{dz}{iz}</span></td>
+<td style="text-align: left;"><span class="math inline">\lvert
+z\rvert&lt;1</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">\int_{-\infty}^{\infty}</span> racionali</td>
+<td style="text-align: left;">uždarai viršuje (vardiklio laipsnis bent 2
+didesnis)</td>
+<td style="text-align: left;"><span
+class="math inline">\operatorname{Im}z&gt;0</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">\int_{-\infty}^{\infty}</span> su <span
+class="math inline">\cos kx</span> / <span class="math inline">\sin
+kx</span></td>
+<td style="text-align: left;"><span class="math inline">e^{ikz}</span>,
+gale <span class="math inline">\operatorname{Re}</span> / <span
+class="math inline">\operatorname{Im}</span>, Žordano lema</td>
+<td style="text-align: left;"><span
+class="math inline">\operatorname{Im}z&gt;0</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">polius ant realiosios ašies</td>
+<td style="text-align: left;">apeini mažu pusapskritimiu</td>
+<td style="text-align: left;">ant ašies <span class="math inline">\pi
+i\operatorname{Res}</span>, viršuje <span class="math inline">2\pi
+i\operatorname{Res}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\sum
+f(n)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\pi\operatorname{ctg}\pi z</span> (su <span
+class="math inline">(-1)^n</span>: <span
+class="math inline">\frac{\pi}{\sin\pi z}</span>)</td>
+<td style="text-align: left;"><span class="math inline">f</span> poliai,
+suma <span class="math inline">=-\sum\operatorname{Res}</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="deze teorija metodai">
+<div class="deze-antraste">
+<p>Reziduumai: kaip suskaičiuoti („Kur? Kokia? Kiek? Sudėk“)</p>
+</div>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Polius</th>
+<th style="text-align: left;">Kaip skaičiuoti</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">paprastas</td>
+<td style="text-align: left;"><strong>nulinį skliaustą diferencijuok,
+kitus įstatyk</strong>: <span
+class="math inline">\operatorname{Res}=\frac{\varphi(z_0)}{\psi&#39;(z_0)}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">antros eilės (<span
+class="math inline">z^2</span>, <span
+class="math inline">(z-a)^2</span>)</td>
+<td style="text-align: left;">išbrauk kvadratą, likusios dalies
+išvestinė: <span
+class="math inline">\big[(z-z_0)^2f\big]&#39;_{z=z_0}</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">n</span>-tos
+eilės</td>
+<td style="text-align: left;"><span
+class="math inline">\frac{1}{(n-1)!}\big[(z-z_0)^nf\big]^{(n-1)}_{z=z_0}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">esminis (<span
+class="math inline">e^{1/z}</span>, <span
+class="math inline">\sin\frac1z</span>)</td>
+<td style="text-align: left;">Lorano eilutė, koeficientas prie <span
+class="math inline">\frac1z</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">galas</td>
+<td style="text-align: left;"><span class="math inline">2\pi
+i\sum\operatorname{Res}</span>, tada daugiklis iš keitinio (<span
+class="math inline">\frac1i</span>) arba <span
+class="math inline">\operatorname{Re}</span> / <span
+class="math inline">\operatorname{Im}</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="deze klaidos">
+<div class="deze-antraste">
+<p>Pasitikrink save: koks tipas ir pirmas žingsnis?</p>
+</div>
+<p>Pirma pagalvok pati, tada spausk ant lygties ir pamatysi
+atsakymą.</p>
+<div class="patikra">
+<details>
+<summary>
+<span class="math inline">y&#39;=\frac{x^2+y^2}{xy}</span>
+</summary>
+H: <span class="math inline">y=ux</span> (visi nariai antro laipsnio).
+</details>
+<details>
+<summary>
+<span class="math inline">y&#39;=e^{2x-y}</span>
+</summary>
+A: <span class="math inline">e^{2x-y}=e^{2x}e^{-y}</span>, todėl <span
+class="math inline">e^y\,dy=e^{2x}\,dx</span>.
+</details>
+<details>
+<summary>
+<span class="math inline">xy&#39;-y=x^2y^2</span>
+</summary>
+B: <span class="math inline">y&#39;-\frac yx=xy^2</span>, <span
+class="math inline">n=2</span>, <span
+class="math inline">z=\frac1y</span>.
+</details>
+<details>
+<summary>
+<span class="math inline">y&#39;=\frac{y}{x+y^2}</span>
+</summary>
+Apversk: <span class="math inline">\frac{dx}{dy}=\frac xy+y</span>, t.
+y. <span class="math inline">x&#39;-\frac1y\,x=y</span>.
+</details>
+<details>
+<summary>
+<span class="math inline">y&#39;+2xy=xe^{-x^2}</span>
+</summary>
+T: <span class="math inline">\mu=e^{x^2}</span>, <span
+class="math inline">(ye^{x^2})&#39;=x</span>.
+</details>
+<details>
+<summary>
+<span class="math inline">y&#39;=(x-y+1)^2</span>
+</summary>
+Keitinys <span class="math inline">u=x-y</span>: <span
+class="math inline">u&#39;=1-y&#39;=1-(u+1)^2</span>, gausi A.
+</details>
+<details>
+<summary>
+<span class="math inline">y&#39;=\frac{1}{2x-y^2}</span>
+</summary>
+Apversk: <span class="math inline">\frac{dx}{dy}=2x-y^2</span>, t. y.
+<span class="math inline">x&#39;-2x=-y^2</span>.
+</details>
+<details>
+<summary>
+<span class="math inline">y&#39;\cos x+y\sin x=1</span>
+</summary>
+T: padalyk iš <span class="math inline">\cos x</span>: <span
+class="math inline">y&#39;+y\operatorname{tg}x=\frac1{\cos x}</span>,
+<span class="math inline">\mu=\frac1{\cos x}</span>.
+</details>
+<details>
+<summary>
+<span class="math inline">y&#39;-y=xy^3</span>
+</summary>
+B: <span class="math inline">n=3</span>, <span
+class="math inline">z=y^{-2}</span>.
+</details>
+<details>
+<summary>
+<span class="math inline">xy&#39;=y+x\cos^2\frac yx</span>
+</summary>
+H: <span class="math inline">y&#39;=\frac yx+\cos^2\frac yx</span>,
+<span class="math inline">y=ux</span>.
+</details>
+<details>
+<summary>
+<span class="math inline">\oint_{\lvert
+z-1\rvert=2}\frac{dz}{z(z-4)}</span>
+</summary>
+Viduje tik <span class="math inline">z=0</span> (<span
+class="math inline">\lvert0-1\rvert=1&lt;2</span>), o <span
+class="math inline">\lvert4-1\rvert=3&gt;2</span> išorėje. <span
+class="math inline">\operatorname{Res}_0=-\frac14</span>, <span
+class="math inline">I=-\frac{\pi i}{2}</span>.
+</details>
+<details>
+<summary>
+<span
+class="math inline">\int_0^{2\pi}\frac{d\theta}{5+3\cos\theta}</span>
+</summary>
+<span class="math inline">z=e^{i\theta}</span>, poliai <span
+class="math inline">-\frac13</span> ir <span
+class="math inline">-3</span>, imi tik <span
+class="math inline">-\frac13</span> (<span class="math inline">\lvert
+z\rvert&lt;1</span>). <span class="math inline">I=\frac{\pi}{2}</span>.
+</details>
+<details>
+<summary>
+<span
+class="math inline">\int_{-\infty}^{\infty}\frac{\cos3x}{x^2+4}\,dx</span>
+</summary>
+<span class="math inline">e^{3iz}</span>, polius viršuje <span
+class="math inline">2i</span>, <span
+class="math inline">\operatorname{Res}=\frac{e^{-6}}{4i}</span>, <span
+class="math inline">I=\operatorname{Re}\big(2\pi
+i\cdot\frac{e^{-6}}{4i}\big)=\frac{\pi}{2}e^{-6}</span>.
+</details>
+</div>
+</div>
+<details class="deze pavyzdys planas">
+<summary class="deze-antraste">
+Antros eilės lygtys ir sistemos (jei prireiktų)
+</summary>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Ką matai</th>
+<th style="text-align: left;">Ką darai</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">y&#39;&#39;+py&#39;+qy=f</span>, <span
+class="math inline">p,q</span> skaičiai</td>
+<td style="text-align: left;"><span
+class="math inline">\lambda^2+p\lambda+q=0\to y_h</span>: <span
+class="math inline">C_1e^{\lambda_1x}+C_2e^{\lambda_2x}</span>; <span
+class="math inline">(C_1+C_2x)e^{\lambda x}</span>; <span
+class="math inline">e^{\alpha x}(C_1\cos\beta x+C_2\sin\beta
+x)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">f</span>: <span
+class="math inline">e^{ax}</span>, polinomas, <span
+class="math inline">\sin</span>, <span
+class="math inline">\cos</span></td>
+<td style="text-align: left;">spėk <span class="math inline">y_p</span>
+to paties pavidalo; <strong>rezonansas</strong> (skaičius yra šaknis)
+<span class="math inline">\to</span> daugink iš <span
+class="math inline">x</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">f</span>: <span
+class="math inline">\frac1{\cos x}</span>, <span
+class="math inline">\operatorname{tg}x</span>, <span
+class="math inline">\ln x</span>, <span
+class="math inline">\frac{e^x}{x}</span></td>
+<td style="text-align: left;">varijavimas: <span
+class="math inline">C_1&#39;y_1+C_2&#39;y_2=0</span>, <span
+class="math inline">C_1&#39;y_1&#39;+C_2&#39;y_2&#39;=f</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">nėra <span
+class="math inline">y</span></td>
+<td style="text-align: left;"><span class="math inline">p=y&#39;</span>,
+<span class="math inline">y&#39;&#39;=p&#39;</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">nėra <span
+class="math inline">x</span></td>
+<td style="text-align: left;"><span
+class="math inline">y&#39;=p(y)</span>, <span
+class="math inline">y&#39;&#39;=p\frac{dp}{dy}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sistema <span
+class="math inline">x&#39;</span>, <span
+class="math inline">y&#39;</span></td>
+<td style="text-align: left;">iš vienos išsireikšk <span
+class="math inline">y</span>, įstatyk į kitą, gausi 2 eilės lygtį; <span
+class="math inline">y</span> randi <strong>neintegruodama</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sąlygos dviejuose taškuose</td>
+<td style="text-align: left;">Gryno funkcija</td>
+</tr>
+</tbody>
+</table>
+</details>
+
+</main>
+<nav class="puslapiai" aria-label="Kiti puslapiai">
+  <a class="puslapis-ankstesnis" href="pasiruosimas-1.html"><span>← Atgal</span><strong>Pasiruošimas 1 atsiskaitymui</strong></a>
+  <a class="puslapis-kitas" href="pasiruosimas-1-rinkinys-3.html"><span>Spręsti →</span><strong>3 rinkinys</strong></a>
+</nav>
+<script src="svetaine.js?v=3"></script>
+</body>
+</html>
