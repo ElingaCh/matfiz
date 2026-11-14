@@ -6,7 +6,7 @@
 <title>Atmintinė prieš 1 atsiskaitymą · Matfizo pratybos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
-<link rel="stylesheet" href="stilius.css?v=6">
+<link rel="stylesheet" href="stilius.css?v=8">
 <script defer="" src="katex/katex.min.js"></script>
 <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
@@ -72,7 +72,7 @@
   <div class="hero-vidus">
     <p class="antzenklis">1 atsiskaitymas</p>
     <h1>Atmintinė prieš atsiskaitymą</h1>
-    <p class="hero-info">Svarbiausia vienoje vietoje: kaip atpažinti DL tipą ir kaip suskaičiuoti reziduumus.</p>
+    <p class="hero-info">Svarbiausia vienoje vietoje: kaip atpažinti tipą, kokiais žingsniais spręsti ir kaip suskaičiuoti reziduumus.</p>
   </div>
 </header>
 <main class="turinys atmintine-ps">
@@ -186,6 +186,90 @@ class="math inline">\frac{dx}{dy}=\frac{2x+y^2}{y}=\frac2y\,x+y</span>,
 t. y. <span class="math inline">x&#39;-\frac2y\,x=y</span>. Tai tiesinė
 lygtis, tik <span class="math inline">x</span> ir <span
 class="math inline">y</span> susikeitė vietomis.</p>
+</div>
+<div class="deze pavyzdys receptai">
+<div class="deze-antraste">
+<p>DL: žingsniai kiekvienam tipui</p>
+</div>
+<p>Tipą atpažinai, bet nežinai, ką daryti toliau? Eik žingsniais. Beveik
+viskas baigiasi <strong>A</strong> arba <strong>T</strong>, todėl tuos
+du verta mokėti puikiai.</p>
+<p><strong>A (atskirk).</strong></p>
+<ol type="1">
+<li>Užrašyk <span class="math inline">y&#39;=f(x)\,g(y)</span>.</li>
+<li>Perkelk: <span
+class="math inline">\dfrac{dy}{g(y)}=f(x)\,dx</span>.</li>
+<li>Integruok abi puses, <span class="math inline">+C</span> pridėk
+vienoje pusėje.</li>
+<li>Įstatyk pradinę sąlygą ir rask <span
+class="math inline">C</span>.</li>
+</ol>
+<p><strong>H (homogeninė).</strong></p>
+<ol type="1">
+<li>Keitinys <span class="math inline">y=ux</span>, <span
+class="math inline">y&#39;=u+xu&#39;</span>.</li>
+<li>Įstatyk: visur atsiras <span class="math inline">\frac yx=u</span>,
+o <span class="math inline">x</span> susiprastins.</li>
+<li>Liks <span class="math inline">xu&#39;=F(u)-u</span>, tai
+<strong>A</strong>: <span
+class="math inline">\dfrac{du}{F(u)-u}=\dfrac{dx}{x}</span>.</li>
+<li>Integruok, grįžk prie <span class="math inline">u=\frac yx</span>,
+įstatyk sąlygą.</li>
+</ol>
+<p><strong>T (tiesinė).</strong></p>
+<ol type="1">
+<li>Padalyk, kad būtų <span
+class="math inline">y&#39;+P(x)\,y=Q(x)</span> (prie <span
+class="math inline">y&#39;</span> koeficientas 1).</li>
+<li>Daugiklis <span class="math inline">\mu=e^{\int P\,dx}</span>
+(konstantos čia nereikia).</li>
+<li>Kairė virsta <span class="math inline">(\mu y)&#39;</span>: <span
+class="math inline">(\mu y)&#39;=\mu Q</span>.</li>
+<li>Integruok: <span class="math inline">\mu y=\int\mu Q\,dx+C</span>,
+padalyk iš <span class="math inline">\mu</span>.</li>
+<li>Įstatyk sąlygą.</li>
+</ol>
+<p><strong>B (Bernulis).</strong></p>
+<ol type="1">
+<li>Forma <span class="math inline">y&#39;+P\,y=Q\,y^n</span>.</li>
+<li>Padalyk visą lygtį iš <span class="math inline">y^n</span>.</li>
+<li>Keitinys <span class="math inline">z=y^{1-n}</span>, <span
+class="math inline">z&#39;=(1-n)\,y^{-n}y&#39;</span> (dažniausiai <span
+class="math inline">n=2</span>: <span
+class="math inline">z=\frac1y</span>, <span
+class="math inline">z&#39;=-\frac{y&#39;}{y^2}</span>).</li>
+<li>Gausi <strong>T</strong> su <span class="math inline">z</span>:
+daryk T receptą.</li>
+<li>Grįžk: <span class="math inline">y=z^{1/(1-n)}</span> (kai <span
+class="math inline">n=2</span>: <span
+class="math inline">y=\frac1z</span>), įstatyk sąlygą.</li>
+</ol>
+<p><strong>Apversk.</strong></p>
+<ol type="1">
+<li><span class="math inline">\dfrac{dx}{dy}=\dfrac{1}{y&#39;}</span>:
+apversk trupmeną.</li>
+<li>Sutvarkyk į <span
+class="math inline">x&#39;+P(y)\,x=Q(y)</span>.</li>
+<li>Daryk <strong>T</strong> receptą, tik <span
+class="math inline">x</span> ir <span class="math inline">y</span>
+sukeisti vietomis (integruoji pagal <span
+class="math inline">y</span>).</li>
+<li>Sąlyga <span class="math inline">y(a)=b</span> reiškia <span
+class="math inline">x=a</span>, kai <span
+class="math inline">y=b</span>. Atsakymą palik kaip <span
+class="math inline">x(y)</span>.</li>
+</ol>
+<p><strong>Keitinys <span
+class="math inline">u=ax+by</span>.</strong></p>
+<ol type="1">
+<li><span class="math inline">u=ax+by</span>, <span
+class="math inline">u&#39;=a+b\,y&#39;</span>, todėl <span
+class="math inline">y&#39;=\dfrac{u&#39;-a}{b}</span>.</li>
+<li>Įstatyk: gausi lygtį tik su <span class="math inline">u</span> ir
+<span class="math inline">x</span>, tai <strong>A</strong>.</li>
+<li>Integruok, tada <span class="math inline">y=\dfrac{u-ax}{b}</span>,
+įstatyk sąlygą.</li>
+</ol>
 </div>
 <div class="deze teorija metodai">
 <div class="deze-antraste">
@@ -318,6 +402,81 @@ class="math inline">\operatorname{Im}</span></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="deze pavyzdys receptai">
+<div class="deze-antraste">
+<p>Reziduumai: žingsniai kiekvienam tipui</p>
+</div>
+<p>Visi tipai baigiasi tais pačiais 4 žingsniais (<strong>Kur? Kokia?
+Kiek? Sudėk</strong>). Skiriasi tik pradžia.</p>
+<p><strong><span class="math inline">\oint_C</span> su nurodytu
+kontūru.</strong></p>
+<ol type="1">
+<li>Kur? Vardiklis <span class="math inline">=0</span>. Kiekvienam
+poliui <span class="math inline">\lvert z_0-a\rvert</span> palygink su
+spinduliu <span class="math inline">r</span>.</li>
+<li>Kokia? Paprastas, antros eilės ar esminis.</li>
+<li>Kiek? Reziduumai tik viduje esantiems (ant kontūro duoda <span
+class="math inline">\pi i\operatorname{Res}</span>).</li>
+<li>Sudėk: <span class="math inline">2\pi
+i\sum\operatorname{Res}</span>.</li>
+</ol>
+<p><strong><span class="math inline">\int_0^{2\pi}</span> su <span
+class="math inline">\cos\theta</span>, <span
+class="math inline">\sin\theta</span>.</strong></p>
+<ol type="1">
+<li>Keitinys: <span
+class="math inline">\cos\theta=\frac{z^2+1}{2z}</span>, <span
+class="math inline">\sin\theta=\frac{z^2-1}{2iz}</span>, <span
+class="math inline">d\theta=\frac{dz}{iz}</span>.</li>
+<li>Sutvarkyk į vieną trupmeną, vardiklį išskaidyk.</li>
+<li>Kur? Imi tik polius su <span class="math inline">\lvert
+z\rvert&lt;1</span> (nepamiršk <span class="math inline">z=0</span>, jei
+<span class="math inline">z</span> liko vardiklyje).</li>
+<li>Kiek? ir Sudėk: <span class="math inline">2\pi
+i\sum\operatorname{Res}</span>. Atsakymas turi būti realus.</li>
+</ol>
+<p><strong><span class="math inline">\int_{-\infty}^{\infty}</span>
+racionali.</strong></p>
+<ol type="1">
+<li>Tikrink: vardiklio laipsnis bent 2 didesnis, tada uždarai
+viršuje.</li>
+<li>Kur? Imi polius su <span
+class="math inline">\operatorname{Im}z&gt;0</span>.</li>
+<li>Kiek? ir Sudėk: <span class="math inline">2\pi
+i\sum\operatorname{Res}</span>.</li>
+</ol>
+<p><strong><span class="math inline">\int_{-\infty}^{\infty}</span> su
+<span class="math inline">\cos kx</span> / <span
+class="math inline">\sin kx</span>.</strong></p>
+<ol type="1">
+<li>Vietoje <span class="math inline">\cos kx</span> / <span
+class="math inline">\sin kx</span> rašai <span
+class="math inline">e^{ikz}</span>; pažymi, kad gale imsi <span
+class="math inline">\operatorname{Re}</span> (<span
+class="math inline">\cos</span>) arba <span
+class="math inline">\operatorname{Im}</span> (<span
+class="math inline">\sin</span>).</li>
+<li>Užrašai: „pagal Žordano lemą lanko integralas <span
+class="math inline">\to0</span>“, uždarai viršuje.</li>
+<li>Kur? <span class="math inline">\operatorname{Im}z&gt;0</span>. Kiek?
+Skaitiklyje <span class="math inline">e^{ikz_0}</span>, pvz. <span
+class="math inline">e^{ik\cdot ia}=e^{-ka}</span>.</li>
+<li>Sudėk: <span class="math inline">J=2\pi
+i\sum\operatorname{Res}</span>, tada <span
+class="math inline">\operatorname{Re}J</span> arba <span
+class="math inline">\operatorname{Im}J</span>.</li>
+</ol>
+<p><strong>Polius ant realiosios ašies.</strong></p>
+<ol type="1">
+<li>Kaip ankstesnis tipas, tik polius <span
+class="math inline">x_0</span> ant ašies apeinamas mažu
+pusapskritimiu.</li>
+<li>Ant ašies: <span class="math inline">\pi i\operatorname{Res}</span>;
+viršuje: <span class="math inline">2\pi i\operatorname{Res}</span>.</li>
+<li>Sudėk abu, gale <span class="math inline">\operatorname{Re}</span> /
+<span class="math inline">\operatorname{Im}</span>.</li>
+</ol>
 </div>
 <div class="deze klaidos">
 <div class="deze-antraste">
