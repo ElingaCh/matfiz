@@ -530,3 +530,9 @@ svg.grafikas polygon { stroke: none; }
 .rez-taisykles h3 { margin-top: 2rem; }
 .rez-taisykles .katex-display { overflow-x: auto; overflow-y: hidden; padding: .2rem 0; }
 .rez-taisykles li { margin: .3rem 0; }
+
+/* ---------- Bandomieji: sąrašas ---------- */
+.pasiruosimas .bandomieji p { margin: 0 0 .5rem; }
+.bandomieji-sarasas { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.bandomieji-sarasas li { padding: .45rem .8rem; border: 1px solid var(--linija); border-radius: 10px; background: var(--pavirsius); font-size: .9rem; }
+.bandomieji-sarasas strong { margin-right: .35rem; }
