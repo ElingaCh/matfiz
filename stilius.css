@@ -536,3 +536,9 @@ svg.grafikas polygon { stroke: none; }
 .bandomieji-sarasas { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
 .bandomieji-sarasas li { padding: .45rem .8rem; border: 1px solid var(--linija); border-radius: 10px; background: var(--pavirsius); font-size: .9rem; }
 .bandomieji-sarasas strong { margin-right: .35rem; }
+
+/* ---------- Atmintinė: receptai ---------- */
+.atmintine-ps .receptai p { margin: 1.1rem 0 .3rem; }
+.atmintine-ps .receptai p:first-of-type { margin-top: .4rem; }
+.atmintine-ps .receptai ol { margin: .2rem 0 .4rem; padding-left: 1.4rem; }
+.atmintine-ps .receptai li { margin: .2rem 0; line-height: 1.7; }
