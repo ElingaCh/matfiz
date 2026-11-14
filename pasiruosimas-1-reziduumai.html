@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reziduumų taisyklės per pavyzdžius · Matfizo pratybos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="stilius.css?v=6">
+<script defer="" src="katex/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+</script>
+<link rel="stylesheet" href="katex/katex.min.css" />
+</head>
+<body class="priedo-puslapis su-sonine pasiruosimas">
+<aside class="sonine" id="sonine" aria-label="Temos">
+<div class="sonine-virsus"><a class="sonine-namai" href="index.html">Matfizo pratybos</a><button class="sonine-uzdaryti" type="button" aria-label="Uždaryti">×</button></div>
+<a class="sonine-atmintine" href="atmintine.html">∑ Formulių atmintinė</a>
+<a class="sonine-atmintine sonine-svarbu aktyvi" href="pasiruosimas-1.html">🎯 Pasiruošimas 1 atsiskaitymui</a>
+<a class="sonine-atmintine" href="kotletas.html">🍽 Kotleto receptas</a>
+<div class="sonine-dalis">I dalis · Koordinatės ir paprastosios diferencialinės lygtys</div><ol class="sonine-temos">
+<li><a href="tema-01.html" data-tema="1" data-uzduociu="13"><span class="st-nr">1</span><span class="st-pav">Kreivinės koordinatės ir vektorinės operacijos</span><span class="st-prog"></span></a></li>
+<li><a href="tema-02.html" data-tema="2" data-uzduociu="12"><span class="st-nr">2</span><span class="st-pav">Pirmos eilės diferencialinės lygtys</span><span class="st-prog"></span></a></li>
+<li><a href="tema-03.html" data-tema="3" data-uzduociu="12"><span class="st-nr">3</span><span class="st-pav">Antros ir aukštesnės eilės tiesinės diferencialinės lygtys</span><span class="st-prog"></span></a></li>
+<li><a href="tema-04.html" data-tema="4" data-uzduociu="12"><span class="st-nr">4</span><span class="st-pav">Kraštinis uždavinys ir Gryno funkcija</span><span class="st-prog"></span></a></li>
+<li><a href="tema-05.html" data-tema="5" data-uzduociu="12"><span class="st-nr">5</span><span class="st-pav">Paprastųjų diferencialinių lygčių sistemos</span><span class="st-prog"></span></a></li>
+</ol>
+<div class="sonine-dalis">II dalis · Kompleksinė analizė, sumos ir asimptotika</div><ol class="sonine-temos">
+<li><a href="tema-06.html" data-tema="6" data-uzduociu="12"><span class="st-nr">6</span><span class="st-pav">Analizinės funkcijos ir Gama funkcija</span><span class="st-prog"></span></a></li>
+<li><a href="tema-07.html" data-tema="7" data-uzduociu="12"><span class="st-nr">7</span><span class="st-pav">Integravimas kompleksinėje plokštumoje ir Lorano eilutė</span><span class="st-prog"></span></a></li>
+<li><a href="tema-08.html" data-tema="8" data-uzduociu="18"><span class="st-nr">8</span><span class="st-pav">Reziduumai ir jų taikymas integralams</span><span class="st-prog"></span></a></li>
+<li><a href="tema-09.html" data-tema="9" data-uzduociu="12"><span class="st-nr">9</span><span class="st-pav">Begalinės sumos, Hevisaido ir Dirako funkcijos</span><span class="st-prog"></span></a></li>
+<li><a href="tema-10.html" data-tema="10" data-uzduociu="12"><span class="st-nr">10</span><span class="st-pav">Integralo asimptotika: balno metodas ir Stirlingo formulė</span><span class="st-prog"></span></a></li>
+</ol>
+<div class="sonine-dalis">III dalis · Integralinės transformacijos</div><ol class="sonine-temos">
+<li><a href="tema-11.html" data-tema="11" data-uzduociu="12"><span class="st-nr">11</span><span class="st-pav">Furjė transformacija ir sąsūka</span><span class="st-prog"></span></a></li>
+<li><a href="tema-12.html" data-tema="12" data-uzduociu="12"><span class="st-nr">12</span><span class="st-pav">Laplaso transformacija</span><span class="st-prog"></span></a></li>
+</ol>
+<div class="sonine-dalis">IV dalis · Dalinių išvestinių lygtys</div><ol class="sonine-temos">
+<li><a href="tema-13.html" data-tema="13" data-uzduociu="12"><span class="st-nr">13</span><span class="st-pav">Fizikinių vyksmų lygtys: styga ir difuzija</span><span class="st-prog"></span></a></li>
+<li><a href="tema-14.html" data-tema="14" data-uzduociu="12"><span class="st-nr">14</span><span class="st-pav">Dalinių išvestinių lygčių klasifikacija ir D&#x27;Alambero formulė</span><span class="st-prog"></span></a></li>
+<li><a href="tema-15.html" data-tema="15" data-uzduociu="12"><span class="st-nr">15</span><span class="st-pav">Kintamųjų atskyrimo (Furjė) metodas</span><span class="st-prog"></span></a></li>
+<li><a href="tema-16.html" data-tema="16" data-uzduociu="11"><span class="st-nr">16</span><span class="st-pav">Šturmo–Liuvilio uždavinys ir tikrinės funkcijos</span><span class="st-prog"></span></a></li>
+</ol>
+<div class="sonine-dalis">V dalis · Variacinis skaičiavimas</div><ol class="sonine-temos">
+<li><a href="tema-17.html" data-tema="17" data-uzduociu="12"><span class="st-nr">17</span><span class="st-pav">Funkcionalas, variacija ir Eulerio lygtis</span><span class="st-prog"></span></a></li>
+<li><a href="tema-18.html" data-tema="18" data-uzduociu="12"><span class="st-nr">18</span><span class="st-pav">Sąlyginis ekstremumas ir stygos variacinis principas</span><span class="st-prog"></span></a></li>
+<li><a href="tema-19.html" data-tema="19" data-uzduociu="12"><span class="st-nr">19</span><span class="st-pav">Judamieji rėžiai ir ekstremalės su lūžio taškais</span><span class="st-prog"></span></a></li>
+</ol>
+</aside>
+<div class="sonine-uzdanga" hidden></div>
+
+<header class="virsus">
+  <div class="virsus-vidus">
+    <button class="meniu" type="button" aria-controls="sonine" aria-expanded="false">☰ Temos</button>
+    <a class="atgal" href="pasiruosimas-1.html">← Pasiruošimas</a>
+  </div>
+</header>
+<header class="hero">
+  <div class="hero-vidus">
+    <p class="antzenklis">1 atsiskaitymas</p>
+    <h1>Reziduumų taisyklės per pavyzdžius</h1>
+    <p class="hero-info">Kiekviena taisyklė: ką ji sako, kodėl taip yra ir pilnai išspręstas pavyzdys.</p>
+  </div>
+</header>
+<main class="turinys rez-taisykles">
+<a class="mygtukas grizti" href="pasiruosimas-1.html">← Atgal į pasiruošimą</a>
+<p class="rinkinio-pdf"><a class="mygtukas" href="pasiruosimas-1/reziduumu-taisykles-pavyzdziai.pdf" download>Atsisiųsti PDF</a> <a class="mygtukas" href="pasiruosimas-1-atmintine.html">📋 Atmintinė prieš atsiskaitymą</a></p>
+<nav class="rez-turinys" aria-label="Turinys"><strong>Turinys:</strong> <a href="#pagrindinė-idėja">0. Pagrindinė idėja</a> · <a href="#kaip-suskaičiuoti-reziduumą">1. Kaip suskaičiuoti reziduumą</a> · <a href="#oint_c-su-nurodytu-kontūru">2. <span
+class="math inline">\oint_C</span> su nurodytu kontūru</a> · <a href="#int_02pi-su-costheta-sintheta">3. <span
+class="math inline">\int_0^{2\pi}</span> su <span
+class="math inline">\cos\theta</span>, <span
+class="math inline">\sin\theta</span></a> · <a href="#int_-inftyinfty-racionali-funkcija">4. <span
+class="math inline">\int_{-\infty}^{\infty}</span> racionali
+funkcija</a> · <a href="#int_-inftyinfty-su-cos-kx-arba-sin-kx">5. <span
+class="math inline">\int_{-\infty}^{\infty}</span> su <span
+class="math inline">\cos kx</span> arba <span class="math inline">\sin
+kx</span></a> · <a href="#polius-ant-realiosios-ašies">6. Polius ant realiosios ašies</a> · <a href="#sumos-sum-fn">7. Sumos <span class="math inline">\sum
+f(n)</span></a> · <a href="#šablonas-kaip-užrašyti-sprendimą">8. Šablonas, kaip užrašyti
+sprendimą</a></nav>
+<p><strong>Kaip skaityti.</strong> Kiekvienoje dalyje pirma paaiškinimas
+paprastais žodžiais, tada pavyzdys. Pavyzdį pirmiausia perskaityk, tada
+užversk ir išspręsk pati. Visi atsakymai patikrinti skaitmeniškai.</p>
+<h2 id="pagrindinė-idėja">0. Pagrindinė idėja</h2>
+<p>Visi reziduumų uždaviniai remiasi viena teorema: <span
+class="math display">\oint_C f(z)\,dz=2\pi i\sum_{\text{viduje
+}C}\operatorname{Res}f.</span> Integralą uždaru kontūru galima
+suskaičiuoti <strong>be integravimo</strong>: užtenka rasti taškus, kur
+vardiklis lygus nuliui (polius), atrinkti tuos, kurie yra kontūro
+viduje, ir sudėti jų reziduumus.</p>
+<p>Visi kiti tipai (<span class="math inline">\int_0^{2\pi}</span>,
+<span class="math inline">\int_{-\infty}^{\infty}</span>, sumos) yra tik
+būdai <strong>paversti</strong> paprastą integralą tokiu uždaru kontūru.
+Todėl visada daroma ta pati seka: <strong>Kur? Kokia? Kiek?
+Sudėk.</strong></p>
+<h2 id="kaip-suskaičiuoti-reziduumą">1. Kaip suskaičiuoti reziduumą</h2>
+<h3 id="paprastas-polius">1.1. Paprastas polius</h3>
+<p><strong>Taisyklė.</strong> Jei vardiklyje skliaustas, kuris taške
+<span class="math inline">z_0</span> lygus nuliui, yra <strong>pirmu
+laipsniu</strong>, tai: <span
+class="math display">\operatorname{Res}_{z_0}\frac{\varphi(z)}{\psi(z)}=\frac{\varphi(z_0)}{\psi&#39;(z_0)}.</span>
+Paprastai: <strong>nulinį skliaustą diferencijuok, visa kita
+įstatyk.</strong></p>
+<p><strong>Kodėl.</strong> Reziduumas yra <span
+class="math inline">\lim_{z\to z_0}(z-z_0)f(z)</span>, t. y. „išbrauki“
+<span class="math inline">(z-z_0)</span> ir įstatai <span
+class="math inline">z_0</span>. Formulė su <span
+class="math inline">\psi&#39;</span> daro tą patį, tik nereikia skaidyti
+vardiklio.</p>
+<p><strong>Pavyzdys.</strong> <span
+class="math inline">f(z)=\dfrac{1}{z^2+9}</span>, polius <span
+class="math inline">z_0=3i</span>.</p>
+<ul>
+<li>Su išvestine: <span class="math inline">\psi=z^2+9</span>, <span
+class="math inline">\psi&#39;=2z</span>, <span
+class="math inline">\operatorname{Res}=\dfrac{1}{2\cdot3i}=\dfrac{1}{6i}</span>.</li>
+<li>Išbraukiant: <span class="math inline">z^2+9=(z-3i)(z+3i)</span>,
+išbrauki <span class="math inline">(z-3i)</span>: <span
+class="math inline">\dfrac{1}{3i+3i}=\dfrac{1}{6i}</span>. Tas
+pats.</li>
+</ul>
+<p><strong>Pavyzdys su keliais skliaustais.</strong> <span
+class="math inline">f(z)=\dfrac{e^{2iz}}{(z^2+1)(z^2+4)}</span>, polius
+<span class="math inline">z_0=i</span>. Nulinis skliaustas yra <span
+class="math inline">z^2+1</span> (jo išvestinė <span
+class="math inline">2z=2i</span>). Skliaustas <span
+class="math inline">z^2+4</span> taške <span
+class="math inline">i</span> lygus <span
+class="math inline">-1+4=3</span>, jį tiesiog įstatai. Skaitiklis <span
+class="math inline">e^{2i\cdot i}=e^{-2}</span>. <span
+class="math display">\operatorname{Res}_i=\frac{e^{-2}}{2i\cdot3}=\frac{e^{-2}}{6i}.</span></p>
+<h3 id="antros-eilės-polius">1.2. Antros eilės polius</h3>
+<p><strong>Taisyklė.</strong> Jei nulinis skliaustas yra
+<strong>kvadratu</strong> (<span class="math inline">z^2</span>, <span
+class="math inline">(z-a)^2</span>): <span
+class="math display">\operatorname{Res}_{z_0}f=\Big[(z-z_0)^2f(z)\Big]&#39;_{z=z_0}.</span>
+Paprastai: <strong>išbrauk kvadratą, likusią dalį diferencijuok ir
+įstatyk <span class="math inline">z_0</span>.</strong></p>
+<p><strong>Pavyzdys.</strong> <span
+class="math inline">f(z)=\dfrac{e^z}{z^2(z-1)}</span>, polius <span
+class="math inline">z_0=0</span> (antros eilės).</p>
+<ol type="1">
+<li>Išbraukiame <span class="math inline">z^2</span>: lieka <span
+class="math inline">g(z)=\dfrac{e^z}{z-1}</span>.</li>
+<li>Išvestinė: <span
+class="math inline">g&#39;(z)=\dfrac{e^z(z-1)-e^z}{(z-1)^2}</span>.</li>
+<li>Įstatome <span class="math inline">0</span>: <span
+class="math inline">g&#39;(0)=\dfrac{-1-1}{1}=-2</span>.</li>
+</ol>
+<p>Taigi <span class="math inline">\operatorname{Res}_0=-2</span>. O
+taške <span class="math inline">z=1</span> polius paprastas: išbrauki
+<span class="math inline">(z-1)</span>, įstatai <span
+class="math inline">1</span>: <span
+class="math inline">\operatorname{Res}_1=\dfrac{e}{1}=e</span>.</p>
+<p><strong>Dažna klaida:</strong> formulę <span
+class="math inline">\frac{\varphi}{\psi&#39;}</span> taikyti antros
+eilės poliui. Ji tinka <strong>tik paprastam</strong>.</p>
+<h3 id="esminis-taškas">1.3. Esminis taškas</h3>
+<p><strong>Taisyklė.</strong> Jei taške yra <span
+class="math inline">e^{1/z}</span>, <span
+class="math inline">\sin\frac1z</span>, <span
+class="math inline">\cos\frac1z</span> (begalinė eilutė su <span
+class="math inline">\frac1z</span> laipsniais), formulės neveikia.
+Reikia išskleisti <strong>Lorano eilute</strong> ir paimti koeficientą
+prie <span class="math inline">\frac1z</span>.</p>
+<p><strong>Pavyzdys.</strong> <span
+class="math inline">f(z)=z^2\sin\dfrac1z</span>, taškas <span
+class="math inline">0</span>. <span
+class="math display">z^2\left(\frac1z-\frac{1}{3!\,z^3}+\frac{1}{5!\,z^5}-\dots\right)=z-\frac{1}{6z}+\dots</span>
+Koeficientas prie <span class="math inline">\frac1z</span> yra <span
+class="math inline">-\frac16</span>, todėl <span
+class="math inline">\operatorname{Res}_0=-\frac16</span>.</p>
+<h2 id="oint_c-su-nurodytu-kontūru">2. <span
+class="math inline">\oint_C</span> su nurodytu kontūru</h2>
+<p><strong>Taisyklė.</strong> Apskritimas <span
+class="math inline">|z-a|=r</span> turi centrą <span
+class="math inline">a</span> ir spindulį <span
+class="math inline">r</span>. Polius <span
+class="math inline">z_0</span> yra:</p>
+<ul>
+<li><strong>viduje</strong>, jei <span
+class="math inline">|z_0-a|&lt;r</span>: imi <span
+class="math inline">2\pi i\operatorname{Res}</span>;</li>
+<li><strong>ant kontūro</strong>, jei <span
+class="math inline">|z_0-a|=r</span>: imi <span class="math inline">\pi
+i\operatorname{Res}</span> (pusę);</li>
+<li><strong>išorėje</strong>, jei <span
+class="math inline">|z_0-a|&gt;r</span>: neimi.</li>
+</ul>
+<p><strong>Pavyzdys.</strong> <span class="math inline">\displaystyle
+I=\oint_{|z-1|=2}\frac{dz}{z(z-4)}</span>.</p>
+<ol type="1">
+<li><strong>Kur?</strong> Poliai <span class="math inline">0</span> ir
+<span class="math inline">4</span>. Centras <span
+class="math inline">1</span>, spindulys <span
+class="math inline">2</span>. <span
+class="math inline">|0-1|=1&lt;2</span>, viduje. <span
+class="math inline">|4-1|=3&gt;2</span>, išorėje.</li>
+<li><strong>Kokia?</strong> <span class="math inline">z=0</span>
+paprastas.</li>
+<li><strong>Kiek?</strong> Išbrauki <span class="math inline">z</span>,
+įstatai <span class="math inline">0</span>: <span
+class="math inline">\operatorname{Res}_0=\dfrac{1}{0-4}=-\dfrac14</span>.</li>
+<li><strong>Sudėk:</strong> <span class="math inline">I=2\pi
+i\cdot\left(-\dfrac14\right)=-\dfrac{\pi i}{2}</span>.</li>
+</ol>
+<h2 id="int_02pi-su-costheta-sintheta">3. <span
+class="math inline">\int_0^{2\pi}</span> su <span
+class="math inline">\cos\theta</span>, <span
+class="math inline">\sin\theta</span></h2>
+<p><strong>Taisyklė.</strong> Keitinys <span
+class="math inline">z=e^{i\theta}</span> paverčia integralą nuo <span
+class="math inline">0</span> iki <span class="math inline">2\pi</span>
+integralu vienetiniu apskritimu <span class="math inline">|z|=1</span>:
+<span
+class="math display">\cos\theta=\frac{z+z^{-1}}{2}=\frac{z^2+1}{2z},\qquad
+\sin\theta=\frac{z-z^{-1}}{2i}=\frac{z^2-1}{2iz},\qquad
+d\theta=\frac{dz}{iz}.</span> Imi tik polius, kurių <span
+class="math inline">|z|&lt;1</span>.</p>
+<p><strong>Kodėl.</strong> Kai <span class="math inline">\theta</span>
+eina nuo <span class="math inline">0</span> iki <span
+class="math inline">2\pi</span>, taškas <span
+class="math inline">e^{i\theta}</span> apeina vienetinį apskritimą vieną
+kartą. <span class="math inline">d\theta=\frac{dz}{iz}</span> gaunasi iš
+<span class="math inline">dz=ie^{i\theta}d\theta=iz\,d\theta</span>.</p>
+<p><strong>Pavyzdys.</strong> <span class="math inline">\displaystyle
+I=\int_0^{2\pi}\frac{d\theta}{5+3\cos\theta}</span>.</p>
+<ol type="1">
+<li><strong>Keitinys:</strong> <span
+class="math inline">5+3\cdot\dfrac{z^2+1}{2z}=\dfrac{10z+3z^2+3}{2z}=\dfrac{3z^2+10z+3}{2z}</span>.
+Todėl <span
+class="math display">I=\oint_{|z|=1}\frac{2z}{3z^2+10z+3}\cdot\frac{dz}{iz}=\oint_{|z|=1}\frac{2\,dz}{i(3z^2+10z+3)}.</span></li>
+<li><strong>Kur?</strong> <span class="math inline">3z^2+10z+3=0</span>:
+<span class="math inline">D=100-36=64</span>, <span
+class="math inline">z=\dfrac{-10\pm8}{6}</span>, t. y. <span
+class="math inline">-\dfrac13</span> ir <span
+class="math inline">-3</span>. Viduje tik <span
+class="math inline">-\dfrac13</span>.</li>
+<li><strong>Kiek?</strong> Paprastas polius, vardiklio išvestinė <span
+class="math inline">6z+10</span>, taške <span
+class="math inline">-\frac13</span> lygi <span
+class="math inline">8</span>: <span
+class="math display">\operatorname{Res}=\frac{2}{i}\cdot\frac{1}{8}=\frac{1}{4i}.</span></li>
+<li><strong>Sudėk:</strong> <span class="math inline">I=2\pi
+i\cdot\dfrac{1}{4i}=\dfrac{\pi}{2}</span>.</li>
+</ol>
+<p><strong>Patikrinimas:</strong> atsakymas realus ir teigiamas, kaip ir
+turi būti, nes integrandas teigiamas.</p>
+<h2 id="int_-inftyinfty-racionali-funkcija">4. <span
+class="math inline">\int_{-\infty}^{\infty}</span> racionali
+funkcija</h2>
+<p><strong>Taisyklė.</strong> Uždarai kontūrą <strong>dideliu
+pusapskritimiu viršuje</strong> ir imi polius su <span
+class="math inline">\operatorname{Im}z&gt;0</span>: <span
+class="math display">\int_{-\infty}^{\infty}f(x)\,dx=2\pi
+i\sum_{\operatorname{Im}z_k&gt;0}\operatorname{Res}f.</span></p>
+<p><strong>Kodėl.</strong> Uždaras kontūras yra atkarpa <span
+class="math inline">[-R,R]</span> ir lankas virš jos. Kai vardiklio
+laipsnis <strong>bent 2 didesnis</strong> už skaitiklio, lanko
+integralas artėja į <span class="math inline">0</span>, kai <span
+class="math inline">R\to\infty</span>, todėl lieka tik integralas
+realiąja ašimi. Kai <span class="math inline">R</span> didelis,
+pusapskritimis apima <strong>visą viršutinę pusplokštumą</strong>.</p>
+<p><strong>Pavyzdys.</strong> <span class="math inline">\displaystyle
+I=\int_{-\infty}^{\infty}\frac{dx}{(x^2+1)(x^2+4)}</span>.</p>
+<ol type="1">
+<li><strong>Kur?</strong> Poliai <span class="math inline">\pm i</span>,
+<span class="math inline">\pm2i</span>. Viršuje <span
+class="math inline">i</span> ir <span
+class="math inline">2i</span>.</li>
+<li><strong>Kiek?</strong>
+<ul>
+<li><span class="math inline">\operatorname{Res}_i</span>: nulinis <span
+class="math inline">(z^2+1)</span>, <span
+class="math inline">2z=2i</span>; kitas <span
+class="math inline">z^2+4=3</span>. <span
+class="math inline">\operatorname{Res}_i=\dfrac{1}{2i\cdot3}=\dfrac{1}{6i}</span>.</li>
+<li><span class="math inline">\operatorname{Res}_{2i}</span>: nulinis
+<span class="math inline">(z^2+4)</span>, <span
+class="math inline">2z=4i</span>; kitas <span
+class="math inline">z^2+1=-3</span>. <span
+class="math inline">\operatorname{Res}_{2i}=\dfrac{1}{-3\cdot4i}=-\dfrac{1}{12i}</span>.</li>
+</ul></li>
+<li><strong>Sudėk:</strong> <span class="math inline">I=2\pi
+i\left(\dfrac{1}{6i}-\dfrac{1}{12i}\right)=2\pi\cdot\dfrac{1}{12}=\dfrac{\pi}{6}</span>.</li>
+</ol>
+<h2 id="int_-inftyinfty-su-cos-kx-arba-sin-kx">5. <span
+class="math inline">\int_{-\infty}^{\infty}</span> su <span
+class="math inline">\cos kx</span> arba <span class="math inline">\sin
+kx</span></h2>
+<p>Tai ta pati 4 dalis, tik su vienu triuku. Paaiškinu iš eilės, ką
+reiškia „<span class="math inline">e^{ikz}</span>, gale <span
+class="math inline">\operatorname{Re}</span> / <span
+class="math inline">\operatorname{Im}</span>, Žordano lema“.</p>
+<h3 id="kodėl-negalima-tiesiog-palikti-cos-kz">5.1. Kodėl negalima
+tiesiog palikti <span class="math inline">\cos kz</span></h3>
+<p>Atrodytų, galima imti <span class="math inline">f(z)\cos kz</span> ir
+daryti kaip 4 dalyje. Bet kompleksinėje plokštumoje <span
+class="math inline">\cos kz</span> <strong>neaprėžtas</strong>.
+Pavyzdžiui, <span
+class="math inline">\cos(iy)=\operatorname{ch}y</span>, o tai išauga
+eksponentiškai. Tada lanko integralas nenyksta ir metodas sugriūva.</p>
+<h3 id="triukas-cos-kxto-eikz">5.2. Triukas: <span
+class="math inline">\cos kx\to e^{ikz}</span></h3>
+<p>Realiojoje ašyje galioja Eulerio formulė: <span
+class="math display">e^{ikx}=\cos kx+i\sin kx.</span> Todėl vietoje
+dviejų integralų skaičiuojame vieną: <span
+class="math display">J=\int_{-\infty}^{\infty}f(x)\,e^{ikx}\,dx=\underbrace{\int
+f(x)\cos kx\,dx}_{\operatorname{Re}J}+i\underbrace{\int f(x)\sin
+kx\,dx}_{\operatorname{Im}J}.</span> Jei <span
+class="math inline">f</span> reali (paprastai taip ir yra), tai:</p>
+<ul>
+<li>integralas su <strong><span class="math inline">\cos</span></strong>
+yra <span class="math inline">\operatorname{Re}J</span>;</li>
+<li>integralas su <strong><span class="math inline">\sin</span></strong>
+yra <span class="math inline">\operatorname{Im}J</span>.</li>
+</ul>
+<p>Tai ir yra „gale <span class="math inline">\operatorname{Re}</span> /
+<span class="math inline">\operatorname{Im}</span>“: pirma suskaičiuoji
+<span class="math inline">J</span> su <span
+class="math inline">e^{ikz}</span>, o <strong>pačiame gale</strong>
+paimi realiąją arba menamąją dalį.</p>
+<h3 id="kodėl-uždarome-viršuje">5.3. Kodėl uždarome viršuje</h3>
+<p>Jei <span class="math inline">z=x+iy</span>, tai <span
+class="math inline">e^{ikz}=e^{ikx}\cdot e^{-ky}</span>, o <span
+class="math inline">|e^{ikx}|=1</span>. Todėl <span
+class="math display">|e^{ikz}|=e^{-ky}\le1,\quad\text{kai }y\ge0\
+(k&gt;0).</span> Viršutinėje pusplokštumoje <span
+class="math inline">e^{ikz}</span> <strong>neišauga</strong>, o apačioje
+išaugtų. Todėl uždarome viršuje ir imame polius su <span
+class="math inline">\operatorname{Im}z&gt;0</span>.</p>
+<h3 id="žordano-lema">5.4. Žordano lema</h3>
+<p><strong>Ką sako.</strong> Jei <span
+class="math inline">f(z)\to0</span>, kai <span
+class="math inline">|z|\to\infty</span>, tai integralas viršutiniu lanku
+<span class="math display">\int_{C_R}f(z)\,e^{ikz}\,dz\to0,\qquad
+R\to\infty\quad(k&gt;0).</span></p>
+<p><strong>Kam reikia.</strong> 4 dalyje lankas nykdavo tik tada, kai
+vardiklio laipsnis <strong>bent 2</strong> didesnis. Su <span
+class="math inline">e^{ikz}</span> užtenka, kad būtų <strong>bent
+1</strong> didesnis, nes <span class="math inline">e^{ikz}</span> pats
+padeda nuslopinti lanką. Pavyzdžiui, <span
+class="math inline">\frac{x\sin x}{x^2+1}</span> skirtumas tik 1, bet
+metodas veikia.</p>
+<p><strong>Ką rašyti per atsiskaitymą:</strong> vieną sakinį:
+<em>„Kadangi <span class="math inline">f(z)\to0</span>, pagal Žordano
+lemą integralas lanku artėja į 0.“</em></p>
+<h3 id="pavyzdys-su-cos">5.5. Pavyzdys su <span
+class="math inline">\cos</span></h3>
+<p><span class="math inline">\displaystyle
+I=\int_{-\infty}^{\infty}\frac{\cos3x}{x^2+4}\,dx</span>.</p>
+<ol type="1">
+<li><strong>Triukas:</strong> <span class="math inline">\cos3x\to
+e^{3iz}</span>. Skaičiuojame <span
+class="math inline">J=\displaystyle\int\frac{e^{3ix}}{x^2+4}dx</span>, o
+<span class="math inline">I=\operatorname{Re}J</span>. Pagal Žordano
+lemą lankas nyksta.</li>
+<li><strong>Kur?</strong> Poliai <span class="math inline">\pm2i</span>,
+viršuje tik <span class="math inline">2i</span>.</li>
+<li><strong>Kiek?</strong> Nulinis skliaustas <span
+class="math inline">z^2+4</span>, išvestinė <span
+class="math inline">2z=4i</span>. Skaitiklis <span
+class="math inline">e^{3i\cdot2i}=e^{-6}</span>. <span
+class="math display">\operatorname{Res}_{2i}=\frac{e^{-6}}{4i}.</span></li>
+<li><strong>Sudėk:</strong> <span class="math inline">J=2\pi
+i\cdot\dfrac{e^{-6}}{4i}=\dfrac{\pi}{2}e^{-6}</span>.</li>
+<li><strong>Gale Re:</strong> <span class="math inline">J</span> jau
+realus, todėl <span
+class="math inline">I=\operatorname{Re}J=\dfrac{\pi}{2}e^{-6}</span>.</li>
+</ol>
+<h3 id="pavyzdys-su-sin">5.6. Pavyzdys su <span
+class="math inline">\sin</span></h3>
+<p><span class="math inline">\displaystyle
+I=\int_{-\infty}^{\infty}\frac{x\sin x}{x^2+1}\,dx</span>.</p>
+<ol type="1">
+<li><strong>Triukas:</strong> <span class="math inline">\sin x\to
+e^{iz}</span>. <span
+class="math inline">J=\displaystyle\int\frac{xe^{ix}}{x^2+1}dx</span>,
+<span class="math inline">I=\operatorname{Im}J</span>. Vardiklio
+laipsnis tik 1 didesnis, bet <span
+class="math inline">\frac{z}{z^2+1}\to0</span>, todėl Žordano lema
+tinka.</li>
+<li><strong>Kur?</strong> Viršuje tik <span
+class="math inline">z=i</span>.</li>
+<li><strong>Kiek?</strong> <span
+class="math inline">\operatorname{Res}_i=\dfrac{i\cdot e^{i\cdot
+i}}{2i}=\dfrac{e^{-1}}{2}=\dfrac{1}{2e}</span>.</li>
+<li><strong>Sudėk:</strong> <span class="math inline">J=2\pi
+i\cdot\dfrac{1}{2e}=\dfrac{\pi i}{e}</span>.</li>
+<li><strong>Gale Im:</strong> <span
+class="math inline">I=\operatorname{Im}\dfrac{\pi
+i}{e}=\dfrac{\pi}{e}</span>.</li>
+</ol>
+<p><strong>Atkreipk dėmesį:</strong> su <span
+class="math inline">\cos</span> atsakymas <span
+class="math inline">J</span> išėjo realus, su <span
+class="math inline">\sin</span> grynai menamas. Taip dažnai būna, ir tai
+geras patikrinimas.</p>
+<p><strong>Greitas spąstas:</strong> jei <span
+class="math inline">f</span> nelyginė, o integrale <span
+class="math inline">\cos</span> (pvz. <span
+class="math inline">\int\frac{x\cos x}{x^2+1}dx</span>), integralas
+lygus <span class="math inline">0</span> iš simetrijos, nieko skaičiuoti
+nereikia.</p>
+<h2 id="polius-ant-realiosios-ašies">6. Polius ant realiosios ašies</h2>
+<p><strong>Taisyklė.</strong> Jei polius <span
+class="math inline">x_0</span> yra <strong>ant</strong> realiosios ašies
+(pvz. vardiklyje <span class="math inline">x</span>), jį apeiname mažu
+pusapskritimiu. Toks polius įneša <strong>pusę</strong>: <span
+class="math display">\int_{-\infty}^{\infty}=2\pi
+i\sum_{\text{viršuje}}\operatorname{Res}+\pi i\sum_{\text{ant
+ašies}}\operatorname{Res}.</span></p>
+<p><strong>Kodėl pusę.</strong> Pilnas apėjimas aplink polių duoda <span
+class="math inline">2\pi i\operatorname{Res}</span>. Pusapskritimis yra
+pusė apskritimo, todėl duoda pusę, t. y. <span class="math inline">\pi
+i\operatorname{Res}</span>.</p>
+<p><strong>Pavyzdys.</strong> <span class="math inline">\displaystyle
+I=\int_{-\infty}^{\infty}\frac{\sin x}{x(x^2+1)}\,dx</span>.</p>
+<ol type="1">
+<li><strong>Triukas:</strong> <span class="math inline">\sin x\to
+e^{iz}</span>, <span
+class="math inline">f(z)=\dfrac{e^{iz}}{z(z^2+1)}</span>, <span
+class="math inline">I=\operatorname{Im}J</span>.</li>
+<li><strong>Kur?</strong> <span class="math inline">z=0</span> ant
+ašies, <span class="math inline">z=i</span> viršuje (<span
+class="math inline">-i</span> apačioje, neimi).</li>
+<li><strong>Kiek?</strong>
+<ul>
+<li><span class="math inline">\operatorname{Res}_0</span>: išbrauki
+<span class="math inline">z</span>, įstatai <span
+class="math inline">0</span>: <span
+class="math inline">\dfrac{e^0}{0+1}=1</span>.</li>
+<li><span class="math inline">\operatorname{Res}_i</span>: nulinis <span
+class="math inline">(z^2+1)</span>, išvestinė <span
+class="math inline">2i</span>; kitas <span
+class="math inline">z=i</span>; skaitiklis <span
+class="math inline">e^{-1}</span>: <span
+class="math inline">\dfrac{e^{-1}}{i\cdot2i}=-\dfrac{1}{2e}</span>.</li>
+</ul></li>
+<li><strong>Sudėk:</strong> <span class="math inline">J=\pi i\cdot1+2\pi
+i\cdot\left(-\dfrac{1}{2e}\right)=\pi
+i\left(1-\dfrac1e\right)</span>.</li>
+<li><strong>Gale Im:</strong> <span
+class="math inline">I=\pi\left(1-\dfrac1e\right)</span>.</li>
+</ol>
+<h2 id="sumos-sum-fn">7. Sumos <span class="math inline">\sum
+f(n)</span></h2>
+<p><strong>Taisyklė.</strong> <span
+class="math display">\sum_{n=-\infty}^{\infty}f(n)=-\sum_{\text{$f$
+poliai}}\operatorname{Res}\Big[\pi\operatorname{ctg}(\pi
+z)\,f(z)\Big].</span> Su <span class="math inline">(-1)^n</span> vietoje
+<span class="math inline">\pi\operatorname{ctg}\pi z</span> imi <span
+class="math inline">\dfrac{\pi}{\sin\pi z}</span>.</p>
+<p><strong>Kodėl.</strong> <span
+class="math inline">\pi\operatorname{ctg}\pi z</span> turi paprastus
+polius visuose sveikuosiuose <span class="math inline">n</span> su
+reziduumu 1, todėl jo reziduumai „surenka“ <span
+class="math inline">f(n)</span>. Visų reziduumų suma lygi nuliui, todėl
+suma <span class="math inline">=-</span>(likę reziduumai <span
+class="math inline">f</span> poliuose).</p>
+<p><strong>Pavyzdys.</strong> <span class="math inline">\displaystyle
+S=\sum_{n=-\infty}^{\infty}\frac{1}{n^2+1}</span>.</p>
+<ol type="1">
+<li><span class="math inline">f</span> poliai <span
+class="math inline">\pm i</span>. <span
+class="math inline">\operatorname{ctg}(\pm\pi i)=\mp
+i\operatorname{cth}\pi</span>.</li>
+<li><span
+class="math inline">\operatorname{Res}_i=\dfrac{\pi\operatorname{ctg}(\pi
+i)}{2i}=\dfrac{-i\pi\operatorname{cth}\pi}{2i}=-\dfrac{\pi}{2}\operatorname{cth}\pi</span>;
+<span class="math inline">\operatorname{Res}_{-i}</span> toks pat.</li>
+<li><span
+class="math inline">S=-\left(-\pi\operatorname{cth}\pi\right)=\pi\operatorname{cth}\pi</span>.
+Jei suma nuo <span class="math inline">n=1</span>: <span
+class="math inline">\dfrac{S-f(0)}{2}=\dfrac{\pi\operatorname{cth}\pi-1}{2}</span>.</li>
+</ol>
+<h2 id="šablonas-kaip-užrašyti-sprendimą">8. Šablonas, kaip užrašyti
+sprendimą</h2>
+<ol type="1">
+<li><strong>Keitinys / funkcija:</strong> „Nagrinėjame <span
+class="math inline">f(z)=\dots</span>“ (su <span
+class="math inline">e^{ikz}</span> arba po <span
+class="math inline">z=e^{i\theta}</span>).</li>
+<li><strong>Kontūras:</strong> „Uždarome viršuje, pagal Žordano lemą
+lankas <span class="math inline">\to0</span>“ arba „<span
+class="math inline">|z|=1</span>“.</li>
+<li><strong>Kur?</strong> Išsprendi vardiklis <span
+class="math inline">=0</span>, nurodai, kurie viduje.</li>
+<li><strong>Kokia ir kiek?</strong> Kiekvienam poliui eilė ir
+reziduumas.</li>
+<li><strong>Sudėk:</strong> <span class="math inline">2\pi
+i\sum\operatorname{Res}</span> (+ <span class="math inline">\pi
+i\operatorname{Res}</span> ant ašies), tada <span
+class="math inline">\operatorname{Re}</span> / <span
+class="math inline">\operatorname{Im}</span>.</li>
+<li><strong>Patikrink:</strong> ar atsakymas realus? Ar teigiamas, kai
+integrandas teigiamas?</li>
+</ol>
+
+</main>
+<nav class="puslapiai" aria-label="Kiti puslapiai">
+  <a class="puslapis-ankstesnis" href="pasiruosimas-1-atmintine.html"><span>← Atmintinė</span><strong>Prieš atsiskaitymą</strong></a>
+  <a class="puslapis-kitas" href="pasiruosimas-1-rinkinys-3.html"><span>Spręsti →</span><strong>3 rinkinys</strong></a>
+</nav>
+<script src="svetaine.js?v=3"></script>
+</body>
+</html>
