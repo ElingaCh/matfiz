@@ -519,3 +519,14 @@ svg.grafikas polygon { stroke: none; }
 .atmintine-ps .planas table { width: 100%; border-collapse: collapse; font-size: .92rem; display: block; overflow-x: auto; }
 .atmintine-ps .planas td, .atmintine-ps .planas th { border-bottom: 1px solid var(--linija); padding: .5rem .6rem; text-align: left; vertical-align: top; }
 .atmintine-ps .dl-lentele td:nth-child(2) { white-space: nowrap; }
+
+/* ---------- Reziduumų taisyklės per pavyzdžius ---------- */
+.atmintine-baneris.ab-antras { margin-top: .8rem; border-color: var(--teorija); background: color-mix(in srgb, var(--teorija) 7%, var(--pavirsius)); }
+.ab-antras .ab-eiti { color: var(--teorija); }
+.rez-taisykles .rez-turinys { font: .9rem/1.9 var(--ui-sriftas); color: var(--pilka); margin: 0 0 2rem; padding: .9rem 1.1rem;
+  border: 1px solid var(--linija); border-radius: 10px; background: var(--pavirsius); }
+.rez-taisykles .rez-turinys a { color: var(--akcentas); }
+.rez-taisykles h2 { margin-top: 3rem; scroll-margin-top: 4rem; }
+.rez-taisykles h3 { margin-top: 2rem; }
+.rez-taisykles .katex-display { overflow-x: auto; overflow-y: hidden; padding: .2rem 0; }
+.rez-taisykles li { margin: .3rem 0; }
