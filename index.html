@@ -6,7 +6,7 @@
 <title>Matfizo pratybos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
-<link rel="stylesheet" href="stilius.css?v=6">
+<link rel="stylesheet" href="stilius.css?v=10">
 </head>
 <body class="titulinis" data-uzduociu="234">
 
@@ -30,6 +30,13 @@
 </header>
 
 <main class="titulo-turinys">
+  <section class="motyvacija" id="motyvacija" aria-live="polite">
+    <div class="motyv-virsus">
+      <div><h2>Norisi pasiduoti?</h2><p class="motyv-apr">Paspausk ir gauk atsitiktinę citatą iš katalogo.</p></div>
+      <button class="mygtukas motyv-mygtukas" type="button" id="motyv-mygtukas">😩 Noriu pasiduoti</button>
+    </div>
+    <figure class="motyv-citata" id="motyv-citata" hidden><blockquote id="motyv-tekstas"></blockquote><figcaption id="motyv-autorius"></figcaption></figure>
+  </section>
   <section class="atsiskaitymas-blokas" id="atsiskaitymas-1">
     <h2><span>1 atsiskaitymas</span> Pasiruošimas 1 atsiskaitymui</h2>
     <p>60 min. · 2 uždaviniai: diferencialinės lygtys ir reziduumai · be konspekto.</p>
@@ -66,5 +73,20 @@
 </main>
 
 <script src="svetaine.js?v=3"></script>
+<script>
+(function () {
+  var Q = [{"t": "Reziduumas yra tai, kas lieka, kai visa kita susiprastina. Tu irgi liksi.", "a": "Koši (nesakė, bet galėjo)"}, {"t": "Kiekvienas polius kada nors būna apeitas mažu pusapskritimiu. Tavo problemos irgi.", "a": "Žordano lema, laisvas vertimas"}, {"t": "Lanko integralas artėja į nulį, kai R artėja į begalybę. Nerimas artėja į nulį, kai miegi bent 7 valandas.", "a": "Kontūro išmintis"}, {"t": "Matematikoje dalykų nesupranti. Prie jų tiesiog pripranti.", "a": "Johnas von Neumannas"}, {"t": "Haris tikrai bus atsiskaityme. Ir tu būsi. Ir abu išlaikysit.", "a": "„Ar Haris Tikrai Bus Atsiskaityme?“"}, {"t": "Nepamiršk +C. Tai tavo konstanta, ir niekas jos iš tavęs neatims.", "a": "Integravimo konstanta"}, {"t": "Tavo progresas yra didėjanti funkcija. Tiesiog kartais jos išvestinė arti nulio.", "a": "Matematinė analizė, 1 kursas"}, {"t": "Nėra tokio poliaus, kurio negalėtum apeiti.", "a": "Kompleksinė analizė, 8 tema"}, {"t": "Kotletas egzistuoja ir yra vienintelis. Tavo išlaikytas atsiskaitymas irgi.", "a": "Kotleto teorema"}, {"t": "Padaugink viską iš kantrybės, ir kairė pusė susiglaus pati.", "a": "Integruojantis daugiklis μ"}, {"t": "Jei niekas nebeveikia, patikrink, ar nedalini iš nulio. Arba ar šiandien valgei.", "a": "Patyręs studentas"}, {"t": "Bernulis irgi kažkada nežinojo, kas yra Bernulio lygtis.", "a": "Istorinis faktas (beveik)"}, {"t": "Antros eilės polius? Išbrauk kvadratą ir diferencijuok. Gyvenime irgi kartais padeda.", "a": "Reziduumų skaičiavimo vadovėlis"}, {"t": "Tu ne užstrigai. Tu tiesiog prie esminio taško. Ten reikia Lorano eilutės, o ne pasidavimo.", "a": "Lorano eilutė"}, {"t": "Konstantos varijuoja, nuotaika irgi. Sprendinys vis tiek egzistuoja.", "a": "Konstantų varijavimo metodas"}, {"t": "Uždaryk kontūrą viršuje. Viršuje visada geriau.", "a": "Žordano lema"}, {"t": "Pradėjai teisingai? Tai jau pusė taškų. Matematikoje tai vadinama daliniu sprendiniu.", "a": "Dėstytojo vertinimo lentelė"}, {"t": "Pertrauka nėra pasidavimas. Tai integravimo konstantos parinkimas.", "a": "Koši uždavinys"}, {"t": "Kiekviena klaida bandomajame yra viena klaida mažiau tikrame atsiskaityme.", "a": "Statistika"}, {"t": "Riemanno hipotezė neišspręsta jau daugiau nei 160 metų, o tu nori viską išmokti per savaitgalį?", "a": "Perspektyvos jausmas"}, {"t": "Atsiskaitymas truks 60 minučių. Tu ruošiesi jau kelias dienas. Pranašumas aiškiai tavo pusėje.", "a": "Paprasta aritmetika"}, {"t": "Kai lygtis atrodo bjauri x atžvilgiu, pažiūrėk į ją y atžvilgiu. Su gyvenimu irgi veikia.", "a": "„Apversk“ metodas"}, {"t": "Jei visai nebegali, iškepk kotletą. Recepte yra įrodymas, kad tai padeda.", "a": "Virtuvės fizika"}, {"t": "e^{iπ} + 1 = 0. Net patys sudėtingiausi dalykai kartais susitraukia į nulį.", "a": "Euleris"}, {"t": "Tu esi uždaras kontūras: visa, ko reikia, jau yra viduje.", "a": "Koši integralo formulė"}, {"t": "Sistema iš dviejų lygčių? Eliminuok vieną. Iš dviejų rūpesčių irgi.", "a": "5 tema"}, {"t": "Jei atsakymas išėjo kompleksinis, o turėjo būti realus, tai ne katastrofa. Tiesiog dar nepaėmei Re.", "a": "Realioji dalis"}, {"t": "Kiekvienas profesorius kažkada pamiršo i² = −1. Bent kartą. Tikrai.", "a": "Nepatvirtinti šaltiniai"}, {"t": "Kas negali išspręsti lygties, gali ją bent gražiai perrašyti. Už tai irgi duoda taškų.", "a": "Atsiskaitymo taktika"}, {"t": "Ketvirtadienį nemokėjai atpažinti tipų. Dabar moki. Tai ne smulkmena, tai teigiama išvestinė.", "a": "Tavo pačios progresas"}];
+  var btn = document.getElementById("motyv-mygtukas"), fig = document.getElementById("motyv-citata"),
+      tx = document.getElementById("motyv-tekstas"), au = document.getElementById("motyv-autorius"), last = -1;
+  if (!btn) return;
+  btn.addEventListener("click", function () {
+    var i; do { i = Math.floor(Math.random() * Q.length); } while (Q.length > 1 && i === last);
+    last = i;
+    tx.textContent = "„" + Q[i].t + "“"; au.textContent = "— " + Q[i].a;
+    fig.hidden = false; fig.classList.remove("rodo"); void fig.offsetWidth; fig.classList.add("rodo");
+    btn.textContent = "🎲 Dar vieną";
+  });
+})();
+</script>
 </body>
 </html>
