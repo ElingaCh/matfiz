@@ -542,3 +542,8 @@ svg.grafikas polygon { stroke: none; }
 .atmintine-ps .receptai p:first-of-type { margin-top: .4rem; }
 .atmintine-ps .receptai ol { margin: .2rem 0 .4rem; padding-left: 1.4rem; }
 .atmintine-ps .receptai li { margin: .2rem 0; line-height: 1.7; }
+
+/* ---------- Kontūrai ---------- */
+.konturai figure.brezinys { margin: 1rem 0 .5rem; }
+.konturai .ka-rasyti { margin-top: .6rem; }
+.konturai .ka-rasyti p { margin: .2rem 0 0; }
