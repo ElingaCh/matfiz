@@ -24,7 +24,7 @@
 </script>
 <link rel="stylesheet" href="katex/katex.min.css" />
 </head>
-<body class="temos-puslapis su-sonine" data-tema="12" data-uzduociu="15">
+<body class="temos-puslapis su-sonine" data-tema="12" data-uzduociu="21">
 <aside class="sonine" id="sonine" aria-label="Temos">
 <div class="sonine-virsus"><a class="sonine-namai" href="index.html">Matfizo pratybos</a><button class="sonine-uzdaryti" type="button" aria-label="Uždaryti">×</button></div>
 <a class="sonine-atmintine" href="pratybos.html">✎ Visi pratybų uždaviniai</a>
@@ -47,7 +47,7 @@
 </ol>
 <div class="sonine-dalis">III dalis · Integralinės transformacijos</div><ol class="sonine-temos">
 <li><a href="tema-11.html" data-tema="11" data-uzduociu="12"><span class="st-nr">11</span><span class="st-pav">Furjė transformacija ir sąsūka</span><span class="st-prog"></span></a></li>
-<li><a href="tema-12.html" data-tema="12" data-uzduociu="15" class="aktyvi" aria-current="page"><span class="st-nr">12</span><span class="st-pav">Laplaso transformacija</span><span class="st-prog"></span></a></li>
+<li><a href="tema-12.html" data-tema="12" data-uzduociu="21" class="aktyvi" aria-current="page"><span class="st-nr">12</span><span class="st-pav">Laplaso transformacija</span><span class="st-prog"></span></a></li>
 </ol>
 <div class="sonine-dalis">IV dalis · Dalinių išvestinių lygtys</div><ol class="sonine-temos">
 <li><a href="tema-13.html" data-tema="13" data-uzduociu="12"><span class="st-nr">13</span><span class="st-pav">Fizikinių vyksmų lygtys: styga ir difuzija</span><span class="st-prog"></span></a></li>
@@ -85,7 +85,7 @@
   <div class="hero-vidus">
     <p class="antzenklis">12 tema · Integralinės transformacijos</p>
     <h1>Laplaso transformacija</h1>
-    <p class="hero-info">3 išspręsti pavyzdžiai · 15 užduotys · sprendimai atidengiami po žingsnį</p>
+    <p class="hero-info">3 išspręsti pavyzdžiai · 21 užduotys · sprendimai atidengiami po žingsnį</p>
     <div class="juosta"><div class="juosta-uzpildas"></div></div>
   </div>
 </header>
@@ -831,6 +831,418 @@ class="math inline">y=\operatorname{sh}x</span>.</p>
 <p><strong>Atsakymas:</strong> <span class="math inline">\boxed{F(p)=\dfrac{\sqrt\pi}{2}\,e^{p^2/4}\operatorname{erfc}\left(\dfrac p2\right)}</span></p>
 <blockquote>
 <p><strong>Pataisymas:</strong> pratybų užrašuose vietoj <span class="math inline">\frac{\sqrt\pi}{2}</span> parašyta „<span class="math inline">\frac{3\pi}{2}</span>“, greičiausiai perrašant. Patikrinimas: kai <span class="math inline">p=0</span>, <span class="math inline">F(0)=\int_0^\infty e^{-t^2}dt=\frac{\sqrt\pi}2\approx0{,}886</span>, o su <span class="math inline">\frac{3\pi}{2}</span> gautųsi <span class="math inline">\approx4{,}71</span>. Kai <span class="math inline">p=1{,}3</span>, skaitinis integralas <span class="math inline">\approx0{,}4840</span>, sutampa su <span class="math inline">\frac{\sqrt\pi}{2}</span> formule.</p>
+</blockquote>
+</div>
+</div>
+<h2 id="pratybos-11">11 pratybų uždaviniai</h2>
+<div class="deze uzduotis" id="uzd-12-16" data-nr="12.16"><div class="deze-antraste">12.16 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Raskite <span class="math inline">\hat L[x\cos bx]</span> dviem
+būdais: per daugybos iš <span class="math inline">x</span> savybę ir per
+Oilerio formulę.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><strong>I būdas.</strong> Savybė <span class="math inline">x f(x)\
+\dot=\ -F&#39;(p)</span>. Ji gaunama išdiferencijavus apibrėžimą pagal
+<span class="math inline">p</span>: <span
+class="math display">F&#39;(p)=\int_0^\infty f(x)\,(-x)\,e^{-px}dx=-\hat
+L[xf(x)].</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Po integralu nuo <span class="math inline">p</span> priklauso tik
+<span class="math inline">e^{-px}</span>, o <span
+class="math inline">\frac{d}{dp}e^{-px}=-x\,e^{-px}</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Čia <span class="math inline">f=\cos bx</span>, <span
+class="math inline">F(p)=\dfrac{p}{p^2+b^2}</span>. Dalmens išvestinė
+(<span class="math inline">u=p</span>, <span
+class="math inline">v=p^2+b^2</span>, <span
+class="math inline">u&#39;=1</span>, <span
+class="math inline">v&#39;=2p</span>): <span
+class="math display">F&#39;(p)=\frac{(p^2+b^2)-p\cdot2p}{(p^2+b^2)^2}=\frac{b^2-p^2}{(p^2+b^2)^2}.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p><span class="math inline">\left(\frac
+uv\right)&#39;=\frac{u&#39;v-uv&#39;}{v^2}</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Su minusu: <span class="math inline">\hat L[x\cos
+bx]=-F&#39;(p)=\dfrac{p^2-b^2}{(p^2+b^2)^2}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><strong>II būdas.</strong> <span class="math inline">\cos
+bx=\dfrac{e^{ibx}+e^{-ibx}}2</span>, todėl <span
+class="math inline">x\cos bx=\frac12xe^{ibx}+\frac12xe^{-ibx}</span>.
+Kadangi <span class="math inline">x\ \dot=\ \dfrac1{p^2}</span>, o
+daugyba iš <span class="math inline">e^{\alpha x}</span> vaizde keičia
+<span class="math inline">p\to p-\alpha</span>: <span
+class="math display">xe^{\pm ibx}\ \dot=\ \frac1{(p\mp
+ib)^2}.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Poslinkis vaizde: <span class="math inline">\int_0^\infty e^{\alpha
+x}f(x)e^{-px}dx=\int_0^\infty
+f(x)e^{-(p-\alpha)x}dx=F(p-\alpha)</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">5 žingsnis</div>
+<p>Bendras vardiklis <span
+class="math inline">(p-ib)^2(p+ib)^2=(p^2+b^2)^2</span>, o skaitiklyje
+<span class="math inline">(p+ib)^2+(p-ib)^2=2p^2-2b^2</span> (menamosios
+dalys <span class="math inline">\pm2ipb</span> išsiprastina): <span
+class="math display">\frac12\left(\frac1{(p-ib)^2}+\frac1{(p+ib)^2}\right)=\frac{p^2-b^2}{(p^2+b^2)^2}.</span>
+Gavome tą patį. Patikrinimas: kai <span class="math inline">b=0</span>,
+gaunama <span class="math inline">\frac1{p^2}</span>, t. y. <span
+class="math inline">x</span> vaizdas ✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\boxed{\hat L[x\cos
+bx]=\dfrac{p^2-b^2}{(p^2+b^2)^2}}</span></p>
+<blockquote>
+<p><strong>Pataisymas:</strong> Užrašuose parašyta <span
+class="math inline">x\,\frac{e^{ix}+e^{-ix}}2</span>, o turi būti <span
+class="math inline">e^{ibx}</span> ir <span
+class="math inline">e^{-ibx}</span> (su <span
+class="math inline">b</span>). Taip pat „<span
+class="math inline">p/p^2+b^2</span>“ reikia skaityti <span
+class="math inline">\frac{p}{p^2+b^2}</span>. Galutinis atsakymas
+užrašuose teisingas.</p>
+</blockquote>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-12-17" data-nr="12.17"><div class="deze-antraste">12.17 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Raskite integralinio sinuso <span
+class="math inline">\displaystyle\operatorname{Si}(x)=\int_0^x\frac{\sin
+y}{y}\,dy</span> Laplaso vaizdą.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Planas: <span class="math inline">\sin x</span> vaizdas <span
+class="math inline">\to</span> padalijame iš <span
+class="math inline">x</span> <span class="math inline">\to</span>
+suintegruojame nuo 0 iki <span class="math inline">x</span>. Pradžia:
+<span class="math inline">\sin x\ \dot=\ \dfrac1{p^2+1}</span>.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><strong>Dalyba iš <span class="math inline">x</span>:</strong> <span
+class="math inline">\dfrac{f(x)}{x}\ \dot=\ \displaystyle\int_p^\infty
+F(q)\,dq</span>. Todėl <span class="math display">\hat
+L\!\left[\frac{\sin
+x}{x}\right]=\int_p^\infty\frac{dq}{q^2+1}=\operatorname{arctg}q\Big|_p^\infty=\frac\pi2-\operatorname{arctg}p.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Sukeitus integravimo tvarką: <span class="math inline">\int_p^\infty
+F(q)dq=\int_0^\infty f(x)\left[\int_p^\infty e^{-qx}dq\right]dx</span>,
+o vidinis integralas lygus <span
+class="math inline">\frac{e^{-px}}{x}</span>. Taip gaunamas <span
+class="math inline">\frac{f(x)}{x}</span> vaizdas.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><strong>Originalo integralas:</strong> <span
+class="math inline">\displaystyle\int_0^x g(y)dy\ \dot=\
+\frac{G(p)}{p}</span>. Todėl <span class="math display">\hat
+L[\operatorname{Si}x]=\frac1p\left(\frac\pi2-\operatorname{arctg}p\right).</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Jei <span class="math inline">h(x)=\int_0^xg</span>, tai <span
+class="math inline">h&#39;=g</span> ir <span
+class="math inline">h(0)=0</span>. Išvestinės savybė: <span
+class="math inline">G=\hat L[h&#39;]=pH-h(0)=pH</span>, taigi <span
+class="math inline">H=G/p</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><strong>Patikrinimai.</strong> Mažiems <span
+class="math inline">x</span>: <span
+class="math inline">\operatorname{Si}x\approx x</span>, todėl dideliems
+<span class="math inline">p</span> vaizdas turi būti <span
+class="math inline">\approx\frac1{p^2}</span>; iš tikrųjų <span
+class="math inline">\frac\pi2-\operatorname{arctg}p=\operatorname{arcctg}p\approx\frac1p</span>
+✓. Dideliems <span class="math inline">x</span>: <span
+class="math inline">\operatorname{Si}x\to\frac\pi2</span>, todėl mažiems
+<span class="math inline">p</span> vaizdas <span
+class="math inline">\approx\frac{\pi/2}{p}</span> ✓. Skaitiškai, kai
+<span class="math inline">p=1{,}7</span>: <span
+class="math inline">\approx0{,}31278</span> ✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\boxed{\hat
+L[\operatorname{Si}x]=\dfrac1p\left(\dfrac\pi2-\operatorname{arctg}p\right)=\dfrac{\operatorname{arcctg}p}{p}}</span></p>
+<blockquote>
+<p>Pratybų atsakymas teisingas.</p>
+</blockquote>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-12-18" data-nr="12.18"><div class="deze-antraste">12.18 užduotis <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p>Išspręskite <span
+class="math inline">y&#39;&#39;+4y&#39;+4y=f(x)</span>, kai <span
+class="math inline">y(0)=0</span>, <span
+class="math inline">y&#39;(0)=0</span> (<span
+class="math inline">f</span> bet kokia).</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Su nulinėmis pradinėmis sąlygomis <span class="math inline">y&#39;\
+\dot=\ pY</span>, <span class="math inline">y&#39;&#39;\ \dot=\
+p^2Y</span>. Lygtis vaizdams: <span
+class="math display">(p^2+4p+4)\,Y=F\quad\Rightarrow\quad
+Y=\frac{F(p)}{(p+2)^2}.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p><span class="math inline">y&#39;\ \dot=\ pY-y(0)</span>, <span
+class="math inline">y&#39;&#39;\ \dot=\ p^2Y-py(0)-y&#39;(0)</span>, o
+<span class="math inline">y(0)=y&#39;(0)=0</span>. <span
+class="math inline">p^2+4p+4=(p+2)^2</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">\dfrac1{(p+2)^2}\ \dot=\ xe^{-2x}</span>
+(pratybose čia sustota).</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p><span class="math inline">x\ \dot=\ \frac1{p^2}</span>, o daugyba iš
+<span class="math inline">e^{-2x}</span> vaizde keičia <span
+class="math inline">p\to p+2</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p><strong>Vaizdų sandauga = originalų sąsūka:</strong> <span
+class="math inline">F(p)G(p)\ \dot=\ \displaystyle\int_0^x
+g(x-t)f(t)\,dt</span>. Su <span
+class="math inline">g(x)=xe^{-2x}</span>: <span
+class="math display">y(x)=\int_0^x(x-t)\,e^{-2(x-t)}f(t)\,dt.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><strong>Patikrinimas.</strong> <span
+class="math inline">K(s)=se^{-2s}</span>: <span
+class="math inline">K(0)=0</span>, <span
+class="math inline">K&#39;(0)=1</span>. Pagal Leibnico taisyklę <span
+class="math inline">y&#39;=\int_0^xK&#39;(x-t)f\,dt</span>, <span
+class="math inline">y&#39;&#39;=f(x)+\int_0^xK&#39;&#39;(x-t)f\,dt</span>.
+Tada <span
+class="math display">y&#39;&#39;+4y&#39;+4y=f(x)+\int_0^x\big[K&#39;&#39;+4K&#39;+4K\big]f\,dt,</span>
+o <span
+class="math inline">K&#39;&#39;+4K&#39;+4K=e^{-2s}\big[(4s-4)+4(1-2s)+4s\big]=0</span>
+✓. Pradinės sąlygos tenkinamos, nes integralai nuo 0 iki 0 lygūs 0
+✓.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Leibnico taisyklė: <span
+class="math inline">\frac{d}{dx}\int_0^xK(x-t)f(t)dt=K(0)f(x)+\int_0^xK&#39;(x-t)f(t)dt</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">5 žingsnis</div>
+<p>Pavyzdys: kai <span class="math inline">f=1</span>, <span
+class="math inline">y=\int_0^xse^{-2s}ds=\frac14-\left(\frac14+\frac
+x2\right)e^{-2x}\to\frac14</span> ✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\boxed{y(x)=\displaystyle\int_0^x(x-t)\,e^{-2(x-t)}f(t)\,dt}</span>,
+vaizdas <span class="math inline">Y=\dfrac{F(p)}{(p+2)^2}</span></p>
+<blockquote>
+<p>Pratybose gautas teisingas vaizdas, užbaigta sąsūka.</p>
+</blockquote>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-12-19" data-nr="12.19"><div class="deze-antraste">12.19 užduotis (ND) <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Raskite sprendinio vaizdą ir originalą: <span
+class="math inline">y&#39;&#39;+a^2y=f&#39;&#39;(x)</span>, kai <span
+class="math inline">y(0)=f(0)</span>, <span
+class="math inline">y&#39;(0)=f&#39;(0)</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p>Abiejų pusių vaizdai (įstatome <span
+class="math inline">y(0)=f(0)</span>, <span
+class="math inline">y&#39;(0)=f&#39;(0)</span>): <span
+class="math display">p^2Y-pf(0)-f&#39;(0)+a^2Y=p^2F-pf(0)-f&#39;(0).</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Ta pati išvestinės formulė <span class="math inline">f&#39;&#39;\
+\dot=\ p^2F-pf(0)-f&#39;(0)</span> taikoma ir <span
+class="math inline">y</span>, ir <span class="math inline">f</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p>Nariai <span class="math inline">-pf(0)-f&#39;(0)</span> yra abiejose
+pusėse ir išsiprastina: <span
+class="math display">(p^2+a^2)Y=p^2F\quad\Rightarrow\quad
+Y(p)=\frac{p^2}{p^2+a^2}F(p).</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Būtent todėl sąlygoje pasirinktos tokios pradinės sąlygos.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Skaitiklyje pridedame ir atimame <span
+class="math inline">a^2</span>: <span
+class="math display">\frac{p^2}{p^2+a^2}=1-\frac{a^2}{p^2+a^2}\quad\Rightarrow\quad
+Y=F-a\cdot\frac{a}{p^2+a^2}\cdot F.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><span class="math inline">\dfrac{a}{p^2+a^2}\ \dot=\ \sin ax</span>,
+o sandauga su <span class="math inline">F</span> yra sąsūka: <span
+class="math display">y(x)=f(x)-a\int_0^x\sin\big(a(x-t)\big)f(t)\,dt.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">5 žingsnis</div>
+<p><strong>Patikrinimas.</strong> <span
+class="math inline">g=\int_0^x\sin(a(x-t))f\,dt</span>: <span
+class="math inline">g&#39;=a\int_0^x\cos(a(x-t))f\,dt</span>, <span
+class="math inline">g&#39;&#39;=af-a^2g</span>. Tada <span
+class="math inline">y=f-ag</span>, <span
+class="math inline">y&#39;&#39;=f&#39;&#39;-a^2f+a^3g</span>, <span
+class="math inline">a^2y=a^2f-a^3g</span>, suma <span
+class="math inline">=f&#39;&#39;</span> ✓. <span
+class="math inline">g(0)=g&#39;(0)=0</span>, todėl <span
+class="math inline">y(0)=f(0)</span>, <span
+class="math inline">y&#39;(0)=f&#39;(0)</span> ✓.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">6 žingsnis</div>
+<p>Lygiavertė forma (jei nesuprastinti narių): <span
+class="math inline">y=f(0)\cos ax+\dfrac{f&#39;(0)}a\sin
+ax+\dfrac1a\displaystyle\int_0^x\sin\big(a(x-t)\big)f&#39;&#39;(t)\,dt</span>.
+Du kartus integravus dalimis gaunama ta pati formulė. Pavyzdys: <span
+class="math inline">f=x^2</span> duoda <span
+class="math inline">Y=\dfrac{2}{p(p^2+a^2)}</span>, <span
+class="math inline">y=\dfrac{2}{a^2}(1-\cos ax)</span> ✓.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\boxed{Y=\dfrac{p^2F(p)}{p^2+a^2},\quad
+y=f(x)-a\displaystyle\int_0^x\sin\big(a(x-t)\big)f(t)\,dt}</span></p>
+<blockquote>
+<p>Patikrinta simboliškai (SymPy) su <span
+class="math inline">f=e^{2x}</span> ir <span
+class="math inline">f=x^2+3x+1</span>.</p>
+</blockquote>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-12-20" data-nr="12.20"><div class="deze-antraste">12.20 užduotis (ND) <span class="lygis lygis-2">★★☆ Vidutinė</span></div>
+<p><span class="math inline">f(x)=\begin{cases}0,&amp;0\le x\le a,\\
+e^{-b(x-a)},&amp;x&gt;a\end{cases}</span> (<span
+class="math inline">a,b&gt;0</span>). Nubraižykite, raskite vaizdą ir
+atstatykite originalą.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><strong>Brėžinys.</strong> Iki <span class="math inline">x=a</span>
+funkcija lygi nuliui, ties <span class="math inline">x=a</span> šoka į
+<span class="math inline">1</span>, toliau gęsta kaip <span
+class="math inline">e^{-b(x-a)}</span>: tai <span
+class="math inline">e^{-bx}</span>, pastumta per <span
+class="math inline">a</span> į dešinę, t. y. <span
+class="math inline">f(x)=\theta(x-a)e^{-b(x-a)}</span>.</p>
+<figure class="brezinys"><div class="brezinys-svg"><svg class="grafikas" viewBox="0 0 680 340" role="img" xmlns="http://www.w3.org/2000/svg"><line class="tinklas" x1="56.0" x2="56.0" y1="290" y2="22"/><text class="zym" x="56.0" y="310" text-anchor="middle">0</text><line class="tinklas" x1="177.2" x2="177.2" y1="290" y2="22"/><text class="zym" x="177.2" y="310" text-anchor="middle">a</text><line class="tinklas" x1="298.4" x2="298.4" y1="290" y2="22"/><text class="zym" x="298.4" y="310" text-anchor="middle">2</text><line class="tinklas" x1="419.6" x2="419.6" y1="290" y2="22"/><text class="zym" x="419.6" y="310" text-anchor="middle">3</text><line class="tinklas" x1="540.8" x2="540.8" y1="290" y2="22"/><text class="zym" x="540.8" y="310" text-anchor="middle">4</text><line class="tinklas" x1="662.0" x2="662.0" y1="290" y2="22"/><text class="zym" x="662.0" y="310" text-anchor="middle">5</text><line class="tinklas" x1="56" x2="662" y1="290.0" y2="290.0"/><text class="zym" x="48" y="294.5" text-anchor="end">0</text><line class="tinklas" x1="56" x2="662" y1="204.3" y2="204.3"/><text class="zym" x="48" y="208.8" text-anchor="end">1/e</text><line class="tinklas" x1="56" x2="662" y1="173.5" y2="173.5"/><text class="zym" x="48" y="178.0" text-anchor="end">1/2</text><line class="tinklas" x1="56" x2="662" y1="57.0" y2="57.0"/><text class="zym" x="48" y="61.5" text-anchor="end">1</text><line class="asis" x1="56" x2="662" y1="290" y2="290"/><line class="asis" x1="56" x2="56" y1="290" y2="22"/><text class="asies-pav" x="662" y="282" text-anchor="end">x</text><text class="asies-pav" x="64" y="34">f(x)</text><polyline class="s4" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="7 5" points="56.0,290.0 177.2,290.0"/><polyline class="s4" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="7 5" points="177.2,57.0 178.8,63.1 180.4,69.1 182.0,74.9 183.7,80.5 185.3,86.0 186.9,91.4 188.5,96.6 190.1,101.7 191.7,106.7 193.4,111.5 195.0,116.2 196.6,120.8 198.2,125.2 199.8,129.6 201.4,133.8 203.1,137.9 204.7,141.9 206.3,145.8 207.9,149.6 209.5,153.3 211.1,156.9 212.8,160.4 214.4,163.8 216.0,167.1 217.6,170.4 219.2,173.5 220.8,176.6 222.4,179.6 224.1,182.5 225.7,185.3 227.3,188.0 228.9,190.7 230.5,193.3 232.1,195.9 233.8,198.4 235.4,200.8 237.0,203.1 238.6,205.4 240.2,207.6 241.8,209.8 243.5,211.9 245.1,214.0 246.7,216.0 248.3,217.9 249.9,219.8 251.5,221.7 253.2,223.5 254.8,225.2 256.4,226.9 258.0,228.6 259.6,230.2 261.2,231.8 262.8,233.3 264.5,234.8 266.1,236.2 267.7,237.7 269.3,239.0 270.9,240.4 272.5,241.7 274.2,242.9 275.8,244.2 277.4,245.4 279.0,246.6 280.6,247.7 282.2,248.8 283.9,249.9 285.5,251.0 287.1,252.0 288.7,253.0 290.3,254.0 291.9,254.9 293.6,255.8 295.2,256.7 296.8,257.6 298.4,258.5 300.0,259.3 301.6,260.1 303.2,260.9 304.9,261.7 306.5,262.4 308.1,263.1 309.7,263.8 311.3,264.5 312.9,265.2 314.6,265.8 316.2,266.5 317.8,267.1 319.4,267.7 321.0,268.3 322.6,268.9 324.3,269.4 325.9,270.0 327.5,270.5 329.1,271.0 330.7,271.5 332.3,272.0 334.0,272.5 335.6,272.9 337.2,273.4 338.8,273.8 340.4,274.2 342.0,274.6 343.6,275.1 345.3,275.4 346.9,275.8 348.5,276.2 350.1,276.6 351.7,276.9 353.3,277.3 355.0,277.6 356.6,277.9 358.2,278.2 359.8,278.6 361.4,278.9 363.0,279.1 364.7,279.4 366.3,279.7 367.9,280.0 369.5,280.2 371.1,280.5 372.7,280.8 374.4,281.0 376.0,281.2 377.6,281.5 379.2,281.7 380.8,281.9 382.4,282.1 384.0,282.3 385.7,282.5 387.3,282.7 388.9,282.9 390.5,283.1 392.1,283.3 393.7,283.5 395.4,283.6 397.0,283.8 398.6,284.0 400.2,284.1 401.8,284.3 403.4,284.4 405.1,284.6 406.7,284.7 408.3,284.9 409.9,285.0 411.5,285.1 413.1,285.3 414.8,285.4 416.4,285.5 418.0,285.6 419.6,285.7 421.2,285.8 422.8,286.0 424.4,286.1 426.1,286.2 427.7,286.3 429.3,286.4 430.9,286.5 432.5,286.6 434.1,286.6 435.8,286.7 437.4,286.8 439.0,286.9 440.6,287.0 442.2,287.1 443.8,287.1 445.5,287.2 447.1,287.3 448.7,287.4 450.3,287.4 451.9,287.5 453.5,287.6 455.2,287.6 456.8,287.7 458.4,287.7 460.0,287.8 461.6,287.9 463.2,287.9 464.8,288.0 466.5,288.0 468.1,288.1 469.7,288.1 471.3,288.2 472.9,288.2 474.5,288.3 476.2,288.3 477.8,288.4 479.4,288.4 481.0,288.5 482.6,288.5 484.2,288.5 485.9,288.6 487.5,288.6 489.1,288.6 490.7,288.7 492.3,288.7 493.9,288.7 495.6,288.8 497.2,288.8 498.8,288.8 500.4,288.9 502.0,288.9 503.6,288.9 505.2,289.0 506.9,289.0 508.5,289.0 510.1,289.0 511.7,289.1 513.3,289.1 514.9,289.1 516.6,289.1 518.2,289.2 519.8,289.2 521.4,289.2 523.0,289.2 524.6,289.2 526.3,289.3 527.9,289.3 529.5,289.3 531.1,289.3 532.7,289.3 534.3,289.4 536.0,289.4 537.6,289.4 539.2,289.4 540.8,289.4 542.4,289.4 544.0,289.5 545.6,289.5 547.3,289.5 548.9,289.5 550.5,289.5 552.1,289.5 553.7,289.5 555.3,289.5 557.0,289.6 558.6,289.6 560.2,289.6 561.8,289.6 563.4,289.6 565.0,289.6 566.7,289.6 568.3,289.6 569.9,289.6 571.5,289.7 573.1,289.7 574.7,289.7 576.4,289.7 578.0,289.7 579.6,289.7 581.2,289.7 582.8,289.7 584.4,289.7 586.0,289.7 587.7,289.7 589.3,289.7 590.9,289.7 592.5,289.8 594.1,289.8 595.7,289.8 597.4,289.8 599.0,289.8 600.6,289.8 602.2,289.8 603.8,289.8 605.4,289.8 607.1,289.8 608.7,289.8 610.3,289.8 611.9,289.8 613.5,289.8 615.1,289.8 616.8,289.8 618.4,289.8 620.0,289.8 621.6,289.8 623.2,289.9 624.8,289.9 626.4,289.9 628.1,289.9 629.7,289.9 631.3,289.9 632.9,289.9 634.5,289.9 636.1,289.9 637.8,289.9 639.4,289.9 641.0,289.9 642.6,289.9 644.2,289.9 645.8,289.9 647.5,289.9 649.1,289.9 650.7,289.9 652.3,289.9 653.9,289.9 655.5,289.9 657.2,289.9 658.8,289.9 660.4,289.9 662.0,289.9"/><polyline class="s1" fill="none" stroke-width="2.6" stroke-linecap="round"  points="56.0,290.0 177.2,290.0"/><polyline class="s1" fill="none" stroke-width="2.6" stroke-linecap="round"  points="177.2,57.0 178.8,60.0 180.4,63.1 182.0,66.1 183.7,69.1 185.3,72.0 186.9,74.9 188.5,77.7 190.1,80.5 191.7,83.3 193.4,86.0 195.0,88.7 196.6,91.4 198.2,94.0 199.8,96.6 201.4,99.2 203.1,101.7 204.7,104.2 206.3,106.7 207.9,109.1 209.5,111.5 211.1,113.9 212.8,116.2 214.4,118.5 216.0,120.8 217.6,123.0 219.2,125.2 220.8,127.4 222.4,129.6 224.1,131.7 225.7,133.8 227.3,135.9 228.9,137.9 230.5,139.9 232.1,141.9 233.8,143.9 235.4,145.8 237.0,147.7 238.6,149.6 240.2,151.5 241.8,153.3 243.5,155.1 245.1,156.9 246.7,158.6 248.3,160.4 249.9,162.1 251.5,163.8 253.2,165.5 254.8,167.1 256.4,168.7 258.0,170.4 259.6,171.9 261.2,173.5 262.8,175.0 264.5,176.6 266.1,178.1 267.7,179.6 269.3,181.0 270.9,182.5 272.5,183.9 274.2,185.3 275.8,186.7 277.4,188.0 279.0,189.4 280.6,190.7 282.2,192.0 283.9,193.3 285.5,194.6 287.1,195.9 288.7,197.1 290.3,198.4 291.9,199.6 293.6,200.8 295.2,202.0 296.8,203.1 298.4,204.3 300.0,205.4 301.6,206.5 303.2,207.6 304.9,208.7 306.5,209.8 308.1,210.9 309.7,211.9 311.3,212.9 312.9,214.0 314.6,215.0 316.2,216.0 317.8,216.9 319.4,217.9 321.0,218.9 322.6,219.8 324.3,220.7 325.9,221.7 327.5,222.6 329.1,223.5 330.7,224.3 332.3,225.2 334.0,226.1 335.6,226.9 337.2,227.7 338.8,228.6 340.4,229.4 342.0,230.2 343.6,231.0 345.3,231.8 346.9,232.5 348.5,233.3 350.1,234.0 351.7,234.8 353.3,235.5 355.0,236.2 356.6,237.0 358.2,237.7 359.8,238.3 361.4,239.0 363.0,239.7 364.7,240.4 366.3,241.0 367.9,241.7 369.5,242.3 371.1,242.9 372.7,243.6 374.4,244.2 376.0,244.8 377.6,245.4 379.2,246.0 380.8,246.6 382.4,247.1 384.0,247.7 385.7,248.3 387.3,248.8 388.9,249.4 390.5,249.9 392.1,250.4 393.7,251.0 395.4,251.5 397.0,252.0 398.6,252.5 400.2,253.0 401.8,253.5 403.4,254.0 405.1,254.4 406.7,254.9 408.3,255.4 409.9,255.8 411.5,256.3 413.1,256.7 414.8,257.2 416.4,257.6 418.0,258.0 419.6,258.5 421.2,258.9 422.8,259.3 424.4,259.7 426.1,260.1 427.7,260.5 429.3,260.9 430.9,261.3 432.5,261.7 434.1,262.0 435.8,262.4 437.4,262.8 439.0,263.1 440.6,263.5 442.2,263.8 443.8,264.2 445.5,264.5 447.1,264.9 448.7,265.2 450.3,265.5 451.9,265.8 453.5,266.2 455.2,266.5 456.8,266.8 458.4,267.1 460.0,267.4 461.6,267.7 463.2,268.0 464.8,268.3 466.5,268.6 468.1,268.9 469.7,269.1 471.3,269.4 472.9,269.7 474.5,270.0 476.2,270.2 477.8,270.5 479.4,270.7 481.0,271.0 482.6,271.2 484.2,271.5 485.9,271.7 487.5,272.0 489.1,272.2 490.7,272.5 492.3,272.7 493.9,272.9 495.6,273.1 497.2,273.4 498.8,273.6 500.4,273.8 502.0,274.0 503.6,274.2 505.2,274.4 506.9,274.6 508.5,274.9 510.1,275.1 511.7,275.3 513.3,275.4 514.9,275.6 516.6,275.8 518.2,276.0 519.8,276.2 521.4,276.4 523.0,276.6 524.6,276.7 526.3,276.9 527.9,277.1 529.5,277.3 531.1,277.4 532.7,277.6 534.3,277.8 536.0,277.9 537.6,278.1 539.2,278.2 540.8,278.4 542.4,278.6 544.0,278.7 545.6,278.9 547.3,279.0 548.9,279.1 550.5,279.3 552.1,279.4 553.7,279.6 555.3,279.7 557.0,279.8 558.6,280.0 560.2,280.1 561.8,280.2 563.4,280.4 565.0,280.5 566.7,280.6 568.3,280.8 569.9,280.9 571.5,281.0 573.1,281.1 574.7,281.2 576.4,281.3 578.0,281.5 579.6,281.6 581.2,281.7 582.8,281.8 584.4,281.9 586.0,282.0 587.7,282.1 589.3,282.2 590.9,282.3 592.5,282.4 594.1,282.5 595.7,282.6 597.4,282.7 599.0,282.8 600.6,282.9 602.2,283.0 603.8,283.1 605.4,283.2 607.1,283.3 608.7,283.4 610.3,283.5 611.9,283.5 613.5,283.6 615.1,283.7 616.8,283.8 618.4,283.9 620.0,284.0 621.6,284.0 623.2,284.1 624.8,284.2 626.4,284.3 628.1,284.4 629.7,284.4 631.3,284.5 632.9,284.6 634.5,284.6 636.1,284.7 637.8,284.8 639.4,284.9 641.0,284.9 642.6,285.0 644.2,285.1 645.8,285.1 647.5,285.2 649.1,285.3 650.7,285.3 652.3,285.4 653.9,285.4 655.5,285.5 657.2,285.6 658.8,285.6 660.4,285.7 662.0,285.7"/><line class="pag" x1="177.2" y1="57.0" x2="298.4" y2="290.0" stroke-dasharray="3 4"/><circle class="s1" cx="298.4" cy="204.3" r="4" fill="currentColor"/><text class="t" x="306.4" y="196.3">x = a + 1/b</text><line class="pag" x1="177.2" y1="290.0" x2="177.2" y2="57.0" stroke-dasharray="2 4"/><circle class="s1" cx="177.2" cy="57.0" r="5" fill="var(--fonas)" stroke-width="2"/><circle class="s1" cx="177.2" cy="290.0" r="5" fill="currentColor"/><text class="t" x="187.2" y="51.0">šuolis: f(a)=0, f(a+0)=1</text><rect class="legendos-fonas" x="440" y="88" width="210" height="56" rx="8"/><line class="s1" x1="450" x2="474" y1="106" y2="106" stroke-width="3"/><text class="t" x="480" y="110.5">b = 1</text><line class="s4" x1="450" x2="474" y1="128" y2="128" stroke-width="3" stroke-dasharray="6 4"/><text class="t" x="480" y="132.5">b = 2 (gęsta greičiau)</text></svg></div><figcaption>Funkcija <span
+class="math inline">f(x)=\theta(x-a)e^{-b(x-a)}</span>, kai <span
+class="math inline">a=1</span>: ištisinė <span
+class="math inline">b=1</span>, punktyrinė <span
+class="math inline">b=2</span>. Ties <span
+class="math inline">x=a</span> šuolis iš 0 į 1 (pačiame taške <span
+class="math inline">f(a)=0</span>, todėl apačioje pilnas skrituliukas,
+viršuje tuščias). Liestinė taške <span class="math inline">x=a</span>
+kerta ašį ties <span class="math inline">x=a+\frac1b</span>, kur <span
+class="math inline">f=\frac1e</span>.</figcaption></figure>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><strong>Vaizdas.</strong> Integralas nuo <span
+class="math inline">0</span> iki <span class="math inline">a</span>
+lygus nuliui, todėl <span class="math display">F(p)=\int_a^\infty
+e^{-b(x-a)}e^{-px}dx\overset{s=x-a}{=}e^{-pa}\int_0^\infty
+e^{-(p+b)s}ds=\frac{e^{-ap}}{p+b}.</span> Integralas konverguoja, kai <span class=\"math inline\">\operatorname{Re}p&gt;-b</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Keičiant <span class="math inline">x=s+a</span>: <span
+class="math inline">e^{-px}=e^{-pa}e^{-ps}</span>, o <span
+class="math inline">e^{-pa}</span> nepriklauso nuo <span
+class="math inline">s</span> ir iškeliamas. <span
+class="math inline">\int_0^\infty e^{-cs}ds=\frac1c</span>, kai <span
+class="math inline">\operatorname{Re}c&gt;0</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Per savybes: <span class="math inline">e^{-bx}\ \dot=\
+\frac1{p+b}</span>, o vėlavimas <span
+class="math inline">\theta(x-a)g(x-a)\ \dot=\ e^{-ap}G(p)</span>. Tas
+pats ✓.</p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p><strong>Originalas iš vaizdo (Melino formulė).</strong> <span
+class="math inline">f(x)=\dfrac1{2\pi
+i}\displaystyle\int_{\gamma-i\infty}^{\gamma+i\infty}\frac{e^{p(x-a)}}{p+b}dp</span>,
+vienintelis polius <span class="math inline">p=-b</span>.</p>
+<ul>
+<li><span class="math inline">x&gt;a</span>: <span
+class="math inline">e^{p(x-a)}</span> nyksta kairėje, kontūrą uždarome
+kairėje, <span
+class="math inline">f=\operatorname{Res}_{p=-b}=e^{-b(x-a)}</span>.</li>
+<li><span class="math inline">x&lt;a</span>: uždarome dešinėje, polių
+nėra, <span class="math inline">f=0</span>.</li>
+<li><span class="math inline">x=a</span>: gaunamas šuolio vidurkis <span
+class="math inline">\frac12</span>.</li>
+</ul>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Žordano lema: kai <span class="math inline">x-a&gt;0</span>, <span
+class="math inline">|e^{p(x-a)}|=e^{(x-a)\operatorname{Re}p}\to0</span>,
+kai <span class="math inline">\operatorname{Re}p\to-\infty</span>, todėl
+didelio kairiojo lanko integralas nyksta.</p>
+</div>
+</div>
+<p><strong>Atsakymas:</strong> <span class="math inline">\boxed{F(p)=\dfrac{e^{-ap}}{p+b},\qquad
+f(x)=\theta(x-a)\,e^{-b(x-a)}}</span></p>
+</div>
+</div>
+<div class="deze uzduotis" id="uzd-12-21" data-nr="12.21"><div class="deze-antraste">12.21 užduotis <span class="lygis lygis-3">★★★ Sunki</span></div>
+<p>Dvigubu Laplaso vaizdu išspręskite <span
+class="math inline">\dfrac{\partial u}{\partial x}+\dfrac{\partial
+u}{\partial y}=x+y</span>, kai <span
+class="math inline">u(0,y)=1</span>, <span
+class="math inline">u(x,0)=1</span>.</p>
+<div class="sprendimas">
+<div class="zingsnis"><div class="zingsnis-nr">1 žingsnis</div>
+<p><strong>Žymėjimas.</strong> <span class="math inline">\hat L_x</span>
+(užrašuose „<span class="math inline">\alpha_x</span> su stogeliu“) yra
+Laplaso operatorius pagal <span class="math inline">x</span> (<span
+class="math inline">x\to p</span>), <span class="math inline">\hat
+L_y</span> pagal <span class="math inline">y</span> (<span
+class="math inline">y\to q</span>). <span
+class="math display">U(p,q)=\int_0^\infty\!\!\int_0^\infty
+u(x,y)e^{-px-qy}dx\,dy.</span></p>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">2 žingsnis</div>
+<p><span class="math inline">\partial_xu\ \dot=\ pU-\bar u(0,q)</span>,
+<span class="math inline">\ \partial_yu\ \dot=\ qU-\bar u(p,0)</span>,
+kur <span class="math inline">\bar u(0,q)=\hat
+L_y[u(0,y)]=\frac1q</span>, <span class="math inline">\bar u(p,0)=\hat
+L_x[u(x,0)]=\frac1p</span>.</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Pirma <span class="math inline">\hat L_x[\partial_xu]=p\bar
+u(p,y)-u(0,y)</span> (<span class="math inline">y</span> tik
+parametras), paskui taikome <span class="math inline">\hat L_y</span>
+abiem nariams.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">3 žingsnis</div>
+<p>Dešinė: <span class="math inline">x\ \dot=\
+\frac1{p^2}\cdot\frac1q</span>, <span class="math inline">y\ \dot=\
+\frac1p\cdot\frac1{q^2}</span>. Lygtis: <span
+class="math display">pU-\frac1q+qU-\frac1p=\frac1{p^2q}+\frac1{pq^2}.</span>
+(Iki čia buvo išspręsta pratybose.)</p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p>Dvigubas integralas išsiskaido: <span
+class="math inline">\int_0^\infty xe^{-px}dx\cdot\int_0^\infty
+e^{-qy}dy=\frac1{p^2}\cdot\frac1q</span>.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">4 žingsnis</div>
+<p>Sugrupuojame ir subendravardiklinam poromis: <span
+class="math display">(p+q)U=\frac{p+q}{pq}+\frac{p+q}{p^2q^2}\quad\Rightarrow\quad
+U=\frac1{pq}+\frac1{p^2q^2}.</span></p>
+<div class="kodel"><span class="kodel-zyme">Kodėl?</span>
+<p><span class="math inline">\frac1p+\frac1q=\frac{q+p}{pq}</span>,
+<span
+class="math inline">\frac1{p^2q}+\frac1{pq^2}=\frac{q+p}{p^2q^2}</span>,
+todėl <span class="math inline">(p+q)</span> suprastėja.</p>
+</div>
+</div>
+<div class="zingsnis"><div class="zingsnis-nr">5 žingsnis</div>
+<p>Originalas: <span class="math inline">\frac1{pq}=\frac1p\cdot\frac1q\
+\dot=\ 1</span>, <span class="math inline">\frac1{p^2q^2}\ \dot=\ x\cdot
+y</span>. Taigi <span class="math inline">u=1+xy</span>. Patikrinimas:
+<span class="math inline">u_x+u_y=y+x</span> ✓, <span
+class="math inline">u(0,y)=u(x,0)=1</span> ✓. Charakteristikomis: <span
+class="math inline">u=xy+\varphi(x-y)</span>, iš sąlygų <span
+class="math inline">\varphi\equiv1</span>, todėl sprendinys
+vienintelis.</p>
+</div>
+<p><strong>Atsakymas:</strong> <span
+class="math inline">\boxed{U(p,q)=\dfrac1{pq}+\dfrac1{p^2q^2},\qquad
+u(x,y)=1+xy}</span></p>
+<blockquote>
+<p>Pratybose pradėta teisingai, užbaigta.</p>
 </blockquote>
 </div>
 </div>
